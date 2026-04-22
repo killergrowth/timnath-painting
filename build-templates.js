@@ -209,6 +209,21 @@ ${content}
 </div>
 ${mobileNav()}
 ${htmlScripts()}
+<script>
+// Fix JS-driven transforms that break about section layout
+function fixTransforms() {
+  var thumb = document.querySelector(".about-one__thumb__item.real-image");
+  if (thumb) { thumb.style.transform = "none"; thumb.style.position = "static"; }
+  var funfact = document.querySelector(".about-one__funfact");
+  if (funfact) { funfact.style.transform = "none"; }
+  var bgJar = document.querySelectorAll(".about-one [data-jarallax],.about-one__thumb .jarallax-img");
+  bgJar.forEach(function(el) { el.style.transform = "none"; el.style.position = "static"; });
+}
+document.addEventListener("DOMContentLoaded", fixTransforms);
+setTimeout(fixTransforms, 500);
+setTimeout(fixTransforms, 1500);
+setTimeout(fixTransforms, 3000);
+</script>
 </body>
 </html>`;
 }

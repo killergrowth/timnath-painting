@@ -1573,3 +1573,67 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   text-transform: uppercase !important;
   color: #DF9E42 !important;
 }
+
+/* =============================================================
+   FIX: Jarallax + GSAP inline transforms on about section
+   ============================================================= */
+.about-one__thumb__item.real-image,
+.about-one__thumb__item.real-image > *,
+.about-one__funfact {
+  transform: none !important;
+  -webkit-transform: none !important;
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+}
+
+/* About thumb main image — always visible, clean */
+.about-one__thumb__item.real-image img {
+  transform: none !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 400px !important;
+  object-fit: cover !important;
+  border-radius: 8px !important;
+}
+
+/* About thumb wrapper */
+.about-one__thumb {
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Suppress jarallax container that wraps background */
+.about-one .jarallax,
+.about-one .jarallax-img {
+  transform: none !important;
+  position: relative !important;
+}
+
+/* =============================================================
+   HERO — Brighter, painter-first (force override any old rules)
+   ============================================================= */
+.main-slider-one__item {
+  position: relative;
+}
+
+.main-slider-one__item::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to right, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.40) 55%, rgba(0,0,0,0.10) 100%) !important;
+  z-index: 1 !important;
+}
+
+.main-slider-one__content {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* =============================================================
+   FORCE hide orange funfact on desktop too — it's a count-box
+   placed awkwardly in the about thumb column
+   ============================================================= */
+.about-one__funfact.count-box {
+  display: none !important;
+}
