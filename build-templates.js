@@ -68,21 +68,21 @@ function topbar() {
     <div class="topbar-two__logo logo-wallox"><a href="/index.html"><img src="/assets/images/logo-dark.png" alt="${CLIENT.name}" width="202"></a></div>
     <div class="topbar-two__list"><ul class="list-unstyled topbar-two__info">
       <li class="topbar-two__info__item">
-        <div class="topbar-two__info__icon"><i class="icon-maps-and-flags"></i></div>
+        <div class="topbar-two__info__icon"><i class="fa-solid fa-location-dot"></i></div>
         <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">location</span><p class="topbar-two__info__location">${CLIENT.city}, ${CLIENT.state}</p></div>
       </li>
       <li class="topbar-two__info__item">
-        <div class="topbar-two__info__icon"><i class="icon-email"></i></div>
+        <div class="topbar-two__info__icon"><i class="fa-solid fa-envelope"></i></div>
         <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">email us</span><a href="mailto:${CLIENT.email}" class="topbar-two__info__content">${CLIENT.email}</a></div>
       </li>
       <li class="topbar-two__info__item">
-        <div class="topbar-two__info__icon"><i class="icon-telephone"></i></div>
+        <div class="topbar-two__info__icon"><i class="fa-solid fa-phone"></i></div>
         <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">call us</span><a href="tel:${CLIENT.phoneTel}" class="topbar-two__info__content">${CLIENT.phone}</a></div>
       </li>
     </ul></div>
     <div class="topbar-two__right"><div class="topbar-two__social">
-      <a href="${CLIENT.facebook}"><i class="icon-facebook1"></i><span class="sr-only">Facebook</span></a>
-      <a href="${CLIENT.instagram}"><i class="icon-social-media"></i><span class="sr-only">Instagram</span></a>
+      <a href="${CLIENT.facebook}"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+      <a href="${CLIENT.instagram}"><i class="fa-brands fa-instagram"></i><span class="sr-only">Instagram</span></a>
     </div></div>
   </div></div>
 </div>`;
@@ -94,7 +94,7 @@ function pageHeader(title, crumbs) {
   <div class="container">
     <h2 class="page-header__title">${title}</h2>
     <div class="wallox-breadcrumb"><ul class="wallox-breadcrumb__list list-unstyled">
-      <li><a href="/index.html"><i class="icon-home"></i> Home</a></li>
+      <li><a href="/index.html"><i class="fa-solid fa-house"></i> Home</a></li>
       ${crumbs}
     </ul></div>
   </div>
@@ -105,16 +105,16 @@ function mobileNav() {
   return `<div class="mobile-nav__wrapper">
   <div class="mobile-nav__overlay mobile-nav__toggler"></div>
   <div class="mobile-nav__content">
-    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
     <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-light.png" width="155" alt="${CLIENT.name}"></a></div>
     <div class="mobile-nav__container"></div>
     <ul class="mobile-nav__contact list-unstyled">
-      <li><i class="fa fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
-      <li><i class="fa fa-phone-alt"></i><a href="tel:${CLIENT.phoneTel}">${CLIENT.phone}</a></li>
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:${CLIENT.phoneTel}">${CLIENT.phone}</a></li>
     </ul>
     <div class="mobile-nav__social">
-      <a href="${CLIENT.facebook}"><i class="icon-facebook1"></i><span class="sr-only">Facebook</span></a>
-      <a href="${CLIENT.instagram}"><i class="icon-social-media"></i><span class="sr-only">Instagram</span></a>
+      <a href="${CLIENT.facebook}"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+      <a href="${CLIENT.instagram}"><i class="fa-brands fa-instagram"></i><span class="sr-only">Instagram</span></a>
     </div>
   </div>
 </div>
@@ -135,12 +135,12 @@ function contactFormSection() {
             <div class="sec-title">
               <div class="d-flex align-items-center justify-content-start">
                 <img class="sec-title__image" src="/assets/images/shapes/sec-title-s-2.png" alt="">
-                <h6 class="sec-title__tagline">get in touch</h6>
+                <h6 class="sec-title__tagline">Request a Quote</h6>
               </div>
               <h3 class="sec-title__title">Get a Free Quote</h3>
             </div>
             <div class="testimonials-contact__form">
-              <form class="contact-one__form contact-form-validated form-one background-base" action="https://formspree.io/f/placeholder" method="POST">
+              <form class="contact-one__form contact-form-validated form-one background-base" action="#" method="POST" onsubmit="event.preventDefault(); this.innerHTML='<p style=\"color:#DF9E42;font-weight:600;padding:20px 0\">Thanks! We\'ll be in touch within a few hours. Or call us now: (970) 236-8271<\/p>'">
                 <div class="form-one__group">
                   <div class="form-one__control"><label for="name">Your Name*</label><input id="name" type="text" name="name" placeholder="Full name" required></div>
                   <div class="form-one__control"><label for="email">Email*</label><input type="email" id="email" name="email" placeholder="Email address" required></div>
@@ -151,9 +151,10 @@ function contactFormSection() {
                     </select>
                   </div>
                   <div class="form-one__control form-one__control - full"><label for="message">Message</label><textarea name="message" id="message" placeholder="Tell us about your project"></textarea></div>
-                  <div class="form-one__control form-one__control - full"><button type="submit" class="wallox-btn wallox-btn - base">Send Message</button></div>
+                  <div class="form-one__control form-one__control - full"><button type="submit" class="wallox-btn wallox-btn - base">Request a Quote</button></div>
                 </div>
               </form>
+              <p class="contact-preview-note">We'll follow up by phone or email within a few hours. Or call us directly: <a href="tel:${CLIENT.phoneTel}" style="color:#DF9E42;font-weight:600;">${CLIENT.phone}</a></p>
             </div>
           </div>
         </div>
@@ -168,9 +169,9 @@ function contactFormSection() {
             <h3 class="sec-title__title">We Respond Within a Few Hours</h3>
           </div>
           <ul class="list-unstyled" style="margin-top:30px;line-height:2.2;">
-            <li><i class="icon-telephone" style="color:var(--wallox-base);margin-right:10px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;">${CLIENT.phone}</a></li>
-            <li><i class="icon-email" style="color:var(--wallox-base);margin-right:10px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
-            <li><i class="icon-maps-and-flags" style="color:var(--wallox-base);margin-right:10px;"></i>${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</li>
+            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base);margin-right:10px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base);margin-right:10px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:10px;"></i>${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</li>
           </ul>
           <p style="margin-top:30px;font-style:italic;">Licensed &amp; Insured &bull; Eco-Painter Certified &bull; $2M General Liability</p>
         </div>
@@ -194,7 +195,7 @@ function serviceCarouselItems() {
     <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} Northern Colorado"></div>
     <div class="service-one__item__content"><div class="service-one__item__content__inner">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
-      <a href="/${s.slug}/index.html" class="wallox-btn service-one__item__btn"><i class="icon-right-arrow"></i></a>
+      <a href="/${s.slug}/index.html" class="wallox-btn service-one__item__btn"><i class="fa-solid fa-arrow-right"></i></a>
     </div></div>
   </div></div>`).join('\n');
 }

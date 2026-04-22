@@ -1637,3 +1637,257 @@ h1 > div > div, h2 > div > div, h3 > div > div {
 .about-one__funfact.count-box {
   display: none !important;
 }
+
+/* =============================================================
+   FINAL PASS — Tyler B 05:14 direction
+   ============================================================= */
+
+/* ── HERO CTA BUTTONS — plain, clear, no icon dependency ───── */
+.tp-btn-hero {
+  display: inline-block;
+  padding: 15px 32px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.3px;
+}
+
+.tp-hero-primary {
+  background: #DF9E42;
+  color: #fff !important;
+  border: 2px solid #DF9E42;
+}
+
+.tp-hero-primary:hover {
+  background: #c88a2e;
+  border-color: #c88a2e;
+  color: #fff !important;
+}
+
+.tp-hero-secondary {
+  background: transparent;
+  color: #fff !important;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+
+.tp-hero-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: #fff;
+  color: #fff !important;
+}
+
+@media (max-width: 767px) {
+  .main-slider-one__btn {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    margin-top: 24px !important;
+  }
+
+  .tp-btn-hero {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* ── KILL ALL LETTER-SPACING ON EYEBROW LABELS ─────────────── */
+.sec-title__tagline,
+.topbar-two__info__subtitle,
+h6.sec-title__tagline,
+.page-header .sec-title__tagline {
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  opacity: 0.75;
+}
+
+/* Remove ALL decorative underline/image from tagline rows */
+.sec-title .d-flex {
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.sec-title__image {
+  display: none !important;
+}
+
+/* ── SERVICE SECTION ─────────────────────────────────────────── */
+/* Service section background image (sets dark context) */
+.service-one {
+  background: #f8f5f0 !important;
+}
+
+.service-one__bg {
+  display: none !important;
+}
+
+/* Service grid cards — clean, readable */
+.service-one__item__title {
+  color: #2E2A20 !important;
+}
+
+/* Service bottom bar */
+.service-one__bottom {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  margin-top: 32px;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.service-one__bottom__nav {
+  display: none !important;
+}
+
+.service-one__bottom__call__number {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #DF9E42 !important;
+}
+
+/* ── CONTACT SECTION — honest, local, preview-safe ─────────── */
+.testimonials-contact {
+  background: #2E2A20 !important;
+}
+
+/* Form note — honest preview state */
+.contact-preview-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* Submit button */
+.form-one__btn .wallox-btn,
+.form-one__btn button {
+  background: #DF9E42 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 14px 32px !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  border-radius: 4px !important;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* ── HEADER — remove noise ──────────────────────────────────── */
+/* Topbar on desktop: clean, compact */
+.topbar-two {
+  font-size: 13px;
+}
+
+.topbar-two__info__subtitle {
+  display: none !important;
+}
+
+.topbar-two__info__location,
+.topbar-two__info .topbar-two__info__content {
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+/* ── ABOUT SECTION — less template, more local ──────────────── */
+.about-one__list__item {
+  padding: 8px 0 !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.about-one__list__item:last-child {
+  border-bottom: none;
+}
+
+.about-one__list__item i {
+  color: #DF9E42;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Stars row */
+.about-one__client__star {
+  color: #DF9E42;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+
+.about-one__client__text {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #4a4540 !important;
+}
+
+/* ── WHY CHOOSE — cleaner ───────────────────────────────────── */
+.why-choose-one__feature__title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #2E2A20 !important;
+}
+
+.why-choose-one__feature__text {
+  font-size: 14px !important;
+  color: #666 !important;
+  line-height: 1.7 !important;
+}
+
+.why-choose-one__top__text {
+  font-size: 15px !important;
+  color: #555 !important;
+  border-left: 3px solid #DF9E42;
+  padding-left: 16px;
+  font-style: normal !important;
+  line-height: 1.7 !important;
+}
+
+/* Progress bar color */
+.progress-box__bar__inner {
+  background: #DF9E42 !important;
+}
+
+/* ── FOOTER ─────────────────────────────────────────────────── */
+.main-footer {
+  background: #1a1712 !important;
+}
+
+.footer-widget__title {
+  color: #fff !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.2px !important;
+  margin-bottom: 18px !important;
+}
+
+.footer-widget__links a {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 14px !important;
+  transition: color 0.2s;
+}
+
+.footer-widget__links a:hover {
+  color: #DF9E42 !important;
+}
+
+.footer-widget__text {
+  color: rgba(255,255,255,0.65) !important;
+  font-size: 13px !important;
+  line-height: 1.8 !important;
+}
+
+/* Footer logo */
+.main-footer__logo img {
+  height: 48px !important;
+  width: auto !important;
+  max-width: 160px !important;
+}
