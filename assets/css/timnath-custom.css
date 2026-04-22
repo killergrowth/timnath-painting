@@ -1406,3 +1406,170 @@ h1 > div > div, h2 > div > div, h3 > div > div {
     line-height: 34px !important;
   }
 }
+
+/* =============================================================
+   SERVICE GRID — static HTML, no OWL JS dependency
+   ============================================================= */
+.service-one__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 0;
+  margin: 0;
+}
+
+@media (max-width: 991px) {
+  .service-one__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .service-one__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Service card in static grid */
+.service-one__grid .service-one__item {
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-one__grid .service-one__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+}
+
+/* Image — clean rectangle, not circle */
+.service-one__grid .service-one__item__thumb {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 0;
+  clip-path: none !important;
+  shape-outside: none !important;
+}
+
+.service-one__grid .service-one__item__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  clip-path: none !important;
+  border-radius: 0;
+  transition: transform 0.4s ease;
+}
+
+.service-one__grid .service-one__item:hover .service-one__item__thumb img {
+  transform: scale(1.04);
+}
+
+/* Content */
+.service-one__grid .service-one__item__content {
+  padding: 20px 22px !important;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-one__grid .service-one__item__title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  line-height: 1.3;
+}
+
+.service-one__grid .service-one__item__title a {
+  color: #2E2A20;
+  text-decoration: none;
+}
+
+.service-one__grid .service-one__item__title a:hover {
+  color: #DF9E42;
+}
+
+.service-one__grid .service-one__item__text {
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #666 !important;
+  display: block !important;
+  flex: 1;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.service-one__grid .service-one__item__btn {
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #DF9E42;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.service-one__grid .service-one__item__btn:hover {
+  gap: 10px;
+}
+
+/* =============================================================
+   HERO OVERLAY — Brighter, painter-first
+   ============================================================= */
+/* Lighter overlay for bright house/painter images */
+.main-slider-one__item::before {
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.40) 50%,
+    rgba(0,0,0,0.15) 100%
+  ) !important;
+}
+
+/* Hero BG images — position painter/house at center-right */
+.main-slider-one__bg {
+  background-position: center right !important;
+  background-size: cover !important;
+}
+
+/* =============================================================
+   HERO TEXT — Cleaner, bigger, more impactful
+   ============================================================= */
+.main-slider-one__title__text {
+  font-size: 56px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.05 !important;
+  letter-spacing: -1px !important;
+}
+
+@media (max-width: 767px) {
+  .main-slider-one__title__text {
+    font-size: 40px !important;
+    letter-spacing: -0.5px !important;
+  }
+  
+  /* Content left-aligned, easier to read */
+  .main-slider-one__content {
+    text-align: left !important;
+  }
+}
+
+/* Hero sub-title */
+.main-slider-one__sub-title {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  color: #DF9E42 !important;
+}

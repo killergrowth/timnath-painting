@@ -150,9 +150,7 @@ ${T.topbar()}
     </div>
   </div>
   <div class="service-one__middle wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-    <div class="service-one__carousel wallox-owl__carousel wallox-owl__carousel - custom-nav owl-carousel owl-theme"
-      data-owl-nav-prev=".service-one__carousel__nav - left" data-owl-nav-next=".service-one__carousel__nav - right"
-      data-owl-options='{"items":1,"margin":0,"loop":true,"smartSpeed":700,"nav":false,"dots":false,"autoplay":true,"responsive":{"0":{"items":1},"576":{"items":2,"margin":30},"991":{"items":3,"margin":30},"1300":{"items":4,"margin":30}}}'>
+    <div class="service-one__grid">
       ${T.serviceCarouselItems()}
     </div>
   </div>
