@@ -70,9 +70,7 @@ function buildHomepage() {
       </div>
     </div>
   </div></div></div>
-  <div class="main-slider-one__element-one"><div class="main-slider-one__element__item"><img src="/assets/images/shapes/hero-1-1.png" alt></div></div>
-  <div class="main-slider-one__element-two"><div class="main-slider-one__element__item"><img src="/assets/images/shapes/hero-1-2.png" alt></div></div>
-  <div class="main-slider-one__element-three"><div class="main-slider-one__element__item"><img src="/assets/images/shapes/hero-1-3.png" alt></div></div>
+
 </div>`).join('\n');
 
   const features = [
@@ -141,8 +139,7 @@ ${T.topbar()}
       </div>
     </div>
   </div>
-  <div class="about-one__shape"><img src="/assets/images/shapes/about-2-1.png" alt></div>
-  <div class="about-one__shape-two"><img src="/assets/images/shapes/about-2-2.png" alt></div>
+
 </section>
 
 <section class="service-one">

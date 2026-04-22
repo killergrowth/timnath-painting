@@ -1967,3 +1967,190 @@ h6.sec-title__tagline * {
     font-size: 15px !important;
   }
 }
+
+/* =================================================================
+   PASS 3 — Visual cleanup: service cards, hero, mobile, difference
+   ================================================================= */
+
+/* ── Mobile topbar — hide entirely on small screens ────────────── */
+@media (max-width: 991px) {
+  .topbar-two { display: none !important; }
+}
+
+/* ── Hero — tighter mobile, better overlay ──────────────────────── */
+.main-slider-one__bg {
+  background-position: center 30% !important;
+  background-size: cover !important;
+}
+
+/* Slightly deeper overlay so white text pops on any image */
+.main-slider-one__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(10,10,20,0.68) 0%, rgba(10,10,20,0.32) 70%, rgba(10,10,20,0.10) 100%);
+  z-index: 1;
+}
+.main-slider-one__content { position: relative; z-index: 2; }
+
+@media (max-width: 767px) {
+  .main-slider-one__item {
+    min-height: 88vh !important;
+    padding-top: 80px !important;
+    display: flex;
+    align-items: center;
+  }
+  .main-slider-one__item::before {
+    background: rgba(10,10,20,0.58) !important;
+  }
+  .main-slider-one__sub-title {
+    font-size: 11px !important;
+    letter-spacing: 1px !important;
+    padding: 6px 14px !important;
+    margin-bottom: 16px !important;
+  }
+  .main-slider-one__title__text {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 8px !important;
+  }
+  .main-slider-one__btn {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    margin-top: 24px !important;
+  }
+  .tp-btn-hero {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 16px 24px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+  }
+}
+
+/* ── Service cards — clean layout ───────────────────────────────── */
+.service-one__item__content {
+  padding: 20px 22px 22px !important;
+  background: #fff !important;
+}
+
+.service-one__item__title {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  line-height: 1.2 !important;
+}
+.service-one__item__title a {
+  color: #1a1a2e !important;
+  text-decoration: none !important;
+}
+.service-one__item__title a:hover { color: #DF9E42 !important; }
+
+.service-one__item__tagline {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+  color: #555 !important;
+  margin: 0 0 12px !important;
+}
+
+.service-one__item__link {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #DF9E42 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+}
+.service-one__item__link:hover { color: #c8882e !important; }
+
+/* Hide old arrow button (wallox-btn) inside service cards */
+.service-one__item .wallox-btn,
+.service-one__item__btn { display: none !important; }
+
+/* Service card thumb — consistent height */
+.service-one__item__thumb {
+  height: 200px !important;
+  overflow: hidden !important;
+}
+.service-one__item__thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transition: transform 0.4s ease !important;
+}
+.service-one__item:hover .service-one__item__thumb img {
+  transform: scale(1.04) !important;
+}
+
+/* Service grid — clean 3-col, no carousel junk */
+.service-one__grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 24px !important;
+}
+@media (max-width: 991px) {
+  .service-one__grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 575px) {
+  .service-one__grid { grid-template-columns: 1fr !important; }
+}
+.service-one__grid .item { display: block !important; }
+.service-one__item {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  background: #fff !important;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07) !important;
+  transition: box-shadow 0.3s ease !important;
+}
+.service-one__item:hover {
+  box-shadow: 0 4px 28px rgba(0,0,0,0.13) !important;
+}
+
+/* ── "Difference" / why-choose-one — simplify stacked images ───── */
+/* Single image, drop the stacked second one on mobile */
+@media (max-width: 991px) {
+  .why-choose-one__thumb-two { display: none !important; }
+  .why-choose-one__thumb-box-two { display: none !important; }
+  .why-choose-one__thumb { width: 100% !important; }
+  .why-choose-one__thumb img {
+    width: 100% !important;
+    height: 280px !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+  }
+}
+
+.why-choose-one__thumb img {
+  border-radius: 8px !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+.why-choose-one__thumb-two img {
+  border-radius: 8px !important;
+  object-fit: cover !important;
+}
+
+/* blockquote style for the "difference" callout */
+.why-choose-one__top__text {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  color: #444 !important;
+  border-left: 3px solid #DF9E42 !important;
+  padding-left: 16px !important;
+  margin-bottom: 24px !important;
+}
+
+/* ── Feature bar — icons display properly ───────────────────────── */
+.feature-two__item__icon i {
+  font-size: 32px !important;
+  color: #DF9E42 !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+}
+
+/* ── About thumb — single clean image ──────────────────────────── */
+.about-one__thumb .real-image img {
+  width: 100% !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+}

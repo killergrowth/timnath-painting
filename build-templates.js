@@ -192,11 +192,12 @@ function faqBlock(faqs, groupName) {
 
 function serviceCarouselItems() {
   return SERVICES.map(s => `<div class="item"><div class="service-one__item">
-    <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} Northern Colorado"></div>
-    <div class="service-one__item__content"><div class="service-one__item__content__inner">
+    <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado"></div>
+    <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
-      <a href="/${s.slug}/index.html" class="wallox-btn service-one__item__btn"><i class="fa-solid fa-arrow-right"></i></a>
-    </div></div>
+      <p class="service-one__item__tagline">${s.tagline}</p>
+      <a href="/${s.slug}/index.html" class="service-one__item__link">Learn more &rarr;</a>
+    </div>
   </div></div>`).join('\n');
 }
 
