@@ -1,0 +1,219 @@
+﻿'use strict';
+const { CLIENT, SERVICES } = require('./_build-data.js');
+
+function htmlHead(title, desc) {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${title}</title>
+<meta name="description" content="${desc}">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
+<link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
+<link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css">
+<link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css">
+<link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.css">
+<link rel="stylesheet" href="/assets/vendors/wallox-icons/style.css">
+<link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/assets/vendors/slick-carousel/slick.css">
+<link rel="stylesheet" href="/assets/vendors/slick-carousel/slick-theme.css">
+<link rel="stylesheet" href="/assets/css/wallox.css">
+<link rel="stylesheet" href="/assets/css/timnath-custom.css">
+<link rel="stylesheet" href="/assets/css/icon-shim.css">
+</head>`;
+}
+
+function htmlScripts() {
+  return `<script src="/assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+<script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
+<script src="/assets/vendors/jarallax/jarallax.min.js"></script>
+<script src="/assets/vendors/jquery-ui/jquery-ui.js"></script>
+<script src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
+<script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
+<script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
+<script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
+<script src="/assets/vendors/tiny-slider/tiny-slider.js"></script>
+<script src="/assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+<script src="/assets/vendors/slick-carousel/slick.min.js"></script>
+<script src="/assets/vendors/wow/wow.js"></script>
+<script src="/assets/vendors/imagesloaded/imagesloaded.min.js"></script>
+<script src="/assets/vendors/isotope/isotope.js"></script>
+<script src="/assets/vendors/jquery-circleType/jquery.circleType.js"></script>
+<script src="/assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
+<script src="/assets/vendors/gsap/splittext.min.js"></script>
+<script src="/assets/vendors/gsap/ScrollTrigger.min.js"></script>
+<script src="/assets/vendors/gsap/gsap.js"></script>
+<script src="/assets/js/wallox-gsap.js"></script>
+<script src="/assets/js/wallox.js"></script>`;
+}
+
+function topbar() {
+  return `<div class="topbar-two">
+  <div class="container-fluid"><div class="topbar-two__inner">
+    <div class="topbar-two__logo logo-wallox"><a href="/index.html"><img src="/assets/images/logo-dark.png" alt="${CLIENT.name}" width="202"></a></div>
+    <div class="topbar-two__list"><ul class="list-unstyled topbar-two__info">
+      <li class="topbar-two__info__item">
+        <div class="topbar-two__info__icon"><i class="icon-maps-and-flags"></i></div>
+        <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">location</span><p class="topbar-two__info__location">${CLIENT.city}, ${CLIENT.state}</p></div>
+      </li>
+      <li class="topbar-two__info__item">
+        <div class="topbar-two__info__icon"><i class="icon-email"></i></div>
+        <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">email us</span><a href="mailto:${CLIENT.email}" class="topbar-two__info__content">${CLIENT.email}</a></div>
+      </li>
+      <li class="topbar-two__info__item">
+        <div class="topbar-two__info__icon"><i class="icon-telephone"></i></div>
+        <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">call us</span><a href="tel:${CLIENT.phoneTel}" class="topbar-two__info__content">${CLIENT.phone}</a></div>
+      </li>
+    </ul></div>
+    <div class="topbar-two__right"><div class="topbar-two__social">
+      <a href="${CLIENT.facebook}"><i class="icon-facebook1"></i><span class="sr-only">Facebook</span></a>
+      <a href="${CLIENT.instagram}"><i class="icon-social-media"></i><span class="sr-only">Instagram</span></a>
+    </div></div>
+  </div></div>
+</div>`;
+}
+
+function pageHeader(title, crumbs) {
+  return `<section class="page-header">
+  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+  <div class="container">
+    <h2 class="page-header__title">${title}</h2>
+    <div class="wallox-breadcrumb"><ul class="wallox-breadcrumb__list list-unstyled">
+      <li><a href="/index.html"><i class="icon-home"></i> Home</a></li>
+      ${crumbs}
+    </ul></div>
+  </div>
+</section>`;
+}
+
+function mobileNav() {
+  return `<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+    <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-light.png" width="155" alt="${CLIENT.name}"></a></div>
+    <div class="mobile-nav__container"></div>
+    <ul class="mobile-nav__contact list-unstyled">
+      <li><i class="fa fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
+      <li><i class="fa fa-phone-alt"></i><a href="tel:${CLIENT.phoneTel}">${CLIENT.phone}</a></li>
+    </ul>
+    <div class="mobile-nav__social">
+      <a href="${CLIENT.facebook}"><i class="icon-facebook1"></i><span class="sr-only">Facebook</span></a>
+      <a href="${CLIENT.instagram}"><i class="icon-social-media"></i><span class="sr-only">Instagram</span></a>
+    </div>
+  </div>
+</div>
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+  <span class="scroll-to-top__text">back top</span>
+  <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+</a>`;
+}
+
+function contactFormSection() {
+  const serviceOptions = SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('');
+  return `<div class="testimonials-contact testimonials-contact - home">
+  <div class="container">
+    <div class="row gutter-y-30 align-items-center">
+      <div class="col-lg-6">
+        <div class="testimonials-contact__left wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms">
+          <div class="testimonials-contact__inner">
+            <div class="sec-title">
+              <div class="d-flex align-items-center justify-content-start">
+                <img class="sec-title__image" src="/assets/images/shapes/sec-title-s-2.png" alt="">
+                <h6 class="sec-title__tagline">get in touch</h6>
+              </div>
+              <h3 class="sec-title__title">Get a Free Quote</h3>
+            </div>
+            <div class="testimonials-contact__form">
+              <form class="contact-one__form contact-form-validated form-one background-base" action="https://formspree.io/f/placeholder" method="POST">
+                <div class="form-one__group">
+                  <div class="form-one__control"><label for="name">Your Name*</label><input id="name" type="text" name="name" placeholder="Full name" required></div>
+                  <div class="form-one__control"><label for="email">Email*</label><input type="email" id="email" name="email" placeholder="Email address" required></div>
+                  <div class="form-one__control"><label for="phone">Phone*</label><input type="text" id="phone" name="phone" placeholder="(970) 000-0000"></div>
+                  <div class="form-one__control"><label for="service">Service Needed</label>
+                    <select id="service" name="service" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:4px;">
+                      <option value="">Select a Service</option>${serviceOptions}
+                    </select>
+                  </div>
+                  <div class="form-one__control form-one__control - full"><label for="message">Message</label><textarea name="message" id="message" placeholder="Tell us about your project"></textarea></div>
+                  <div class="form-one__control form-one__control - full"><button type="submit" class="wallox-btn wallox-btn - base">Send Message</button></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="testimonials-contact__right wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="100ms">
+          <div class="sec-title text-start">
+            <div class="d-flex align-items-center justify-content-start">
+              <img class="sec-title__image" src="/assets/images/shapes/sec-title-s-3.png" alt="">
+              <h6 class="sec-title__tagline">reach us directly</h6>
+            </div>
+            <h3 class="sec-title__title">We Respond Within a Few Hours</h3>
+          </div>
+          <ul class="list-unstyled" style="margin-top:30px;line-height:2.2;">
+            <li><i class="icon-telephone" style="color:var(--wallox-base);margin-right:10px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;">${CLIENT.phone}</a></li>
+            <li><i class="icon-email" style="color:var(--wallox-base);margin-right:10px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
+            <li><i class="icon-maps-and-flags" style="color:var(--wallox-base);margin-right:10px;"></i>${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</li>
+          </ul>
+          <p style="margin-top:30px;font-style:italic;">Licensed &amp; Insured &bull; Eco-Painter Certified &bull; $2M General Liability</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>`;
+}
+
+function faqBlock(faqs, groupName) {
+  return `<div class="wallox-accrodion" data-grp-name="${groupName || 'faq'}">
+  ${faqs.map((f, i) => `<div class="accrodion${i === 0 ? ' active' : ''}">
+    <div class="accrodion-title"><h4>${f.q}</h4></div>
+    <div class="accrodion-content"><div class="inner"><p>${f.a}</p></div></div>
+  </div>`).join('\n  ')}
+</div>`;
+}
+
+function serviceCarouselItems() {
+  return SERVICES.map(s => `<div class="item"><div class="service-one__item">
+    <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} Northern Colorado"></div>
+    <div class="service-one__item__content"><div class="service-one__item__content__inner">
+      <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
+      <a href="/${s.slug}/index.html" class="wallox-btn service-one__item__btn"><i class="icon-right-arrow"></i></a>
+    </div></div>
+  </div></div>`).join('\n');
+}
+
+function wrapBody(content) {
+  return `<body class="custom-cursor">
+<div class="custom-cursor__cursor"></div><div class="custom-cursor__cursor-two"></div>
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/loader.png);"></div></div>
+<div class="page-wrapper">
+${content}
+<!-- FOOTER -->
+</div>
+${mobileNav()}
+${htmlScripts()}
+</body>
+</html>`;
+}
+
+module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
+
+

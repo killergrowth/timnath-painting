@@ -1,0 +1,96 @@
+body {
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.owl-carousel {
+  direction: ltr;
+}
+
+.owl-carousel .owl-nav,
+.owl-carousel .owl-dots,
+.owl-carousel .owl-item {
+  direction: rtl;
+}
+
+.contact__input-box .bootstrap-select .dropdown-menu,
+.bootstrap-select .dropdown-toggle .filter-option {
+  text-align: right;
+}
+
+.list-unstyled {
+  padding-right: 0;
+}
+
+.hero-three__carousel {
+  direction: ltr;
+}
+
+.hero-three__item {
+  direction: rtl;
+}
+
+.hero-three__carousel .slick-dots {
+  left: 33px;
+}
+
+.hero-three__counter__item span {
+  transform: rotate(0deg);
+  writing-mode: vertical-rl;
+}
+
+.main-header__right__info + .main-header__right__link,
+.main-menu .main-menu__list > li + li,
+.main-header__right__info__item + .main-header__right__info__item {
+  margin-left: auto;
+}
+
+.about-two__thumb__item-two,
+.hero-three__carousel .slick-dots,
+.about-two__video-popup,
+.about-two__shape,
+.project-three__thumb__carousel,
+.project-three__element-two,
+.team-card__content {
+  right: auto;
+}
+
+.service-three__content {
+  margin-right: auto;
+}
+
+.service-three__thumb {
+  transform: rotateY(-180deg);
+}
+
+.project-three__carousel__inner__item {
+  margin-left: 0;
+  padding-left: 0;
+  border-left: none;
+}
+
+.project-three__carousel__inner .owl-nav button span,
+.testimonials-three__thumb__carousel .slick-button--prev span,
+.testimonials-three__thumb__carousel .slick-button--next span,
+.footer-widget__btn i {
+  transform: rotateY(180deg);
+}
+
+.team-card__content {
+  transform: rotate(0deg) !important;
+}
+
+.team-card__social,
+.blog-three__item__date {
+  left: auto;
+}
+
+.project-three__carousel .slick-list,
+.project-three__thumb__carousel .slick-list {
+  direction: ltr;
+}
+
+.project-three__item {
+  text-align: right;
+}
+/*# sourceMappingURL=wallox-custom-rtl.css.map */

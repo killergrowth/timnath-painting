@@ -1,0 +1,49 @@
+/* =====================================================
+   Timnath Painting — Wallox Icon → FontAwesome Shim
+   Maps icomoon icon classes to FontAwesome 6 glyphs
+   Loaded because wallox-icons font files are missing
+   ===================================================== */
+
+/* Base: override icomoon with FA Solid */
+[class^="icon-"]::before,
+[class*=" icon-"]::before {
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900;
+  speak: never;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Icon mappings */
+.icon-maps-and-flags::before       { content: "\f3c5"; } /* fa-map-marker-alt / location pin */
+.icon-email::before                { content: "\f0e0"; } /* fa-envelope */
+.icon-telephone::before            { content: "\f095"; } /* fa-phone */
+.icon-facebook1::before            { content: "\f39e"; font-family: "Font Awesome 6 Brands" !important; font-weight: 400; } /* fa-facebook-f */
+.icon-social-media::before         { content: "\f16d"; font-family: "Font Awesome 6 Brands" !important; font-weight: 400; } /* fa-instagram */
+.icon-star::before                 { content: "\f005"; } /* fa-star */
+.icon-check::before                { content: "\f00c"; } /* fa-check */
+.icon-home::before                 { content: "\f015"; } /* fa-house */
+.icon-right-arrow::before          { content: "\f061"; } /* fa-arrow-right */
+.icon-angle-left::before           { content: "\f104"; } /* fa-angle-left */
+.icon-angle-right::before          { content: "\f105"; } /* fa-angle-right */
+.icon-arrow-point-to-right::before { content: "\f061"; } /* fa-arrow-right */
+.icon-up-right-arrow1::before      { content: "\f35d"; } /* fa-arrow-up-right-from-square */
+.icon-idea::before                 { content: "\f0eb"; } /* fa-lightbulb */
+.icon-interior-design::before      { content: "\f5aa"; } /* fa-paint-roller */
+.icon-team-leader::before          { content: "\f0c0"; } /* fa-users */
+.icon-best-price::before           { content: "\f155"; } /* fa-dollar-sign */
+.icon-message::before              { content: "\f0e0"; } /* fa-envelope */
+.icon-circle::before               { content: "\f111"; } /* fa-circle */
+
+/* Fix brands font for social icons */
+.icon-facebook1,
+.icon-social-media {
+  font-family: "Font Awesome 6 Brands" !important;
+}
+
+/* Load FA Brands */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css");

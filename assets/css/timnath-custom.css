@@ -1,0 +1,811 @@
+/* =====================================================
+   Timnath Painting — Custom Overrides v2
+   ===================================================== */
+
+/* ── Fix WOW.js invisible elements ─────────────────── */
+.wow {
+  visibility: visible !important;
+}
+
+/* ── Hero Slider ────────────────────────────────────── */
+.main-slider-one__bg {
+  background-size: cover;
+  background-position: center center;
+}
+
+/* Strong dark gradient overlay — text always readable */
+.main-slider-one__item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.45) 50%,
+    rgba(0,0,0,0.15) 100%
+  );
+  z-index: 1;
+}
+.main-slider-one .container,
+.main-slider-one__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── About section ──────────────────────────────────── */
+.about-one__thumb__item img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Funfact stat box — anchor to bottom-left of image */
+.about-one__funfact.count-box {
+  position: absolute;
+  bottom: 30px;
+  left: -20px;
+  z-index: 2;
+  border-radius: 8px;
+  padding: 20px 24px;
+  min-width: 160px;
+  text-align: center;
+}
+
+/* ── Service section background overlay ─────────────── */
+.service-one {
+  position: relative;
+}
+.service-one__bg {
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Service card images ─────────────────────────────── */
+.service-one__item__thumb img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ── Why Choose Us images ────────────────────────────── */
+.why-choose-one__thumb img {
+  width: 100%;
+  max-height: 500px;
+  height: 440px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 8px;
+  display: block;
+}
+.why-choose-one__thumb-two img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+}
+
+/* ── Page header banner ──────────────────────────────── */
+.page-header {
+  background-size: cover;
+  background-position: center 35%;
+  position: relative;
+}
+.page-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.58);
+}
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Feature trust boxes ────────────────────────────── */
+.feature-two__item {
+  text-align: center;
+  padding: 24px 16px;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 8px;
+  background: #fff;
+  transition: box-shadow 0.2s ease;
+}
+.feature-two__item:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* ── City area buttons — visible on white background ─── */
+a.wallox-btn--border {
+  color: #2e2a20 !important;
+  border-color: #2e2a20 !important;
+  background: transparent;
+}
+a.wallox-btn--border:hover {
+  color: #fff !important;
+  background: #2e2a20 !important;
+}
+/* Hero border buttons stay light */
+.main-slider-one a.wallox-btn--border {
+  color: #fff !important;
+  border-color: #fff !important;
+}
+.main-slider-one a.wallox-btn--border:hover {
+  color: #2e2a20 !important;
+  background: #fff !important;
+}
+
+/* ── Footer logo sizing ──────────────────────────────── */
+.main-footer__logo img,
+.logo-wallox img {
+  max-width: 160px;
+  height: auto;
+}
+
+/* ── Topbar responsive ───────────────────────────────── */
+@media (max-width: 991px) {
+  .topbar-two__list {
+    display: none;
+  }
+}
+
+/* =====================================================
+   MOBILE OVERRIDES (max-width: 767px)
+   ===================================================== */
+@media (max-width: 767px) {
+
+  /* Hide decorative shape blobs */
+  .about-one__shape,
+  .about-one__shape-two,
+  .main-slider-one__element-one,
+  .main-slider-one__element-two,
+  .main-slider-one__element-three,
+  .why-choose-one__thumb-box,
+  .why-choose-one__thumb-box-two {
+    display: none !important;
+  }
+
+  /* Mobile about image */
+  .about-one__thumb__item img {
+    height: 280px;
+  }
+
+  /* Funfact box — stack below image on mobile */
+  .about-one__funfact.count-box {
+    position: static !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    padding: 14px 20px;
+    width: auto;
+  }
+
+  /* Mobile hero — clean above-fold */
+  .main-slider-one__content {
+    padding: 30px 0 24px;
+  }
+  .main-slider-one__title__text {
+    font-size: 30px !important;
+    line-height: 1.15 !important;
+  }
+  .main-slider-one__sub-title {
+    font-size: 12px !important;
+    margin-bottom: 10px !important;
+    letter-spacing: 0.5px;
+  }
+  .main-slider-one__btn {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .main-slider-one__btn .wallox-btn {
+    padding: 10px 18px !important;
+    font-size: 13px !important;
+    flex: 0 0 auto;
+  }
+
+  /* Why choose us mobile stack */
+  .why-choose-one__right {
+    margin-top: 24px;
+  }
+  .why-choose-one__thumb img,
+  .why-choose-one__thumb-two img {
+    height: 220px;
+    margin-bottom: 12px;
+  }
+
+  /* Service card images mobile */
+  .service-one__item__thumb img {
+    height: 200px;
+  }
+}
+
+/* =====================================================
+   TABLET OVERRIDES (768–1024px)
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .main-slider-one__title__text {
+    font-size: 42px !important;
+  }
+  .about-one__thumb__item img {
+    height: 380px;
+  }
+}
+
+/* =====================================================
+   FIX: GSAP split-text letter spacing issue
+   bw-split-in-right / bw-split-in-up use GSAP SplitText
+   which wraps each char in a span — force no extra spacing
+   ===================================================== */
+.bw-split-in-right .char,
+.bw-split-in-up .char,
+[class*="bw-split"] .char {
+  letter-spacing: normal !important;
+}
+
+/* Force headings to render normally even before GSAP runs */
+.sec-title__title,
+.sec-title__tagline,
+.page-header__title,
+h1, h2, h3, h4, h5 {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+
+/* Prevent GSAP from making headings invisible before animation */
+.bw-split-in-right,
+.bw-split-in-up {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+
+/* =====================================================
+   MOBILE HERO — stronger premium feel
+   ===================================================== */
+@media (max-width: 767px) {
+  /* Full-bleed hero on mobile */
+  .main-slider-one__item {
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+  }
+
+  .main-slider-one__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main-slider-one__content {
+    padding: 60px 0 40px;
+  }
+
+  .main-slider-one__sub-title {
+    font-size: 11px !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase;
+    margin-bottom: 12px !important;
+    opacity: 0.9;
+  }
+
+  .main-slider-one__title__text {
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    margin-bottom: 4px;
+  }
+
+  .main-slider-one__title__box {
+    overflow: visible !important;
+  }
+
+  .main-slider-one__btn {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Make primary CTA pop more on mobile */
+  .main-slider-one .wallox-btn--base {
+    font-size: 14px !important;
+    padding: 12px 22px !important;
+    font-weight: 700 !important;
+  }
+
+  /* Topbar hidden on mobile — reduce top clutter */
+  .topbar-two {
+    display: none !important;
+  }
+}
+
+/* =====================================================
+   SECTION RHYTHM + SPACING TIGHTENING
+   ===================================================== */
+
+/* About section — tighter padding */
+.about-one {
+  padding-top: 70px !important;
+  padding-bottom: 70px !important;
+}
+
+/* Remove excessive vertical whitespace between sections */
+.feature-two.feature-two--one {
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+}
+
+/* Section titles — remove bottom margin inflation */
+.sec-title {
+  margin-bottom: 40px !important;
+}
+
+.sec-title__tagline {
+  font-size: 12px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase;
+  margin-bottom: 8px !important;
+}
+
+/* =====================================================
+   FOOTER — more local, less generic
+   ===================================================== */
+.main-footer__top__inner {
+  padding: 30px 0 !important;
+}
+
+.main-footer__copyright {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+/* Local trust line in footer */
+.footer-widget__text {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.85;
+}
+
+/* =====================================================
+   SERVICE CAROUSEL — less cluttered on mobile
+   ===================================================== */
+@media (max-width: 575px) {
+  /* Single card at a time on small mobile */
+  .service-one__carousel .owl-item {
+    min-width: 100% !important;
+  }
+  .service-one__item__thumb img {
+    height: 220px;
+  }
+  .service-one__item__content {
+    padding: 16px 20px !important;
+  }
+}
+
+/* =====================================================
+   CONTACT SECTION — more trustworthy feel
+   ===================================================== */
+.testimonials-contact .form-one__control input,
+.testimonials-contact .form-one__control textarea,
+.testimonials-contact .form-one__control select {
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  background: rgba(255,255,255,0.08) !important;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 12px 16px !important;
+  width: 100%;
+}
+
+.testimonials-contact .form-one__control input::placeholder,
+.testimonials-contact .form-one__control textarea::placeholder {
+  color: rgba(255,255,255,0.5) !important;
+}
+
+/* =====================================================
+   FIX: GSAP SplitText individual character divs
+   Each char gets its own inline-block div — collapse them
+   ===================================================== */
+.sec-title__title > div,
+.sec-title__title > div > div,
+.page-header__title > div,
+.page-header__title > div > div,
+h1 > div, h2 > div, h3 > div,
+h1 > div > div, h2 > div > div, h3 > div > div {
+  display: inline !important;
+  position: relative !important;
+  letter-spacing: normal !important;
+}
+
+/* Wallox GSAP split classes — force readable */
+.bw-split-in-right > div,
+.bw-split-in-right > div > div,
+.bw-split-in-up > div,
+.bw-split-in-up > div > div {
+  display: inline !important;
+  letter-spacing: normal !important;
+}
+
+/* =====================================================
+   FIX: Hero headline color — must be white on dark overlay
+   ===================================================== */
+.main-slider-one__title__text {
+  color: #ffffff !important;
+}
+.main-slider-one__sub-title {
+  color: rgba(255,255,255,0.9) !important;
+}
+
+/* =====================================================
+   FIX: About section funfact — better mobile positioning
+   ===================================================== */
+@media (max-width: 991px) {
+  .about-one__funfact.count-box {
+    position: static !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    border-radius: 8px;
+    padding: 16px 20px;
+    width: fit-content;
+  }
+}
+
+/* =====================================================
+   Service hub page — stronger visual hierarchy
+   ===================================================== */
+.page-header__title {
+  color: #ffffff !important;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+}
+
+.wallox-breadcrumb a,
+.wallox-breadcrumb span {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* =====================================================
+   Why choose us — fix text color on light background
+   ===================================================== */
+.why-choose-one__top__text,
+.why-choose-one__feature__text {
+  color: #4a4540 !important;
+}
+
+/* =====================================================
+   Footer — more local feel
+   ===================================================== */
+.main-footer__middle {
+  padding: 50px 0 !important;
+}
+
+.footer-widget__title {
+  font-size: 18px !important;
+  margin-bottom: 20px !important;
+}
+
+.footer-widget__links li {
+  margin-bottom: 8px !important;
+}
+
+.footer-widget__info li {
+  margin-bottom: 16px !important;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+/* =============================================================
+   MOBILE POLISH PASS — 2026-04-22 Claudia checkin items
+   ============================================================= */
+
+/* ── 1. MOBILE HERO — Premium residential, clean first screen ─ */
+@media (max-width: 991px) {
+  /* Hide topbar on mobile — clean first screen */
+  .topbar-two {
+    display: none !important;
+  }
+
+  /* Hero min-height and overlay */
+  .main-slider-one__item {
+    min-height: 540px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Stronger overlay on mobile for text contrast */
+  .main-slider-one__item::before {
+    background: linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.30) 0%,
+      rgba(0,0,0,0.70) 40%,
+      rgba(0,0,0,0.80) 100%
+    ) !important;
+  }
+
+  .main-slider-one__content {
+    padding: 80px 0 60px;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Subtitle tag above headline */
+  .main-slider-one__sub-title {
+    font-size: 11px !important;
+    letter-spacing: 2.5px !important;
+    text-transform: uppercase !important;
+    color: #DF9E42 !important;
+    margin-bottom: 14px !important;
+    font-weight: 600;
+  }
+
+  /* Big bold headline */
+  .main-slider-one__title__text {
+    font-size: 36px !important;
+    line-height: 1.15 !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 6px !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  /* Headline box stacking */
+  .main-slider-one__title__box {
+    display: block;
+    overflow: visible !important;
+  }
+
+  /* CTA buttons — clear flex row */
+  .main-slider-one__btn {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Primary CTA larger on mobile */
+  .main-slider-one .wallox-btn--base {
+    font-size: 15px !important;
+    padding: 14px 24px !important;
+    font-weight: 700 !important;
+    min-width: 160px;
+    text-align: center;
+  }
+
+  .main-slider-one .wallox-btn--border {
+    font-size: 14px !important;
+    padding: 13px 20px !important;
+    text-align: center;
+  }
+
+  /* Hide decorative floating elements on mobile */
+  .main-slider-one__element-one,
+  .main-slider-one__element-two,
+  .main-slider-one__element-three {
+    display: none !important;
+  }
+
+  /* Dots closer to content */
+  .main-slider-one .owl-dots {
+    bottom: 20px !important;
+  }
+}
+
+/* ── 2. SERVICE CAROUSEL — Simplified mobile view ───────────── */
+@media (max-width: 767px) {
+  /* Show exactly 1 card on mobile */
+  .service-one__carousel.owl-carousel .owl-item {
+    min-width: 100% !important;
+  }
+
+  .service-one__item__thumb {
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .service-one__item__thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .service-one__item__content {
+    padding: 20px !important;
+  }
+
+  .service-one__item__title {
+    font-size: 18px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .service-one__item__text {
+    font-size: 14px !important;
+    line-height: 1.6;
+    -webkit-line-clamp: 3;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+/* ── 3. ABOUT SECTION — Colorado's Climate block ────────────── */
+@media (max-width: 991px) {
+  .about-one {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+
+  /* Stack cleanly: image first, then text */
+  .about-one .row {
+    flex-direction: column;
+  }
+
+  /* Full-width image on mobile */
+  .about-one__thumb {
+    margin-bottom: 40px;
+  }
+
+  /* Constrain to clean column */
+  .about-one__content {
+    padding: 0 !important;
+  }
+
+  /* Funfact pill — inline, not floating */
+  .about-one__funfact {
+    position: static !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 24px;
+    padding: 14px 20px !important;
+    border-radius: 8px;
+    width: auto;
+  }
+
+  .about-one__funfact .count-box__number,
+  .about-one__funfact .odometer {
+    font-size: 32px !important;
+  }
+
+  /* Vertical accent line — hide on mobile */
+  .about-one__thumb__item--two,
+  .about-one__thumb__bg {
+    display: none !important;
+  }
+
+  /* Bullets readable on mobile */
+  .about-one__content__list li {
+    font-size: 14px;
+    padding-left: 20px;
+    margin-bottom: 8px;
+  }
+}
+
+/* ── 4. SECTION RHYTHM ───────────────────────────────────────── */
+/* Consistent heading hierarchy everywhere */
+.sec-title__tagline {
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  margin-bottom: 10px !important;
+  opacity: 0.8;
+}
+
+.sec-title__title {
+  font-size: clamp(26px, 4vw, 42px) !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.3px !important;
+}
+
+/* Feature bars — tighter on mobile */
+@media (max-width: 767px) {
+  .feature-two__item {
+    padding: 20px 16px !important;
+  }
+  .feature-two__item__title {
+    font-size: 14px !important;
+  }
+}
+
+/* ── 5. FOOTER — Local, trustworthy, readable on mobile ─────── */
+@media (max-width: 767px) {
+  .main-footer__middle {
+    padding: 40px 0 20px !important;
+  }
+
+  .footer-widget {
+    margin-bottom: 32px;
+  }
+
+  .footer-widget__title {
+    font-size: 16px !important;
+    margin-bottom: 16px !important;
+    font-weight: 700;
+  }
+
+  /* Phone number — larger and tappable */
+  .footer-widget__info a[href^="tel"] {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: #DF9E42 !important;
+  }
+
+  .footer-widget__links li {
+    margin-bottom: 10px !important;
+  }
+
+  .footer-widget__links a {
+    font-size: 14px !important;
+  }
+
+  .main-footer__copyright {
+    font-size: 12px;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .footer-widget__text {
+    font-size: 13px;
+    line-height: 1.7;
+  }
+}
+
+/* Footer contact info list — clear layout */
+.footer-widget__info li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 14px !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-widget__info li i {
+  color: #DF9E42;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* ── 6. CONTACT SECTION MOBILE ──────────────────────────────── */
+@media (max-width: 767px) {
+  .testimonials-contact {
+    padding: 50px 0 !important;
+  }
+
+  .testimonials-contact .sec-title__title {
+    font-size: 26px !important;
+  }
+
+  .form-one__control input,
+  .form-one__control textarea,
+  .form-one__control select {
+    font-size: 15px !important;
+    padding: 12px 14px !important;
+  }
+
+  /* Phone number in contact block — big and tappable */
+  .testimonials-contact a[href^="tel"] {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    color: #DF9E42 !important;
+    display: block;
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,174 @@
+:root {
+  --wallox-text: #7E7C76;
+  --wallox-text-rgb: 126, 124, 118;
+  --wallox-text-dark: #fff;
+  --wallox-text-dark-rgb: 255, 255, 255;
+  --wallox-text-gray: #89868d;
+  --wallox-text-gray-rgb: 137, 134, 141;
+  --wallox-text-gray2: #D9D9D9;
+  --wallox-text-gray2-rgb: 217, 217, 217;
+  --wallox-base: #DF9E42;
+  --wallox-base-rgb: 223, 158, 66;
+  --wallox-gray: #F4EDE4;
+  --wallox-gray-rgb: 244, 237, 228;
+  --wallox-white: #2E2A20;
+  --wallox-white-rgb: 46, 42, 32;
+  --wallox-black: #1D1B17;
+  --wallox-border-color: #E4DACC;
+  --wallox-border-color-rgb: 228, 218, 204;
+  --wallox-letter-space: 0.1em;
+  --wallox-letter-space-xl: 0.2em;
+}
+
+.topbar-one,
+.feature-one__item__inner,
+.about-two,
+.faqs-two .faq-page__accordion--faqs-two .active .accrodion-title__icon,
+.faq-page__accordion .accrodion-title__icon,
+.project-three,
+.blog-three {
+  background-color: var(--wallox-black);
+}
+
+.topbar-one__info__location,
+.topbar-one__info__content,
+.topbar-one__social a:hover,
+.hero-three__title,
+.hero-three__btn a,
+.hero-three__btn a:hover,
+.about-two__call__icon,
+.service-three__text-slider__item,
+.sec-title__title,
+.service-three__content__title,
+.service-three .sec-title__title,
+.service-three__content__number,
+.faqs-two .faq-page__accordion--faqs-two .active .accrodion-content p,
+.testimonials-three__thumb__carousel .slick-button--prev span:hover,
+.testimonials-three__thumb__carousel .slick-button--next span:hover,
+.team-one .sec-title .sec-title__title,
+.team-card__social a:hover,
+.team-card:hover .team-card__content .team-card__content__title,
+.team-card:hover .team-card__content .team-card__content__dec,
+.blog-card__date__day,
+.blog-three__item__date__day,
+.main-footer__social a:hover,
+.footer-widget__title,
+.mobile-nav__content .main-menu__list li > a,
+.mobile-nav__content .main-menu__list li a button,
+.mobile-nav__contact li,
+.mobile-nav__contact li > i,
+.mobile-nav__social a,
+.mobile-nav__close {
+  color: var(--wallox-text-dark);
+}
+
+.main-menu .main-menu__list li ul li.current > a, .main-menu .main-menu__list li ul li:hover > a,
+.faq-page__accordion .accrodion-title .accrodion-title__text,
+.faqs-two .faq-page__accordion--faqs-two .active .accrodion-title h4,
+.testimonials-three__item__text,
+.testimonials-three__item__name,
+.testimonials-three__item__dec,
+.team-card__content__title,
+.blog-card__date__month,
+.blog-three__item__date__month {
+  color: var(--wallox-white);
+}
+
+.main-header__right__btn {
+  color: var(--wallox-text-dark);
+  background-color: var(--wallox-black);
+}
+.main-header__right__btn::before {
+  background-color: var(--wallox-black);
+}
+
+.hero-three__bg::before,
+.instagram-one__item::before,
+.team-card__thumb::after {
+  background-color: rgba(var(--wallox-white-rgb), 0.8);
+}
+
+.hero-three__item {
+  border-right-color: var(--wallox-white);
+}
+
+.hero-three__carousel .slick-dots li:hover,
+.hero-three__carousel .slick-dots li.slick-active,
+.hero-three__btn a:last-child,
+.hero-three__btn a:hover,
+.about-two__thumb__item-two img,
+.service-three__content__right a,
+.testimonials-three__carousel__right::after,
+.testimonials-three__thumb__carousel .slick-button--prev span, .testimonials-three__thumb__carousel .slick-button--next span {
+  border-color: var(--wallox-text-dark);
+}
+
+.hero-three__carousel .slick-dots li::after,
+.feature-one__item__icon,
+.about-two__video-popup a,
+.faq-page__accordion .accrodion-title__icon::after, .faq-page__accordion .accrodion-title__icon::before,
+.testimonials-three__carousel__left,
+.testimonials-three__carousel__left::after,
+.team-card__social a,
+.team-card__content,
+.blog-three__item__date,
+.main-footer__form__newsletter,
+.main-footer__form__newsletter input[type=text] {
+  background-color: var(--wallox-text-dark);
+}
+
+.project-three__carousel__inner .owl-nav button span {
+  background-color: var(--wallox-text-dark) !important;
+}
+
+.about-two__video-popup a::after,
+.about-two__video-popup a::before {
+  background-color: rgba(var(--wallox-text-dark-rgb), 0.8);
+}
+
+.about-two__feature,
+.blog-three__card__item + .blog-three__card__item,
+.client-carousel__inner,
+.client-carousel__left,
+.main-footer__bottom__inner,
+.mobile-nav__content .main-menu__list li:not(:last-child) {
+  border-color: rgba(var(--wallox-text-dark-rgb), 0.3);
+}
+
+.about-two__right .wallox-btn {
+  background-color: var(--wallox-white);
+}
+.about-two__right .wallox-btn:hover {
+  color: var(--wallox-text-dark);
+}
+
+.service-three,
+.team-one--three,
+.main-footer,
+.footer-widget__btn::before,
+.mobile-nav__overlay,
+.mobile-nav__content {
+  background-color: var(--wallox-white);
+}
+
+.footer-widget__btn {
+  background-color: transparent;
+  border: 1px solid rgba(var(--wallox-gray-rgb), 0.2);
+}
+.footer-widget__btn:hover {
+  color: var(--wallox-text-dark);
+}
+
+.mobile-nav__content .main-menu__list li a button.expanded {
+  background: var(--wallox-base);
+}
+
+.home-showcase .demo-one__btn {
+  background-color: var(--wallox-black);
+  color: var(--wallox-text-dark);
+}
+
+.demo-one__btns {
+  background-color: rgba(var(--wallox-white-rgb), 0.5);
+}
+/*# sourceMappingURL=wallox-dark.css.map */
