@@ -714,8 +714,16 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   letter-spacing: -0.3px !important;
 }
 
+/* Feature bars — padding above to separate from hero */
+.feature-two.feature-two--one {
+  padding-top: 50px !important;
+}
+
 /* Feature bars — tighter on mobile */
 @media (max-width: 767px) {
+  .feature-two.feature-two--one {
+    padding-top: 36px !important;
+  }
   .feature-two__item {
     padding: 20px 16px !important;
   }
@@ -1966,6 +1974,146 @@ h6.sec-title__tagline * {
     padding: 14px 20px !important;
     font-size: 15px !important;
   }
+}
+
+/* =============================================================
+   HEADER TIGHTENING — Tyler B 2026-04-22
+   Topbar was ~200px tall due to oversized logo
+   Target: compact topbar ~60px, full header ~110px total
+   ============================================================= */
+
+/* Topbar — compact strip */
+.topbar-two {
+  padding: 0 !important;
+  height: 40px !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.topbar-two .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+
+.topbar-two__inner {
+  display: flex !important;
+  align-items: center !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/* Logo inside topbar — constrain height tightly */
+.topbar-two__logo img,
+.topbar-two .logo-wallox img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Info items — compact, single line */
+.topbar-two__info {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  flex-wrap: nowrap !important;
+  width: auto !important;
+}
+
+.topbar-two__info__item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  flex-direction: row !important;
+}
+
+.topbar-two__info__icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 13px !important;
+  border-radius: 50% !important;
+}
+
+.topbar-two__info__content {
+  display: flex !important;
+  flex-direction: column !important;
+  line-height: 1.2 !important;
+}
+
+.topbar-two__info__subtitle {
+  display: none !important;
+}
+
+.topbar-two__info__location,
+.topbar-two__info__content a,
+.topbar-two__info__content p {
+  font-size: 13px !important;
+  line-height: 1.3 !important;
+  margin: 0 !important;
+}
+
+/* Right side — vertically centered */
+.topbar-two__right {
+  display: flex !important;
+  align-items: center !important;
+  margin-left: auto !important;
+}
+
+/* Social icons — compact */
+.topbar-two__social {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.topbar-two__social a {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 13px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Main header nav — also tighten */
+.main-header__inner {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  min-height: 0 !important;
+}
+
+.main-header {
+  padding: 0 !important;
+}
+
+/* Nav logo — consistent with topbar */
+.main-header__logo img {
+  height: 44px !important;
+  width: auto !important;
+  max-width: 160px !important;
+  object-fit: contain !important;
+}
+
+/* Sticky header — same compact size */
+.sticky-header.sticky .main-header__inner {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
 
 /* =================================================================

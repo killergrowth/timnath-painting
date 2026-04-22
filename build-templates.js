@@ -65,7 +65,6 @@ function htmlScripts() {
 function topbar() {
   return `<div class="topbar-two">
   <div class="container-fluid"><div class="topbar-two__inner">
-    <div class="topbar-two__logo logo-wallox"><a href="/index.html"><img src="/assets/images/logo-dark.png" alt="${CLIENT.name}" width="202"></a></div>
     <div class="topbar-two__list"><ul class="list-unstyled topbar-two__info">
       <li class="topbar-two__info__item">
         <div class="topbar-two__info__icon"><i class="fa-solid fa-location-dot"></i></div>
