@@ -20,7 +20,7 @@ function htmlHead(title, desc) {
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
 <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
 <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
 <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css">
 <link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css">
@@ -140,7 +140,7 @@ function contactFormSection() {
               <h3 class="sec-title__title">Get a Free Quote</h3>
             </div>
             <div class="testimonials-contact__form">
-              <form class="contact-one__form contact-form-validated form-one background-base" action="#" method="POST" onsubmit="event.preventDefault(); this.innerHTML='<p style=\"color:#DF9E42;font-weight:600;padding:20px 0\">Thanks! We\'ll be in touch within a few hours. Or call us now: (970) 236-8271<\/p>'">
+                            <form class="contact-one__form form-one background-base" id="quote-form" action="#" method="POST">Thanks! We\'ll be in touch within a few hours. Or call us now: (970) 236-8271<\/p>'">
                 <div class="form-one__group">
                   <div class="form-one__control"><label for="name">Your Name*</label><input id="name" type="text" name="name" placeholder="Full name" required></div>
                   <div class="form-one__control"><label for="email">Email*</label><input type="email" id="email" name="email" placeholder="Email address" required></div>
@@ -154,7 +154,7 @@ function contactFormSection() {
                   <div class="form-one__control form-one__control - full"><button type="submit" class="wallox-btn wallox-btn - base">Request a Quote</button></div>
                 </div>
               </form>
-              <p class="contact-preview-note">We'll follow up by phone or email within a few hours. Or call us directly: <a href="tel:${CLIENT.phoneTel}" style="color:#DF9E42;font-weight:600;">${CLIENT.phone}</a></p>
+              <p class="contact-preview-note">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}">${CLIENT.phone}</a></p>
             </div>
           </div>
         </div>
@@ -224,6 +224,16 @@ document.addEventListener("DOMContentLoaded", fixTransforms);
 setTimeout(fixTransforms, 500);
 setTimeout(fixTransforms, 1500);
 setTimeout(fixTransforms, 3000);
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById("quote-form");
+  if (!form) return;
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    form.innerHTML = '<div style="padding:24px;text-align:center;"><p style="color:#DF9E42;font-size:18px;font-weight:700;margin-bottom:12px;">Thanks! We\'ll be in touch soon.</p><p style="color:rgba(255,255,255,0.8);">Or call us now: <a href="tel:+19702368271" style="color:#DF9E42;font-weight:700;">(970) 236-8271</a></p></div>';
+  });
+});
 </script>
 </body>
 </html>`;

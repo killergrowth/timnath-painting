@@ -87,7 +87,7 @@ ${T.topbar()}
 <!-- HEADER -->
 
 <section class="main-slider-one">
-  <div class="main-slider-one__carousel wallox-owl__carousel owl-carousel" data-owl-options='{"loop":true,"animateOut":"fadeOut","animateIn":"fadeIn","items":1,"autoplay":true,"autoplayTimeout":6000,"smartSpeed":1000,"nav":false,"dots":true,"margin":0}'>
+  <div class="main-slider-one__carousel wallox-owl__carousel owl-carousel" data-owl-options='{"loop":false,"animateOut":"fadeOut","animateIn":"fadeIn","items":1,"autoplay":false,"nav":false,"dots":false,"margin":0}'>
     ${sliderHTML}
   </div>
 </section>
