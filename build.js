@@ -76,10 +76,10 @@ function buildHomepage() {
 </div>`).join('\n');
 
   const features = [
-    { icon:'icon-idea', title:'7-10 Year Systems', link:'/exterior-painting/index.html' },
-    { icon:'icon-interior-design', title:'Eco-Painter Certified', link:'/about.html' },
-    { icon:'icon-team-leader', title:'$2M Liability Coverage', link:'/about.html' },
-    { icon:'icon-best-price', title:'Free On-Site Quotes', link:'/contact.html' },
+    { icon:'fa-solid fa-lightbulb', title:'7-10 Year Systems', link:'/exterior-painting/index.html' },
+    { icon:'fa-solid fa-paint-roller', title:'Eco-Painter Certified', link:'/about.html' },
+    { icon:'fa-solid fa-users', title:'$2M Liability Coverage', link:'/about.html' },
+    { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/contact.html' },
   ];
 
   const content = `

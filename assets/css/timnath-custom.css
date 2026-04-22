@@ -1891,3 +1891,79 @@ h6.sec-title__tagline,
   width: auto !important;
   max-width: 160px !important;
 }
+
+/* =============================================================
+   NUCLEAR LETTER-SPACING FIX — force all eyebrows globally
+   Overrides any JS-injected inline style or split-text
+   ============================================================= */
+.sec-title__tagline,
+.sec-title__tagline *,
+h6.sec-title__tagline,
+h6.sec-title__tagline * {
+  letter-spacing: 0.5px !important;
+  word-spacing: normal !important;
+  text-transform: uppercase !important;
+}
+
+/* Also target the split-text divs wallox.js injects into taglines */
+.sec-title .d-flex h6 > div,
+.sec-title .d-flex h6 > span {
+  display: inline !important;
+  letter-spacing: inherit !important;
+}
+
+/* Topbar subtitle labels — hide to reduce clutter */
+.topbar-two__info__subtitle {
+  display: none !important;
+}
+
+/* ── SERVICE CARDS — clean, no ornamental arrows ─────────────── */
+/* Hide the arrow/link icon from service cards */
+.service-one__item__btn .fa-solid,
+.service-one__item__btn i {
+  display: none !important;
+}
+
+.service-one__item__btn {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #DF9E42 !important;
+  text-decoration: none !important;
+  display: block !important;
+  margin-top: 10px !important;
+}
+
+/* Service card hover — no movement */
+.service-one__grid .service-one__item:hover {
+  transform: none !important;
+}
+
+/* ── HERO — final mobile tighten ─────────────────────────────── */
+@media (max-width: 767px) {
+  /* Ensure hero is full viewport height minus header */
+  .main-slider-one__item {
+    min-height: calc(100vh - 70px) !important;
+    max-height: 600px !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Subtitle pill — smaller, lighter */
+  .main-slider-one__sub-title {
+    font-size: 10px !important;
+    padding: 5px 12px !important;
+    margin-bottom: 12px !important;
+  }
+
+  /* Headline */
+  .main-slider-one__title__text {
+    font-size: 36px !important;
+    line-height: 1.1 !important;
+  }
+
+  /* CTA pair */
+  .tp-btn-hero {
+    padding: 14px 20px !important;
+    font-size: 15px !important;
+  }
+}

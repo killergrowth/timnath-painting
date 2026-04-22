@@ -224,6 +224,20 @@ document.addEventListener("DOMContentLoaded", fixTransforms);
 setTimeout(fixTransforms, 500);
 setTimeout(fixTransforms, 1500);
 setTimeout(fixTransforms, 3000);
+// Fix letter-spacing on taglines after wallox.js runs
+function fixTaglines() {
+  document.querySelectorAll(".sec-title__tagline").forEach(function(el) {
+    el.style.letterSpacing = "0.5px";
+    el.style.wordSpacing = "normal";
+    el.querySelectorAll("div, span").forEach(function(child) {
+      child.style.display = "inline";
+      child.style.letterSpacing = "0.5px";
+    });
+  });
+}
+setTimeout(fixTaglines, 300);
+setTimeout(fixTaglines, 1000);
+setTimeout(fixTaglines, 2500);
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
