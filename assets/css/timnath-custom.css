@@ -1175,3 +1175,234 @@ h1 > div > div, h2 > div > div, h3 > div > div {
     display: none !important;
   }
 }
+
+/* =============================================================
+   FINAL POLISH PASS — 03:13 CDT Claudia direction
+   Remove template ornaments, tighten mobile, improve hero
+   ============================================================= */
+
+/* ── REMOVE ALL TEMPLATE DECORATIVE ELEMENTS ──────────────── */
+
+/* Hide ALL floating shape/blob elements globally */
+.main-slider-one__element-one,
+.main-slider-one__element-two,
+.main-slider-one__element-three,
+.main-slider-one__element-four,
+.sec-title__img,
+.sec-title__shape,
+.feature-two__shape,
+.about-one__shape,
+.about-one__shape--two,
+.about-one__thumb__shape,
+.about-one__thumb__item--two,
+.why-choose-one__shape,
+.why-choose-one__bg,
+.service-one__shape,
+.service-one__bg,
+.testimonials-contact__shape,
+[class*="__shape"],
+[class*="__bg-shape"],
+[class*="__element"] {
+  display: none !important;
+}
+
+/* ── HERO — Clean, painter-at-work feel ────────────────────── */
+/* Hero overlay — lighter gradient so bright house photos stay visible */
+.main-slider-one__item::before {
+  background: linear-gradient(
+    135deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(46,42,32,0.45) 50%,
+    rgba(0,0,0,0.25) 100%
+  ) !important;
+}
+
+/* Sub-title styling */
+.main-slider-one__sub-title {
+  background: rgba(223,158,66,0.18) !important;
+  border: 1px solid rgba(223,158,66,0.5) !important;
+  border-radius: 20px !important;
+  padding: 6px 16px !important;
+  display: inline-block !important;
+  color: #DF9E42 !important;
+  font-weight: 600 !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+  font-size: 11px !important;
+  margin-bottom: 16px !important;
+}
+
+/* ── TRUST BARS — Tighter on mobile ──────────────────────── */
+@media (max-width: 767px) {
+  .feature-two.feature-two--one {
+    padding: 20px 0 !important;
+  }
+
+  .feature-two__item {
+    padding: 14px 12px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .feature-two__item:last-child {
+    border-bottom: none;
+  }
+
+  .feature-two__item__icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 16px !important;
+    flex-shrink: 0;
+  }
+
+  .feature-two__item__title {
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Make trust bars horizontal list on mobile */
+  .feature-two__list {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+  }
+}
+
+/* ── ABOUT — Remove ALL gimmicky vertical elements ─────── */
+.about-one__thumb__item:not(:first-child),
+.about-one__thumb__bg,
+.about-one__thumb__item--two,
+.about-one__count {
+  display: none !important;
+}
+
+/* Funfact — fully suppressed on mobile (it's decorative) */
+@media (max-width: 767px) {
+  .about-one__funfact,
+  .count-box {
+    display: none !important;
+  }
+}
+
+/* ── SERVICES SECTION — Larger cards on mobile ─────────── */
+@media (max-width: 767px) {
+  /* Reset grid to single column for bigger cards */
+  .service-one__carousel {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .service-one__item__thumb {
+    height: 200px !important;
+  }
+
+  .service-one__item__thumb img {
+    height: 200px !important;
+    object-fit: cover !important;
+    clip-path: none !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+
+  .service-one__item__title {
+    font-size: 18px !important;
+  }
+
+  /* Show text on mobile for single column */
+  .service-one__item__text {
+    display: block !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    -webkit-line-clamp: 2 !important;
+    display: -webkit-box !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+
+  /* Limit to 3 visible items — hide others */
+  .service-one__carousel .owl-item:nth-child(n+4) {
+    display: none !important;
+  }
+}
+
+/* ── CONTACT SECTION — Single column mobile ───────────── */
+@media (max-width: 767px) {
+  /* Stack form and contact info vertically */
+  .testimonials-contact__inner {
+    flex-direction: column !important;
+    display: flex !important;
+  }
+
+  .testimonials-contact__left,
+  .testimonials-contact__right {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: none !important;
+  }
+
+  .testimonials-contact__right {
+    margin-top: 30px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid rgba(255,255,255,0.12) !important;
+  }
+
+  /* Form inputs full width */
+  .form-one__group {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* CTA button full width */
+  .form-one__btn {
+    width: 100% !important;
+  }
+
+  .form-one__btn .wallox-btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ── HEADING COPY SPACING ─────────────────────────────── */
+/* Tighter heading/tagline/body hierarchy throughout */
+.sec-title {
+  margin-bottom: 36px !important;
+}
+
+.sec-title__tagline {
+  margin-bottom: 8px !important;
+}
+
+.sec-title__title {
+  margin-bottom: 14px !important;
+}
+
+/* Sub-text under headings */
+.sec-title__text {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  max-width: 560px;
+}
+
+/* ── FOOTER — Clean mobile ───────────────────────────── */
+@media (max-width: 767px) {
+  /* Stack footer columns */
+  .main-footer__middle .row > [class*="col-"] {
+    margin-bottom: 28px !important;
+  }
+
+  /* Separator line between footer cols */
+  .main-footer__bottom {
+    padding: 16px 0 !important;
+    text-align: center !important;
+  }
+
+  /* Social links */
+  .main-footer__social a {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 14px !important;
+    line-height: 34px !important;
+  }
+}
