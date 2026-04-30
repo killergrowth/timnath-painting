@@ -227,10 +227,10 @@
 
   function dynamicCurrentMenuClass(selector) {
     // Patched: use full pathname matching (fixes CF Pages trailing-slash URLs)
-    var path = window.location.pathname.replace(/\/index\.html$/, "/").replace(/\/?$/, "/");
+    var path = window.location.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace(/\/?$/, "/");
     selector.find("li").each(function () {
       var anchor = $(this).find("a");
-      var href = ($(anchor).attr("href") || "").replace(/\/index\.html$/, "/").replace(/\/?$/, "/");
+      var href = ($(anchor).attr("href") || "").replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace(/\/?$/, "/");
       if (href && href !== "#/" && href !== "#" && (path === href || (href.length > 1 && path.startsWith(href)))) {
         $(this).addClass("current");
       }
