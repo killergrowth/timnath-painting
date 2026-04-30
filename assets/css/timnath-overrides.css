@@ -209,10 +209,7 @@
   font-weight: 900 !important;
   padding: 0 10px !important;
 }
-/* Fix hero container max-width — wallox overrides Bootstrap at wide viewports */
-.main-slider-one .container {
-  max-width: 1200px !important;
-}
+/* Fix hero container at 1550px+ — wallox overrides Bootstrap container to 1550px at this breakpoint */
 @media (min-width: 1550px) {
   .main-slider-one .container {
     max-width: 1200px !important;
