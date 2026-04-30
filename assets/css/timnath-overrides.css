@@ -186,3 +186,12 @@
 .feature-two__item:hover .feature-two__item__icon::after {
   opacity: 0 !important;
 }
+/* About section left col - center the 5-star + button under the photo */
+.about-one__thumb ~ .about-one__client {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+}
