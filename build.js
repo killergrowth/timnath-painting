@@ -73,7 +73,8 @@ function buildHomepage() {
       sub: 'Northern Colorado Painting Contractor',
       lines: ['Premium Exterior &amp;', 'Interior Painting'],
       btn1: { t: 'Get a Free Quote', h: '/contact.html' },
-      btn2: { t: 'Our Services', h: '/exterior-painting/index.html' }
+      btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
+      subText: 'Professional painting done right—on time, on budget, and built to last.'
     },
   ];
 
@@ -85,6 +86,7 @@ function buildHomepage() {
       <div class="main-slider-one__title">
         ${s.lines.map(l => `<div class="main-slider-one__title__box"><h2 class="main-slider-one__title__text">${l}</h2></div>`).join('')}
       </div>
+      <p class="main-slider-one__sub-text">${s.subText || ''}</p>
       <div class="main-slider-one__btn">
         <a href="${s.btn1.h}" class="wallox-btn wallox-btn--base">${s.btn1.t} <i class="fa-solid fa-arrow-right"></i></a>
         <a href="${s.btn2.h}" class="wallox-btn wallox-btn--hero-secondary">${s.btn2.t}</a>

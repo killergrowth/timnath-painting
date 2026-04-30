@@ -209,3 +209,16 @@
   font-weight: 900 !important;
   padding: 0 10px !important;
 }
+/* Fix hero container max-width — wallox sets 1550px which misaligns with nav (1200px) */
+.main-slider-one .container {
+  max-width: 1200px !important;
+}
+
+/* Hero sub-text */
+.main-slider-one__sub-text {
+  color: rgba(255,255,255,0.90);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 16px 0 28px;
+  max-width: 540px;
+}
