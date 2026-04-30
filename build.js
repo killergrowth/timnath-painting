@@ -515,9 +515,9 @@ function buildServicesHub() {
     <div class="col-lg-4 col-md-6">
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;">${
-          s.slug === 'fence-staining'   ? inlineSvg('icon-fence.svg', 52) :
+          s.slug === 'fence-staining'   ? inlineSvg('icon-wooden-fence.svg', 52) :
           s.slug === 'exterior-staining' ? inlineSvg('icon-gazebo.svg', 52) :
-          s.slug === 'hoa-painting'      ? `<img src="/assets/images/icon-hoa-houses.png" style="width:52px;height:52px;filter:brightness(0) saturate(100%) invert(22%) sepia(100%) saturate(600%) hue-rotate(2deg) brightness(83%);">` :
+          s.slug === 'hoa-painting'      ? inlineSvg('icon-hoa-house.svg', 52) :
           `<i class="${s.icon}"></i>`
         }</div>
         <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">${s.label}</h4>
