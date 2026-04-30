@@ -501,7 +501,40 @@ buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
 buildContact();
+
+// --- Services Hub ---
+function buildServicesHub() {
+  const serviceGrid = SERVICES.map(s => `
+    <div class="col-lg-4 col-md-6">
+      <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
+        <div style="font-size:48px;color:#AE360E;margin-bottom:16px;"><i class="fa-solid fa-paint-roller"></i></div>
+        <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">${s.label}</h4>
+        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">${s.tagline}</p>
+        <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>`).join('\n');
+
+  const content = `
+${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
+
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">what we do</h6></div>
+      <h3 class="sec-title__title">Professional Painting Services in Northern Colorado</h3>
+      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with Eco-Painter Certified crews and premium Sherwin-Williams and Benjamin Moore coatings.</p>
+    </div>
+    <div class="row gutter-y-30">${serviceGrid}</div>
+  </div>
+</section>
+
+${T.contactFormSection()}`;
+
+  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.')}
+${T.wrapBody(content)}`);
+}
 buildServiceAreas();
+buildServicesHub();
 
 console.log('\nâœ... All pillar pages built successfully.');
 

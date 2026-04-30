@@ -73,7 +73,24 @@ function htmlScripts() {
 <script src="/assets/vendors/gsap/ScrollTrigger.min.js"></script>
 <script src="/assets/vendors/gsap/gsap.js"></script>
 <script src="/assets/js/wallox-gsap.js"></script>
-<script src="/assets/js/wallox.js"></script>`;
+<script src="/assets/js/wallox.js"></script>
+<script>
+// Active nav item highlighting based on current URL path
+(function(){
+  var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/?$/, '/');
+  document.querySelectorAll('.main-menu__list > li').forEach(function(li){
+    var a = li.querySelector('a');
+    if (!a) return;
+    var href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\/?$/, '/');
+    if (href === '#/' || href === '#') return;
+    if (path === href || (href !== '/' && path.startsWith(href))) {
+      li.classList.add('current');
+    } else {
+      li.classList.remove('current');
+    }
+  });
+})();
+</script>`;
 }
 
 function topbar() { return ''; /* topbar now embedded in header partial */ }
