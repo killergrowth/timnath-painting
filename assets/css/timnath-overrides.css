@@ -209,9 +209,14 @@
   font-weight: 900 !important;
   padding: 0 10px !important;
 }
-/* Fix hero container max-width — wallox sets 1550px which misaligns with nav (1200px) */
+/* Fix hero container max-width — wallox overrides Bootstrap at wide viewports */
 .main-slider-one .container {
   max-width: 1200px !important;
+}
+@media (min-width: 1550px) {
+  .main-slider-one .container {
+    max-width: 1200px !important;
+  }
 }
 
 /* Hero sub-text */
