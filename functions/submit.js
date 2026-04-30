@@ -152,6 +152,7 @@ export async function onRequestPost({ request, env }) {
     const mimeLines = [
       `From: Timnath Painting <${env.GMAIL_FROM}>`,
       `To: ${env.GMAIL_TO}`,
+      `Cc: josh@timnathpainting.com`,
       `Subject: ${subject}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
