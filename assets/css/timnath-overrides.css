@@ -177,13 +177,12 @@
 .feature-two__item:hover {
   background-color: #201B10 !important;
 }
-.feature-two__item:hover .feature-two__item__icon::after {
-  background-color: #AE360E !important;
-}
+/* Use direct bg-color on icon div (bypasses ::after z-index complexity) */
 .feature-two__item:hover .feature-two__item__icon {
+  background-color: #AE360E !important;
   color: #201B10 !important;
 }
-.feature-two__item:hover .feature-two__item__icon i {
-  position: relative;
-  z-index: 2;
+/* Suppress the ::after expanding circle so direct bg-color is the visible layer */
+.feature-two__item:hover .feature-two__item__icon::after {
+  opacity: 0 !important;
 }

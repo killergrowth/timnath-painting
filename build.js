@@ -114,7 +114,7 @@ ${T.topbar()}
 
 <section class="about-one">
   <div class="container">
-    <div class="row align-items-center gutter-y-30">
+    <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
           <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-1-1.jpg" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
@@ -122,6 +122,13 @@ ${T.topbar()}
             <h3 class="about-one__count"><span class="count-text" data-stop="28" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">freeze-thaw<br>cycles per year</p>
           </div>
+        </div>
+        <div class="about-one__client wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="margin-top:28px;">
+          <div class="about-one__client__item"><div class="about-one__client__dec">
+            <div class="about-one__client__star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p class="about-one__client__text">5-Star Google Rated</p>
+          </div></div>
+          <a href="/about.html" class="wallox-btn wallox-btn--base">More About Us</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -141,13 +148,6 @@ ${T.topbar()}
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  COI on request</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> No subcontractors. No volume rushing.</li>
           </ul>
-          <div class="about-one__client wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <div class="about-one__client__item"><div class="about-one__client__dec">
-              <div class="about-one__client__star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="about-one__client__text">5-Star Google Rated</p>
-            </div></div>
-            <a href="/about.html" class="wallox-btn wallox-btn--base">More About Us</a>
-          </div>
         </div>
       </div>
     </div>
