@@ -244,7 +244,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
     <div class="row align-items-center gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-1-1.jpg" alt="Josh Funk  -  Owner, Timnath Painting"></div>
+          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Timnath Painting" style="max-width:100%;border-radius:8px;"></div>
         </div>
       </div>
       <div class="col-lg-6">
@@ -253,10 +253,9 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
             <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">Our Story</h6></div>
             <h3 class="sec-title__title">Built Different  -  On Purpose</h3>
           </div>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">[JOSH PHOTO PLACEHOLDER]</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms">Founded in [FOUNDED: YEAR], ${CLIENT.name} isn't built like most painting companies  -  and that's intentional.</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">We don't chase volume. We don't race from job to job. We work with a small number of homeowners each year who expect more than a coat of paint  -  they expect a partner who shows up with a plan, communicates without being chased, and delivers predictable results.</p>
-          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="250ms">Owner Josh Funk leads every project personally. [INSERT JOSH BIO  -  2-3 sentences about background, why he started Timnath Painting, what drives him]</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">I'm Josh, a Colorado native. I've been in and around the painting industry since 2007 and have owned and operated multiple successful painting and construction companies in the Midwest.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms"><em>I have a passion for running small businesses that are insistent on absolute customer satisfaction.</em> I am also a founding partner and coach for Service Catalyst, a growing, Fort Collins-based, coaching and advisory community dedicated to helping service business owners succeed and scale.</p>
+          <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">Aside from that, I'm a committed family man with a loving wife and four amazing children. I believe customers want to pay for exceptional care and peace of mind. Our commitment is to curate that!</p>
           <a href="/contact.html" class="wallox-btn wallox-btn - base" style="margin-top:20px;">Get a Free Quote</a>
         </div>
       </div>
