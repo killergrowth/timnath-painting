@@ -10,10 +10,10 @@ function htmlHead(title, desc) {
 <title>${title}</title>
 <meta name="description" content="${desc}">
 <meta name="robots" content="noindex, nofollow">
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
-<link rel="manifest" href="/assets/images/favicons/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons-v2/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons-v2/site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
@@ -33,6 +33,7 @@ function htmlHead(title, desc) {
 <link rel="stylesheet" href="/assets/css/wallox.css">
 <link rel="stylesheet" href="/assets/css/timnath-custom.css">
 <link rel="stylesheet" href="/assets/css/icon-shim.css">
+<link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 </head>`;
 }
 
@@ -124,57 +125,80 @@ function mobileNav() {
 }
 
 function contactFormSection() {
-  const serviceOptions = SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('');
-  return `<div class="testimonials-contact testimonials-contact - home">
+  const serviceOptions = SERVICES.map(s => `<option value="${s.slug}" style="color:#222;background:#fff;">${s.label}</option>`).join('');
+  return `<div class="testimonials-contact" style="
+    position:relative;
+    background-image: linear-gradient(rgba(20,15,10,0.72), rgba(20,15,10,0.72)), url(/assets/images/backgrounds/quote-bg.jpg);
+    background-size:cover;
+    background-position:center;
+    padding:100px 0;
+  ">
   <div class="container">
-    <div class="row gutter-y-30 align-items-center">
+    <div class="row gutter-y-30 align-items-start">
+
+      <!-- Quote Form -->
       <div class="col-lg-6">
-        <div class="testimonials-contact__left wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms">
-          <div class="testimonials-contact__inner">
-            <div class="sec-title">
-              <div class="d-flex align-items-center justify-content-start">
-                <img class="sec-title__image" src="/assets/images/shapes/sec-title-s-2.png" alt="">
-                <h6 class="sec-title__tagline">Request a Quote</h6>
+        <div class="wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms"
+          style="background:rgba(30,22,14,0.88);border-radius:10px;padding:40px 36px;">
+          <div style="margin-bottom:24px;">
+            <span style="color:var(--wallox-base,#DF9E42);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Request a Quote</span>
+            <h3 style="color:#fff;margin-top:8px;margin-bottom:0;">Get a Free Quote</h3>
+          </div>
+          <form class="contact-one__form form-one" id="quote-form"
+            action="/submit"
+            method="POST"
+            style="--form-bg:transparent;">
+            <div class="form-one__group">
+              <div class="form-one__control">
+                <label for="name" style="color:#ccc;font-size:13px;">Your Name*</label>
+                <input id="name" type="text" name="name" placeholder="Full name" required
+                  style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;">
               </div>
-              <h3 class="sec-title__title">Get a Free Quote</h3>
+              <div class="form-one__control">
+                <label for="email" style="color:#ccc;font-size:13px;">Email*</label>
+                <input type="email" id="email" name="email" placeholder="Email address" required
+                  style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;">
+              </div>
+              <div class="form-one__control">
+                <label for="phone" style="color:#ccc;font-size:13px;">Phone*</label>
+                <input type="text" id="phone" name="phone" placeholder="(970) 000-0000"
+                  style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;">
+              </div>
+              <div class="form-one__control">
+                <label for="service" style="color:#ccc;font-size:13px;">Service Needed</label>
+                <select id="service" name="service"
+                  style="width:100%;padding:10px 14px;border:1px solid rgba(255,255,255,0.15);border-radius:5px;background:#2a1e12;color:#fff;">
+                  <option value="" style="color:#222;background:#fff;">Select a Service</option>${serviceOptions}
+                </select>
+              </div>
+              <div class="form-one__control form-one__control--full" style="grid-column:1/-1;">
+                <label for="message" style="color:#ccc;font-size:13px;">Message</label>
+                <textarea name="message" id="message" placeholder="Tell us about your project"
+                  style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;min-height:110px;"></textarea>
+              </div>
+              <div class="form-one__control form-one__control--full" style="grid-column:1/-1;">
+                <button type="submit" class="wallox-btn wallox-btn--base" style="width:100%;">Request a Quote</button>
+              </div>
             </div>
-            <div class="testimonials-contact__form">
-                            <form class="contact-one__form form-one background-base" id="quote-form" action="#" method="POST">Thanks! We\'ll be in touch within a few hours. Or call us now: (970) 236-8271<\/p>'">
-                <div class="form-one__group">
-                  <div class="form-one__control"><label for="name">Your Name*</label><input id="name" type="text" name="name" placeholder="Full name" required></div>
-                  <div class="form-one__control"><label for="email">Email*</label><input type="email" id="email" name="email" placeholder="Email address" required></div>
-                  <div class="form-one__control"><label for="phone">Phone*</label><input type="text" id="phone" name="phone" placeholder="(970) 000-0000"></div>
-                  <div class="form-one__control"><label for="service">Service Needed</label>
-                    <select id="service" name="service" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:4px;">
-                      <option value="">Select a Service</option>${serviceOptions}
-                    </select>
-                  </div>
-                  <div class="form-one__control form-one__control - full"><label for="message">Message</label><textarea name="message" id="message" placeholder="Tell us about your project"></textarea></div>
-                  <div class="form-one__control form-one__control - full"><button type="submit" class="wallox-btn wallox-btn - base">Request a Quote</button></div>
-                </div>
-              </form>
-              <p class="contact-preview-note">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}">${CLIENT.phone}</a></p>
-            </div>
-          </div>
+          </form>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#DF9E42);">${CLIENT.phone}</a></p>
         </div>
       </div>
+
+      <!-- Contact Info -->
       <div class="col-lg-6">
-        <div class="testimonials-contact__right wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="100ms">
-          <div class="sec-title text-start">
-            <div class="d-flex align-items-center justify-content-start">
-              <img class="sec-title__image" src="/assets/images/shapes/sec-title-s-3.png" alt="">
-              <h6 class="sec-title__tagline">reach us directly</h6>
-            </div>
-            <h3 class="sec-title__title">We Respond Within a Few Hours</h3>
-          </div>
-          <ul class="list-unstyled" style="margin-top:30px;line-height:2.2;">
-            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base);margin-right:10px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;">${CLIENT.phone}</a></li>
-            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base);margin-right:10px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:10px;"></i>${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</li>
+        <div class="wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="150ms" style="padding:20px 10px;">
+          <span style="color:var(--wallox-base,#DF9E42);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
+          <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond Within a Few Hours</h3>
+          <ul class="list-unstyled" style="line-height:2.6;">
+            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#DF9E42);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#DF9E42);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#DF9E42);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
           </ul>
-          <p style="margin-top:30px;font-style:italic;">Licensed &amp; Insured &bull; Eco-Painter Certified &bull; $2M General Liability</p>
+          <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; Eco-Painter Certified &bull; $2M General Liability</p>
         </div>
       </div>
+
     </div>
   </div>
 </div>`;
@@ -201,9 +225,8 @@ function serviceCarouselItems() {
 }
 
 function wrapBody(content) {
-  return `<body class="custom-cursor">
-<div class="custom-cursor__cursor"></div><div class="custom-cursor__cursor-two"></div>
-<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/loader.png);"></div></div>
+  return `<body>
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/loader-v2.png);"></div></div>
 <div class="page-wrapper">
 ${content}
 <!-- FOOTER -->
@@ -239,21 +262,17 @@ setTimeout(fixTaglines, 300);
 setTimeout(fixTaglines, 1000);
 setTimeout(fixTaglines, 2500);
 </script>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  var form = document.getElementById("quote-form");
-  if (!form) return;
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    form.innerHTML = '<div style="padding:24px;text-align:center;"><p style="color:#DF9E42;font-size:18px;font-weight:700;margin-bottom:12px;">Thanks! We\'ll be in touch soon.</p><p style="color:rgba(255,255,255,0.8);">Or call us now: <a href="tel:+19702368271" style="color:#DF9E42;font-weight:700;">(970) 236-8271</a></p></div>';
-  });
-});
-</script>
+<!-- form submits natively to formsubmit.co -->
 </body>
 </html>`;
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
+
+
+
+
 
 
 
