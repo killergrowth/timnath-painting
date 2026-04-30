@@ -396,27 +396,6 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
 <section class="contact-one" style="padding:80px 0;">
   <div class="container">
     <div class="row gutter-y-30">
-      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
-          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-location-dot"></i></div>
-          <h4 style="margin-bottom:8px;">Address</h4>
-          <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}<br>Serving Northern Colorado</p>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
-          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
-          <h4 style="margin-bottom:8px;">Phone</h4>
-          <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-          <p style="margin-top:6px;font-size:13px;color:#666;">Mon–Sat: 7am–6pm</p>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
-          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-envelope"></i></div>
-          <h4 style="margin-bottom:8px;">Email</h4>
-          <a href="mailto:${CLIENT.email}" style="word-break:break-all;">${CLIENT.email}</a>
-        </div>
-      </div>
-    </div>
-    <div class="row gutter-y-30" style="margin-top:60px;">
       <div class="col-lg-8">
         <div class="sec-title text-start">
           <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">get in touch</h6></div>
@@ -449,6 +428,27 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No subcontractors</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="row gutter-y-30" style="margin-top:60px;">
+      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
+          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-location-dot"></i></div>
+          <h4 style="margin-bottom:8px;">Address</h4>
+          <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}<br>Serving Northern Colorado</p>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
+          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
+          <h4 style="margin-bottom:8px;">Phone</h4>
+          <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
+          <p style="margin-top:6px;font-size:13px;color:#666;">Mon–Sat: 7am–6pm</p>
+        </div>
+      </div>
+      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
+          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-envelope"></i></div>
+          <h4 style="margin-bottom:8px;">Email</h4>
+          <a href="mailto:${CLIENT.email}" style="word-break:break-all;">${CLIENT.email}</a>
         </div>
       </div>
     </div>
