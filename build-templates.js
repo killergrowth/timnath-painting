@@ -75,21 +75,23 @@ function htmlScripts() {
 <script src="/assets/js/wallox-gsap.js"></script>
 <script src="/assets/js/wallox.js"></script>
 <script>
-// Active nav item highlighting based on current URL path
-(function(){
+// Active nav: runs immediately + after 200ms to override wallox.js theme defaults
+function setActiveNav() {
   var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\/?$/, '/');
-  document.querySelectorAll('.main-menu__list > li').forEach(function(li){
+  var items = document.querySelectorAll('.main-menu__list > li');
+  items.forEach(function(li){ li.classList.remove('current'); });
+  items.forEach(function(li){
     var a = li.querySelector('a');
     if (!a) return;
     var href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\/?$/, '/');
-    if (href === '#/' || href === '#') return;
-    if (path === href || (href !== '/' && path.startsWith(href))) {
+    if (!href || href === '#/' || href === '#') return;
+    if (path === href || (href.length > 1 && path.startsWith(href))) {
       li.classList.add('current');
-    } else {
-      li.classList.remove('current');
     }
   });
-})();
+}
+setActiveNav();
+setTimeout(setActiveNav, 200);
 </script>`;
 }
 
