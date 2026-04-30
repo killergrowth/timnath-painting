@@ -507,7 +507,7 @@ function buildServicesHub() {
   const serviceGrid = SERVICES.map(s => `
     <div class="col-lg-4 col-md-6">
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
-        <div style="font-size:48px;color:#AE360E;margin-bottom:16px;"><i class="${s.icon || 'fa-solid fa-paint-roller'}"></i></div>
+        <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;">${s.icon ? `<i class="${s.icon}"></i>` : `<img src="/assets/images/icon-fence.svg" style="width:52px;height:52px;filter:invert(23%) sepia(80%) saturate(700%) hue-rotate(5deg) brightness(75%);">` }</div>
         <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">${s.label}</h4>
         <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">${s.tagline}</p>
         <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Learn More <i class="fa-solid fa-arrow-right"></i></a>
