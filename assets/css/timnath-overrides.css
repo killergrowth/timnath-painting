@@ -2,35 +2,35 @@
    Timnath Painting - Site Overrides  v2
    ================================================ */
 
-/* Custom topbar replaces wallox topbar-two — no override needed */
+/* Custom topbar replaces wallox topbar-two - no override needed */
 
-/* Header — kill the white gap between topbar and nav */
+/* Header - kill the white gap between topbar and nav */
 .main-header {
   background-color: var(--wallox-text-dark, #201B10) !important;
 }
 .main-header__logo {
-  display: none !important;
+  flex-shrink: 0;
 }
 .main-header__inner {
   padding: 0 !important;
 }
 
-/* Nav CTA button — smaller pill shape, same font */
+/* Nav CTA button - smaller pill shape, same font */
 .main-header__right__btn.wallox-btn {
   padding: 8px 20px !important;
   font-size: 14px !important;
 }
 
-/* Nav — push menu items away from left edge, slim vertical padding */
+/* Nav - slim vertical padding; no left push so items align with container edge */
 .main-header--three .main-header__nav {
-  padding-left: 48px !important;
+  padding-left: 0 !important;
 }
 .main-header--three .main-menu .main-menu__list > li {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
 }
 
-/* Preloader — slower, smoother pulse instead of rapid flip */
+/* Preloader - slower, smoother pulse instead of rapid flip */
 @keyframes logoPulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.92); }
@@ -42,18 +42,18 @@
   animation-timing-function: ease-in-out !important;
 }
 
-/* Why Choose section — hide animated gold decorative shapes */
+/* Why Choose section - hide animated gold decorative shapes */
 .why-choose-one__thumb-box,
 .why-choose-one__thumb-box-two {
   display: none !important;
 }
 
-/* Footer — no gap between CTA section and footer */
+/* Footer - no gap between CTA section and footer */
 .main-footer {
   margin-top: 0 !important;
 }
 
-/* Feature boxes — breathing room between hero and feature strip */
+/* Feature boxes - breathing room between hero and feature strip */
 .feature-two--one {
   padding-top: 80px !important;
 }
@@ -69,7 +69,7 @@
   color: #1a1a2e !important;
 }
 
-/* Service cards — grid layout */
+/* Service cards - grid layout */
 .service-one__middle {
   max-width: 1320px !important;
   margin-left: auto !important;
@@ -110,7 +110,7 @@
   .service-one__grid { grid-template-columns: 1fr !important; }
 }
 
-/* Hero headline — prevent clipping */
+/* Hero headline - prevent clipping */
 .main-slider-one__content {
   overflow: visible !important;
 }
@@ -119,7 +119,15 @@
   overflow: hidden !important;
 }
 
-/* Josh about photo — disable wallox clipping */
+/* Slider sub-title - dark brand bg, no border pill */
+.main-slider-one__sub-title {
+  background-color: #201B10 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+/* Josh about photo - disable wallox clipping */
 .about-one__thumb img {
   object-fit: contain !important;
   border-radius: 0 !important;
