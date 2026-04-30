@@ -7,6 +7,9 @@
   position: relative !important;
   top: auto !important;
   z-index: auto !important;
+  padding: 6px 0 !important;
+  min-height: unset !important;
+  line-height: 1.3 !important;
 }
 
 /* 2. Feature boxes â€” add breathing room between hero and feature strip */
@@ -29,9 +32,6 @@
 /* 5. Service card titles â€” ensure they read well on dark bg */
 .service-one .service-one__item__title a {
   color: #1a1a2e !important;
-}
-
-
 }
 
 /* Service cards — fix grid, titles, container width */
