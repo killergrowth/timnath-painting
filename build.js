@@ -453,9 +453,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
       </div>
     </div>
     <div class="contact-map" style="margin-top:60px;">
-      <div class="google-map google-map__contact" style="height:400px;background:#e4dacc;display:flex;align-items:center;justify-content:center;border-radius:8px;">
-        <p style="color:#7e7c76;">[GOOGLE MAPS EMBED PLACEHOLDER  -  Replace with client Google Maps embed URL]</p>
-      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97168.06445598403!2d-105.03495221370565!3d40.44202459799552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa4047ac4cc01168b%3A0x5ca0bf376555449f!2sTimnath%20Painting!5e0!3m2!1sen!2sus!4v1777530014876!5m2!1sen!2sus" width="100%" height="450" style="border:0;border-radius:8px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>`;
