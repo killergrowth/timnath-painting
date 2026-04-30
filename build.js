@@ -349,7 +349,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
         <div style="margin:40px 0;">
           <div class="sec-title text-start">
             <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">cities we serve</h6></div>
-            <h3 class="sec-title__title">Service Areas</h3>
+            <h3 class="sec-title__title">Areas Served</h3>
           </div>
           <p class="wow fadeInUp" data-wow-duration="1500ms">We provide ${d.title.split(' in ')[0].toLowerCase()} throughout Northern Colorado:</p>
           <div style="margin-top:20px;">${cityLinksHTML}</div>
@@ -469,7 +469,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
 ${T.wrapBody(content)}`);
 }
 
-// â"€â"€ SERVICE AREAS INDEX â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// â"€â"€ Areas Served INDEX â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => `
   <div class="col-md-6 col-lg-4 col-xl-3">
@@ -484,7 +484,7 @@ function buildServiceAreas() {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader('Service Areas  -  Northern Colorado', '<li><span>Service Areas</span></li>')}
+${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</span></li>')}
 
 <section style="padding:80px 0;">
   <div class="container">
@@ -499,7 +499,7 @@ ${T.pageHeader('Service Areas  -  Northern Colorado', '<li><span>Service Areas</
 
 ${T.contactFormSection()}`;
 
-  write('service-areas/index.html', `${T.htmlHead('Service Areas | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all service areas.')}
+  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.')}
 ${T.wrapBody(content)}`);
 }
 
