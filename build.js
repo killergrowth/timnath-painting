@@ -103,7 +103,7 @@ ${T.topbar()}
   </div>
 </section>
 
-<section class="feature-two feature-two - one">
+<section class="feature-two feature-two - one" style="padding-top:60px;">
   <div class="container">
     <div class="row gutter-y-30">
       ${features.map((f,i) => `<div class="col-lg-3 col-md-4 col-sm-6"><div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="${(i+1)*200}ms"><div class="feature-two__item__icon"><i class="${f.icon}"></i></div><h5 class="feature-two__item__title"><a href="${f.link}">${f.title}</a></h5></div></div>`).join('\n')}
