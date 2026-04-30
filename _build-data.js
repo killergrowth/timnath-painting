@@ -19,7 +19,7 @@ const SERVICES = [
   { label: 'Interior Painting',   slug: 'interior-painting',   icon: 'fa-solid fa-couch',             img: 'img-5611-interior.jpg', tagline: 'Clean lines, zero fumes. Low-VOC options available for families and pets.' },
   { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'service-4-3.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
   { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'service-4-4.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
-  { label: 'Fence Staining',      slug: 'fence-staining',      icon: null,        img: 'service-4-5.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
+  { label: 'Fence Staining',      slug: 'fence-staining',      icon: null,        img: 'photo-fence-staining.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
   { label: 'Exterior Staining',   slug: 'exterior-staining',   icon: null,              img: 'photo-exterior-staining.jpg', tagline: 'Deck and siding stain systems applied by Eco-Painter certified applicators.' },
 ];
 
