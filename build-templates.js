@@ -36,7 +36,7 @@ function htmlHead(title, desc) {
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 <style>
 /* Inline critical overrides — beats any cached external CSS */
-.main-header { background-color: #2E2A20 !important; }
+.main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
 </style>

@@ -1,3 +1,11 @@
+
+/* Slider sub-title: dark bg, no border pill */
+.main-slider-one__sub-title {
+  background-color: #201B10 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 4px !important;
+}
 /* =====================================================
    Timnath Painting — Custom Overrides v2
    ===================================================== */
@@ -122,13 +130,13 @@
 
 /* ── City area buttons — visible on white background ─── */
 a.wallox-btn--border {
-  color: #2e2a20 !important;
-  border-color: #2e2a20 !important;
+  color: #201b10 !important;
+  border-color: #201b10 !important;
   background: transparent;
 }
 a.wallox-btn--border:hover {
   color: #fff !important;
-  background: #2e2a20 !important;
+  background: #201b10 !important;
 }
 /* Hero border buttons stay light */
 .main-slider-one a.wallox-btn--border {
@@ -136,7 +144,7 @@ a.wallox-btn--border:hover {
   border-color: #fff !important;
 }
 .main-slider-one a.wallox-btn--border:hover {
-  color: #2e2a20 !important;
+  color: #201b10 !important;
   background: #fff !important;
 }
 
@@ -1496,7 +1504,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
 }
 
 .service-one__grid .service-one__item__title a {
-  color: #2E2A20;
+  color: #201B10;
   text-decoration: none;
 }
 
@@ -1739,7 +1747,7 @@ h6.sec-title__tagline,
 
 /* Service grid cards — clean, readable */
 .service-one__item__title {
-  color: #2E2A20 !important;
+  color: #201B10 !important;
 }
 
 /* Service bottom bar */
@@ -1764,7 +1772,7 @@ h6.sec-title__tagline,
 
 /* ── CONTACT SECTION — honest, local, preview-safe ─────────── */
 .testimonials-contact {
-  background: #2E2A20 !important;
+  background: #201B10 !important;
 }
 
 /* Form note — honest preview state */
@@ -1841,7 +1849,7 @@ h6.sec-title__tagline,
 .why-choose-one__feature__title {
   font-size: 18px !important;
   font-weight: 700 !important;
-  color: #2E2A20 !important;
+  color: #201B10 !important;
 }
 
 .why-choose-one__feature__text {

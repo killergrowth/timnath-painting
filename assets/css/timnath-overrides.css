@@ -6,7 +6,7 @@
 
 /* Header — kill the white gap between topbar and nav */
 .main-header {
-  background-color: var(--wallox-text-dark, #2E2A20) !important;
+  background-color: var(--wallox-text-dark, #201B10) !important;
 }
 .main-header__logo {
   display: none !important;
@@ -63,7 +63,7 @@
   color: var(--wallox-base, #AE360E) !important;
 }
 .service-one {
-  background-color: var(--wallox-text-dark, #2E2A20) !important;
+  background-color: var(--wallox-text-dark, #201B10) !important;
 }
 .service-one .service-one__item__title a {
   color: #1a1a2e !important;
@@ -85,7 +85,7 @@
 .service-one__item {
   border-radius: 12px !important;
   overflow: hidden !important;
-  background: #2e2a20 !important;
+  background: #201b10 !important;
 }
 .service-one__item__thumb {
   height: 420px !important;

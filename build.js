@@ -365,7 +365,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
           </ul>
           <a href="/contact.html" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
         </div>
-        <div style="background:#2e2a20;color:#f4ede4;padding:30px;border-radius:8px;">
+        <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
           <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
           <ul class="list-unstyled" style="line-height:2;">
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
@@ -440,7 +440,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
         </form>
       </div>
       <div class="col-lg-4">
-        <div style="background:#2e2a20;color:#f4ede4;padding:30px;border-radius:8px;">
+        <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
           <h4 style="color:#ae360e;margin-bottom:20px;">Quick Info</h4>
           <ul class="list-unstyled" style="line-height:2.5;">
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
