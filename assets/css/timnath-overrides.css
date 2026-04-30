@@ -136,3 +136,20 @@
 .about-one__thumb {
   overflow: visible !important;
 }
+
+/* ── Alignment: remove Bootstrap col gutter on hero so text left-edge
+       matches the container edge (same as nav items) ── */
+@media (min-width: 768px) {
+  .main-slider-one__item .col-lg-7 {
+    padding-left: 0 !important;
+  }
+}
+
+/* ── Utility bar: responsive — hide email at <900px, location at <600px
+       so bar doesn't wrap to multi-line at narrow screens ── */
+@media (max-width: 899px) {
+  .topbar-email { display: none !important; }
+}
+@media (max-width: 599px) {
+  .topbar-location { display: none !important; }
+}
