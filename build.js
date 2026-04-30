@@ -42,6 +42,19 @@ function write(relPath, html) {
 // â"€â"€ Setup â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
+
+// Copy coming-soon landing page to root
+const COMING_SOON = path.join(ROOT, '..', '..', 'timnath-painting-coming-soon');
+if (fs.existsSync(COMING_SOON)) {
+  fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
+  if (fs.existsSync(path.join(COMING_SOON, 'favicon.ico'))) fs.copyFileSync(path.join(COMING_SOON, 'favicon.ico'), path.join(DIST, 'favicon.ico'));
+  copyDir(path.join(COMING_SOON, 'assets'), path.join(DIST, 'landing-assets'));
+  // Patch asset paths in the copied index.html to use /landing-assets/
+  let csHtml = fs.readFileSync(path.join(DIST, 'index.html'), 'utf8');
+  csHtml = csHtml.replace(/(["'])assets\//g, '$1/landing-assets/');
+  fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
+  console.log('Coming-soon landing page copied to root.');
+}
 console.log('Assets copied.\n');
 
 // â"€â"€ HOMEPAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
@@ -215,7 +228,7 @@ ${T.topbar()}
 
 ${T.contactFormSection()}`;
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior & Interior Painting in Northern Colorado`, CLIENT.description)}
+  write('home/index.html', `${T.htmlHead(`${CLIENT.name} | Exterior & Interior Painting in Northern Colorado`, CLIENT.description)}
 ${T.wrapBody(content)}`);
 }
 
