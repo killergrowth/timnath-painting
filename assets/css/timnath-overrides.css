@@ -216,11 +216,19 @@
   }
 }
 
-/* Hero sub-text */
+/* Hero sub-text - matches wallox slide-in animation pattern */
 .main-slider-one__sub-text {
   color: rgba(255,255,255,0.90);
   font-size: 16px;
   line-height: 1.6;
   margin: 16px 0 28px;
   max-width: 540px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1000ms ease, transform 1000ms ease;
+  transition-delay: 1600ms;
+}
+.main-slider-one .active .main-slider-one__sub-text {
+  opacity: 1;
+  transform: translateY(0);
 }
