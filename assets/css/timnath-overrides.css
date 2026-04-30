@@ -181,5 +181,9 @@
   background-color: #AE360E !important;
 }
 .feature-two__item:hover .feature-two__item__icon {
-  color: #fff !important;
+  color: #201B10 !important;
+}
+.feature-two__item:hover .feature-two__item__icon i {
+  position: relative;
+  z-index: 2;
 }
