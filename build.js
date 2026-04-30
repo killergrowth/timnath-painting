@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 /**
  * build.js  -  Timnath Painting Site Builder
  * Generates all pillar pages from data + templates
@@ -44,7 +44,7 @@ ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
 
 // Copy coming-soon landing page to root
-const COMING_SOON = path.join(ROOT, '..', '..', 'timnath-painting-coming-soon');
+const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
   if (fs.existsSync(path.join(COMING_SOON, 'favicon.ico'))) fs.copyFileSync(path.join(COMING_SOON, 'favicon.ico'), path.join(DIST, 'favicon.ico'));

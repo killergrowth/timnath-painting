@@ -1,40 +1,75 @@
-﻿/* ================================================
-   Timnath Painting â€” Site Overrides
+/* ================================================
+   Timnath Painting - Site Overrides  v2
    ================================================ */
 
-/* 1. Topbar â€” remove sticky/fixed behavior, keep it static at top */
-.topbar-two {
-  position: relative !important;
-  top: auto !important;
-  z-index: auto !important;
-  padding: 6px 0 !important;
-  min-height: unset !important;
-  line-height: 1.3 !important;
+/* Custom topbar replaces wallox topbar-two — no override needed */
+
+/* Header — kill the white gap between topbar and nav */
+.main-header {
+  background-color: var(--wallox-text-dark, #2E2A20) !important;
+}
+.main-header__logo {
+  display: none !important;
+}
+.main-header__inner {
+  padding: 0 !important;
 }
 
-/* 2. Feature boxes â€” add breathing room between hero and feature strip */
+/* Nav CTA button — smaller pill shape, same font */
+.main-header__right__btn.wallox-btn {
+  padding: 8px 20px !important;
+  font-size: 14px !important;
+}
+
+/* Nav — push menu items away from left edge, slim vertical padding */
+.main-header--three .main-header__nav {
+  padding-left: 48px !important;
+}
+.main-header--three .main-menu .main-menu__list > li {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+/* Preloader — slower, smoother pulse instead of rapid flip */
+@keyframes logoPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.92); }
+}
+.preloader__image {
+  animation-name: logoPulse !important;
+  animation-duration: 2.5s !important;
+  animation-iteration-count: infinite !important;
+  animation-timing-function: ease-in-out !important;
+}
+
+/* Why Choose section — hide animated gold decorative shapes */
+.why-choose-one__thumb-box,
+.why-choose-one__thumb-box-two {
+  display: none !important;
+}
+
+/* Footer — no gap between CTA section and footer */
+.main-footer {
+  margin-top: 0 !important;
+}
+
+/* Feature boxes — breathing room between hero and feature strip */
 .feature-two--one {
   padding-top: 80px !important;
 }
 
-/* 3. Painting Services section â€” dark background needs white title (already set),
-   but the tagline "what we do" is hard to read â€” make it visible */
+/* Painting Services section */
 .service-one .sec-title__tagline {
   color: var(--wallox-base, #DF9E42) !important;
 }
-
-/* 4. Service section: if body bg is showing through making title look white-on-light,
-   ensure the section background is actually applied */
 .service-one {
   background-color: var(--wallox-text-dark, #2E2A20) !important;
 }
-
-/* 5. Service card titles â€” ensure they read well on dark bg */
 .service-one .service-one__item__title a {
   color: #1a1a2e !important;
 }
 
-/* Service cards — fix grid, titles, container width */
+/* Service cards — grid layout */
 .service-one__middle {
   max-width: 1320px !important;
   margin-left: auto !important;
@@ -52,8 +87,12 @@
   overflow: hidden !important;
   background: #2e2a20 !important;
 }
+.service-one__item__thumb {
+  height: 420px !important;
+  overflow: hidden !important;
+}
 .service-one__item__thumb img {
-  height: 220px !important;
+  height: 100% !important;
   width: 100% !important;
   object-fit: cover !important;
   object-position: center !important;
@@ -71,18 +110,16 @@
   .service-one__grid { grid-template-columns: 1fr !important; }
 }
 
-/* Fix hero headline getting clipped */
+/* Hero headline — prevent clipping */
 .main-slider-one__content {
   overflow: visible !important;
 }
-
-/* Fix text reveal animation clipping descenders (g, y, p etc) */
 .main-slider-one__title__box {
   padding-bottom: 12px !important;
   overflow: hidden !important;
 }
 
-/* Josh about photo — disable wallox thumb img clipping */
+/* Josh about photo — disable wallox clipping */
 .about-one__thumb img {
   object-fit: contain !important;
   border-radius: 0 !important;
