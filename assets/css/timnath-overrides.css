@@ -173,3 +173,13 @@
 .main-slider-one__btn .wallox-btn--base:hover {
   color: #201B10 !important;
 }
+/* Feature cards - swap red/brown on hover */
+.feature-two__item:hover {
+  background-color: #201B10 !important;
+}
+.feature-two__item:hover .feature-two__item__icon::after {
+  background-color: #AE360E !important;
+}
+.feature-two__item:hover .feature-two__item__icon {
+  color: #fff !important;
+}
