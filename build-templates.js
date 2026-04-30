@@ -181,7 +181,7 @@ function contactFormSection() {
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#DF9E42);">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#DF9E42);">${CLIENT.phone}</a></p>
         </div>
       </div>
 
@@ -262,7 +262,36 @@ setTimeout(fixTaglines, 300);
 setTimeout(fixTaglines, 1000);
 setTimeout(fixTaglines, 2500);
 </script>
-<!-- form submits natively to formsubmit.co -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('quote-form');
+  if (!form) return;
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var orig = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    try {
+      var res = await fetch('/submit', { method: 'POST', body: new FormData(form) });
+      var data = await res.json();
+      if (data.ok) {
+        var thankYou = document.createElement('div');
+        thankYou.style.cssText = 'padding:40px 24px;text-align:center;';
+        thankYou.innerHTML = '<p style="color:#DF9E42;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few hours.</p>';
+        var note = form.parentElement && form.parentElement.querySelector('.contact-preview-note');
+        if (note) note.style.display = 'none';
+        form.replaceWith(thankYou);
+      } else {
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+        alert('Something went wrong. Please call us at (970) 236-8271.');
+      }
+    } catch (err) {
+      if (btn) { btn.disabled = false; btn.textContent = orig; }
+      alert('Something went wrong. Please call us at (970) 236-8271.');
+    }
+  });
+});
+</script>
 </body>
 </html>`;
 }

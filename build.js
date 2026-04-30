@@ -408,7 +408,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <div style="font-size:40px;color:var(--wallox-base);margin-bottom:15px;"><i class="fa-solid fa-phone"></i></div>
           <h4>Phone</h4>
           <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;">${CLIENT.phone}</a>
-          <p style="margin-top:8px;font-size:14px;">[PLACEHOLDER: Business Hours]</p>
+          <p style="margin-top:8px;font-size:14px;">Mon-Sat: 7am-6pm</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -426,7 +426,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <h3 class="sec-title__title">Get a Free Quote</h3>
         </div>
         <p>Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few hours  -  and always provide honest, no-obligation quotes.</p>
-        <form class="contact-one__form contact-form-validated" action="https://formspree.io/f/placeholder" method="POST" style="margin-top:30px;">
+        <form class="contact-one__form" id="quote-form" action="/submit" method="POST" style="margin-top:30px;">
           <div class="row gutter-y-20">
             <div class="col-md-6"><input type="text" name="name" placeholder="Your Name *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
             <div class="col-md-6"><input type="email" name="email" placeholder="Email Address *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
