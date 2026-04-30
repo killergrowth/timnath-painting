@@ -78,8 +78,8 @@ function buildHomepage() {
         ${s.lines.map(l => `<div class="main-slider-one__title__box"><h2 class="main-slider-one__title__text">${l}</h2></div>`).join('')}
       </div>
       <div class="main-slider-one__btn">
-        <a href="${s.btn1.h}" class="tp-btn-hero tp-hero-primary">${s.btn1.t}</a>
-        <a href="${s.btn2.h}" class="tp-btn-hero tp-hero-secondary">${s.btn2.t}</a>
+        <a href="${s.btn1.h}" class="wallox-btn wallox-btn--base">${s.btn1.t} <i class="fa-solid fa-arrow-right"></i></a>
+        <a href="${s.btn2.h}" class="wallox-btn wallox-btn--hero-secondary">${s.btn2.t}</a>
       </div>
     </div>
   </div></div></div>
