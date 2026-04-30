@@ -166,3 +166,10 @@
   color: #fff !important;
   background: transparent !important;
 }
+/* Hero "Get a Free Quote" — white slide-in animation to match nav button behavior */
+.main-slider-one__btn .wallox-btn--base::before {
+  background-color: #fff !important;
+}
+.main-slider-one__btn .wallox-btn--base:hover {
+  color: #201B10 !important;
+}
