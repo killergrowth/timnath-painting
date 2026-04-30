@@ -40,6 +40,13 @@ function htmlHead(title, desc) {
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
 </style>
+<script type="text/javascript">
+ (function(k) {
+ let s=document.createElement('script');s.defer=true;
+ s.src="https://cdn.feedbucket.app/assets/feedbucket.js";
+ s.dataset.feedbucket=k;document.head.appendChild(s);
+ })('unHnhjucA9iBv9bu4nxg')
+</script>
 </head>`;
 }
 
