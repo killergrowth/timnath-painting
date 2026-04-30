@@ -242,9 +242,11 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 <section class="about-one" style="padding-top:80px;padding-bottom:80px;">
   <div class="container">
     <div class="row align-items-center gutter-y-30">
-      <div class="col-lg-6">
-        <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Timnath Painting" style="max-width:100%;border-radius:8px;"></div>
+      <div class="col-lg-6" style="text-align:center;">
+        <div style="overflow:visible;">
+          <img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Timnath Painting" style="width:100%;max-width:460px;display:block;margin:0 auto;">
+          <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Josh Funk, Owner</p>
+          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -256,7 +258,6 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">I'm Josh, a Colorado native. I've been in and around the painting industry since 2007 and have owned and operated multiple successful painting and construction companies in the Midwest.</p>
           <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="150ms"><em>I have a passion for running small businesses that are insistent on absolute customer satisfaction.</em> I am also a founding partner and coach for Service Catalyst, a growing, Fort Collins-based, coaching and advisory community dedicated to helping service business owners succeed and scale.</p>
           <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">Aside from that, I'm a committed family man with a loving wife and four amazing children. I believe customers want to pay for exceptional care and peace of mind. Our commitment is to curate that!</p>
-          <a href="/contact.html" class="wallox-btn wallox-btn - base" style="margin-top:20px;">Get a Free Quote</a>
         </div>
       </div>
     </div>
