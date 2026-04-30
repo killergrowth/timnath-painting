@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
 function htmlHead(title, desc) {
@@ -124,7 +124,7 @@ function contactFormSection() {
         <div class="wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="100ms"
           style="background:rgba(30,22,14,0.88);border-radius:10px;padding:40px 36px;">
           <div style="margin-bottom:24px;">
-            <span style="color:var(--wallox-base,#DF9E42);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Request a Quote</span>
+            <span style="color:var(--wallox-base,#AE360E);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Request a Quote</span>
             <h3 style="color:#fff;margin-top:8px;margin-bottom:0;">Get a Free Quote</h3>
           </div>
           <form class="contact-one__form form-one" id="quote-form"
@@ -164,19 +164,19 @@ function contactFormSection() {
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#DF9E42);">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#AE360E);">${CLIENT.phone}</a></p>
         </div>
       </div>
 
       <!-- Contact Info -->
       <div class="col-lg-6">
         <div class="wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="150ms" style="padding:20px 10px;">
-          <span style="color:var(--wallox-base,#DF9E42);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
+          <span style="color:var(--wallox-base,#AE360E);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
           <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond Within a Few Hours</h3>
           <ul class="list-unstyled" style="line-height:2.6;">
-            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#DF9E42);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
-            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#DF9E42);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
-            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#DF9E42);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
+            <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
           </ul>
           <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; Eco-Painter Certified &bull; $2M General Liability</p>
         </div>
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (data.ok) {
         var thankYou = document.createElement('div');
         thankYou.style.cssText = 'padding:40px 24px;text-align:center;';
-        thankYou.innerHTML = '<p style="color:#DF9E42;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few hours.</p>';
+        thankYou.innerHTML = '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few hours.</p>';
         var note = form.parentElement && form.parentElement.querySelector('.contact-preview-note');
         if (note) note.style.display = 'none';
         form.replaceWith(thankYou);

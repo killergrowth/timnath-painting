@@ -60,7 +60,7 @@
 
 /* Painting Services section */
 .service-one .sec-title__tagline {
-  color: var(--wallox-base, #DF9E42) !important;
+  color: var(--wallox-base, #AE360E) !important;
 }
 .service-one {
   background-color: var(--wallox-text-dark, #2E2A20) !important;
@@ -101,7 +101,7 @@
   color: #1a1a2e !important;
 }
 .service-one__item__title a:hover {
-  color: var(--wallox-base, #DF9E42) !important;
+  color: var(--wallox-base, #AE360E) !important;
 }
 @media (max-width: 991px) {
   .service-one__grid { grid-template-columns: repeat(2, 1fr) !important; }

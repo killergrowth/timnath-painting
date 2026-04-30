@@ -546,7 +546,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
     font-size: 11px !important;
     letter-spacing: 2.5px !important;
     text-transform: uppercase !important;
-    color: #DF9E42 !important;
+    color: #AE360E !important;
     margin-bottom: 14px !important;
     font-weight: 600;
   }
@@ -752,7 +752,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   .footer-widget__info a[href^="tel"] {
     font-size: 18px !important;
     font-weight: 700 !important;
-    color: #DF9E42 !important;
+    color: #AE360E !important;
   }
 
   .footer-widget__links li {
@@ -786,7 +786,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
 }
 
 .footer-widget__info li i {
-  color: #DF9E42;
+  color: #AE360E;
   flex-shrink: 0;
   margin-top: 3px;
 }
@@ -812,7 +812,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   .testimonials-contact a[href^="tel"] {
     font-size: 22px !important;
     font-weight: 800 !important;
-    color: #DF9E42 !important;
+    color: #AE360E !important;
     display: block;
     margin-bottom: 8px;
   }
@@ -1129,7 +1129,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   .testimonials-contact__right a[href^="tel"] {
     font-size: 24px !important;
     font-weight: 800 !important;
-    color: #DF9E42 !important;
+    color: #AE360E !important;
     display: block !important;
     margin-bottom: 10px !important;
   }
@@ -1232,7 +1232,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   border-radius: 20px !important;
   padding: 6px 16px !important;
   display: inline-block !important;
-  color: #DF9E42 !important;
+  color: #AE360E !important;
   font-weight: 600 !important;
   letter-spacing: 1.5px !important;
   text-transform: uppercase !important;
@@ -1501,7 +1501,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
 }
 
 .service-one__grid .service-one__item__title a:hover {
-  color: #DF9E42;
+  color: #AE360E;
 }
 
 .service-one__grid .service-one__item__text {
@@ -1520,7 +1520,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   margin-top: 14px;
   font-size: 13px;
   font-weight: 600;
-  color: #DF9E42;
+  color: #AE360E;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -1579,7 +1579,7 @@ h1 > div > div, h2 > div > div, h3 > div > div {
   font-weight: 600 !important;
   letter-spacing: 2px !important;
   text-transform: uppercase !important;
-  color: #DF9E42 !important;
+  color: #AE360E !important;
 }
 
 /* =============================================================
@@ -1665,9 +1665,9 @@ h1 > div > div, h2 > div > div, h3 > div > div {
 }
 
 .tp-hero-primary {
-  background: #DF9E42;
+  background: #AE360E;
   color: #fff !important;
-  border: 2px solid #DF9E42;
+  border: 2px solid #AE360E;
 }
 
 .tp-hero-primary:hover {
@@ -1759,7 +1759,7 @@ h6.sec-title__tagline,
 .service-one__bottom__call__number {
   font-size: 20px !important;
   font-weight: 700 !important;
-  color: #DF9E42 !important;
+  color: #AE360E !important;
 }
 
 /* ── CONTACT SECTION — honest, local, preview-safe ─────────── */
@@ -1778,7 +1778,7 @@ h6.sec-title__tagline,
 /* Submit button */
 .form-one__btn .wallox-btn,
 .form-one__btn button {
-  background: #DF9E42 !important;
+  background: #AE360E !important;
   color: #fff !important;
   border: none !important;
   padding: 14px 32px !important;
@@ -1819,14 +1819,14 @@ h6.sec-title__tagline,
 }
 
 .about-one__list__item i {
-  color: #DF9E42;
+  color: #AE360E;
   flex-shrink: 0;
   margin-top: 3px;
 }
 
 /* Stars row */
 .about-one__client__star {
-  color: #DF9E42;
+  color: #AE360E;
   letter-spacing: 2px;
   margin-bottom: 4px;
 }
@@ -1853,7 +1853,7 @@ h6.sec-title__tagline,
 .why-choose-one__top__text {
   font-size: 15px !important;
   color: #555 !important;
-  border-left: 3px solid #DF9E42;
+  border-left: 3px solid #AE360E;
   padding-left: 16px;
   font-style: normal !important;
   line-height: 1.7 !important;
@@ -1861,7 +1861,7 @@ h6.sec-title__tagline,
 
 /* Progress bar color */
 .progress-box__bar__inner {
-  background: #DF9E42 !important;
+  background: #AE360E !important;
 }
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
@@ -1884,7 +1884,7 @@ h6.sec-title__tagline,
 }
 
 .footer-widget__links a:hover {
-  color: #DF9E42 !important;
+  color: #AE360E !important;
 }
 
 .footer-widget__text {
@@ -1935,7 +1935,7 @@ h6.sec-title__tagline * {
 .service-one__item__btn {
   font-size: 13px !important;
   font-weight: 600 !important;
-  color: #DF9E42 !important;
+  color: #AE360E !important;
   text-decoration: none !important;
   display: block !important;
   margin-top: 10px !important;
@@ -2193,7 +2193,7 @@ h6.sec-title__tagline * {
   color: #1a1a2e !important;
   text-decoration: none !important;
 }
-.service-one__item__title a:hover { color: #DF9E42 !important; }
+.service-one__item__title a:hover { color: #AE360E !important; }
 
 .service-one__item__tagline {
   font-size: 13px !important;
@@ -2205,7 +2205,7 @@ h6.sec-title__tagline * {
 .service-one__item__link {
   font-size: 13px !important;
   font-weight: 600 !important;
-  color: #DF9E42 !important;
+  color: #AE360E !important;
   text-decoration: none !important;
   display: inline-block !important;
 }
@@ -2283,7 +2283,7 @@ h6.sec-title__tagline * {
   font-size: 15px !important;
   line-height: 1.7 !important;
   color: #444 !important;
-  border-left: 3px solid #DF9E42 !important;
+  border-left: 3px solid #AE360E !important;
   padding-left: 16px !important;
   margin-bottom: 24px !important;
 }
@@ -2291,7 +2291,7 @@ h6.sec-title__tagline * {
 /* ── Feature bar — icons display properly ───────────────────────── */
 .feature-two__item__icon i {
   font-size: 32px !important;
-  color: #DF9E42 !important;
+  color: #AE360E !important;
   display: block !important;
   margin-bottom: 8px !important;
 }

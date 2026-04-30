@@ -22,7 +22,7 @@
   --wallox-text-gray-rgb: 137, 134, 141;
   --wallox-text-gray2: #D9D9D9;
   --wallox-text-gray2-rgb: 217, 217, 217;
-  --wallox-base: #DF9E42;
+  --wallox-base: #AE360E;
   --wallox-base-rgb: 223, 158, 66;
   --wallox-gray: #F4EDE4;
   --wallox-gray-rgb: 244, 237, 228;
@@ -266,7 +266,7 @@
 }
 .wallox-btn::before {
   content: "";
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
   border-radius: 100px;
   display: block;
   height: 100%;
@@ -281,7 +281,7 @@
   z-index: -1;
 }
 .wallox-btn--base {
-  background: var(--wallox-base, #DF9E42);
+  background: var(--wallox-base, #AE360E);
   color: var(--wallox-white, #fff);
 }
 .wallox-btn--base::before {
@@ -324,7 +324,7 @@ body.locked {
 }
 
 a {
-  color: var(--wallox-base, #DF9E42);
+  color: var(--wallox-base, #AE360E);
   transition: all 400ms ease;
 }
 
@@ -429,7 +429,7 @@ h6 {
 }
 .bootstrap-select .dropdown-item.active,
 .bootstrap-select .dropdown-item:active {
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
 }
 
 /* tiny slider button customize */
@@ -520,7 +520,7 @@ h6 {
 }
 .ul-list-one li::before {
   content: "\e907";
-  color: var(--wallox-base, #DF9E42);
+  color: var(--wallox-base, #AE360E);
   font-size: 26px;
   position: absolute;
   top: 50%;
@@ -593,7 +593,7 @@ h6 {
   display: inline-block;
   width: 30px;
   height: 4px;
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
   position: relative;
   overflow: hidden;
 }
@@ -623,7 +623,7 @@ h6 {
   gap: 11px;
 }
 .post-pagination li:last-child a:hover, .post-pagination li:first-child a:hover {
-  background: var(--wallox-base, #DF9E42);
+  background: var(--wallox-base, #AE360E);
   color: var(--wallox-white, #fff);
 }
 .post-pagination a {
@@ -646,8 +646,8 @@ h6 {
 }
 .post-pagination a:hover {
   background: transparent;
-  color: var(--wallox-base, #DF9E42);
-  border: 1px solid var(--wallox-base, #DF9E42);
+  color: var(--wallox-base, #AE360E);
+  border: 1px solid var(--wallox-base, #AE360E);
 }
 .post-pagination a i {
   line-height: 1;
@@ -716,7 +716,7 @@ h6 {
   margin: 0;
 }
 .wallox-owl__carousel--basic-nav.owl-carousel .owl-dots .owl-dot:hover span, .wallox-owl__carousel--basic-nav.owl-carousel .owl-dots .owl-dot.active span {
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
 }
 .wallox-owl__carousel--basic-nav.owl-carousel .owl-nav.disabled + .owl-dots {
   margin-top: 60px;
@@ -774,7 +774,7 @@ h6 {
   font-size: 24px;
   line-height: 67%;
   position: relative;
-  color: var(--wallox-base, #DF9E42);
+  color: var(--wallox-base, #AE360E);
   text-transform: uppercase;
 }
 
@@ -797,7 +797,7 @@ h6 {
 }
 .sec-title__tagline {
   margin: 0;
-  color: var(--wallox-base, #DF9E42);
+  color: var(--wallox-base, #AE360E);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   font-style: normal;
@@ -876,13 +876,13 @@ h6 {
 .ui-datepicker-calendar .ui-widget-content .ui-state-default:hover,
 .ui-datepicker-calendar .ui-widget-header .ui-state-default:hover {
   color: var(--wallox-white, #fff);
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
 }
 .ui-datepicker-calendar .ui-state-highlight,
 .ui-datepicker-calendar .ui-widget-content .ui-state-highlight,
 .ui-datepicker-calendar .ui-widget-header .ui-state-highlight {
   color: var(--wallox-white, #fff);
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
 }
 
 .ui-datepicker .ui-datepicker-prev,
@@ -893,7 +893,7 @@ h6 {
 }
 .ui-datepicker .ui-datepicker-prev:hover,
 .ui-datepicker .ui-datepicker-next:hover {
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
   color: var(--wallox-white, #fff);
   top: 2px;
 }
@@ -910,7 +910,7 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 .hero-section {
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
   position: relative;
   padding-top: 80px;
   padding-bottom: 80px;
@@ -999,7 +999,7 @@ h6 {
 }
 .hero-section .wallox-btn {
   background-color: var(--wallox-white, #fff);
-  color: var(--wallox-base, #DF9E42);
+  color: var(--wallox-base, #AE360E);
   display: inline-flex;
   border-radius: 6px;
   align-items: center;
@@ -1345,7 +1345,7 @@ h6 {
   border-radius: 10px;
 }
 .demos-one__buttons .wallox-btn::before {
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
   border-radius: 10px;
 }
 .demos-one__buttons .wallox-btn:hover {
@@ -1510,7 +1510,7 @@ h6 {
   }
 }
 .main-footer .wallox-btn {
-  background-color: var(--wallox-base, #DF9E42);
+  background-color: var(--wallox-base, #AE360E);
   color: var(--wallox-white, #fff);
   display: inline-flex;
   border-radius: 6px;

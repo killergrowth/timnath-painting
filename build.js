@@ -366,13 +366,13 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
           <a href="/contact.html" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
         </div>
         <div style="background:#2e2a20;color:#f4ede4;padding:30px;border-radius:8px;">
-          <h4 style="color:#df9e42;margin-bottom:15px;">Why Timnath Painting</h4>
+          <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
           <ul class="list-unstyled" style="line-height:2;">
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>Eco-Painter Certified</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>$2M General Liability</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>SW &amp; BM Approved</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>No Subcontractors</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
           </ul>
         </div>
       </div>
@@ -441,13 +441,13 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
       </div>
       <div class="col-lg-4">
         <div style="background:#2e2a20;color:#f4ede4;padding:30px;border-radius:8px;">
-          <h4 style="color:#df9e42;margin-bottom:20px;">Quick Info</h4>
+          <h4 style="color:#ae360e;margin-bottom:20px;">Quick Info</h4>
           <ul class="list-unstyled" style="line-height:2.5;">
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>Eco-Painter Certified</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>$2M General Liability  -  COI on request</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>No subcontractors</li>
-            <li><i class="fa-solid fa-check" style="color:#df9e42;margin-right:8px;"></i>Free on-site quotes</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability  -  COI on request</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No subcontractors</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
           </ul>
         </div>
       </div>
