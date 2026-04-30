@@ -226,24 +226,18 @@
   }
 
   function dynamicCurrentMenuClass(selector) {
-    let FileName = window.location.href.split("/").reverse()[0];
-
+    // Patched: use full pathname matching (fixes CF Pages trailing-slash URLs)
+    var path = window.location.pathname.replace(/\/index\.html$/, "/").replace(/\/?$/, "/");
     selector.find("li").each(function () {
-      let anchor = $(this).find("a");
-      if ($(anchor).attr("href") == FileName) {
+      var anchor = $(this).find("a");
+      var href = ($(anchor).attr("href") || "").replace(/\/index\.html$/, "/").replace(/\/?$/, "/");
+      if (href && href !== "#/" && href !== "#" && (path === href || (href.length > 1 && path.startsWith(href)))) {
         $(this).addClass("current");
       }
     });
-    // if any li has .current elmnt add class
     selector.children("li").each(function () {
-      if ($(this).find(".current").length) {
-        $(this).addClass("current");
-      }
+      if ($(this).find(".current").length) { $(this).addClass("current"); }
     });
-    // if no file name return
-    if ("" == FileName) {
-      selector.find("li").eq(0).addClass("current");
-    }
   }
 
   if ($(".main-menu__list").length) {
