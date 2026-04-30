@@ -34,6 +34,12 @@ function htmlHead(title, desc) {
 <link rel="stylesheet" href="/assets/css/timnath-custom.css">
 <link rel="stylesheet" href="/assets/css/icon-shim.css">
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
+<style>
+/* Inline critical overrides — beats any cached external CSS */
+.main-header { background-color: #2E2A20 !important; }
+.main-header__inner { padding: 0 !important; }
+.main-header__logo { display: none !important; }
+</style>
 </head>`;
 }
 
@@ -63,30 +69,7 @@ function htmlScripts() {
 <script src="/assets/js/wallox.js"></script>`;
 }
 
-function topbar() {
-  return `<div class="topbar-two">
-  <div class="container-fluid"><div class="topbar-two__inner">
-    <div class="topbar-two__list"><ul class="list-unstyled topbar-two__info">
-      <li class="topbar-two__info__item">
-        <div class="topbar-two__info__icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">location</span><p class="topbar-two__info__location">${CLIENT.city}, ${CLIENT.state}</p></div>
-      </li>
-      <li class="topbar-two__info__item">
-        <div class="topbar-two__info__icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">email us</span><a href="mailto:${CLIENT.email}" class="topbar-two__info__content">${CLIENT.email}</a></div>
-      </li>
-      <li class="topbar-two__info__item">
-        <div class="topbar-two__info__icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="topbar-two__info__content"><span class="topbar-two__info__subtitle">call us</span><a href="tel:${CLIENT.phoneTel}" class="topbar-two__info__content">${CLIENT.phone}</a></div>
-      </li>
-    </ul></div>
-    <div class="topbar-two__right"><div class="topbar-two__social">
-      <a href="${CLIENT.facebook}"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-      <a href="${CLIENT.instagram}"><i class="fa-brands fa-instagram"></i><span class="sr-only">Instagram</span></a>
-    </div></div>
-  </div></div>
-</div>`;
-}
+function topbar() { return ''; /* topbar now embedded in header partial */ }
 
 function pageHeader(title, crumbs) {
   return `<section class="page-header">
@@ -106,7 +89,7 @@ function mobileNav() {
   <div class="mobile-nav__overlay mobile-nav__toggler"></div>
   <div class="mobile-nav__content">
     <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
-    <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-light.png" width="155" alt="${CLIENT.name}"></a></div>
+    <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-vertical-white.png" width="140" alt="${CLIENT.name}" style="display:block;margin:0 auto;"></a></div>
     <div class="mobile-nav__container"></div>
     <ul class="mobile-nav__contact list-unstyled">
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
