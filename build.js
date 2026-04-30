@@ -30,7 +30,8 @@ const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 // Custom SVG icons — inline with brand color
 const RED = '#AE360E';
 function inlineSvg(filename, size) {
-  const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8');
+  const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
+    .replace(/<\?xml[^?]*\?>/g, '').replace(/<!--[\s\S]*?-->/g, '').trim();
   return raw.replace('<svg ', `<svg fill="${RED}" width="${size}" height="${size}" `);
 }
 const FOOTER = fs.readFileSync(path.join(PARTS, 'footer.html'), 'utf8');
