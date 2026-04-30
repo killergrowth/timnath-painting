@@ -146,7 +146,7 @@ ${T.topbar()}
               <div class="about-one__client__star"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
               <p class="about-one__client__text">5-Star Google Rated</p>
             </div></div>
-            <a href="/about.html" class="wallox-btn wallox-btn - base">More About Us</a>
+            <a href="/about.html" class="wallox-btn wallox-btn--base">More About Us</a>
           </div>
         </div>
       </div>
@@ -310,7 +310,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
       ${SERVICES.map(s => `<div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;">
           <h5 class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></h5>
-          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn - base" style="margin-top:10px;">Learn More</a>
+          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
         </div>
       </div>`).join('\n')}
     </div>
@@ -329,7 +329,7 @@ function buildServiceHub(slug) {
   if (!d) { console.warn('No data for', slug); return; }
 
   const cityLinksHTML = CITIES.map(c =>
-    `<a href="/${slug}/${c.slug}/index.html" class="wallox-btn wallox-btn - border" style="margin:4px 4px 4px 0;">${c.label}</a>`
+    `<a href="/${slug}/${c.slug}/index.html" class="wallox-btn wallox-btn--border" style="margin:4px 4px 4px 0;">${c.label}</a>`
   ).join('\n');
 
   const content = `
@@ -376,7 +376,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base);margin-right:8px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
             <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:8px;"></i>${CLIENT.city}, ${CLIENT.state}</li>
           </ul>
-          <a href="/contact.html" class="wallox-btn wallox-btn - base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
+          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
         </div>
         <div style="background:#2e2a20;color:#f4ede4;padding:30px;border-radius:8px;">
           <h4 style="color:#df9e42;margin-bottom:15px;">Why Timnath Painting</h4>
@@ -420,8 +420,8 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
         <div class="contact-one__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms" style="text-align:center;padding:30px;background:#f4ede4;border-radius:8px;">
           <div style="font-size:40px;color:var(--wallox-base);margin-bottom:15px;"><i class="fa-solid fa-phone"></i></div>
           <h4>Phone</h4>
-          <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;">${CLIENT.phone}</a>
-          <p style="margin-top:8px;font-size:14px;">Mon-Sat: 7am-6pm</p>
+          <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;white-space:nowrap;">${CLIENT.phone}</a>
+          <p style="margin-top:8px;font-size:14px;">Mon–Sat: 7am–6pm</p>
         </div>
       </div>
       <div class="col-md-4">
@@ -451,7 +451,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
               </select>
             </div>
             <div class="col-12"><textarea name="message" placeholder="Tell us about your project" rows="5" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></textarea></div>
-            <div class="col-12"><button type="submit" class="wallox-btn wallox-btn - base">Send Message</button></div>
+            <div class="col-12"><button type="submit" class="wallox-btn wallox-btn--base">Send Message</button></div>
           </div>
         </form>
       </div>
@@ -522,4 +522,5 @@ buildContact();
 buildServiceAreas();
 
 console.log('\nâœ... All pillar pages built successfully.');
+
 
