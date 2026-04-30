@@ -47,6 +47,7 @@ function htmlHead(title, desc) {
  s.dataset.feedbucket=k;document.head.appendChild(s);
  })('unHnhjucA9iBv9bu4nxg')
 </script>
+<script type="text/javascript" src="https://www.bugherd.com/sidebarv2.js?apikey=lhjx2e3bmvxt1qq8uxt1bw" async="true"></script>
 </head>`;
 }
 
