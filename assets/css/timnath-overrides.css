@@ -36,6 +36,11 @@
   50% { opacity: 0.5; transform: scale(0.92); }
 }
 .preloader__image {
+  width: 280px !important;
+  height: 280px !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
   animation-name: logoPulse !important;
   animation-duration: 2.5s !important;
   animation-iteration-count: infinite !important;

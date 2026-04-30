@@ -216,7 +216,7 @@ function serviceCarouselItems() {
 
 function wrapBody(content) {
   return `<body>
-<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/loader-v2.png);"></div></div>
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
 <div class="page-wrapper">
 ${content}
 <!-- FOOTER -->
