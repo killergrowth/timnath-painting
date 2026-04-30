@@ -292,6 +292,9 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <h4 class="progress-box__title">Premium Coating Systems</h4>
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="90%"><div class="progress-box__number count-text">90%</div></div></div>
         </div>
+        <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
+          <img src="/assets/images/about/about-kitchen.jpg" alt="Interior painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
+        </div>
       </div>
     </div>
   </div>
