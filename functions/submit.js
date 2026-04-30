@@ -107,9 +107,7 @@ function buildHtmlEmail(name, email, phone, service, message) {
             <div style="background:#f9f5f0;border-left:3px solid #DF9E42;padding:16px;font-size:15px;color:#2E2A20;line-height:1.7;">${message.replace(/\n/g,'<br>')}</div>
           </div>` : ''}
 
-          <div style="margin-top:32px;text-align:center;">
-            <a href="tel:+19702368271" style="display:inline-block;background:#DF9E42;color:#2E2A20;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call (970) 236-8271</a>
-          </div>
+          ${phone ? `<div style="margin-top:32px;text-align:center;"><a href="tel:${phone.replace(/\D/g,'')}" style="display:inline-block;background:#DF9E42;color:#2E2A20;font-family:'Oswald','Arial Narrow',Arial,sans-serif;font-size:16px;font-weight:700;padding:14px 36px;border-radius:4px;text-decoration:none;letter-spacing:2px;text-transform:uppercase;">Call ${phone}</a></div>` : ''}
         </td></tr>
 
         <!-- Footer -->

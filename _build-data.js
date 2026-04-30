@@ -17,8 +17,8 @@ const CLIENT = {
 const SERVICES = [
   { label: 'Exterior Painting',   slug: 'exterior-painting',   icon: 'fa-solid fa-house',             img: 'service-4-1.jpg', tagline: 'Coatings built to handle Colorado freeze-thaw cycles — rated for 7-10 years.' },
   { label: 'Interior Painting',   slug: 'interior-painting',   icon: 'fa-solid fa-couch',             img: 'service-4-2.jpg', tagline: 'Clean lines, zero fumes. Low-VOC options available for families and pets.' },
-  { label: 'HOA Painting',        slug: 'hoa-painting',        icon: 'fa-solid fa-building',          img: 'service-4-3.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
-  { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building-columns',  img: 'service-4-4.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
+  { label: 'HOA Painting',        slug: 'hoa-painting',        icon: 'fa-solid fa-city',          img: 'service-4-3.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
+  { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'service-4-4.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
   { label: 'Fence Staining',      slug: 'fence-staining',      icon: 'fa-solid fa-border-all',        img: 'service-4-5.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
   { label: 'Exterior Staining',   slug: 'exterior-staining',   icon: 'fa-solid fa-tree',              img: 'service-4-1.jpg', tagline: 'Deck and siding stain systems applied by Eco-Painter certified applicators.' },
 ];
