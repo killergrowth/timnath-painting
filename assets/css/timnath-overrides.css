@@ -173,16 +173,23 @@
 .main-slider-one__btn .wallox-btn--base:hover {
   color: #201B10 !important;
 }
-/* Feature cards - swap red/brown on hover */
+/* Feature cards - icon colors */
+/* Default: dark brown icon on white circle */
+.feature-two__item .feature-two__item__icon,
+.feature-two__item .feature-two__item__icon i {
+  color: #201B10 !important;
+}
+/* Hover: dark card, red circle, white icon */
 .feature-two__item:hover {
   background-color: #201B10 !important;
 }
-/* Use direct bg-color on icon div (bypasses ::after z-index complexity) */
 .feature-two__item:hover .feature-two__item__icon {
   background-color: #AE360E !important;
-  color: #201B10 !important;
+  color: #fff !important;
 }
-/* Suppress the ::after expanding circle so direct bg-color is the visible layer */
+.feature-two__item:hover .feature-two__item__icon i {
+  color: #fff !important;
+}
 .feature-two__item:hover .feature-two__item__icon::after {
   opacity: 0 !important;
 }
