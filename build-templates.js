@@ -190,7 +190,7 @@ function contactFormSection() {
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We respond within a few hours. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#AE360E);">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We Respond In Minutes. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#AE360E);">${CLIENT.phone}</a></p>
         </div>
       </div>
 
@@ -198,7 +198,7 @@ function contactFormSection() {
       <div class="col-lg-6">
         <div class="wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="150ms" style="padding:20px 10px;">
           <span style="color:var(--wallox-base,#AE360E);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
-          <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond Within a Few Hours</h3>
+          <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond In Minutes</h3>
           <ul class="list-unstyled" style="line-height:2.6;">
             <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
             <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
