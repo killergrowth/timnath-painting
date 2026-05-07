@@ -431,7 +431,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
     </div>
     <div class="row gutter-y-30" style="margin-top:60px;">
       <div class="col-lg-8">
-        <div class="sec-title text-start">
+        <div class="sec-title text-start" style="margin-bottom:12px;">
           <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">get in touch</h6></div>
           <h3 class="sec-title__title">Get a Free Quote</h3>
         </div>
