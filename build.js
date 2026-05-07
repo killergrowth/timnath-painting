@@ -347,8 +347,8 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
         </div>
         ${d.intro.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">${p}</p>`).join('\n')}
         <div style="margin:40px 0;">
-          <div class="sec-title text-start">
-            <h4 style="margin-bottom:20px;">Our Process</h4>
+          <div class="sec-title text-start" style="padding-bottom:0;">
+            <h4 style="margin-bottom:12px;">Our Process</h4>
           </div>
           ${d.process.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">${p}</p>`).join('\n')}
         </div>
