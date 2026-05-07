@@ -156,7 +156,7 @@ ${T.topbar()}
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Eco-Painter Certified applicators</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Sherwin-Williams &amp; Benjamin Moore approved</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  COI on request</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> No subcontractors. No volume rushing.</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We know our crew. No volume rushing.</li>
           </ul>
         </div>
       </div>
@@ -194,7 +194,7 @@ ${T.topbar()}
           <div class="why-choose-one__feature wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
             <div class="why-choose-one__feature__item"><div class="why-choose-one__feature__item__inner">
               <div class="why-choose-one__feature__icon"><i class="fa-solid fa-check"></i></div>
-              <h4 class="why-choose-one__feature__title">No Subcontractors. Ever.</h4>
+              <h4 class="why-choose-one__feature__title">We Know Our Crew.</h4>
             </div></div>
             <p class="why-choose-one__feature__text">Josh leads every project personally. The crew you meet on day one is the crew that finishes the job.</p>
           </div>
@@ -274,7 +274,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Eco-Painter Certified  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  certificates available on request</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> No subcontractors on any project</li>
+          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We know our crew</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Limited project capacity to maintain quality control</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Daily progress updates  -  no chasing us down</li>
         </ul>
@@ -385,7 +385,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Painter Certified</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>We Know Our Crew</li>
           </ul>
         </div>
       </div>
@@ -459,7 +459,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Painter Certified</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability  -  COI on request</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No subcontractors</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>We Know Our Crew</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
           </ul>
         </div>
