@@ -97,7 +97,7 @@ function buildHomepage() {
 </div>`).join('\n');
 
   const features = [
-    { icon:'fa-solid fa-lightbulb', title:'7-10 Year Systems', link:'/exterior-painting/index.html' },
+    { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
     { icon:'fa-solid fa-paint-roller', title:'Eco-Painter Certified', link:'/about.html' },
     { icon:'fa-solid fa-users', title:'$2M Liability Coverage', link:'/about.html' },
     { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/contact.html' },
