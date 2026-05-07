@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (data.ok) {
         var thankYou = document.createElement('div');
         thankYou.style.cssText = 'padding:40px 24px;text-align:center;';
-        thankYou.innerHTML = '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few hours.</p>';
+        thankYou.innerHTML = '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>';
         var note = form.parentElement && form.parentElement.querySelector('.contact-preview-note');
         if (note) note.style.display = 'none';
         form.replaceWith(thankYou);
