@@ -433,9 +433,9 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
       <div class="col-lg-8">
         <div class="sec-title text-start" style="margin-bottom:12px;">
           <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">get in touch</h6></div>
-          <h3 class="sec-title__title">Get a Free Quote</h3>
+          <h3 class="sec-title__title" style="margin-bottom:8px;">Get a Free Quote</h3>
         </div>
-        <p>Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few hours  -  and always provide honest, no-obligation quotes.</p>
+        <p style="margin-top:0;">Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few hours  -  and always provide honest, no-obligation quotes.</p>
         <form class="contact-one__form" id="quote-form" action="/submit" method="POST" style="margin-top:30px;">
           <div class="row gutter-y-20">
             <div class="col-md-6"><input type="text" name="name" placeholder="Your Name *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
