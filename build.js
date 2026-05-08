@@ -96,7 +96,7 @@ function buildHomepage() {
 
   // Render reviews partial
   const reviewsSection = fs.readFileSync(path.join(PARTS, 'reviews.html'), 'utf8')
-    .replace('<!-- REVIEW_CARDS -->', reviewCards || '');
+    .replace('<!-- REVIEW_CARDS -->', reviewCards || '').replace('<!-- RATING_VALUE -->', reviewData.rating !== null ? Number(reviewData.rating).toFixed(1) : '5.0');
 
   // Build LocalBusiness + AggregateRating + Review[] schema
   const schemaObj = {
