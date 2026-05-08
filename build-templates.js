@@ -244,7 +244,7 @@ function serviceCarouselItems() {
     </div>
   </div></div>`).join('\n');
   const areasBox = `<div class="item"><div class="service-one__item" style="background:#f4ede4;">
-    <div class="service-one__item__thumb" style="background:#e4dacc;display:flex;align-items:center;justify-content:center;min-height:180px;"><i class="fa-solid fa-map-location-dot" style="font-size:64px;color:#AE360E;"></i></div>
+    <div class="service-one__item__thumb"><img src="/assets/images/service/areas-served-map.jpg" alt="Northern Colorado service area map"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/areas-served/index.html">See Areas We Serve</a></h4>
       <p class="service-one__item__tagline">Serving Timnath, Windsor, Fort Collins, Loveland and more across Northern Colorado.</p>
