@@ -265,7 +265,7 @@ ${T.topbar()}
               <div class="why-choose-one__feature__icon"><i class="fa-solid fa-check"></i></div>
               <h4 class="why-choose-one__feature__title">We Know Our Crews.</h4>
             </div></div>
-            <p class="why-choose-one__feature__text">Josh leads every project personally. The crew you meet on day one is the crew that finishes the job.</p>
+            <p class="why-choose-one__feature__text">The crew you meet on day one is the crew that finishes the job.</p>
           </div>
           <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
             <h4 class="progress-box__title">Premium Surface Preparation</h4>
