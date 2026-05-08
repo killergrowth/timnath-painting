@@ -341,9 +341,9 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
   <div class="container">
     <div class="row gutter-y-30">
       <div class="col-lg-8">
-        <div class="sec-title text-start">
+        <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:16px;">
           <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">${d.tagline}</h6></div>
-          <h3 class="sec-title__title">${d.heroTitle}</h3>
+          <h3 class="sec-title__title" style="margin-bottom:0;">${d.heroTitle}</h3>
         </div>
         ${d.intro.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">${p}</p>`).join('\n')}
         <div style="margin:40px 0;">
