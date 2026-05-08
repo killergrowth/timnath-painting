@@ -67,6 +67,75 @@ console.log('Assets copied.\n');
 
 // â"€â"€ HOMEPAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 function buildHomepage() {
+  // ── Reviews data ─────────────────────────────────────────────────────────────
+  const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
+  const reviewData = fs.existsSync(reviewsFile)
+    ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
+    : { rating: null, userRatingCount: 0, reviews: [] };
+
+  // Build review cards
+  const reviewCards = reviewData.reviews.map(r => {
+    const initial = (r.author || 'A').charAt(0).toUpperCase();
+    const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return `<div class="col-md-6 col-lg-4">
+  <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;">
+    <div style="color:#AE360E;margin-bottom:12px;font-size:15px;">
+      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+    </div>
+    <p style="font-size:14px;color:#5a5650;line-height:1.8;margin-bottom:20px;flex:1;">&ldquo;${escapedText}&rdquo;</p>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <div style="width:38px;height:38px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;">${initial}</div>
+      <div>
+        <strong style="font-size:14px;color:#201B10;display:block;">${r.author}</strong>
+        <span style="font-size:12px;color:#999;">${r.relativeTime}</span>
+      </div>
+    </div>
+  </div>
+</div>`;
+  }).join('\n');
+
+  // Render reviews partial
+  const reviewsSection = fs.readFileSync(path.join(PARTS, 'reviews.html'), 'utf8')
+    .replace('<!-- REVIEW_CARDS -->', reviewCards || '');
+
+  // Build LocalBusiness + AggregateRating + Review[] schema
+  const schemaObj = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: CLIENT.name,
+    telephone: CLIENT.phone,
+    email: CLIENT.email,
+    url: 'https://timnathpainting.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '4836 Becker Dr',
+      addressLocality: 'Timnath',
+      addressRegion: 'CO',
+      postalCode: '80547',
+      addressCountry: 'US'
+    },
+    areaServed: 'Northern Colorado'
+  };
+  if (reviewData.rating && reviewData.userRatingCount) {
+    schemaObj.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: reviewData.rating,
+      reviewCount: reviewData.userRatingCount,
+      bestRating: 5,
+      worstRating: 1
+    };
+  }
+  if (reviewData.reviews.length > 0) {
+    schemaObj.review = reviewData.reviews.map(r => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.author },
+      reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
+      reviewBody: r.text,
+      ...(r.publishTime ? { datePublished: r.publishTime.substring(0, 10) } : {})
+    }));
+  }
+  const schemaTag = `<script type="application/ld+json">${JSON.stringify(schemaObj)}</script>`;
+
   const sliders = [
     {
       bg: 'slider-3-1.jpg',
@@ -223,10 +292,15 @@ ${T.topbar()}
   </div>
 </section>
 
+<!-- REVIEWS -->
+
 ${T.contactFormSection()}`;
 
+  // Inject reviews section and schema
+  const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
+
   write('home/index.html', `${T.htmlHead(`${CLIENT.name} | Exterior & Interior Painting in Northern Colorado`, CLIENT.description)}
-${T.wrapBody(content)}`);
+${T.wrapBody(finalContent)}`);
 }
 
 // â"€â"€ ABOUT PAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
