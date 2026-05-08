@@ -16,7 +16,6 @@ const CLIENT = {
 
 const SERVICES = [
   { label: 'Exterior Painting',   slug: 'exterior-painting',   icon: 'fa-solid fa-house',             img: 'img-4932-exterior.jpg', tagline: 'Coatings built to handle Colorado freeze-thaw cycles — rated for 7-10 years.' },
-  { label: 'Interior Painting',   slug: 'interior-painting',   icon: 'fa-solid fa-couch',             img: 'img-5611-interior.jpg', tagline: 'Clean lines, zero fumes. Low-VOC options available for families and pets.' },
   { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'service-4-3.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
   { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'photo-commercial-painting.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
   { label: 'Fence Staining',      slug: 'fence-staining',      icon: null,        img: 'photo-fence-staining.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
@@ -32,12 +31,6 @@ const CITIES = [
   { label: 'Greeley',     slug: 'greeley-co' },
   { label: 'Wellington',  slug: 'wellington-co' },
   { label: 'Johnstown',   slug: 'johnstown-co' },
-  { label: 'Evans',       slug: 'evans-co' },
-  { label: 'Milliken',    slug: 'milliken-co' },
-  { label: 'Eaton',       slug: 'eaton-co' },
-  { label: 'La Salle',    slug: 'la-salle-co' },
-  { label: 'Longmont',    slug: 'longmont-co' },
-  { label: 'Berthoud',    slug: 'berthoud-co' },
 ];
 
 const SERVICE_DATA = {
@@ -62,29 +55,6 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
       { q: 'What prep work is required for exterior painting in Northern Colorado?', a: 'All loose and failing paint must be scraped to stable substrate. Wood siding requires sanding, rot repair, and bare wood priming with oil or shellac-based primers. All gaps, joints, and seams need premium elastomeric caulking. Surfaces are pressure washed to remove dirt, mildew, and chalk. Skipping any of these steps leads to premature failure.' },
       { q: 'Do you handle HOA color approval for exterior painting?', a: 'Yes. Many Northern Colorado communities require HOA approval before exterior color changes. We help navigate the approval process, provide color samples that meet HOA guidelines, and submit all required documentation on your behalf. Most approvals take 2-4 weeks, which we build into project timelines.' },
       { q: 'What does exterior painting cost in Northern Colorado?', a: 'Most premium exterior painting projects for $650K+ homes range from $8,000-$18,000+ depending on home size, siding type, and surface condition. Call (970) 236-8271 for an accurate quote based on your specific home.' },
-    ],
-  },
-  'interior-painting': {
-    title: 'Interior Painting in Northern Colorado',
-    metaTitle: 'Interior Painting Northern Colorado | Timnath Painting',
-    metaDesc: 'Interior painting by certified professionals. Low-VOC options, meticulous prep, clean results. Serving Northern Colorado. (970) 236-8271',
-    tagline: 'Meticulous Prep. Clean Results.',
-    heroTitle: 'Interior Painting That Protects and Transforms Your Home',
-    intro: `Interior painting is where the details live. Proper surface preparation  -  patching nail holes, skim-coating damaged drywall, sanding all surfaces  -  is what separates a professional result from a paint-over job that shows every flaw.
-
-Timnath Painting brings the same no-shortcuts approach to interior work that we apply to every exterior project. We use low-VOC and zero-VOC options from Sherwin-Williams and Benjamin Moore. We protect your floors, furniture, and trim meticulously. We leave your home cleaner than we found it.`,
-    process: `Every interior project begins with a full walkthrough to assess surfaces, note existing damage, and confirm color selections.
-
-<strong>Surface Preparation:</strong> We patch all holes and cracks, skim-coat damaged drywall sections, sand all surfaces smooth, caulk gaps between trim and walls, and apply the correct primer for each surface type.
-
-<strong>Coating Application:</strong> We use Sherwin-Williams Emerald and Benjamin Moore Aura for interiors  -  both available in low-VOC and zero-VOC formulations. Ceiling paint, trim paint, and wall paint are each specified separately for correct sheen and performance.
-
-<strong>Protection & Cleanup:</strong> All floors, furniture, and surfaces are masked or covered. We remove all tape and masking before final walkthrough. Full site cleanup is included.`,
-    faqs: [
-      { q: 'Do you use low-VOC paint for interior projects?', a: 'Yes. We offer low-VOC and zero-VOC interior paint options from Sherwin-Williams (Emerald) and Benjamin Moore (Aura). These products perform as well or better than standard formulations and are appropriate for homes with children, pets, or occupants with chemical sensitivities.' },
-      { q: 'How long does interior painting take?', a: 'A typical 2,000 sq ft home interior takes 3-5 days depending on number of rooms, ceiling height, trim complexity, and surface condition. Homes with extensive drywall repair or multiple color changes take longer. We provide a specific timeline during the on-site assessment.' },
-      { q: 'Do I need to move furniture before you arrive?', a: 'We ask that you clear small items from surfaces and remove breakables. For larger furniture, we work around it and cover what cannot be moved. We handle all floor and surface protection with drop cloths and masking.' },
-      { q: 'What does interior painting cost in Northern Colorado?', a: 'Interior painting for a standard room typically ranges from $400-$900 depending on size, ceiling height, and surface condition. Full home interiors run $3,500-$12,000+. Call (970) 236-8271 for an accurate quote.' },
     ],
   },
   'hoa-painting': {

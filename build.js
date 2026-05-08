@@ -71,7 +71,7 @@ function buildHomepage() {
     {
       bg: 'slider-3-1.jpg',
       sub: 'Northern Colorado Painting Contractor',
-      lines: ['Premium Exterior &amp;', 'Interior Painting'],
+      lines: ['Premium Exterior', 'Painting and More'],
       btn1: { t: 'Get a Free Quote', h: '/contact.html' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
       subText: 'Professional painting done right—on time, on budget, and built to last.'
@@ -313,6 +313,12 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
         </div>
       </div>`).join('\n')}
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;background:#f4ede4;">
+          <h5 class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html" style="color:#AE360E;">See Areas We Serve</a></h5>
+          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">View All Areas</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -235,7 +235,7 @@ function faqBlock(faqs, groupName) {
 }
 
 function serviceCarouselItems() {
-  return SERVICES.map(s => `<div class="item"><div class="service-one__item">
+  const items = SERVICES.map(s => `<div class="item"><div class="service-one__item">
     <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
@@ -243,6 +243,15 @@ function serviceCarouselItems() {
       <a href="/${s.slug}/index.html" class="service-one__item__link">Learn more &rarr;</a>
     </div>
   </div></div>`).join('\n');
+  const areasBox = `<div class="item"><div class="service-one__item" style="background:#f4ede4;">
+    <div class="service-one__item__thumb" style="background:#e4dacc;display:flex;align-items:center;justify-content:center;min-height:180px;"><i class="fa-solid fa-map-location-dot" style="font-size:64px;color:#AE360E;"></i></div>
+    <div class="service-one__item__content">
+      <h4 class="service-one__item__title"><a href="/areas-served/index.html">See Areas We Serve</a></h4>
+      <p class="service-one__item__tagline">Serving Timnath, Windsor, Fort Collins, Loveland and more across Northern Colorado.</p>
+      <a href="/areas-served/index.html" class="service-one__item__link">View all areas &rarr;</a>
+    </div>
+  </div></div>`;
+  return items + '\n' + areasBox;
 }
 
 function wrapBody(content) {
