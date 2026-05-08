@@ -550,7 +550,15 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
       <h3 class="sec-title__title">Professional Painting Services in Northern Colorado</h3>
       <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with Eco-Painter Certified crews and premium Sherwin-Williams and Benjamin Moore coatings.</p>
     </div>
-    <div class="row gutter-y-30">${serviceGrid}</div>
+    <div class="row gutter-y-30">${serviceGrid}
+    <div class="col-lg-4 col-md-6">
+      <div style="background:#201b10;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
+        <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;"><i class="fa-solid fa-medal"></i></div>
+        <h4 style="font-size:20px;font-weight:700;color:#f4ede4;margin-bottom:8px;">Why Timnath?</h4>
+        <p style="color:rgba(244,237,228,0.75);font-size:14px;margin-bottom:24px;flex:1;">Eco-Painter Certified. $2M liability. We know our crews. See what sets us apart.</p>
+        <a href="/about.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Our Story <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div></div>
   </div>
 </section>
 
