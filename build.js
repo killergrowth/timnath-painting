@@ -353,17 +353,17 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
           ${d.process.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">${p}</p>`).join('\n')}
         </div>
         <div style="margin:40px 0;">
-          <div class="sec-title text-start">
+          <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
             <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">cities we serve</h6></div>
-            <h3 class="sec-title__title">Areas Served</h3>
+            <h3 class="sec-title__title" style="margin-bottom:0;">Areas Served</h3>
           </div>
           <p class="wow fadeInUp" data-wow-duration="1500ms">We provide ${d.title.split(' in ')[0].toLowerCase()} throughout Northern Colorado:</p>
           <div style="margin-top:20px;">${cityLinksHTML}</div>
         </div>
         <div style="margin:40px 0;">
-          <div class="sec-title text-start">
+          <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
             <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">common questions</h6></div>
-            <h3 class="sec-title__title">Frequently Asked Questions</h3>
+            <h3 class="sec-title__title" style="margin-bottom:0;">Frequently Asked Questions</h3>
           </div>
           <div style="margin-top:30px;">${T.faqBlock(d.faqs, slug + '-faq')}</div>
         </div>
