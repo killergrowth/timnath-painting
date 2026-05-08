@@ -214,12 +214,24 @@ function contactFormSection() {
 }
 
 function faqBlock(faqs, groupName) {
-  return `<div class="wallox-accrodion" data-grp-name="${groupName || 'faq'}">
-  ${faqs.map((f, i) => `<div class="accrodion${i === 0 ? ' active' : ''}">
-    <div class="accrodion-title"><h4>${f.q}</h4></div>
-    <div class="accrodion-content"><div class="inner"><p>${f.a}</p></div></div>
-  </div>`).join('\n  ')}
-</div>`;
+  return `<div class="kg-faq" style="margin-top:16px;">
+  ${faqs.map(f => `<details style="border-bottom:1px solid #e4dacc;padding:0;margin:0;">
+    <summary style="display:flex;align-items:center;justify-content:space-between;padding:16px 0;cursor:pointer;list-style:none;gap:16px;">
+      <span style="display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px;color:#2e2a20;">
+        <i class="fa-solid fa-circle-dot" style="color:#AE360E;font-size:8px;flex-shrink:0;"></i>${f.q}
+      </span>
+      <span class="faq-toggle" style="font-size:12px;color:#AE360E;white-space:nowrap;flex-shrink:0;">See answer &#9660;</span>
+    </summary>
+    <div style="padding:0 0 16px 18px;color:#5a5650;font-size:15px;line-height:1.7;">${f.a}</div>
+  </details>`).join('\n  ')}
+</div>
+<style>
+.kg-faq details[open] .faq-toggle { content: ''; }
+.kg-faq details[open] > summary .faq-toggle::after { content: ''; }
+.kg-faq details[open] .faq-toggle { color:#AE360E; }
+.kg-faq details > summary::-webkit-details-marker { display:none; }
+.kg-faq details > summary::marker { display:none; }
+</style>`;
 }
 
 function serviceCarouselItems() {
