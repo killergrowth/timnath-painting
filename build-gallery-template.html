@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Gallery | Timnath Painting</title>
+<meta name="description" content="Browse completed painting projects by Timnath Painting across Northern Colorado. Exterior, interior, HOA, commercial and more.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons-v2/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
+<link rel="manifest" href="/assets/images/favicons-v2/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
+<link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="/assets/css/wallox.css">
+<link rel="stylesheet" href="/assets/css/timnath-custom.css">
+<link rel="stylesheet" href="/assets/css/icon-shim.css">
+<link rel="stylesheet" href="/assets/css/timnath-overrides.css">
+<style>
+.main-header { background-color: #201B10 !important; }
+.main-header__inner { padding: 0 !important; }
+.main-header__logo { display: none !important; }
+
+.gallery-filter-bar { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:36px; }
+.filter-btn {
+  padding:7px 18px; border-radius:20px; border:1px solid #ddd;
+  background:#fff; color:#5a5650; font-size:13px; font-weight:600;
+  cursor:pointer; transition:all 0.2s;
+}
+.filter-btn:hover, .filter-btn.active { background:#AE360E; border-color:#AE360E; color:#fff; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+.gallery-card {
+  background: #fff; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gallery-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.14); }
+.gallery-card img { width:100%; height:220px; object-fit:cover; display:block; cursor:pointer; }
+.gallery-card-body { padding:14px 16px; }
+.gallery-card-title { font-weight:600; font-size:14px; color:#201B10; margin-bottom:8px; }
+.gallery-card-tags { display:flex; flex-wrap:wrap; gap:5px; }
+.gallery-tag {
+  background:#f4ede4; color:#AE360E; font-size:11px; font-weight:700;
+  padding:3px 10px; border-radius:12px; text-transform:uppercase; letter-spacing:0.5px; cursor:pointer;
+}
+.gallery-tag:hover { background:#AE360E; color:#fff; }
+
+#lightbox {
+  display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92);
+  z-index:9999; align-items:center; justify-content:center; padding:20px;
+}
+#lightbox.open { display:flex; }
+#lightbox img { max-height:90vh; max-width:90vw; object-fit:contain; border-radius:4px; }
+#lightbox-close {
+  position:absolute; top:20px; right:28px; color:#fff;
+  font-size:36px; cursor:pointer; line-height:1; z-index:10000;
+}
+#lightbox-caption {
+  position:absolute; bottom:20px; left:50%; transform:translateX(-50%);
+  color:#fff; font-size:14px; background:rgba(0,0,0,0.6);
+  padding:8px 18px; border-radius:4px;
+}
+
+.gallery-empty { text-align:center; padding:80px 20px; color:#999; }
+.gallery-empty i { font-size:48px; color:#e4dacc; margin-bottom:16px; display:block; }
+.gallery-loading { text-align:center; padding:80px 20px; }
+.gallery-loading .spinner {
+  width:40px; height:40px; border:3px solid #f4ede4;
+  border-top-color:#AE360E; border-radius:50%;
+  animation:spin 0.8s linear infinite; margin:0 auto 16px;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+</style>
+<script type="text/javascript">
+(function(k){let s=document.createElement('script');s.defer=true;s.src="https://cdn.feedbucket.app/assets/feedbucket.js";s.dataset.feedbucket=k;document.head.appendChild(s);})('unHnhjucA9iBv9bu4nxg')
+</script>
+</head>
+<body>
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
+<div class="page-wrapper">
+
+<!-- HEADER -->
+
+<section class="page-header">
+  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+  <div class="container">
+    <h2 class="page-header__title">Project Gallery</h2>
+    <div class="wallox-breadcrumb"><ul class="wallox-breadcrumb__list list-unstyled">
+      <li><a href="/home/index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><span>Gallery</span></li>
+    </ul></div>
+  </div>
+</section>
+
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">our work</h6></div>
+      <h3 class="sec-title__title">Completed Projects</h3>
+      <p style="color:#5a5650;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">Browse our completed painting projects across Northern Colorado. Click a tag to filter by project type.</p>
+    </div>
+
+    <div class="gallery-filter-bar" id="filterBar">
+      <button class="filter-btn active" data-tag="all">All Projects</button>
+    </div>
+
+    <div id="galleryContainer">
+      <div class="gallery-loading">
+        <div class="spinner"></div>
+        <p style="color:#999;font-size:14px;">Loading photos...</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+<!-- FOOTER -->
+</div>
+
+<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
+    <div class="logo-box"><a href="/home/index.html"><img src="/assets/images/logo-vertical-white.png" width="140" alt="Timnath Painting" style="display:block;margin:0 auto;"></a></div>
+    <div class="mobile-nav__container"></div>
+    <ul class="mobile-nav__contact list-unstyled">
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:josh@timnathpainting.com">josh@timnathpainting.com</a></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:9702368271">(970) 236-8271</a></li>
+    </ul>
+  </div>
+</div>
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+  <span class="scroll-to-top__text">back top</span>
+  <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+</a>
+
+<script src="/assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+<script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendors/wow/wow.js"></script>
+<script src="/assets/js/wallox.js"></script>
+<script>
+function setActiveNav() {
+  var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+  document.querySelectorAll('.main-menu__list > li').forEach(function(li) {
+    li.classList.remove('current');
+    var a = li.querySelector('a');
+    if (!a) return;
+    var href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+    if (!href || href === '#/' || href === '#') return;
+    if (path === href || (href.length > 1 && path.startsWith(href))) li.classList.add('current');
+  });
+}
+setActiveNav(); setTimeout(setActiveNav, 200);
+</script>
+<script>
+(function () {
+  var activeTag = 'all';
+
+  function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption || '';
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  document.getElementById('lightbox-close').addEventListener('click', function () {
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lightbox-img').src = '';
+  });
+  document.getElementById('lightbox').addEventListener('click', function (e) {
+    if (e.target === this) {
+      this.classList.remove('open');
+      document.getElementById('lightbox-img').src = '';
+    }
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      document.getElementById('lightbox').classList.remove('open');
+      document.getElementById('lightbox-img').src = '';
+    }
+  });
+
+  function setFilter(tag) {
+    activeTag = tag;
+    document.querySelectorAll('#filterBar .filter-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.tag === tag);
+    });
+    document.querySelectorAll('.gallery-card').forEach(function (card) {
+      var tags = JSON.parse(card.dataset.tags || '[]');
+      card.style.display = (tag === 'all' || tags.indexOf(tag) !== -1) ? '' : 'none';
+    });
+  }
+
+  function buildFilterBar(photos) {
+    var bar = document.getElementById('filterBar');
+    var tags = [];
+    photos.forEach(function (p) {
+      (p.tags || []).forEach(function (t) {
+        if (tags.indexOf(t) === -1) tags.push(t);
+      });
+    });
+    bar.innerHTML = '<button class="filter-btn active" data-tag="all">All Projects</button>';
+    tags.forEach(function (tag) {
+      var btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.tag = tag;
+      btn.textContent = tag;
+      bar.appendChild(btn);
+    });
+    bar.querySelectorAll('.filter-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () { setFilter(this.dataset.tag); });
+    });
+  }
+
+  function renderPhotos(photos) {
+    var container = document.getElementById('galleryContainer');
+    if (!photos.length) {
+      container.innerHTML = '<div class="gallery-empty"><i class="fa-regular fa-images"></i><p>No photos yet. Check back soon!</p></div>';
+      return;
+    }
+    container.innerHTML = '<div class="gallery-grid" id="galleryGrid"></div>';
+    var grid = document.getElementById('galleryGrid');
+    photos.forEach(function (p) {
+      var card = document.createElement('div');
+      card.className = 'gallery-card';
+      card.dataset.tags = JSON.stringify(p.tags || []);
+
+      var img = document.createElement('img');
+      img.src = '/api/photo/' + p.id;
+      img.alt = p.title || 'Project photo';
+      img.loading = 'lazy';
+      img.addEventListener('click', function () { openLightbox('/api/photo/' + p.id, p.title || ''); });
+
+      var body = document.createElement('div');
+      body.className = 'gallery-card-body';
+      if (p.title) {
+        var titleEl = document.createElement('div');
+        titleEl.className = 'gallery-card-title';
+        titleEl.textContent = p.title;
+        body.appendChild(titleEl);
+      }
+      var tagsEl = document.createElement('div');
+      tagsEl.className = 'gallery-card-tags';
+      (p.tags || []).forEach(function (t) {
+        var span = document.createElement('span');
+        span.className = 'gallery-tag';
+        span.dataset.tag = t;
+        span.textContent = t;
+        span.addEventListener('click', function () { setFilter(t); });
+        tagsEl.appendChild(span);
+      });
+      body.appendChild(tagsEl);
+
+      card.appendChild(img);
+      card.appendChild(body);
+      grid.appendChild(card);
+    });
+  }
+
+  fetch('/api/photos')
+    .then(function (r) { return r.json(); })
+    .then(function (data) {
+      var photos = data.photos || [];
+      buildFilterBar(photos);
+      renderPhotos(photos);
+    })
+    .catch(function (err) {
+      document.getElementById('galleryContainer').innerHTML =
+        '<div class="gallery-empty"><i class="fa-solid fa-triangle-exclamation"></i><p>Failed to load photos. Please refresh the page.</p></div>';
+      console.error('Gallery load error:', err);
+    });
+}());
+</script>
+</body>
+</html>

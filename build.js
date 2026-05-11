@@ -8,7 +8,7 @@
 
 const fs   = require('fs');
 const path = require('path');
-const { CLIENT, SERVICES, CITIES, SERVICE_DATA } = require('./_build-data.js');
+const { CLIENT, SERVICES, CITIES, SERVICE_DATA, CITY_DATA } = require('./_build-data.js');
 const T = require('./build-templates.js');
 
 const ROOT = __dirname;
@@ -51,8 +51,17 @@ function write(relPath, html) {
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
 
-// Copy coming-soon landing page to root
-const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
+// Root index.html — redirect to homepage
+fs.writeFileSync(path.join(DIST, 'index.html'),
+`<!DOCTYPE html><html><head><meta charset="UTF-8">
+<meta http-equiv="refresh" content="0;url=/home/">
+<link rel="canonical" href="/home/">
+<title>Timnath Painting | Northern Colorado\'s Premium Painting Contractor</title>
+</head><body><a href="/home/">Click here if you are not redirected</a></body></html>`, 'utf8');
+console.log('Root redirect written.');
+
+// Copy coming-soon landing page to root (DISABLED — site is live)
+/* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
   if (fs.existsSync(path.join(COMING_SOON, 'favicon.ico'))) fs.copyFileSync(path.join(COMING_SOON, 'favicon.ico'), path.join(DIST, 'favicon.ico'));
@@ -62,7 +71,14 @@ if (fs.existsSync(COMING_SOON)) {
   csHtml = csHtml.replace(/(["'])assets\//g, '$1/landing-assets/');
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
-}
+} */
+// Remove _worker.js and _routes.json — Pages Functions handle routing now
+// _worker.js in dist/ disables ALL Pages Functions (CF limitation)
+const workerFile = path.join(DIST, '_worker.js');
+const routesFile = path.join(DIST, '_routes.json');
+if (fs.existsSync(workerFile)) fs.unlinkSync(workerFile);
+if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
+
 console.log('Assets copied.\n');
 
 // â"€â"€ HOMEPAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
@@ -560,7 +576,7 @@ function buildServiceAreas() {
   const cityGrid = CITIES.map(c => `
   <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#f4ede4;padding:25px;border-radius:8px;margin-bottom:20px;">
-      <h4 style="margin-bottom:15px;">${c.label}, CO</h4>
+      <h4 style="margin-bottom:15px;"><a href="/areas-served/${c.slug}/index.html" style="color:#201B10;text-decoration:none;">${c.label}, CO</a></h4>
       <ul class="list-unstyled" style="font-size:14px;line-height:2;">
         ${SERVICES.map(s => `<li><a href="/${s.slug}/${c.slug}/index.html">${s.label}</a></li>`).join('')}
       </ul>
@@ -641,8 +657,308 @@ ${T.contactFormSection()}`;
   write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.')}
 ${T.wrapBody(content)}`);
 }
+// ══ CITY HUB PAGES ══════════════════════════════════════════════════════════
+function buildCityHub(city) {
+  const d = CITY_DATA[city.slug];
+  if (!d) { console.warn('No city data for', city.slug); return; }
+
+  const serviceFeatures = SERVICES.map(s => `
+    <li style="display:flex;align-items:flex-start;gap:14px;padding:14px 0;border-bottom:1px solid #e4dacc;">
+      <div style="flex-shrink:0;width:32px;height:32px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:2px;">
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <div>
+        <div style="font-weight:700;color:#201B10;margin-bottom:4px;">
+          <a href="/${s.slug}/${city.slug}/index.html" style="color:#201B10;text-decoration:none;">${s.label} in ${d.label}, CO</a>
+        </div>
+        <div style="color:#5a5650;font-size:14px;line-height:1.6;">${s.tagline} <a href="/${s.slug}/${city.slug}/index.html" style="color:#AE360E;font-size:13px;">Learn more &rarr;</a></div>
+      </div>
+    </li>`).join('');
+
+  const otherCities = CITIES.filter(c => c.slug !== city.slug)
+    .map(c => `<a href="/areas-served/${c.slug}/index.html" style="display:inline-block;margin:4px 4px 4px 0;padding:6px 14px;background:#f4ede4;border-radius:4px;font-size:13px;color:#201B10;text-decoration:none;border:1px solid #e4dacc;">${c.label}</a>`).join('');
+
+  const faqSchema = d.faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }));
+  const schema = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'LocalBusiness',
+      name: CLIENT.name,
+      telephone: CLIENT.phone,
+      email: CLIENT.email,
+      url: `https://timnathpainting.com/areas-served/${city.slug}/`,
+      areaServed: `${d.label}, ${d.state}`,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Timnath',
+        addressRegion: 'CO',
+        postalCode: CLIENT.zip,
+        addressCountry: 'US'
+      }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqSchema
+    }
+  ];
+
+  const content = `
+${T.topbar()}
+<!-- HEADER -->
+${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-served/index.html">Areas Served</a></li><li><span>${d.label}</span></li>`)}
+
+<script type="application/ld+json">${JSON.stringify(schema)}</script>
+
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="row gutter-y-30">
+
+      <!-- MAIN CONTENT -->
+      <div class="col-lg-8">
+        <div style="margin-bottom:32px;">
+          <h1 style="font-size:32px;font-weight:700;color:#201B10;margin-bottom:10px;">Painting Services in ${d.label}, CO</h1>
+          <p style="font-size:15px;color:#5a5650;margin-bottom:0;"><strong>${d.context}.</strong></p>
+        </div>
+
+        ${d.intro.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:18px;">${p}</p>`).join('')}
+
+        <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+        <div style="margin-bottom:32px;">
+          <h6 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">what we offer</h6>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Our Services in ${d.label}, CO</h2>
+          <ul style="list-style:none;padding:0;margin:0;border-top:1px solid #e4dacc;">
+            ${serviceFeatures}
+          </ul>
+        </div>
+
+        <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+        <div style="margin-bottom:32px;">
+          <h6 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</h6>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions — ${d.label}, CO</h2>
+          ${T.faqBlock(d.faqs, city.slug + '-faq')}
+        </div>
+
+        <div style="background:#201B10;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:32px;">
+          <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get Started in ${d.label}?</h4>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond within minutes and always provide free on-site quotes.</p>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4">
+        <div style="background:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
+          <h4 style="margin-bottom:16px;color:#201B10;">Get a Free Quote</h4>
+          <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
+            <li><i class="fa-solid fa-phone" style="color:#AE360E;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#201B10;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:#AE360E;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:#AE360E;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
+          </ul>
+          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
+        </div>
+
+        <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
+          <h5 style="color:#AE360E;margin-bottom:14px;font-size:16px;">Why Timnath Painting</h5>
+          <ul class="list-unstyled" style="line-height:2.2;margin:0;">
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Free On-Site Quotes</li>
+          </ul>
+        </div>
+
+        <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;">
+          <h5 style="color:#201B10;margin-bottom:14px;font-size:15px;">Other Areas We Serve</h5>
+          <div>${otherCities}</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+${T.contactFormSection()}`;
+
+  write(`areas-served/${city.slug}/index.html`,
+    `${T.htmlHead(
+      `Painting Services in ${d.label}, CO | Timnath Painting`,
+      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 236-8271.`
+    )}
+${T.wrapBody(content)}`);
+}
+
+// ══ GALLERY PAGE ══════════════════════════════════════════════════════════
+function buildGallery_OLD() { // OLD — replaced by template-based version below
+  const galleryCSS = `
+.gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
+.filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.filter-btn:hover,.filter-btn.active{background:#AE360E;border-color:#AE360E;color:#fff;}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px;}
+.gallery-card{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.08);transition:transform 0.2s,box-shadow 0.2s;}
+.gallery-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,0.14);}
+.gallery-card img{width:100%;height:220px;object-fit:cover;display:block;cursor:pointer;}
+.gallery-card-body{padding:14px 16px;}
+.gallery-card-title{font-weight:600;font-size:14px;color:#201B10;margin-bottom:8px;}
+.gallery-card-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.gallery-tag{background:#f4ede4;color:#AE360E;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px;text-transform:uppercase;letter-spacing:0.5px;cursor:pointer;}
+.gallery-tag:hover{background:#AE360E;color:#fff;}
+#lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:20px;}
+#lightbox.open{display:flex;}
+#lightbox img{max-height:90vh;max-width:90vw;object-fit:contain;border-radius:4px;}
+#lightbox-close{position:absolute;top:20px;right:28px;color:#fff;font-size:32px;cursor:pointer;line-height:1;z-index:10000;}
+#lightbox-caption{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);color:#fff;font-size:14px;background:rgba(0,0,0,0.6);padding:8px 18px;border-radius:4px;white-space:nowrap;max-width:90vw;overflow:hidden;text-overflow:ellipsis;}
+.gallery-empty{text-align:center;padding:80px 20px;color:#999;}
+.gallery-empty i{font-size:48px;color:#e4dacc;margin-bottom:16px;display:block;}
+.gallery-loading{text-align:center;padding:80px 20px;}
+.gallery-loading .spinner{width:40px;height:40px;border:3px solid #f4ede4;border-top-color:#AE360E;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px;}
+@keyframes spin{to{transform:rotate(360deg);}}`;
+
+  const content = `
+${T.topbar()}
+<!-- HEADER -->
+${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
+
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">our work</h6></div>
+      <h3 class="sec-title__title">Completed Projects</h3>
+      <p style="color:#5a5650;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">Browse our completed painting projects across Northern Colorado. Click a tag to filter by project type.</p>
+    </div>
+    <div class="gallery-filter-bar" id="filterBar">
+      <button class="filter-btn active" data-tag="all">All Projects</button>
+    </div>
+    <div id="galleryContainer">
+      <div class="gallery-loading"><div class="spinner"></div><p style="color:#999;font-size:14px;">Loading photos...</p></div>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox">
+  <span id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-caption"></div>
+</div>
+
+${T.contactFormSection()}`;
+
+  const head = T.htmlHead('Project Gallery | Timnath Painting', 'Browse completed painting projects by Timnath Painting across Northern Colorado. Exterior, interior, HOA, commercial and more.');
+  const fullPage = head.replace('</head>', `<style>${galleryCSS}</style></head>`);
+
+  const bodyScript = `
+<script>
+(function() {
+  let activeTag = 'all';
+  function renderPhotos(photos) {
+    const container = document.getElementById('galleryContainer');
+    if (!photos.length) {
+      container.innerHTML = '<div class="gallery-empty"><i class="fa-regular fa-images"></i><p>No photos yet. Check back soon!</p></div>';
+      return;
+    }
+    container.innerHTML = '<div class="gallery-grid" id="galleryGrid"></div>';
+    const grid = document.getElementById('galleryGrid');
+    photos.forEach(function(p) {
+      const card = document.createElement('div');
+      card.className = 'gallery-card';
+      card.dataset.tags = JSON.stringify(p.tags || []);
+      const tagsHtml = (p.tags || []).map(t => '<span class="gallery-tag" data-tag="'+t+'">'+t+'</span>').join('');
+      card.innerHTML = '<img src="/api/photo/'+p.id+'" alt="'+(p.title||'Project photo')+'" loading="lazy" onclick="openLightbox(\'/api/photo/'+p.id+'\',\''+(p.title||'').replace(/'/g,"\\'")+'\')"><div class="gallery-card-body">'+(p.title?'<div class="gallery-card-title">'+p.title+'</div>':'')+'<div class="gallery-card-tags">'+tagsHtml+'</div></div>';
+      grid.appendChild(card);
+    });
+    document.querySelectorAll('.gallery-tag').forEach(function(el) {
+      el.addEventListener('click', function() { setFilter(this.dataset.tag); });
+    });
+  }
+  function buildFilterBar(photos) {
+    const bar = document.getElementById('filterBar');
+    const tags = new Set();
+    photos.forEach(p => (p.tags||[]).forEach(t => tags.add(t)));
+    bar.innerHTML = '<button class="filter-btn active" data-tag="all">All Projects</button>';
+    tags.forEach(function(tag) {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn'; btn.dataset.tag = tag; btn.textContent = tag;
+      bar.appendChild(btn);
+    });
+    bar.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() { setFilter(this.dataset.tag); });
+    });
+  }
+  function setFilter(tag) {
+    activeTag = tag;
+    document.querySelectorAll('#filterBar .filter-btn').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.tag === tag);
+    });
+    document.querySelectorAll('.gallery-card').forEach(function(card) {
+      const tags = JSON.parse(card.dataset.tags||'[]');
+      card.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
+  }
+  window.openLightbox = function(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox').classList.add('open');
+  };
+  document.getElementById('lightbox-close').onclick = function() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.getElementById('lightbox-img').src = '';
+  };
+  document.getElementById('lightbox').onclick = function(e) {
+    if (e.target === this) { this.classList.remove('open'); document.getElementById('lightbox-img').src = ''; }
+  };
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { document.getElementById('lightbox').classList.remove('open'); document.getElementById('lightbox-img').src = ''; }
+  });
+  fetch('/api/photos').then(r => r.json()).then(function(data) {
+    const photos = data.photos || [];
+    buildFilterBar(photos);
+    renderPhotos(photos);
+  }).catch(function() {
+    document.getElementById('galleryContainer').innerHTML = '<div class="gallery-empty"><i class="fa-solid fa-triangle-exclamation"></i><p>Failed to load photos.</p></div>';
+  });
+})();
+<\/script>`;
+
+  const wrapped = T.wrapBody(content).replace('</body>', bodyScript + '\n</body>');
+  write('gallery/index.html', fullPage + '\n' + wrapped);
+}
+
+function buildGallery() {
+  // Read clean source template, inject header+footer partials, write to dist
+  let html = fs.readFileSync(path.join(ROOT, 'build-gallery-template.html'), 'utf8');
+  html = html.replace('<!-- HEADER -->', HEADER).replace('<!-- FOOTER -->', FOOTER);
+  const dest = path.join(DIST, 'gallery', 'index.html');
+  ensureDir(path.dirname(dest));
+  fs.writeFileSync(dest, html, 'utf8');
+  console.log('Built: gallery/index.html');
+}
+
+// ══ UPLOAD ADMIN PAGE ═════════════════════════════════════════════════════════
+function buildUploadAdmin() {
+  // Read the pre-built upload page from the dist template file if it exists,
+  // otherwise write the standalone file directly (not injected through wrapBody
+  // since it has its own minimal shell with no site chrome).
+  const uploadHtml = require('fs').readFileSync(
+    require('path').join(__dirname, 'build-upload-template.html'), 'utf8'
+  );
+  const dest = require('path').join(DIST, 'upload', 'index.html');
+  require('fs').mkdirSync(require('path').dirname(dest), { recursive: true });
+  require('fs').writeFileSync(dest, uploadHtml, 'utf8');
+  console.log('Built: upload/index.html');
+}
+
 buildServiceAreas();
 buildServicesHub();
+CITIES.forEach(buildCityHub);
+buildGallery();
+buildUploadAdmin();
 
 console.log('\nâœ... All pillar pages built successfully.');
 

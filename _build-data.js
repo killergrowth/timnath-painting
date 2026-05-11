@@ -151,4 +151,111 @@ Timnath Painting specializes in exterior staining for natural wood surfaces acro
   },
 };
 
-module.exports = { CLIENT, SERVICES, CITIES, SERVICE_DATA };
+const CITY_DATA = {
+  'timnath-co': {
+    label: 'Timnath',
+    state: 'CO',
+    context: 'Fast-growing community along the I-25 corridor with high-end new construction and HOA neighborhoods',
+    intro: `Timnath is one of the fastest-growing communities in Northern Colorado, with new construction neighborhoods and established HOA communities spreading east of I-25. The homes here are newer and premium — and the expectation for exterior appearance matches. Colorado's 28+ freeze-thaw cycles and intense UV exposure hit every home in Timnath the same way, regardless of age. Paint systems that aren't designed for Zone 5b conditions fail early.\n\nTimnath Painting is based here. We know the neighborhoods, the HOA requirements, and the local conditions better than anyone. Licensed, Insured, and Eco-Painter Certified with $2M general liability coverage.`,
+    faqs: [
+      { q: 'Do you serve the Timnath area?', a: 'Yes — Timnath is our home base. We serve all neighborhoods in Timnath including newer HOA communities east of I-25. We\x27re on-site in Timnath regularly and can typically schedule faster here than in other cities.' },
+      { q: 'Do you work with HOAs in Timnath?', a: 'Yes. Many Timnath neighborhoods have HOA color approval requirements. We handle the approval documentation, provide color samples, and submit to the architectural review committee on your behalf. Most HOA approvals in this area take 2–4 weeks, which we build into every project timeline.' },
+      { q: 'How long does exterior paint last on new construction in Timnath?', a: 'Builder-grade paint applied on new construction homes typically lasts 4–6 years before visible chalking, fading, and edge failures appear. We install premium Sherwin-Williams and Benjamin Moore systems rated for 7–10 years using proper prep and two-coat minimum application.' },
+      { q: 'Can you match existing HOA-approved colors?', a: 'Yes. We use spectrophotometer color matching and work directly with Sherwin-Williams and Benjamin Moore reps to replicate existing approved colors precisely. Accurate color matching is essential for HOA compliance and multi-unit consistency.' },
+      { q: 'How far in advance should I book exterior painting in Timnath?', a: 'Spring and early summer slots fill 4–8 weeks out in Timnath. We recommend contacting us in March or April for May–June scheduling. We do accept late-season projects through October when weather permits.' },
+    ],
+  },
+  'windsor-co': {
+    label: 'Windsor',
+    state: 'CO',
+    context: 'Established and growing community with lakefront properties, HOA neighborhoods, and premium residential builds',
+    intro: `Windsor combines established neighborhoods near Lake Windsor with newer HOA communities growing along the US-34 and I-25 corridors. The range of home styles — from lakefront properties to newer planned communities — means painting needs vary widely. What doesn\'t vary is Colorado\'s climate: 28+ freeze-thaw cycles per year, intense UV at altitude, and temperature swings that push coating systems to their limits.\n\nTimnath Painting serves all of Windsor with the same licensed, insured, Eco-Painter Certified crew we bring to every project. No subcontractors. No volume rushing. Premium Sherwin-Williams and Benjamin Moore coatings with $2M general liability coverage.`,
+    faqs: [
+      { q: 'Do you serve Windsor, CO?', a: 'Yes. Timnath Painting serves all of Windsor including neighborhoods near Lake Windsor, Eastman Park, and newer communities along Harmony Road and the I-25 corridor. We\'re in Windsor regularly and can provide on-site quotes quickly.' },
+      { q: 'Do you handle HOA color approvals in Windsor?', a: 'Yes. Windsor has a number of HOA communities with strict color approval requirements. We handle the full documentation process — color samples, approval submissions, and compliance letters — on your behalf.' },
+      { q: 'What exterior paint should I use on my Windsor home?', a: 'We specify Sherwin-Williams Duration, Emerald, or Benjamin Moore Aura for Windsor exteriors. These are 100% acrylic latex coatings formulated for Colorado\'s UV intensity and freeze-thaw cycling. Builder-grade or budget paints fail 2–3 years faster in this climate.' },
+      { q: 'How long does exterior painting take in Windsor?', a: 'Most residential exterior painting projects in Windsor take 3–5 days from first day of prep to final coat. Larger homes, significant repair work, or HOA multi-unit projects run longer. We provide specific timelines during the quoting process.' },
+      { q: 'Do you offer fence staining in Windsor?', a: 'Yes. Fence staining is one of our most common services in Windsor. We use penetrating oil and water-based stains that protect wood from Windsor\'s UV exposure and moisture cycles. Most fences need restaining every 3–5 years.' },
+    ],
+  },
+  'severance-co': {
+    label: 'Severance',
+    state: 'CO',
+    context: 'Small but rapidly growing town north of Windsor with new residential development and rural properties',
+    intro: `Severance has grown rapidly over the past decade, with new residential subdivisions filling in around its rural roots north of Windsor. Whether you have a newer build in a planned community or an older home on a larger lot, Northern Colorado\'s climate treats every home the same — freeze-thaw cycles, high-altitude UV, and wind-driven moisture test exterior paint systems every single year.\n\nTimnath Painting serves Severance with full exterior and interior painting, fence staining, and commercial work. Licensed, Insured, Eco-Painter Certified. $2M general liability. We bring the same standards to every project regardless of size.`,
+    faqs: [
+      { q: 'Does Timnath Painting serve Severance, CO?', a: 'Yes. We serve Severance and the surrounding Weld County communities. Severance is within our standard service area and we\'re able to schedule projects there without travel surcharges.' },
+      { q: 'How does Colorado\'s climate affect exterior paint in Severance?', a: 'Northern Colorado sees 28+ freeze-thaw cycles annually. UV radiation at altitude is 10–15% more intense than at sea level. These factors degrade budget exterior coatings in 3–4 years. We use premium paint systems rated for 7–10 years and apply proper prep including pressure washing, scraping, caulking, and spot priming before any topcoat.' },
+      { q: 'Do you do fence staining in Severance?', a: 'Yes. Fence staining is common in Severance where newer homes have cedar and pine fencing. We use penetrating semi-transparent stains that protect the wood grain through Northern Colorado winters and summers, lasting 3–5 years with proper prep.' },
+      { q: 'Can you paint the exterior of an older farmhouse or rural property in Severance?', a: 'Yes. Older homes and rural properties often have more prep work involved — failed paint, wood rot, compromised caulk, and weathered surfaces. We assess all of this upfront and factor it into the quote. We don\'t charge extra for thorough prep; we treat it as part of every project.' },
+      { q: 'How do I get a quote for exterior painting in Severance?', a: 'Call (970) 236-8271 or use the contact form on this page. We schedule on-site assessments in Severance and provide written quotes within 24 hours of the visit. We respond to all inquiries within a few minutes during business hours.' },
+    ],
+  },
+  'fort-collins-co': {
+    label: 'Fort Collins',
+    state: 'CO',
+    context: 'Larimer County seat with a diverse housing stock ranging from historic Craftsman homes to newer neighborhoods',
+    intro: `Fort Collins is the largest city in Northern Colorado and has one of the most diverse housing stocks in the region — historic Craftsman and Victorian homes in Old Town, mid-century builds in established neighborhoods, and newer subdivisions spreading south and east. Each era of construction comes with its own set of coating challenges. Historic homes require careful prep, lead paint awareness, and specialty primers. Newer builds need proper topcoat systems, not just builder repaints.\n\nTimnath Painting serves Fort Collins with the same standards we apply everywhere — Licensed, Insured, Eco-Painter Certified, $2M general liability. Sherwin-Williams and Benjamin Moore coatings. No subcontractors.`,
+    faqs: [
+      { q: 'Does Timnath Painting serve Fort Collins?', a: 'Yes. We serve all areas of Fort Collins including Old Town, Midtown, and newer developments in southeast Fort Collins. Fort Collins is within our standard service area with no travel surcharges.' },
+      { q: 'Can you paint historic homes in Old Town Fort Collins?', a: 'Yes. Older homes in Old Town require special attention — lead paint testing and containment on pre-1978 homes, oil-based primers for chalky or bare wood surfaces, and careful prep to avoid damaging historic trim detail. We\'re experienced with the specific challenges of older Fort Collins housing stock.' },
+      { q: 'How long does exterior paint last on Fort Collins homes?', a: 'Most Fort Collins homes see the same Northern Colorado climate as the rest of the region — 28+ freeze-thaw cycles, intense UV, and temperature swings. Budget paint fails in 3–4 years. Premium systems using Sherwin-Williams Duration or Benjamin Moore Aura last 7–10 years with proper prep.' },
+      { q: 'Do you offer commercial painting in Fort Collins?', a: 'Yes. We provide commercial exterior and interior painting for Fort Collins businesses, including strip malls, office buildings, and multi-family properties. We schedule around business hours and provide COI within 24 hours.' },
+      { q: 'What Fort Collins neighborhoods do you serve?', a: 'We serve all of Fort Collins — Old Town, Midtown, Fossil Creek, Harmony, Rigden Farm, Sidehill, and new developments in southeast and southwest Fort Collins. Call (970) 236-8271 for availability in your specific neighborhood.' },
+    ],
+  },
+  'loveland-co': {
+    label: 'Loveland',
+    state: 'CO',
+    context: 'Mid-sized Larimer County city with established neighborhoods, growing south end, and scenic Front Range setting',
+    intro: `Loveland sits along the Front Range at the foot of the Big Thompson Canyon — scenic, but that also means direct UV exposure, wind, and temperature swings that challenge exterior paint systems year-round. The city has a mix of established mid-century neighborhoods near downtown and newer developments spreading south and east toward Johnstown. Both require proper exterior coating systems to survive Northern Colorado's climate.\n\nTimnath Painting serves Loveland with the same Eco-Painter Certified crew, premium Sherwin-Williams and Benjamin Moore coatings, and thorough prep that protects every project for 7–10 years. Licensed, Insured, $2M general liability.`,
+    faqs: [
+      { q: 'Does Timnath Painting serve Loveland, CO?', a: 'Yes. Loveland is within our standard service area. We serve all areas of Loveland including established neighborhoods near downtown, the south end near the Centerra area, and outlying properties.' },
+      { q: 'How does the Front Range climate affect exterior paint in Loveland?', a: 'Loveland\'s location at the base of the Big Thompson Canyon means increased wind exposure on top of Northern Colorado\'s standard UV and freeze-thaw cycles. Paint systems need to be flexible enough to handle thermal cycling and tough enough to resist UV degradation. We specify coatings rated for exactly these conditions.' },
+      { q: 'Do you stain fences and decks in Loveland?', a: 'Yes. Fence and deck staining is common in Loveland. We use penetrating semi-transparent stains that protect wood from UV damage and moisture, typically lasting 3–5 years. Decks on the south or west side of homes in Loveland may need attention sooner due to sun exposure.' },
+      { q: 'Can you paint older Loveland homes?', a: 'Yes. We handle older homes with the appropriate prep — scraping to stable substrate, oil-based or shellac primers on bare wood, elastomeric caulking on all gaps, and pressure washing before any coating goes on. Thorough prep is the difference between a 4-year job and a 10-year system.' },
+      { q: 'How do I get a painting quote in Loveland?', a: 'Call (970) 236-8271 or fill out the quote form on this page. We schedule on-site assessments in Loveland and provide written quotes within 24 hours. We respond to all quote requests within minutes during business hours.' },
+    ],
+  },
+  'greeley-co': {
+    label: 'Greeley',
+    state: 'CO',
+    context: 'Weld County seat and agricultural hub with a large and diverse housing stock',
+    intro: `Greeley is the Weld County seat and one of the larger cities in Northern Colorado, with a housing stock that ranges from older neighborhoods near downtown to newer developments spreading west and south. The agricultural and industrial roots of the city mean many properties have seen harder use than typical residential homes — and Colorado\'s climate doesn\'t take it easy on any of them. UV radiation, freeze-thaw cycles, and wind-driven dust and moisture accelerate coating breakdown across the region.\n\nTimnath Painting serves Greeley with the same standards: Licensed, Insured, Eco-Painter Certified, $2M general liability, premium Sherwin-Williams and Benjamin Moore coatings.`,
+    faqs: [
+      { q: 'Does Timnath Painting serve Greeley, CO?', a: 'Yes. We serve Greeley and the surrounding Weld County area. Greeley is within our standard service area.' },
+      { q: 'Do you paint commercial properties in Greeley?', a: 'Yes. We provide commercial exterior and interior painting in Greeley for office buildings, retail properties, and multi-family housing. We schedule around business operations and carry $2M general liability with COI available on request.' },
+      { q: 'How do you prep older Greeley homes for exterior painting?', a: 'Older homes in Greeley often have multiple layers of failed paint, weathered wood, and outdated caulking. We scrape all loose and peeling material to stable substrate, repair damaged wood, apply appropriate primers, and re-caulk all joints before any topcoat goes on. There are no shortcuts in prep.' },
+      { q: 'What exterior paint works best in Greeley\'s climate?', a: 'We specify Sherwin-Williams Duration, Emerald, or Benjamin Moore Aura for Greeley exteriors. These 100% acrylic coatings are formulated for high UV exposure and thermal cycling. They outperform budget paints by 3–5 years in Northern Colorado conditions.' },
+      { q: 'Do you offer fence and deck staining in Greeley?', a: 'Yes. Fence and deck staining is available in Greeley. We use penetrating oil and water-based stains that protect wood from Greeley\'s UV exposure and moisture cycles, typically lasting 3–5 years per application.' },
+    ],
+  },
+  'wellington-co': {
+    label: 'Wellington',
+    state: 'CO',
+    context: 'Small town north of Fort Collins with rural properties and newer residential subdivisions',
+    intro: `Wellington sits at the northern end of the I-25 corridor, a small town that has grown considerably with families looking for more space north of Fort Collins. The mix here includes acreage properties, older ranch-style homes, and newer subdivision builds. All of them share the same Northern Colorado climate conditions — and the same need for coating systems that actually hold up to freeze-thaw cycles, wind, and intense UV radiation at altitude.\n\nTimnath Painting serves Wellington with no travel surcharge and the same full-service approach: Licensed, Insured, Eco-Painter Certified, $2M general liability. We bring the prep and the product to make it last.`,
+    faqs: [
+      { q: 'Does Timnath Painting serve Wellington, CO?', a: 'Yes. Wellington is within our standard service area. We serve residential and commercial properties in Wellington with no travel surcharge.' },
+      { q: 'Can you paint acreage properties and outbuildings in Wellington?', a: 'Yes. Rural properties, detached garages, barns, and outbuildings are within our scope. We assess each structure and apply appropriate coatings — exterior latex for residential structures, and elastomeric or industrial coatings for metal buildings and agricultural structures where appropriate.' },
+      { q: 'How does wind affect exterior paint in Wellington?', a: 'Wellington is exposed to consistent Front Range winds that accelerate paint breakdown, especially on north and west-facing surfaces. Wind-driven moisture and debris abrade coating surfaces over time. This makes proper prep — scraping, priming, and caulking — even more important than it is in more sheltered locations.' },
+      { q: 'Do you stain fences and decks in Wellington?', a: 'Yes. Fence and deck staining is common in Wellington where wood fencing is standard on acreage and suburban properties alike. We use penetrating stains that hold up to Northern Colorado\'s weather cycles, lasting 3–5 years per application.' },
+      { q: 'How do I book exterior painting in Wellington?', a: 'Call (970) 236-8271 or submit the quote form on this page. We schedule on-site assessments in Wellington and provide written quotes within 24 hours of the visit.' },
+    ],
+  },
+  'johnstown-co': {
+    label: 'Johnstown',
+    state: 'CO',
+    context: 'Fast-growing I-25 corridor community with newer residential developments and commercial growth',
+    intro: `Johnstown has grown significantly along the I-25 corridor between Loveland and Greeley, with newer residential neighborhoods and commercial development continuing to expand. Most homes here are newer builds — but newer doesn\'t mean immune to Colorado\'s climate. Freeze-thaw cycles, intense UV, and temperature swings that can exceed 60°F in a single day stress even recently applied builder-grade paint systems.\n\nTimnath Painting serves Johnstown with the same approach: thorough prep, premium Sherwin-Williams and Benjamin Moore coatings rated for 7–10 years, and an Eco-Painter Certified crew. Licensed, Insured, $2M general liability.`,
+    faqs: [
+      { q: 'Does Timnath Painting serve Johnstown, CO?', a: 'Yes. Johnstown is within our standard service area. We serve residential and commercial properties throughout Johnstown.' },
+      { q: 'How long does builder paint last on newer Johnstown homes?', a: 'Builder-grade paint applied during construction typically shows chalking, fading, and edge failures within 4–6 years in Northern Colorado. We replace it with premium two-coat systems using Sherwin-Williams Duration or Benjamin Moore Aura — rated for 7–10 years with proper surface prep.' },
+      { q: 'Do you do HOA exterior painting in Johnstown?', a: 'Yes. Several Johnstown communities have HOA requirements for exterior painting. We handle color approval documentation, provide compliant color samples, and submit to architectural review committees. We\'ve worked with HOAs throughout Northern Colorado and understand the approval process.' },
+      { q: 'What commercial painting services do you offer in Johnstown?', a: 'We provide commercial exterior and interior painting for Johnstown businesses — retail, office, and multi-family properties. We schedule around business operations and carry $2M general liability insurance with COI available on request.' },
+      { q: 'How do I get a painting quote in Johnstown?', a: 'Call (970) 236-8271 or fill out the quote form on this page. We provide on-site assessments in Johnstown and written quotes within 24 hours. We respond to all inquiries within minutes during business hours.' },
+    ],
+  },
+};
+
+module.exports = { CLIENT, SERVICES, CITIES, SERVICE_DATA, CITY_DATA };

@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery Admin | Timnath Painting</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; margin: 0; min-height: 100vh; }
+
+/* ── Admin header ── */
+.admin-header {
+  background: #201B10; color: #fff; padding: 14px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  position: sticky; top: 0; z-index: 100;
+}
+.admin-header h1 { font-size: 17px; margin: 0; font-weight: 700; }
+.admin-header a { color: #AE360E; font-size: 13px; text-decoration: none; }
+.admin-body { max-width: 1200px; margin: 0 auto; padding: 32px 20px; }
+
+/* ── Login ── */
+#loginScreen {
+  max-width: 360px; margin: 100px auto;
+  background: #fff; border-radius: 10px; padding: 40px 36px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+#loginScreen h2 { font-size: 22px; margin-bottom: 24px; text-align: center; }
+#loginScreen input {
+  width: 100%; padding: 11px 14px; border: 1px solid #ddd; border-radius: 6px;
+  font-size: 15px; margin-bottom: 14px; font-family: inherit;
+}
+#loginScreen button {
+  width: 100%; padding: 12px; background: #AE360E; color: #fff;
+  border: none; border-radius: 6px; font-size: 15px; font-weight: 700; cursor: pointer;
+}
+#loginError { color: #c0392b; font-size: 13px; text-align: center; margin-top: 10px; display: none; }
+
+/* ── Card shell ── */
+.card {
+  background: #fff; border-radius: 10px; padding: 28px 32px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 32px;
+}
+.card h2 { font-size: 18px; margin: 0 0 20px; display: flex; align-items: center; gap: 10px; }
+.card h2 .badge {
+  font-size: 12px; background: #f4ede4; color: #AE360E; padding: 3px 10px;
+  border-radius: 12px; font-weight: 700;
+}
+
+/* ── Drop zone ── */
+.drop-zone {
+  border: 2px dashed #ccc; border-radius: 8px; padding: 56px 20px;
+  text-align: center; cursor: pointer; transition: all 0.2s; background: #fafafa;
+  position: relative;
+}
+.drop-zone.drag-over { border-color: #AE360E; background: #fdf5f0; }
+.drop-zone i { font-size: 40px; color: #ccc; margin-bottom: 14px; display: block; }
+.drop-zone p { color: #888; font-size: 14px; margin: 4px 0; }
+.drop-zone strong { color: #AE360E; }
+#fileInput { display: none; }
+
+/* ── Upload queue ── */
+#uploadQueue { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+.queue-thumb {
+  position: relative; width: 100px; height: 100px;
+  border-radius: 8px; overflow: hidden; flex-shrink: 0;
+}
+.queue-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.queue-thumb .q-status {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-size: 22px; background: rgba(0,0,0,0.45); color: #fff;
+}
+.queue-thumb .q-status.uploading { background: rgba(174,54,14,0.7); }
+.queue-thumb .q-status.done { background: rgba(39,174,96,0.75); }
+.queue-thumb .q-status.error { background: rgba(192,57,43,0.75); }
+
+.upload-controls { display: flex; align-items: center; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
+#uploadAllBtn {
+  padding: 11px 28px; background: #AE360E; color: #fff;
+  border: none; border-radius: 6px; font-size: 15px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; gap: 8px;
+}
+#uploadAllBtn:disabled { background: #ccc; cursor: not-allowed; }
+#clearQueueBtn {
+  padding: 11px 20px; background: #f4ede4; color: #5a5650;
+  border: none; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer;
+}
+#uploadStatus { font-size: 14px; color: #5a5650; }
+
+/* ── Photo grid ── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+.photo-card {
+  background: #fff; border-radius: 8px; overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07); cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+.photo-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.13); }
+.photo-card img { width: 100%; height: 170px; object-fit: cover; display: block; }
+.photo-card-body { padding: 10px 12px; }
+.photo-card-title {
+  font-weight: 600; font-size: 13px; color: #201B10;
+  margin-bottom: 6px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.photo-card-tags { display: flex; flex-wrap: wrap; gap: 4px; min-height: 20px; }
+.tag-pill {
+  background: #f4ede4; color: #AE360E; font-size: 11px; font-weight: 700;
+  padding: 2px 9px; border-radius: 12px;
+}
+.photo-card-hint {
+  font-size: 11px; color: #bbb; margin-top: 6px; display: flex; align-items: center; gap: 5px;
+}
+.photo-card-delete {
+  position: absolute; top: 8px; right: 8px;
+  width: 28px; height: 28px; background: rgba(192,57,43,0.9); color: #fff;
+  border: none; border-radius: 50%; font-size: 12px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.15s;
+}
+.photo-card:hover .photo-card-delete { opacity: 1; }
+
+/* ── Edit modal ── */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.55); z-index: 9999;
+  align-items: center; justify-content: center; padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: #fff; border-radius: 12px; width: 100%; max-width: 520px;
+  max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.modal-img { width: 100%; height: 240px; object-fit: cover; display: block; }
+.modal-body { padding: 24px 28px 28px; }
+.modal-body h3 { font-size: 17px; margin: 0 0 20px; }
+.modal-body label {
+  display: block; font-size: 13px; font-weight: 600;
+  color: #5a5650; margin-bottom: 6px;
+}
+.modal-body input[type=text] {
+  width: 100%; padding: 10px 14px; border: 1px solid #ddd; border-radius: 6px;
+  font-size: 14px; font-family: inherit; margin-bottom: 20px;
+}
+.modal-body input[type=text]:focus { outline: none; border-color: #AE360E; }
+
+/* Tag chip input */
+.tag-input-wrap {
+  border: 1px solid #ddd; border-radius: 6px; padding: 8px 10px;
+  display: flex; flex-wrap: wrap; gap: 6px; cursor: text;
+  min-height: 46px; align-items: center; margin-bottom: 24px;
+}
+.tag-input-wrap:focus-within { border-color: #AE360E; }
+.tag-chip {
+  display: flex; align-items: center; gap: 5px;
+  background: #AE360E; color: #fff; font-size: 13px; font-weight: 600;
+  padding: 4px 10px 4px 12px; border-radius: 16px;
+}
+.tag-chip button {
+  background: none; border: none; color: rgba(255,255,255,0.8);
+  font-size: 14px; cursor: pointer; padding: 0; line-height: 1;
+  display: flex; align-items: center;
+}
+.tag-chip button:hover { color: #fff; }
+.tag-chip-input {
+  border: none; outline: none; font-size: 14px; font-family: inherit;
+  flex: 1; min-width: 120px; color: #201B10; padding: 2px 4px;
+  background: transparent;
+}
+.tag-hint { font-size: 12px; color: #bbb; margin-top: -16px; margin-bottom: 20px; }
+
+.modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
+.btn-save {
+  padding: 10px 24px; background: #AE360E; color: #fff;
+  border: none; border-radius: 6px; font-weight: 700; font-size: 14px; cursor: pointer;
+}
+.btn-save:hover { background: #962d0b; }
+.btn-cancel {
+  padding: 10px 20px; background: #f4ede4; color: #5a5650;
+  border: none; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer;
+}
+
+/* ── States ── */
+.loading-state { text-align: center; padding: 60px; color: #999; }
+.empty-state { text-align: center; padding: 60px; color: #bbb; }
+.empty-state i { font-size: 40px; margin-bottom: 12px; display: block; color: #e4dacc; }
+
+/* ── Toast ── */
+#toast {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: #201B10; color: #fff; padding: 12px 24px; border-radius: 8px;
+  font-size: 14px; font-weight: 600; z-index: 99999;
+  transition: transform 0.3s ease; pointer-events: none;
+  display: flex; align-items: center; gap: 8px;
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
+#toast.success i { color: #27ae60; }
+#toast.error i { color: #e74c3c; }
+</style>
+</head>
+<body>
+
+<!-- Toast -->
+<div id="toast"><i class="fa-solid fa-check"></i> <span id="toastMsg"></span></div>
+
+<!-- Login -->
+<div id="loginScreen">
+  <h2><i class="fa-solid fa-lock" style="color:#AE360E;margin-right:8px;"></i>Admin Access</h2>
+  <input type="password" id="passwordInput" placeholder="Enter admin password" autocomplete="current-password">
+  <button onclick="doLogin()">Sign In</button>
+  <div id="loginError">Incorrect password. Try again.</div>
+</div>
+
+<!-- Admin panel -->
+<div id="adminPanel" style="display:none;">
+  <div class="admin-header">
+    <h1><i class="fa-solid fa-images" style="color:#AE360E;margin-right:10px;"></i>Timnath Painting — Gallery Admin</h1>
+    <a href="/gallery/" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square" style="margin-right:5px;"></i>View public gallery</a>
+  </div>
+  <div class="admin-body">
+
+    <!-- Upload section -->
+    <div class="card">
+      <h2><i class="fa-solid fa-cloud-arrow-up" style="color:#AE360E;"></i> Upload Photos</h2>
+      <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+        <i class="fa-solid fa-images"></i>
+        <p><strong>Click to choose photos</strong> or drag and drop here</p>
+        <p>JPG, PNG, WebP &bull; Select as many as you want at once</p>
+        <p style="font-size:12px;color:#bbb;margin-top:6px;">Photos are auto-compressed. Add titles &amp; tags after uploading.</p>
+      </div>
+      <input type="file" id="fileInput" accept="image/*" multiple>
+
+      <div id="uploadQueue"></div>
+
+      <div class="upload-controls" id="uploadControls" style="display:none;">
+        <button id="uploadAllBtn" onclick="uploadAll()">
+          <i class="fa-solid fa-cloud-arrow-up"></i> Upload All
+        </button>
+        <button id="clearQueueBtn" onclick="clearQueue()">Clear</button>
+        <span id="uploadStatus"></span>
+      </div>
+    </div>
+
+    <!-- Photo grid -->
+    <div class="card">
+      <h2>
+        <i class="fa-solid fa-grip" style="color:#AE360E;"></i>
+        All Photos
+        <span class="badge" id="photoCountBadge">0</span>
+      </h2>
+      <p style="font-size:13px;color:#888;margin:-12px 0 20px;">Click any photo to add a title, description, or tags.</p>
+      <div id="photoGrid">
+        <div class="loading-state">
+          <i class="fa-solid fa-spinner fa-spin" style="font-size:28px;color:#AE360E;"></i>
+          <p style="margin-top:12px;font-size:14px;">Loading...</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit modal -->
+<div class="modal-overlay" id="editModal">
+  <div class="modal-box">
+    <img id="modalImg" src="" alt="" class="modal-img">
+    <div class="modal-body">
+      <h3>Edit Photo Details</h3>
+
+      <label>Title / Description <span style="font-weight:400;color:#bbb;">(optional)</span></label>
+      <input type="text" id="editTitle" placeholder="e.g. Exterior repaint — Windsor HOA">
+
+      <label>Tags</label>
+      <div class="tag-input-wrap" id="tagInputWrap" onclick="document.getElementById('tagInput').focus()">
+        <!-- chips injected here -->
+        <input type="text" class="tag-chip-input" id="tagInput" placeholder="Type a tag and press Enter or comma">
+      </div>
+      <p class="tag-hint">Press <strong>Enter</strong> or <strong>,</strong> to add a tag &bull; Click &times; to remove</p>
+
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeEditModal()">Cancel</button>
+        <button class="btn-save" onclick="saveEdit()"><i class="fa-solid fa-check"></i> Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SESSION_KEY = 'tp_admin_pw';
+let adminPassword = '';
+let editingId = null;
+let currentTags = [];
+let selectedFiles = [];
+
+// ── Toast ──────────────────────────────────────────────
+function toast(msg, type = 'success') {
+  const el = document.getElementById('toast');
+  const icon = el.querySelector('i');
+  icon.className = type === 'success' ? 'fa-solid fa-check' : 'fa-solid fa-triangle-exclamation';
+  el.className = 'show ' + type;
+  document.getElementById('toastMsg').textContent = msg;
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.classList.remove('show', 'success', 'error'); }, 3000);
+}
+
+// ── Auth ───────────────────────────────────────────────
+function init() {
+  const saved = sessionStorage.getItem(SESSION_KEY);
+  if (saved) { adminPassword = saved; showPanel(); }
+  else { document.getElementById('loginScreen').style.display = ''; }
+  document.getElementById('passwordInput').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+}
+
+function doLogin() {
+  const pw = document.getElementById('passwordInput').value.trim();
+  if (!pw) return;
+  adminPassword = pw;
+  sessionStorage.setItem(SESSION_KEY, pw);
+  document.getElementById('loginScreen').style.display = 'none';
+  showPanel();
+}
+
+function showPanel() {
+  document.getElementById('adminPanel').style.display = '';
+  setupDragDrop();
+  loadPhotos();
+}
+
+// ── File selection + queue ─────────────────────────────
+function setupDragDrop() {
+  const dz = document.getElementById('dropZone');
+  const fi = document.getElementById('fileInput');
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('drag-over'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('drag-over'));
+  dz.addEventListener('drop', e => {
+    e.preventDefault(); dz.classList.remove('drag-over');
+    handleFiles(Array.from(e.dataTransfer.files).filter(f => f.type.startsWith('image/')));
+  });
+  fi.addEventListener('change', () => { handleFiles(Array.from(fi.files)); fi.value = ''; });
+}
+
+function handleFiles(files) {
+  if (!files.length) return;
+  selectedFiles = [...selectedFiles, ...files];
+  renderQueue();
+}
+
+function renderQueue() {
+  const q = document.getElementById('uploadQueue');
+  const controls = document.getElementById('uploadControls');
+  if (!selectedFiles.length) { q.innerHTML = ''; controls.style.display = 'none'; return; }
+  controls.style.display = 'flex';
+  document.getElementById('uploadAllBtn').disabled = false;
+  document.getElementById('uploadStatus').textContent = `${selectedFiles.length} photo${selectedFiles.length !== 1 ? 's' : ''} ready`;
+  q.innerHTML = '';
+  selectedFiles.forEach((f, i) => {
+    const wrap = document.createElement('div');
+    wrap.className = 'queue-thumb';
+    wrap.id = `qthumb_${i}`;
+    const img = document.createElement('img');
+    img.src = URL.createObjectURL(f);
+    wrap.appendChild(img);
+    const status = document.createElement('div');
+    status.className = 'q-status';
+    status.style.display = 'none';
+    wrap.appendChild(status);
+    q.appendChild(wrap);
+  });
+}
+
+function clearQueue() {
+  selectedFiles = [];
+  renderQueue();
+}
+
+// ── Compress ───────────────────────────────────────────
+function compressImage(file, maxPx = 1200, quality = 0.78) {
+  return new Promise(resolve => {
+    const img = new Image();
+    const url = URL.createObjectURL(file);
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      let w = img.naturalWidth, h = img.naturalHeight;
+      if (w > maxPx || h > maxPx) {
+        if (w > h) { h = Math.round(h * maxPx / w); w = maxPx; }
+        else { w = Math.round(w * maxPx / h); h = maxPx; }
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      canvas.toBlob(blob => resolve(new File([blob], file.name, { type: 'image/jpeg' })), 'image/jpeg', quality);
+    };
+    img.src = url;
+  });
+}
+
+// ── Upload all ─────────────────────────────────────────
+async function uploadAll() {
+  if (!selectedFiles.length) return;
+  const btn = document.getElementById('uploadAllBtn');
+  const status = document.getElementById('uploadStatus');
+  btn.disabled = true;
+  let done = 0, failed = 0;
+
+  for (let i = 0; i < selectedFiles.length; i++) {
+    const thumb = document.getElementById(`qthumb_${i}`);
+    const statusEl = thumb ? thumb.querySelector('.q-status') : null;
+    if (statusEl) { statusEl.style.display = 'flex'; statusEl.className = 'q-status uploading'; statusEl.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>'; }
+    status.textContent = `Uploading ${i + 1} of ${selectedFiles.length}...`;
+
+    try {
+      const compressed = await compressImage(selectedFiles[i]);
+      const fd = new FormData();
+      fd.append('password', adminPassword);
+      fd.append('photo', compressed, compressed.name);
+      fd.append('title', '');
+      fd.append('tags', '');
+
+      const res = await fetch('/api/photos', { method: 'POST', body: fd });
+      const data = await res.json();
+
+      if (data.ok) {
+        done++;
+        if (statusEl) { statusEl.className = 'q-status done'; statusEl.innerHTML = '<i class="fa-solid fa-check"></i>'; }
+      } else if (res.status === 401) {
+        status.innerHTML = '<span style="color:#c0392b">Wrong password. Refresh to log in again.</span>';
+        sessionStorage.removeItem(SESSION_KEY);
+        return;
+      } else {
+        failed++;
+        if (statusEl) { statusEl.className = 'q-status error'; statusEl.innerHTML = '<i class="fa-solid fa-xmark"></i>'; }
+      }
+    } catch (e) {
+      failed++;
+      if (statusEl) { statusEl.className = 'q-status error'; statusEl.innerHTML = '<i class="fa-solid fa-xmark"></i>'; }
+    }
+  }
+
+  const msg = failed
+    ? `${done} uploaded, ${failed} failed`
+    : `${done} photo${done !== 1 ? 's' : ''} uploaded!`;
+  status.innerHTML = `<span style="color:${failed ? '#c0392b' : '#27ae60'}"><i class="fa-solid fa-check"></i> ${msg}</span>`;
+  toast(msg, failed ? 'error' : 'success');
+
+  selectedFiles = [];
+  setTimeout(() => {
+    document.getElementById('uploadQueue').innerHTML = '';
+    document.getElementById('uploadControls').style.display = 'none';
+    document.getElementById('uploadStatus').textContent = '';
+    loadPhotos();
+  }, 1800);
+}
+
+// ── Load photos ────────────────────────────────────────
+async function loadPhotos() {
+  const grid = document.getElementById('photoGrid');
+  grid.innerHTML = '<div class="loading-state"><i class="fa-solid fa-spinner fa-spin" style="font-size:24px;color:#AE360E;"></i></div>';
+  try {
+    const res = await fetch('/api/photos');
+    const data = await res.json();
+    const photos = data.photos || [];
+    document.getElementById('photoCountBadge').textContent = photos.length;
+    if (!photos.length) {
+      grid.innerHTML = '<div class="empty-state"><i class="fa-regular fa-images"></i><p>No photos yet. Upload some above!</p></div>';
+      return;
+    }
+    grid.innerHTML = '<div class="photo-grid" id="photoGridInner"></div>';
+    const inner = document.getElementById('photoGridInner');
+    photos.forEach(p => inner.appendChild(makeCard(p)));
+  } catch (e) {
+    grid.innerHTML = `<div class="empty-state"><i class="fa-solid fa-triangle-exclamation"></i><p>Failed to load: ${e.message}</p></div>`;
+  }
+}
+
+function makeCard(p) {
+  const card = document.createElement('div');
+  card.className = 'photo-card';
+  card.id = `card_${p.id}`;
+  const tagsHtml = (p.tags || []).map(t => `<span class="tag-pill">${t}</span>`).join('');
+  const noMeta = !p.title && !(p.tags && p.tags.length);
+  card.innerHTML = `
+    <img src="/api/photo/${p.id}" alt="${p.title || 'Project photo'}" loading="lazy">
+    <button class="photo-card-delete" title="Delete photo" onclick="event.stopPropagation();deletePhoto('${p.id}')">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+    <div class="photo-card-body">
+      <div class="photo-card-title">${p.title || '<em style="color:#bbb">No title</em>'}</div>
+      <div class="photo-card-tags">${tagsHtml}</div>
+      ${noMeta ? '<div class="photo-card-hint"><i class="fa-solid fa-pen" style="color:#AE360E;"></i> Click to add title &amp; tags</div>' : ''}
+    </div>`;
+  card.addEventListener('click', () => openEditModal(p));
+  return card;
+}
+
+// ── Edit modal ─────────────────────────────────────────
+function openEditModal(p) {
+  editingId = p.id;
+  currentTags = Array.isArray(p.tags) ? [...p.tags] : [];
+  document.getElementById('modalImg').src = `/api/photo/${p.id}`;
+  document.getElementById('editTitle').value = p.title || '';
+  renderTagChips();
+  document.getElementById('editModal').classList.add('open');
+  setTimeout(() => document.getElementById('editTitle').focus(), 50);
+}
+
+function closeEditModal() {
+  editingId = null;
+  currentTags = [];
+  document.getElementById('editModal').classList.remove('open');
+  document.getElementById('modalImg').src = '';
+}
+
+function renderTagChips() {
+  const wrap = document.getElementById('tagInputWrap');
+  const input = document.getElementById('tagInput');
+  // Remove existing chips (keep the input)
+  wrap.querySelectorAll('.tag-chip').forEach(c => c.remove());
+  currentTags.forEach(tag => {
+    const chip = document.createElement('div');
+    chip.className = 'tag-chip';
+    chip.innerHTML = `<span>${tag}</span><button type="button" onclick="removeTag('${tag.replace(/'/g,"\\'")}')"><i class="fa-solid fa-xmark"></i></button>`;
+    wrap.insertBefore(chip, input);
+  });
+}
+
+function removeTag(tag) {
+  currentTags = currentTags.filter(t => t !== tag);
+  renderTagChips();
+}
+
+function addTagFromInput() {
+  const input = document.getElementById('tagInput');
+  const raw = input.value.replace(/,/g, '').trim();
+  if (!raw) return;
+  const tags = raw.split(/[\s,]+/).map(t => t.trim()).filter(Boolean);
+  tags.forEach(t => {
+    if (t && !currentTags.includes(t)) currentTags.push(t);
+  });
+  input.value = '';
+  renderTagChips();
+}
+
+// Tag input keyboard handling
+document.addEventListener('DOMContentLoaded', function() {
+  const input = document.getElementById('tagInput');
+  input.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ',') {
+      e.preventDefault();
+      addTagFromInput();
+    } else if (e.key === 'Backspace' && !input.value && currentTags.length) {
+      currentTags.pop();
+      renderTagChips();
+    }
+  });
+  input.addEventListener('blur', addTagFromInput);
+});
+
+async function saveEdit() {
+  if (!editingId) return;
+  // Flush any pending input
+  addTagFromInput();
+  const title = document.getElementById('editTitle').value.trim();
+  try {
+    const res = await fetch(`/api/photos/${editingId}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: adminPassword, title, tags: currentTags })
+    });
+    const data = await res.json();
+    if (data.ok) {
+      toast('Photo updated!');
+      closeEditModal();
+      loadPhotos();
+    } else if (res.status === 401) {
+      alert('Session expired. Please refresh and log in again.');
+      sessionStorage.removeItem(SESSION_KEY);
+    } else {
+      toast(data.error, 'error');
+    }
+  } catch (e) {
+    toast(e.message, 'error');
+  }
+}
+
+// -- Delete ---------------------------------------------
+async function deletePhoto(id) {
+  if (!confirm('Delete this photo? This cannot be undone.')) return;
+  try {
+    const res = await fetch(`/api/photos/${id}`, {
+      method: 'DELETE',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: adminPassword })
+    });
+    const data = await res.json();
+    if (data.ok) {
+      const card = document.getElementById(`card_${id}`);
+      if (card) card.remove();
+      const count = document.querySelectorAll('.photo-card').length;
+      document.getElementById('photoCountBadge').textContent = count;
+      if (!count) loadPhotos();
+      toast('Photo deleted.');
+    } else if (res.status === 401) {
+      alert('Session expired. Please refresh.');
+      sessionStorage.removeItem(SESSION_KEY);
+    } else {
+      toast(data.error, 'error');
+    }
+  } catch (e) {
+    toast(e.message, 'error');
+  }
+}
+
+// Close modal on overlay click
+document.getElementById('editModal').addEventListener('click', function(e) {
+  if (e.target === this) closeEditModal();
+});
+
+init();
+</script>
+</body>
+</html>
