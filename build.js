@@ -315,7 +315,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('home/index.html', `${T.htmlHead(`${CLIENT.name} | Exterior & Interior Painting in Northern Colorado`, CLIENT.description)}
+  write('home/index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description)}
 ${T.wrapBody(finalContent)}`);
 }
 
