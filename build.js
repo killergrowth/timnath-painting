@@ -51,14 +51,7 @@ function write(relPath, html) {
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
 
-// Root index.html — redirect to homepage
-fs.writeFileSync(path.join(DIST, 'index.html'),
-`<!DOCTYPE html><html><head><meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=/home/">
-<link rel="canonical" href="/home/">
-<title>Timnath Painting | Northern Colorado\'s Premium Painting Contractor</title>
-</head><body><a href="/home/">Click here if you are not redirected</a></body></html>`, 'utf8');
-console.log('Root redirect written.');
+// Root index.html — built by buildHomepage()
 
 // Copy coming-soon landing page to root (DISABLED — site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
@@ -315,7 +308,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('home/index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description)}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description)}
 ${T.wrapBody(finalContent)}`);
 }
 
