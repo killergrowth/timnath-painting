@@ -569,10 +569,7 @@ function buildServiceAreas() {
   const cityGrid = CITIES.map(c => `
   <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#f4ede4;padding:25px;border-radius:8px;margin-bottom:20px;">
-      <h4 style="margin-bottom:15px;"><a href="/areas-served/${c.slug}/index.html" style="color:#201B10;text-decoration:none;">${c.label}, CO</a></h4>
-      <ul class="list-unstyled" style="font-size:14px;line-height:2;">
-        ${SERVICES.map(s => `<li><a href="/${s.slug}/${c.slug}/index.html">${s.label}</a></li>`).join('')}
-      </ul>
+      <h4 style="margin-bottom:0;"><a href="/areas-served/${c.slug}/index.html" style="color:#201B10;text-decoration:none;">${c.label}, CO</a></h4>
     </div>
   </div>`).join('\n');
 
