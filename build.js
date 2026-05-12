@@ -662,9 +662,9 @@ function buildCityHub(city) {
       </div>
       <div>
         <div style="font-weight:700;color:#201B10;margin-bottom:4px;">
-          <a href="/${s.slug}/${city.slug}/index.html" style="color:#201B10;text-decoration:none;">${s.label} in ${d.label}, CO</a>
+          ${s.label} in ${d.label}, CO
         </div>
-        <div style="color:#5a5650;font-size:14px;line-height:1.6;">${s.tagline} <a href="/${s.slug}/${city.slug}/index.html" style="color:#AE360E;font-size:13px;">Learn more &rarr;</a></div>
+        <div style="color:#5a5650;font-size:14px;line-height:1.6;">${s.tagline}</div>
       </div>
     </li>`).join('');
 
