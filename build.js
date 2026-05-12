@@ -278,7 +278,7 @@ ${T.topbar()}
           </div>
           <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
             <h4 class="progress-box__title">Premium Surface Preparation</h4>
-            <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="95%"><div class="progress-box__number count-text">95%</div></div></div>
+            <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
           </div>
           <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
             <h4 class="progress-box__title">Customer Satisfaction Rate</h4>
@@ -365,7 +365,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
       <div class="col-lg-6">
         <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="margin-top:40px;">
           <h4 class="progress-box__title">Surface Preparation Standards</h4>
-          <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="95%"><div class="progress-box__number count-text">95%</div></div></div>
+          <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
         </div>
         <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
           <h4 class="progress-box__title">Customer Satisfaction Rate</h4>

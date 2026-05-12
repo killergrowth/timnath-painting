@@ -9,7 +9,20 @@ function htmlHead(title, desc) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 <meta name="description" content="${desc}">
-<meta name="robots" content="noindex, nofollow">
+<meta name="robots" content="index, follow">
+<!-- Open Graph / Social Share -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Timnath Painting">
+<meta property="og:title" content="${title}">
+<meta property="og:description" content="${desc}">
+<meta property="og:image" content="https://timnathpainting.com/assets/images/social-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="${title}">
+<meta name="twitter:description" content="${desc}">
+<meta name="twitter:image" content="https://timnathpainting.com/assets/images/social-share.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons-v2/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
