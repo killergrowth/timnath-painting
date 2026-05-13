@@ -11,7 +11,7 @@ function htmlHead(title, desc, canonicalUrl, preloadImage) {
 <meta name="description" content="${desc}">
 <meta name="robots" content="index, follow">
 ${canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}">` : ''}
-${preloadImage ? `<link rel="preload" as="image" href="${preloadImage}">` : ''}
+${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '.webp')}">` : ''}
 <!-- Open Graph / Social Share -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Timnath Painting">
@@ -29,26 +29,41 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage}">` : ''}
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
 <link rel="manifest" href="/assets/images/favicons-v2/site.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+<!-- Self-hosted fonts — eliminates Google Fonts external round-trips -->
+<link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/plusjakarta-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Critical CSS — render-blocking (above-fold layout + icons affect visible content) -->
+<link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
-<link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
 <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
-<link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css">
-<link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css">
-<link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.css">
 <link rel="stylesheet" href="/assets/vendors/wallox-icons/style.css">
 <link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.carousel.min.css">
 <link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.theme.default.min.css">
-<link rel="stylesheet" href="/assets/vendors/slick-carousel/slick.css">
-<link rel="stylesheet" href="/assets/vendors/slick-carousel/slick-theme.css">
 <link rel="stylesheet" href="/assets/css/wallox.css">
 <link rel="stylesheet" href="/assets/css/timnath-custom.css">
 <link rel="stylesheet" href="/assets/css/icon-shim.css">
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
+<!-- Preload FontAwesome webfont to prevent header layout shift -->
+<link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Non-critical CSS — deferred async (no visible layout impact above fold) -->
+<link rel="preload" href="/assets/vendors/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/jquery-ui/jquery-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/jarallax/jarallax.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/tiny-slider/tiny-slider.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/slick-carousel/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/slick-carousel/slick-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+<link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
+<link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
+<link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
+<link rel="stylesheet" href="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css">
+<link rel="stylesheet" href="/assets/vendors/tiny-slider/tiny-slider.css">
+<link rel="stylesheet" href="/assets/vendors/slick-carousel/slick.css">
+<link rel="stylesheet" href="/assets/vendors/slick-carousel/slick-theme.css">
+<link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css">
+</noscript>
 <style>
 /* Inline critical overrides — beats any cached external CSS */
 .main-header { background-color: #201B10 !important; }
@@ -57,8 +72,19 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage}">` : ''}
 /* CWV: Auto-dismiss preloader after 400ms via CSS — covers initial carousel CLS without blocking LCP on window.load */
 @keyframes dismissPreloader { 0% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
 .preloader { animation: dismissPreloader 200ms ease forwards; animation-delay: 400ms; }
-/* CWV: Hide extra slides before Owl initializes — prevents stacked-slide whitespace */
-.main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item ~ .main-slider-one__item { display: none !important; }
+/* CWV: Pre-Owl carousel containment — use absolute+visibility instead of display:none.
+   display:none + .owl-loaded removal briefly shows slides 2+3 in block flow before Owl sets
+   them position:absolute, causing a 373px section-height spike = 0.398 CLS on about-one. */
+.main-slider-one__carousel:not(.owl-loaded) { overflow: hidden; }
+.main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item { position: relative; }
+.main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item ~ .main-slider-one__item {
+  position: absolute; top: 0; left: 0; width: 100%; visibility: hidden; pointer-events: none;
+}
+/* CWV: Stabilize about-one layout */
+.about-one { contain: layout; }
+/* CWV: Tagline letter-spacing via CSS — eliminates fixTaglines JS setTimeout (which caused CLS) */
+.sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
+.sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 /* CWV: Reduce hero animation delays — theme defaults are 1300–1700ms which feels broken without preloader */
 .main-slider-one .active .main-slider-one__bg { transition-delay: 0ms !important; }
 .main-slider-one .active .main-slider-one__sub-title { transition-delay: 100ms !important; }
@@ -76,24 +102,19 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage}">` : ''}
 }
 
 function htmlScripts() {
+  // Removed unused vendor JS (confirmed 0 HTML hooks):
+  // jquery-ui.js (463KB), isotope.js (37KB), tiny-slider.js (31KB),
+  // slick.min.js (55KB), imagesloaded (7KB), circleType (5KB), lettering, circle-progress
   return `<script src="/assets/vendors/jquery/jquery-3.7.0.min.js"></script>
 <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="/assets/vendors/bootstrap-select/bootstrap-select.min.js"></script>
-<script src="/assets/vendors/jarallax/jarallax.min.js"></script>
-<script src="/assets/vendors/jquery-ui/jquery-ui.js"></script>
+<!-- jarallax: never initialized on this site (0 elements with jarallax class or data-jarallax) -->
 <script src="/assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js"></script>
 <script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
-<script src="/assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js"></script>
 <script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-<script src="/assets/vendors/tiny-slider/tiny-slider.js"></script>
 <script src="/assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
-<script src="/assets/vendors/slick-carousel/slick.min.js"></script>
 <script src="/assets/vendors/wow/wow.js"></script>
-<script src="/assets/vendors/imagesloaded/imagesloaded.min.js"></script>
-<script src="/assets/vendors/isotope/isotope.js"></script>
-<script src="/assets/vendors/jquery-circleType/jquery.circleType.js"></script>
-<script src="/assets/vendors/jquery-lettering/jquery.lettering.min.js"></script>
 <script src="/assets/vendors/gsap/splittext.min.js"></script>
 <script src="/assets/vendors/gsap/ScrollTrigger.min.js"></script>
 <script src="/assets/vendors/gsap/gsap.js"></script>
@@ -140,7 +161,7 @@ function mobileNav() {
   <div class="mobile-nav__overlay mobile-nav__toggler"></div>
   <div class="mobile-nav__content">
     <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
-    <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-vertical-white.png" width="140" alt="${CLIENT.name}" style="display:block;margin:0 auto;"></a></div>
+    <div class="logo-box"><a href="/index.html"><img src="/assets/images/logo-vertical-white.png" width="140" alt="${CLIENT.name}" style="display:block;margin:0 auto;" loading="lazy"></a></div>
     <div class="mobile-nav__container"></div>
     <ul class="mobile-nav__contact list-unstyled">
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
@@ -261,7 +282,7 @@ function faqBlock(faqs, groupName) {
 
 function serviceCarouselItems() {
   const items = SERVICES.map(s => `<div class="item"><div class="service-one__item">
-    <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado"></div>
+    <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado" loading="lazy"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
       <p class="service-one__item__tagline">${s.tagline}</p>
@@ -269,7 +290,7 @@ function serviceCarouselItems() {
     </div>
   </div></div>`).join('\n');
   const areasBox = `<div class="item"><div class="service-one__item" style="background:#f4ede4;">
-    <div class="service-one__item__thumb"><img src="/assets/images/service/areas-served-map.jpg" alt="Northern Colorado service area map"></div>
+    <div class="service-one__item__thumb"><img src="/assets/images/service/areas-served-map.jpg" alt="Northern Colorado service area map" loading="lazy"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/areas-served/index.html">See Areas We Serve</a></h4>
       <p class="service-one__item__tagline">Serving Timnath, Windsor, Fort Collins, Loveland and more across Northern Colorado.</p>
@@ -289,33 +310,13 @@ ${content}
 ${mobileNav()}
 ${htmlScripts()}
 <script>
-// Fix JS-driven transforms that break about section layout
-function fixTransforms() {
+// Fix JS-driven inline transforms on about section at DOM ready (CSS handles it too but inline styles override CSS)
+document.addEventListener("DOMContentLoaded", function fixTransforms() {
   var thumb = document.querySelector(".about-one__thumb__item.real-image");
   if (thumb) { thumb.style.transform = "none"; thumb.style.position = "static"; }
   var funfact = document.querySelector(".about-one__funfact");
   if (funfact) { funfact.style.transform = "none"; }
-  var bgJar = document.querySelectorAll(".about-one [data-jarallax],.about-one__thumb .jarallax-img");
-  bgJar.forEach(function(el) { el.style.transform = "none"; el.style.position = "static"; });
-}
-document.addEventListener("DOMContentLoaded", fixTransforms);
-setTimeout(fixTransforms, 500);
-setTimeout(fixTransforms, 1500);
-setTimeout(fixTransforms, 3000);
-// Fix letter-spacing on taglines after wallox.js runs
-function fixTaglines() {
-  document.querySelectorAll(".sec-title__tagline").forEach(function(el) {
-    el.style.letterSpacing = "0.5px";
-    el.style.wordSpacing = "normal";
-    el.querySelectorAll("div, span").forEach(function(child) {
-      child.style.display = "inline";
-      child.style.letterSpacing = "0.5px";
-    });
-  });
-}
-setTimeout(fixTaglines, 300);
-setTimeout(fixTaglines, 1000);
-setTimeout(fixTaglines, 2500);
+});
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
