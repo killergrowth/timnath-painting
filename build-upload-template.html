@@ -175,7 +175,20 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
   flex: 1; min-width: 120px; color: #201B10; padding: 2px 4px;
   background: transparent;
 }
-.tag-hint { font-size: 12px; color: #bbb; margin-top: -16px; margin-bottom: 20px; }
+.tag-hint { font-size: 12px; color: #bbb; margin-top: -16px; margin-bottom: 12px; }
+
+/* Tag suggestions */
+.tag-suggestions-label { font-size: 12px; color: #999; margin-bottom: 8px; font-weight: 600; letter-spacing: 0.3px; }
+.tag-suggestions {
+  display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px;
+}
+.tag-suggest-btn {
+  background: #f4ede4; color: #AE360E; font-size: 12px; font-weight: 700;
+  padding: 4px 12px; border-radius: 14px; border: 1px solid transparent;
+  cursor: pointer; transition: all 0.15s;
+}
+.tag-suggest-btn:hover { background: #AE360E; color: #fff; }
+.tag-suggest-btn.active { background: #AE360E; color: #fff; opacity: 0.5; cursor: default; }
 
 .modal-actions { display: flex; gap: 10px; justify-content: flex-end; }
 .btn-save {
@@ -283,6 +296,10 @@ body { font-family: 'Outfit', sans-serif; background: #f7f3ee; color: #201B10; m
         <input type="text" class="tag-chip-input" id="tagInput" placeholder="Type a tag and press Enter or comma">
       </div>
       <p class="tag-hint">Press <strong>Enter</strong> or <strong>,</strong> to add a tag &bull; Click &times; to remove</p>
+      <div id="tagSuggestionsWrap" style="display:none;">
+        <div class="tag-suggestions-label">Previously used tags — click to add:</div>
+        <div class="tag-suggestions" id="tagSuggestions"></div>
+      </div>
 
       <div class="modal-actions">
         <button class="btn-cancel" onclick="closeEditModal()">Cancel</button>
@@ -298,6 +315,10 @@ let adminPassword = '';
 let editingId = null;
 let currentTags = [];
 let selectedFiles = [];
+let allKnownTags = [];
+
+// Suggested tags for Timnath Painting (seeded list + dynamically expanded)
+const SEED_TAGS = ['painting', 'interior', 'exterior', 'commercial', 'residential', 'HOA', 'fence', 'deck', 'staining', 'trim', 'cabinet', 'garage', 'before & after'];
 
 // ── Toast ──────────────────────────────────────────────
 function toast(msg, type = 'success') {
@@ -466,6 +487,9 @@ async function loadPhotos() {
     const res = await fetch('/api/photos');
     const data = await res.json();
     const photos = data.photos || [];
+    // Collect all known tags from loaded photos for suggestions
+    const discovered = new Set(photos.flatMap(p => p.tags || []));
+    allKnownTags = [...new Set([...SEED_TAGS, ...discovered])].sort();
     document.getElementById('photoCountBadge').textContent = photos.length;
     if (!photos.length) {
       grid.innerHTML = '<div class="empty-state"><i class="fa-regular fa-images"></i><p>No photos yet. Upload some above!</p></div>';
@@ -506,8 +530,34 @@ function openEditModal(p) {
   document.getElementById('modalImg').src = `/api/photo/${p.id}`;
   document.getElementById('editTitle').value = p.title || '';
   renderTagChips();
+  renderTagSuggestions();
   document.getElementById('editModal').classList.add('open');
   setTimeout(() => document.getElementById('editTitle').focus(), 50);
+}
+
+function renderTagSuggestions() {
+  const wrap = document.getElementById('tagSuggestionsWrap');
+  const container = document.getElementById('tagSuggestions');
+  // Merge seed tags + dynamically discovered tags, dedupe, sort
+  const allTags = [...new Set([...SEED_TAGS, ...allKnownTags])].sort();
+  if (!allTags.length) { wrap.style.display = 'none'; return; }
+  wrap.style.display = '';
+  container.innerHTML = '';
+  allTags.forEach(tag => {
+    const btn = document.createElement('button');
+    btn.className = 'tag-suggest-btn' + (currentTags.includes(tag) ? ' active' : '');
+    btn.textContent = tag;
+    btn.type = 'button';
+    btn.disabled = currentTags.includes(tag);
+    btn.addEventListener('click', () => {
+      if (!currentTags.includes(tag)) {
+        currentTags.push(tag);
+        renderTagChips();
+        renderTagSuggestions();
+      }
+    });
+    container.appendChild(btn);
+  });
 }
 
 function closeEditModal() {
