@@ -1,7 +1,7 @@
 'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
-function htmlHead(title, desc) {
+function htmlHead(title, desc, canonicalUrl) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +10,7 @@ function htmlHead(title, desc) {
 <title>${title}</title>
 <meta name="description" content="${desc}">
 <meta name="robots" content="index, follow">
+${canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}">` : ''}
 <!-- Open Graph / Social Share -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Timnath Painting">

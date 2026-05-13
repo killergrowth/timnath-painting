@@ -308,7 +308,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description)}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/')}  
 ${T.wrapBody(finalContent)}`);
 }
 
@@ -408,7 +408,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271")}
+  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about.html')}  
 ${T.wrapBody(content)}`);
 }
 
@@ -484,7 +484,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
 
 ${T.contactFormSection()}`;
 
-  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc)}
+  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://timnathpainting.com/${slug}/`)}  
 ${T.wrapBody(content)}`);
 }
 
@@ -560,7 +560,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
   </div>
 </section>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.')}
+  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact.html')}  
 ${T.wrapBody(content)}`);
 }
 
@@ -591,7 +591,7 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
 
 ${T.contactFormSection()}`;
 
-  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.')}
+  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://timnathpainting.com/areas-served/')}  
 ${T.wrapBody(content)}`);
 }
 
@@ -644,7 +644,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.')}
+  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}  
 ${T.wrapBody(content)}`);
 }
 // ══ CITY HUB PAGES ══════════════════════════════════════════════════════════
@@ -780,8 +780,9 @@ ${T.contactFormSection()}`;
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
       `Painting Services in ${d.label}, CO | Timnath Painting`,
-      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 236-8271.`
-    )}
+      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 236-8271.`,
+      `https://timnathpainting.com/areas-served/${city.slug}/`
+    )}  
 ${T.wrapBody(content)}`);
 }
 
