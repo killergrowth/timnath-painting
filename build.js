@@ -308,7 +308,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/')}  
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/slider-3-1.jpg')}  
 ${T.wrapBody(finalContent)}`);
 }
 

@@ -1,7 +1,7 @@
 'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
-function htmlHead(title, desc, canonicalUrl) {
+function htmlHead(title, desc, canonicalUrl, preloadImage) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +11,7 @@ function htmlHead(title, desc, canonicalUrl) {
 <meta name="description" content="${desc}">
 <meta name="robots" content="index, follow">
 ${canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}">` : ''}
+${preloadImage ? `<link rel="preload" as="image" href="${preloadImage}">` : ''}
 <!-- Open Graph / Social Share -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Timnath Painting">
@@ -53,6 +54,16 @@ ${canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}">` : ''}
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
+/* CWV: Auto-dismiss preloader after 400ms via CSS — covers initial carousel CLS without blocking LCP on window.load */
+@keyframes dismissPreloader { 0% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
+.preloader { animation: dismissPreloader 200ms ease forwards; animation-delay: 400ms; }
+/* CWV: Hide extra slides before Owl initializes — prevents stacked-slide whitespace */
+.main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item ~ .main-slider-one__item { display: none !important; }
+/* CWV: Reduce hero animation delays — theme defaults are 1300–1700ms which feels broken without preloader */
+.main-slider-one .active .main-slider-one__bg { transition-delay: 0ms !important; }
+.main-slider-one .active .main-slider-one__sub-title { transition-delay: 100ms !important; }
+.main-slider-one .active .main-slider-one__title__box h2 { transition-delay: 200ms !important; }
+.main-slider-one .active .main-slider-one__btn { transition-delay: 300ms !important; }
 </style>
 <script type="text/javascript">
  (function(k) {
