@@ -33,18 +33,15 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <!-- Self-hosted fonts - eliminates Google Fonts external round-trips -->
 <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plusjakarta-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Critical CSS - render-blocking (layout-affecting only) -->
+<!-- Critical CSS - render-blocking (layout-affecting). Owl carousel removed (dead weight). -->
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.theme.default.min.css">
 <link rel="stylesheet" href="/assets/css/wallox.css">
 <link rel="stylesheet" href="/assets/css/timnath-custom.css">
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Non-critical CSS — deferred async (icon glyphs + animations, no layout impact) -->
-<!-- FA icon space reservation — prevents CLS when icon glyphs render after CSS loads -->
+<!-- Non-critical CSS - deferred async -->
 <link rel="preload" href="/assets/vendors/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/wallox-icons/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/css/icon-shim.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -74,9 +71,10 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
-/* CWV: Auto-dismiss preloader â€" delay gives wallox.js time to initialize + hero image to become visible */
-@keyframes dismissPreloader { 0% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
-.preloader { animation: dismissPreloader 600ms ease forwards; animation-delay: 900ms; }
+/* preloader removed - no longer needed with static hero */
+.preloader { display: none !important; }
+/* .real-image: GSAP xPercent reveal removed. Images visible by default. */
+.real-image { overflow: hidden; }
 /* === STATIC HERO (no Owl carousel, no wallox.js dep for LCP) === */
 /* Hero bg: immediately visible, no wallox opacity:0 initial state */
 .hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -98,11 +96,11 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .about-one { contain: layout; }
 /* A11y: Darken about-one body text from #7E7C76 (3.86:1) to #666 (5.74:1) to pass WCAG AA contrast */
 .about-one__top__text { color: #666 !important; }
-/* A11y: FA icon space reservation — prevents CLS when FontAwesome loads async.
-   Inline icons (.fa-solid etc) take 0 space without FA CSS; reserving 1em prevents layout shifts. */
+/* A11y: FA icon space reservation - prevents CLS when FontAwesome loads async. */
 .fa-solid, .fa-regular, .fa-brands, .fa {
   display: inline-block; min-width: 1em; font-style: normal;
 }
+
 /* CWV: Tagline letter-spacing via CSS - eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
@@ -129,12 +127,10 @@ function htmlScripts() {
 <script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
 <script src="/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js"></script>
 <script src="/assets/vendors/jquery-validate/jquery.validate.min.js"></script>
-<script src="/assets/vendors/owl-carousel/js/owl.carousel.min.js"></script>
+<!-- owl.carousel.min.js removed: no Owl usage anywhere after static hero replacement -->
+<!-- GSAP (splittext+ScrollTrigger+gsap) + wallox-gsap.js removed:
+     bwsplit_text() ran on window.load (~9s on throttled 4G) and refreshed the LCP measurement window -->
 <script src="/assets/vendors/wow/wow.js"></script>
-<script src="/assets/vendors/gsap/splittext.min.js"></script>
-<script src="/assets/vendors/gsap/ScrollTrigger.min.js"></script>
-<script src="/assets/vendors/gsap/gsap.js"></script>
-<script src="/assets/js/wallox-gsap.js"></script>
 <script src="/assets/js/wallox.js"></script>
 <script>
 // Active nav: runs immediately + after 200ms to override wallox.js theme defaults
@@ -318,7 +314,8 @@ function serviceCarouselItems() {
 
 function wrapBody(content) {
   return `<body>
-<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
+<!-- preloader removed: static hero is visible on first paint, no Owl carousel or opacity:0 initial states remain.
+     jQuery fadeOut() at window.load was pushing LCP to ~9s by causing a display:none transition at that time. -->
 <div class="page-wrapper">
 ${content}
 </main>
@@ -370,6 +367,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 

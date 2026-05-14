@@ -233,7 +233,7 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-1-1.jpg" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
+          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-1-1.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
           <div class="about-one__funfact count-box">
             <h3 class="about-one__count"><span class="count-text" data-stop="28" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">freeze-thaw<br>cycles per year</p>
@@ -317,10 +317,10 @@ ${T.topbar()}
       <div class="col-lg-6">
         <div class="why-choose-one__right">
           <div class="why-choose-one__thumb wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <img src="/assets/images/resources/why-choose-1-1.jpg" alt="${CLIENT.name} crew at work"><div class="why-choose-one__thumb-box"></div>
+            <img src="/assets/images/resources/why-choose-1-1.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"><div class="why-choose-one__thumb-box"></div>
           </div>
           <div class="why-choose-one__thumb-two wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="300ms">
-            <img src="/assets/images/resources/why-choose-1-2.jpg" alt="Premium exterior painting result">
+            <img src="/assets/images/resources/why-choose-1-2.jpg" loading="lazy" width="490" height="460" alt="Premium exterior painting result">
           </div>
           <div class="why-choose-one__thumb-box-two"></div>
         </div>
@@ -980,6 +980,7 @@ buildGallery();
 buildUploadAdmin();
 
 console.log('\nÃ¢Å“... All pillar pages built successfully.');
+
 
 
 
