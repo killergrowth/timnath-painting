@@ -37,8 +37,8 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="preload" href="/assets/css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/css/wallox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="/assets/css/timnath-custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="preload" href="/assets/css/timnath-overrides.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/timnath-custom.css?v=20260514" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/timnath-overrides.css?v=20260514" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Non-critical CSS - deferred async -->
@@ -57,8 +57,8 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/css/wallox.css">
-<link rel="stylesheet" href="/assets/css/timnath-custom.css">
-<link rel="stylesheet" href="/assets/css/timnath-overrides.css">
+<link rel="stylesheet" href="/assets/css/timnath-custom.css?v=20260514">
+<link rel="stylesheet" href="/assets/css/timnath-overrides.css?v=20260514">
 <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
 <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
