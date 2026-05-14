@@ -50,6 +50,17 @@ function write(relPath, html) {
 // â"€â"€ Setup â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
+// Generate mobile hero variant (800px @ q68 ~70KB) — desktop is pre-compressed in source
+// Source: assets/images/backgrounds/slider-3-1.webp (151KB @ 1440px q50)
+{
+  const sharp = require('sharp');
+  const heroSrc = path.join(DIST, 'assets', 'images', 'backgrounds', 'slider-3-1.webp');
+  const heroMobile = path.join(DIST, 'assets', 'images', 'backgrounds', 'slider-3-1-mobile.webp');
+  if (fs.existsSync(heroSrc) && !fs.existsSync(heroMobile)) {
+    sharp(heroSrc).resize(800, null, { withoutEnlargement: true }).webp({ quality: 68 })
+      .toFile(heroMobile).then(() => {}).catch(() => {});
+  }
+}
 // Copy root config files to dist
 ['_headers', '_redirects', 'robots.txt', 'sitemap.xml'].forEach(f => {
   const src = path.join(ROOT, f);
@@ -161,8 +172,20 @@ function buildHomepage() {
     },
   ];
 
-  const sliderHTML = sliders.map(s => `<div class="main-slider-one__item">
-  <div class="main-slider-one__bg" style="background-image:url(/assets/images/backgrounds/${s.bg});"></div>
+  const sliderHTML = sliders.map(s => {
+    // Use WebP path for LCP hero image
+    const bgWebp = s.bg.replace(/\.(jpg|jpeg)$/i, '.webp');
+    const bgMobile = bgWebp.replace('.webp', '-mobile.webp');
+    return `<div class="main-slider-one__item">
+  <div class="main-slider-one__bg">
+    <img
+      src="/assets/images/backgrounds/${bgWebp}"
+      srcset="/assets/images/backgrounds/${bgMobile} 800w, /assets/images/backgrounds/${bgWebp} 1440w"
+      sizes="(max-width:800px) 800px, 1440px"
+      alt="" width="1440" height="960"
+      fetchpriority="high" decoding="sync"
+      style="position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center;">
+  </div>
   <div class="container"><div class="row align-items-center gutter-y-30"><div class="col-lg-7">
     <div class="main-slider-one__content">
       <h6 class="main-slider-one__sub-title">${s.sub}</h6>
@@ -177,7 +200,7 @@ function buildHomepage() {
     </div>
   </div></div></div>
 
-</div>`).join('\n');
+</div>`; }).join('\n');
 
   const features = [
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },

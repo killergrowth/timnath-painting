@@ -11,7 +11,8 @@ function htmlHead(title, desc, canonicalUrl, preloadImage) {
 <meta name="description" content="${desc}">
 <meta name="robots" content="index, follow">
 ${canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}">` : ''}
-${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '.webp')}">` : ''}
+${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '-mobile.webp')}" media="(max-width:800px)">
+<link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '.webp')}" media="(min-width:801px)">` : ''}
 <!-- Open Graph / Social Share -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Timnath Painting">
@@ -45,7 +46,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Non-critical CSS — deferred async (no visible layout impact above fold) -->
+<!-- Non-critical CSS — deferred async (no layout impact above fold) -->
 <link rel="preload" href="/assets/vendors/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/jquery-ui/jquery-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -80,6 +81,11 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item ~ .main-slider-one__item {
   position: absolute; top: 0; left: 0; width: 100%; visibility: hidden; pointer-events: none;
 }
+/* CWV: Hero LCP img — fills the .main-slider-one__bg container the same way the CSS bg-image did */
+.main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
+/* CWV: Hero transition speed — reduce 1000ms wallox fade to 200ms */
+.main-slider-one__bg { transition-duration: 200ms, 200ms !important; }
+
 /* CWV: Stabilize about-one layout */
 .about-one { contain: layout; }
 /* CWV: Tagline letter-spacing via CSS — eliminates fixTaglines JS setTimeout (which caused CLS) */
