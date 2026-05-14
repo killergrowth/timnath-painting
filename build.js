@@ -979,7 +979,10 @@ CITIES.forEach(buildCityHub);
 buildGallery();
 buildUploadAdmin();
 
-console.log('\nÃ¢Å"... All pillar pages built successfully.');
+// Always sync functions/ into dist/ so CF Pages deploys include the API workers
+copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
+
+console.log('\n✓ All pillar pages built successfully.');
 
 
 
