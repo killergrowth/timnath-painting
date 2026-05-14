@@ -27,7 +27,7 @@ function copyDir(src, dest) {
 
 const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 
-// Custom SVG icons â€” inline with brand color
+// Custom SVG icons â€" inline with brand color
 const RED = '#AE360E';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -47,10 +47,10 @@ function write(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// Ã¢"â‚¬Ã¢"â‚¬ Setup Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ Setup Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) â€” desktop is pre-compressed in source
+// Generate mobile hero variant (800px @ q68 ~70KB) â€" desktop is pre-compressed in source
 // Source: assets/images/backgrounds/slider-3-1.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
@@ -67,9 +67,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html â€” built by buildHomepage()
+// Root index.html â€" built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED â€” site is live)
+// Copy coming-soon landing page to root (DISABLED â€" site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -81,7 +81,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json â€” Pages Functions handle routing now
+// Remove _worker.js and _routes.json â€" Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -90,9 +90,9 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// Ã¢"â‚¬Ã¢"â‚¬ HOMEPAGE Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ HOMEPAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 function buildHomepage() {
-  // â”€â”€ Reviews data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+  // â"€â"€ Reviews data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
@@ -168,7 +168,7 @@ function buildHomepage() {
       lines: ['Premium Exterior', 'Painting and More'],
       btn1: { t: 'Get a Free Quote', h: '/contact.html' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
-      subText: 'Professional painting done rightâ€”on time, on budget, and built to last.'
+      subText: 'Professional painting done right—on time, on budget, and built to last.'
     },
   ];
 
@@ -181,7 +181,7 @@ function buildHomepage() {
     <img
       src="/assets/images/backgrounds/${bgWebp}"
       srcset="/assets/images/backgrounds/${bgMobile} 800w, /assets/images/backgrounds/${bgWebp} 1440w"
-      sizes="(max-width:800px) 800px, 1440px"
+      sizes="(max-width:800px) 100vw, 1440px"
       alt="" width="1440" height="960"
       fetchpriority="high" decoding="sync"
       style="position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center;">
@@ -251,7 +251,7 @@ ${T.topbar()}
         <div class="about-one__right">
           <div class="sec-title text-start">
             <div class="d-flex align-items-center justify-content-start">
-              
+
               <p class="sec-title__tagline">About ${CLIENT.name}</p>
             </div>
             <h3 class="sec-title__title">Paint Systems Built for Colorado's Climate</h3>
@@ -336,11 +336,11 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/slider-3-1.jpg')}  
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/slider-3-1.jpg')}
 ${T.wrapBody(finalContent)}`);
 }
 
-// Ã¢"â‚¬Ã¢"â‚¬ ABOUT PAGE Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ ABOUT PAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 function buildAbout() {
   const content = `
 ${T.topbar()}
@@ -436,11 +436,11 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about.html')}  
+  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about.html')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â‚¬Ã¢"â‚¬ SERVICE HUB PAGES Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ SERVICE HUB PAGES Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -512,11 +512,11 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
 
 ${T.contactFormSection()}`;
 
-  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://timnathpainting.com/${slug}/`)}  
+  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://timnathpainting.com/${slug}/`)}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â‚¬Ã¢"â‚¬ CONTACT PAGE Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ CONTACT PAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -536,7 +536,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
           <h4 style="margin-bottom:8px;">Phone</h4>
           <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-          <p style="margin-top:6px;font-size:13px;color:#666;">Monâ€“Sat: 7amâ€“6pm</p>
+          <p style="margin-top:6px;font-size:13px;color:#666;">Monâ€"Sat: 7amâ€"6pm</p>
         </div>
       </div>
       <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
@@ -588,11 +588,11 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
   </div>
 </section>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact.html')}  
+  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact.html')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â‚¬Ã¢"â‚¬ Areas Served INDEX Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ Areas Served INDEX Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => `
   <div class="col-md-6 col-lg-4 col-xl-3">
@@ -619,11 +619,11 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
 
 ${T.contactFormSection()}`;
 
-  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://timnathpainting.com/areas-served/')}  
+  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://timnathpainting.com/areas-served/')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â‚¬Ã¢"â‚¬ RUN ALL Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
+// Ã¢"â'¬Ã¢"â'¬ RUN ALL Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -672,7 +672,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}  
+  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}
 ${T.wrapBody(content)}`);
 }
 // â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
@@ -759,7 +759,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions â€” ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions â€" ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -810,12 +810,12 @@ ${T.contactFormSection()}`;
       `Painting Services in ${d.label}, CO | Timnath Painting`,
       `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 236-8271.`,
       `https://timnathpainting.com/areas-served/${city.slug}/`
-    )}  
+    )}
 ${T.wrapBody(content)}`);
 }
 
 // â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function buildGallery_OLD() { // OLD â€” replaced by template-based version below
+function buildGallery_OLD() { // OLD â€" replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -979,7 +979,7 @@ CITIES.forEach(buildCityHub);
 buildGallery();
 buildUploadAdmin();
 
-console.log('\nÃ¢Å“... All pillar pages built successfully.');
+console.log('\nÃ¢Å"... All pillar pages built successfully.');
 
 
 

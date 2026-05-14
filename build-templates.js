@@ -33,12 +33,12 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <!-- Self-hosted fonts - eliminates Google Fonts external round-trips -->
 <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plusjakarta-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Critical CSS - render-blocking (layout-affecting). Owl carousel removed (dead weight). -->
-<link rel="stylesheet" href="/assets/css/fonts.css">
-<link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/css/wallox.css">
-<link rel="stylesheet" href="/assets/css/timnath-custom.css">
-<link rel="stylesheet" href="/assets/css/timnath-overrides.css">
+<!-- All CSS async — critical styles are inlined below -->
+<link rel="preload" href="/assets/css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/wallox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/timnath-custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/timnath-overrides.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
 <!-- Non-critical CSS - deferred async -->
@@ -54,6 +54,11 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="preload" href="/assets/vendors/slick-carousel/slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/slick-carousel/slick-theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript>
+<link rel="stylesheet" href="/assets/css/fonts.css">
+<link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/wallox.css">
+<link rel="stylesheet" href="/assets/css/timnath-custom.css">
+<link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 <link rel="stylesheet" href="/assets/vendors/animate/animate.min.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css">
 <link rel="stylesheet" href="/assets/vendors/jquery-ui/jquery-ui.css">
@@ -67,12 +72,64 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/css/icon-shim.css">
 </noscript>
 <style>
-/* Inline critical overrides - beats any cached external CSS */
+/* ============================================================
+   CRITICAL CSS — inlined to eliminate ALL render-blocking CSS
+   ============================================================ */
+
+/* 1. CSS variables (from wallox.css :root) */
+:root{--wallox-font:"Plus Jakarta Sans",sans-serif;--wallox-text:#7E7C76;--wallox-text-dark:#2E2A20;--wallox-base:#AE360E;--wallox-gray:#F4EDE4;--wallox-white:#fff;--wallox-border-color:#E4DACC}
+
+/* 2. Bootstrap container — minimal, so bootstrap.min.css can load async */
+.container,.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
+@media(min-width:576px){.container{max-width:540px}}
+@media(min-width:768px){.container{max-width:720px}}
+@media(min-width:992px){.container{max-width:960px}}
+@media(min-width:1200px){.container{max-width:1140px}}
+@media(min-width:1400px){.container{max-width:1320px}}
+.d-none{display:none!important}.d-block{display:block!important}
+@media(min-width:768px){.d-md-inline{display:inline!important}}
+
+/* 3. Page wrapper */
+.page-wrapper{position:relative;margin:0 auto;width:100%;min-width:300px;overflow:hidden}
+
+/* 4. HERO SIZING — critical for LCP paint. Without this, hero collapses and image can't render. */
+.main-slider-one{position:relative;overflow:hidden}
+.main-slider-one__item{position:relative;padding-top:115px;padding-bottom:158px;height:803px;background-color:#F4EDE4}
+@media(max-width:1350px){.main-slider-one__item{height:auto}}
+@media(max-width:767px){.main-slider-one__item{padding-top:180px;padding-bottom:200px}}
+/* Hero dark gradient overlay (from timnath-custom.css) */
+.main-slider-one__item::before{content:"";position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.72) 0%,rgba(0,0,0,.45) 50%,rgba(0,0,0,.15) 100%);z-index:1}
+.main-slider-one .container,.main-slider-one__content{position:relative;z-index:2}
+/* Hero title text */
+.main-slider-one__title__box{overflow:hidden}
+.main-slider-one__title__text{display:block;color:#2E2A20;font-weight:800;font-size:80px;line-height:112%;letter-spacing:-.02em;margin:0;text-transform:capitalize}
+@media(max-width:575px){.main-slider-one__title__text{font-size:50px}}
+
+/* 5. CTA button */
+.wallox-btn{display:inline-block;vertical-align:middle;border:none;outline:none!important;background-color:#2E2A20;color:#fff;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);padding:15px 24px;font-weight:600;font-size:16px;line-height:1.25;text-transform:capitalize;border-radius:100px;position:relative;overflow:hidden;text-align:center}
+.wallox-btn--base{background:#AE360E;color:#fff}
+
+/* 6. Header layout */
+.main-header__right{display:flex;align-items:center}
+.main-header--three .main-header__inner{padding:0}
+@media(max-width:1199px){.main-header--three .main-header__inner{padding:10px 0}}
+.main-header--three .main-menu .main-menu__list > li > a{color:#fff}
+.main-header--three .main-header__logo{display:none}
+@media(max-width:1199px){.main-header--three .main-header__logo{display:block}}
+.main-header--three .main-header__nav{margin-left:0;margin-right:auto}
+/* Mobile hamburger */
+.mobile-nav__btn span{display:block;width:30px;height:2px;background:#fff;margin-bottom:7px}
+.mobile-nav__btn span:last-child{margin-bottom:0}
+
+/* ============================================================
+   Existing critical overrides (unchanged)
+   ============================================================ */
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
-/* preloader removed - no longer needed with static hero */
-.preloader { display: none !important; }
+/* Preloader: CSS auto-dismiss after 700ms (no jQuery/window.load dependency — avoids LCP delay) */
+@keyframes dismissPreloader{0%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}
+.preloader{animation:dismissPreloader 500ms ease forwards;animation-delay:700ms;}
 /* .real-image: GSAP xPercent reveal removed. Images visible by default. */
 .real-image { overflow: hidden; }
 /* === STATIC HERO (no Owl carousel, no wallox.js dep for LCP) === */
@@ -105,13 +162,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
-<script type="text/javascript">
- (function(k) {
- let s=document.createElement('script');s.defer=true;
- s.src="https://cdn.feedbucket.app/assets/feedbucket.js";
- s.dataset.feedbucket=k;document.head.appendChild(s);
- })('unHnhjucA9iBv9bu4nxg')
-</script>
+
 </head>`;
 }
 
@@ -315,7 +366,9 @@ function serviceCarouselItems() {
 function wrapBody(content) {
   return `<body>
 <!-- preloader removed: static hero is visible on first paint, no Owl carousel or opacity:0 initial states remain.
-     jQuery fadeOut() at window.load was pushing LCP to ~9s by causing a display:none transition at that time. -->
+     jQuery fadeOut() at window.load was pushing LCP to ~9s by causing a display:none transition at that time.
+     Preloader reinstated with CSS auto-dismiss (700ms delay, 500ms fade) — fires before window.load, no LCP impact. -->
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
 <div class="page-wrapper">
 ${content}
 </main>

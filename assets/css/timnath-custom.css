@@ -10,6 +10,23 @@
    Timnath Painting — Custom Overrides v2
    ===================================================== */
 
+/* ── Fix: wallox.css sets .real-image { visibility: hidden } for GSAP reveal.
+   GSAP removed — force visible so about section image always shows. ── */
+.real-image {
+  visibility: visible !important;
+}
+
+/* ── Fix: wallox.css text-transform:capitalize on body/paragraph text ── */
+.about-one__top__text,
+.about-one__list__item,
+.why-choose__top__text,
+.why-choose__box__list__item,
+.why-choose-one__top__text,
+.why-choose-one__feature__title,
+.why-choose-one__feature__text {
+  text-transform: none !important;
+}
+
 /* ── Fix WOW.js invisible elements ─────────────────── */
 .wow {
   visibility: visible !important;

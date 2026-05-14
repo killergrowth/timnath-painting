@@ -52,22 +52,40 @@ async function patchDistHTML() {
   let patched = 0;
   for (const f of htmlFiles) {
     let html = fs.readFileSync(f, 'utf8');
-    // Replace .jpg/.jpeg in background-image inline styles and CSS url() references with .webp
-    // Only replace if the WebP version exists in dist
     const original = html;
+
+    // 1. Replace .jpg/.jpeg in CSS url() (background-image, etc.)
     html = html.replace(/url\(([^)]*)\.(jpg|jpeg)\)/gi, (match, base, ext) => {
-      // Resolve path relative to dist
       const relPath = base.replace(/^\//, '');
       const webpDist = path.join(distDir, relPath + '.webp');
       if (fs.existsSync(webpDist)) return `url(${base}.webp)`;
       return match;
     });
+
+    // 2. Replace .jpg/.jpeg in <img src="..."> attributes
+    html = html.replace(/(\bsrc=["'])([^"']+)\.(jpg|jpeg)(["'])/gi, (match, prefix, base, ext, suffix) => {
+      const relPath = base.replace(/^\//, '');
+      const webpDist = path.join(distDir, relPath + '.webp');
+      if (fs.existsSync(webpDist)) return `${prefix}${base}.webp${suffix}`;
+      return match;
+    });
+
+    // 3. Replace .jpg/.jpeg in srcset attributes
+    html = html.replace(/(srcset=["'][^"']+["'])/gi, (match) => {
+      return match.replace(/([^\s,"']+)\.(jpg|jpeg)(\s|,|["'])/gi, (m, base, ext, after) => {
+        const relPath = base.replace(/^\//, '');
+        const webpDist = path.join(distDir, relPath + '.webp');
+        if (fs.existsSync(webpDist)) return `${base}.webp${after}`;
+        return m;
+      });
+    });
+
     if (html !== original) {
       fs.writeFileSync(f, html, 'utf8');
       patched++;
     }
   }
-  console.log(`\nPatched ${patched} HTML files to use WebP backgrounds.`);
+  console.log(`\nPatched ${patched} HTML files to use WebP (backgrounds + img src + srcset).`);
 }
 
 async function run() {
