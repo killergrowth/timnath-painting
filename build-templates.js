@@ -73,29 +73,28 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 /* CWV: Auto-dismiss preloader — delay gives wallox.js time to initialize + hero image to become visible */
 @keyframes dismissPreloader { 0% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
 .preloader { animation: dismissPreloader 600ms ease forwards; animation-delay: 900ms; }
-/* CWV: Pre-Owl carousel containment - use absolute+visibility instead of display:none.
-   display:none + .owl-loaded removal briefly shows slides 2+3 in block flow before Owl sets
-   them position:absolute, causing a 373px section-height spike = 0.398 CLS on about-one. */
-.main-slider-one__carousel:not(.owl-loaded) { overflow: hidden; }
-.main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item { position: relative; }
-.main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item ~ .main-slider-one__item {
-  position: absolute; top: 0; left: 0; width: 100%; visibility: hidden; pointer-events: none;
-}
-/* CWV: Hero LCP img - fills the .main-slider-one__bg container the same way the CSS bg-image did */
-.main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
-/* CWV: Hero transition speed - reduce 1000ms wallox fade to 200ms */
-.main-slider-one__bg { transition-duration: 200ms, 200ms !important; }
+/* === STATIC HERO (no Owl carousel, no wallox.js dep for LCP) === */
+/* Hero bg: immediately visible, no wallox opacity:0 initial state */
+.hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
+/* Hero bg img positioning (same as before) */
+.hero-static .main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
+/* CSS-only text entrance animations — fire on load, no JS required */
+@keyframes heroSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
+.hero-static .main-slider-one__sub-title { animation: heroSlideUp 0.55s ease 0.15s both; }
+.hero-static .main-slider-one__title__box:nth-child(1) h2 { animation: heroSlideUp 0.55s ease 0.3s both; }
+.hero-static .main-slider-one__title__box:nth-child(2) h2 { animation: heroSlideUp 0.55s ease 0.45s both; }
+.hero-static .main-slider-one__sub-text { animation: heroSlideUp 0.55s ease 0.55s both; }
+.hero-static .main-slider-one__btn { animation: heroSlideUp 0.55s ease 0.7s both; }
+/* Override wallox initial opacity:0 states so CSS animations control visibility */
+.hero-static .main-slider-one__sub-title,
+.hero-static .main-slider-one__title__box h2,
+.hero-static .main-slider-one__btn { opacity: 0; }
 
 /* CWV: Stabilize about-one layout */
 .about-one { contain: layout; }
 /* CWV: Tagline letter-spacing via CSS - eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
-/* CWV: Reduce hero animation delays - theme defaults are 1300-1700ms which feels broken without preloader */
-.main-slider-one .active .main-slider-one__bg { transition-delay: 0ms !important; }
-.main-slider-one .active .main-slider-one__sub-title { transition-delay: 100ms !important; }
-.main-slider-one .active .main-slider-one__title__box h2 { transition-delay: 200ms !important; }
-.main-slider-one .active .main-slider-one__btn { transition-delay: 300ms !important; }
 </style>
 <script type="text/javascript">
  (function(k) {

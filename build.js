@@ -176,7 +176,7 @@ function buildHomepage() {
     // Use WebP path for LCP hero image
     const bgWebp = s.bg.replace(/\.(jpg|jpeg)$/i, '.webp');
     const bgMobile = bgWebp.replace('.webp', '-mobile.webp');
-    return `<div class="main-slider-one__item">
+    return `<div class="main-slider-one__item active">
   <div class="main-slider-one__bg">
     <img
       src="/assets/images/backgrounds/${bgWebp}"
@@ -213,10 +213,9 @@ function buildHomepage() {
 ${T.topbar()}
 <!-- HEADER -->
 
-<section class="main-slider-one">
-  <div class="main-slider-one__carousel wallox-owl__carousel owl-carousel" data-owl-options='{"loop":false,"animateOut":"fadeOut","animateIn":"fadeIn","items":1,"autoplay":false,"nav":false,"dots":false,"margin":0}'>
+<!-- Static hero: no Owl carousel, no wallox.js dependency for LCP visibility -->
+<section class="main-slider-one hero-static">
     ${sliderHTML}
-  </div>
 </section>
 
 <section class="feature-two feature-two - one" style="padding-top:60px;">
