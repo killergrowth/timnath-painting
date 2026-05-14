@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 /**
  * build.js  -  Timnath Painting Site Builder
  * Generates all pillar pages from data + templates
@@ -27,7 +27,7 @@ function copyDir(src, dest) {
 
 const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 
-// Custom SVG icons — inline with brand color
+// Custom SVG icons â€” inline with brand color
 const RED = '#AE360E';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -47,10 +47,10 @@ function write(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// â"€â"€ Setup â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ Setup Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) — desktop is pre-compressed in source
+// Generate mobile hero variant (800px @ q68 ~70KB) â€” desktop is pre-compressed in source
 // Source: assets/images/backgrounds/slider-3-1.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
@@ -67,9 +67,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html — built by buildHomepage()
+// Root index.html â€” built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED — site is live)
+// Copy coming-soon landing page to root (DISABLED â€” site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -81,7 +81,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json — Pages Functions handle routing now
+// Remove _worker.js and _routes.json â€” Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -90,9 +90,9 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// â"€â"€ HOMEPAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ HOMEPAGE Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 function buildHomepage() {
-  // ── Reviews data ─────────────────────────────────────────────────────────────
+  // â”€â”€ Reviews data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
@@ -168,7 +168,7 @@ function buildHomepage() {
       lines: ['Premium Exterior', 'Painting and More'],
       btn1: { t: 'Get a Free Quote', h: '/contact.html' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
-      subText: 'Professional painting done right—on time, on budget, and built to last.'
+      subText: 'Professional painting done rightâ€”on time, on budget, and built to last.'
     },
   ];
 
@@ -188,7 +188,7 @@ function buildHomepage() {
   </div>
   <div class="container"><div class="row align-items-center gutter-y-30"><div class="col-lg-7">
     <div class="main-slider-one__content">
-      <h6 class="main-slider-one__sub-title">${s.sub}</h6>
+      <p class="main-slider-one__sub-title">${s.sub}</p>
       <div class="main-slider-one__title">
         ${s.lines.map(l => `<div class="main-slider-one__title__box"><h2 class="main-slider-one__title__text">${l}</h2></div>`).join('')}
       </div>
@@ -213,6 +213,7 @@ function buildHomepage() {
 ${T.topbar()}
 <!-- HEADER -->
 
+<main>
 <!-- Static hero: no Owl carousel, no wallox.js dependency for LCP visibility -->
 <section class="main-slider-one hero-static">
     ${sliderHTML}
@@ -221,7 +222,7 @@ ${T.topbar()}
 <section class="feature-two feature-two - one" style="padding-top:60px;">
   <div class="container">
     <div class="row gutter-y-30">
-      ${features.map((f,i) => `<div class="col-lg-3 col-md-4 col-sm-6"><div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="${(i+1)*200}ms"><div class="feature-two__item__icon"><i class="${f.icon}"></i></div><h5 class="feature-two__item__title"><a href="${f.link}">${f.title}</a></h5></div></div>`).join('\n')}
+      ${features.map((f,i) => `<div class="col-lg-3 col-md-4 col-sm-6"><div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="${(i+1)*200}ms"><div class="feature-two__item__icon"><i class="${f.icon}"></i></div><p class="feature-two__item__title"><a href="${f.link}">${f.title}</a></p></div></div>`).join('\n')}
     </div>
     <div class="line"></div>
   </div>
@@ -251,7 +252,7 @@ ${T.topbar()}
           <div class="sec-title text-start">
             <div class="d-flex align-items-center justify-content-start">
               
-              <h6 class="sec-title__tagline">About ${CLIENT.name}</h6>
+              <p class="sec-title__tagline">About ${CLIENT.name}</p>
             </div>
             <h3 class="sec-title__title">Paint Systems Built for Colorado's Climate</h3>
           </div>
@@ -274,7 +275,7 @@ ${T.topbar()}
   <div class="service-one__bg" style="background-image:url(/assets/images/backgrounds/service-4-1.jpg);"></div>
   <div class="service-one__top">
     <div class="sec-title text-center">
-      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">what we do</h6></div>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
       <h3 class="sec-title__title">Painting Services We Offer</h3>
     </div>
   </div>
@@ -292,7 +293,7 @@ ${T.topbar()}
       <div class="col-lg-6">
         <div class="why-choose-one__left">
           <div class="sec-title text-start">
-            <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">Why Choose Us?</h6></div>
+            <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Why Choose Us?</p></div>
             <h3 class="sec-title__title">The Difference Between a 4-Year Job and a 10-Year System</h3>
           </div>
           <blockquote class="why-choose-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most paint failures in Colorado are prep failures, not coating failures. We address the full stack  -  surface prep, primer selection, coating chemistry, and application standards most painters never learn.</blockquote>
@@ -339,7 +340,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(finalContent)}`);
 }
 
-// â"€â"€ ABOUT PAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ ABOUT PAGE Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 function buildAbout() {
   const content = `
 ${T.topbar()}
@@ -359,7 +360,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
       <div class="col-lg-6">
         <div class="about-one__right">
           <div class="sec-title text-start">
-            <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">Our Story</h6></div>
+            <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Our Story</p></div>
             <h3 class="sec-title__title">Built Different  -  On Purpose</h3>
           </div>
           <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">I'm Josh, a Colorado local, and I've been in and around the painting industry since 2007 and have owned and operated multiple successful painting and construction companies in the Midwest.</p>
@@ -376,7 +377,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
     <div class="row gutter-y-30">
       <div class="col-lg-6">
         <div class="sec-title text-start">
-          <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">Why We Do It Differently</h6></div>
+          <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Why We Do It Differently</p></div>
           <h3 class="sec-title__title">Why Northern Colorado Homes Trust Timnath Painting</h3>
         </div>
         <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most painting contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
@@ -413,19 +414,19 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 <section style="padding:80px 0;">
   <div class="container">
     <div class="sec-title text-center">
-      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">Our Services</h6></div>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Our Services</p></div>
       <h3 class="sec-title__title">What We Do</h3>
     </div>
     <div class="row gutter-y-30" style="margin-top:40px;">
       ${SERVICES.map(s => `<div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;">
-          <h5 class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></h5>
+          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></p>
           <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
         </div>
       </div>`).join('\n')}
       <div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;background:#f4ede4;">
-          <h5 class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html" style="color:#AE360E;">See Areas We Serve</a></h5>
+          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html" style="color:#AE360E;">See Areas We Serve</a></p>
           <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">View All Areas</a>
         </div>
       </div>
@@ -439,7 +440,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// â"€â"€ SERVICE HUB PAGES â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ SERVICE HUB PAGES Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -458,7 +459,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
     <div class="row gutter-y-30">
       <div class="col-lg-8">
         <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:16px;">
-          <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">${d.tagline}</h6></div>
+          <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">${d.tagline}</p></div>
           <h3 class="sec-title__title" style="margin-bottom:0;">${d.heroTitle}</h3>
         </div>
         ${d.intro.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">${p}</p>`).join('\n')}
@@ -470,7 +471,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
         </div>
         <div style="margin:40px 0;">
           <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
-            <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">cities we serve</h6></div>
+            <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">cities we serve</p></div>
             <h3 class="sec-title__title" style="margin-bottom:0;">Areas Served</h3>
           </div>
           <p class="wow fadeInUp" data-wow-duration="1500ms">We provide ${d.title.split(' in ')[0].toLowerCase()} throughout Northern Colorado:</p>
@@ -478,7 +479,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
         </div>
         <div style="margin:40px 0;">
           <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
-            <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">common questions</h6></div>
+            <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">common questions</p></div>
             <h3 class="sec-title__title" style="margin-bottom:0;">Frequently Asked Questions</h3>
           </div>
           <div style="margin-top:30px;">${T.faqBlock(d.faqs, slug + '-faq')}</div>
@@ -515,7 +516,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// â"€â"€ CONTACT PAGE â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ CONTACT PAGE Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -535,7 +536,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
           <h4 style="margin-bottom:8px;">Phone</h4>
           <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-          <p style="margin-top:6px;font-size:13px;color:#666;">Mon–Sat: 7am–6pm</p>
+          <p style="margin-top:6px;font-size:13px;color:#666;">Monâ€“Sat: 7amâ€“6pm</p>
         </div>
       </div>
       <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
@@ -548,7 +549,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
     <div class="row gutter-y-30" style="margin-top:60px;">
       <div class="col-lg-8">
         <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
-          <div class="d-flex align-items-center justify-content-start"><h6 class="sec-title__tagline">get in touch</h6></div>
+          <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">get in touch</p></div>
           <h3 class="sec-title__title" style="margin-bottom:8px;">Get a Free Quote</h3>
         </div>
         <p style="margin-top:0;">Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few minutes  -  and always provide honest, no-obligation quotes.</p>
@@ -591,7 +592,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
 ${T.wrapBody(content)}`);
 }
 
-// â"€â"€ Areas Served INDEX â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ Areas Served INDEX Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => `
   <div class="col-md-6 col-lg-4 col-xl-3">
@@ -608,7 +609,7 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
 <section style="padding:80px 0;">
   <div class="container">
     <div class="sec-title text-center">
-      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">where we work</h6></div>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">where we work</p></div>
       <h3 class="sec-title__title">Painting Services Across Northern Colorado</h3>
     </div>
     <p class="text-center" style="margin:20px auto 50px;max-width:700px;">${CLIENT.name} serves homeowners and commercial property owners throughout the Northern Colorado I-25 corridor. Select your city below to learn more about our services in your area.</p>
@@ -622,7 +623,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// â"€â"€ RUN ALL â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+// Ã¢"â‚¬Ã¢"â‚¬ RUN ALL Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬Ã¢"â‚¬
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -653,7 +654,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 <section style="padding:80px 0;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">what we do</h6></div>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
       <h3 class="sec-title__title">Professional Painting Services in Northern Colorado</h3>
       <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with Eco-Painter Certified crews and premium Sherwin-Williams and Benjamin Moore coatings.</p>
     </div>
@@ -674,7 +675,7 @@ ${T.contactFormSection()}`;
   write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}  
 ${T.wrapBody(content)}`);
 }
-// ══ CITY HUB PAGES ══════════════════════════════════════════════════════════
+// â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function buildCityHub(city) {
   const d = CITY_DATA[city.slug];
   if (!d) { console.warn('No city data for', city.slug); return; }
@@ -747,7 +748,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
 
         <div style="margin-bottom:32px;">
-          <h6 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">what we offer</h6>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">what we offer</p>
           <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Our Services in ${d.label}, CO</h2>
           <ul style="list-style:none;padding:0;margin:0;border-top:1px solid #e4dacc;">
             ${serviceFeatures}
@@ -757,8 +758,8 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
 
         <div style="margin-bottom:32px;">
-          <h6 style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</h6>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions — ${d.label}, CO</h2>
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions â€” ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -781,7 +782,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         </div>
 
         <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <h5 style="color:#AE360E;margin-bottom:14px;font-size:16px;">Why Timnath Painting</h5>
+          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Painter Certified</li>
@@ -793,7 +794,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         </div>
 
         <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;">
-          <h5 style="color:#201B10;margin-bottom:14px;font-size:15px;">Other Areas We Serve</h5>
+          <p style="color:#201B10;margin-bottom:14px;font-size:15px;font-weight:600;">Other Areas We Serve</p>
           <div>${otherCities}</div>
         </div>
       </div>
@@ -813,8 +814,8 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// ══ GALLERY PAGE ══════════════════════════════════════════════════════════
-function buildGallery_OLD() { // OLD — replaced by template-based version below
+// â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+function buildGallery_OLD() { // OLD â€” replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -847,7 +848,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
 <section style="padding:80px 0;">
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
-      <div class="d-flex align-items-center justify-content-center"><h6 class="sec-title__tagline">our work</h6></div>
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">our work</p></div>
       <h3 class="sec-title__title">Completed Projects</h3>
       <p style="color:#5a5650;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">Browse our completed painting projects across Northern Colorado. Click a tag to filter by project type.</p>
     </div>
@@ -958,7 +959,7 @@ function buildGallery() {
   console.log('Built: gallery/index.html');
 }
 
-// ══ UPLOAD ADMIN PAGE ═════════════════════════════════════════════════════════
+// â•â• UPLOAD ADMIN PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 function buildUploadAdmin() {
   // Read the pre-built upload page from the dist template file if it exists,
   // otherwise write the standalone file directly (not injected through wrapBody
@@ -978,7 +979,8 @@ CITIES.forEach(buildCityHub);
 buildGallery();
 buildUploadAdmin();
 
-console.log('\nâœ... All pillar pages built successfully.');
+console.log('\nÃ¢Å“... All pillar pages built successfully.');
+
 
 
 

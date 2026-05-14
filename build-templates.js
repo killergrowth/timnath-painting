@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
 function htmlHead(title, desc, canonicalUrl, preloadImage) {
@@ -33,20 +33,21 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <!-- Self-hosted fonts - eliminates Google Fonts external round-trips -->
 <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plusjakarta-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Critical CSS - render-blocking (above-fold layout + icons affect visible content) -->
+<!-- Critical CSS - render-blocking (layout-affecting only) -->
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="/assets/vendors/wallox-icons/style.css">
 <link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.carousel.min.css">
 <link rel="stylesheet" href="/assets/vendors/owl-carousel/css/owl.theme.default.min.css">
 <link rel="stylesheet" href="/assets/css/wallox.css">
 <link rel="stylesheet" href="/assets/css/timnath-custom.css">
-<link rel="stylesheet" href="/assets/css/icon-shim.css">
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Non-critical CSS - deferred async (no layout impact above fold) -->
+<!-- Non-critical CSS — deferred async (icon glyphs + animations, no layout impact) -->
+<!-- FA icon space reservation — prevents CLS when icon glyphs render after CSS loads -->
+<link rel="preload" href="/assets/vendors/fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/vendors/wallox-icons/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="/assets/css/icon-shim.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/jquery-ui/jquery-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -64,13 +65,16 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/vendors/slick-carousel/slick.css">
 <link rel="stylesheet" href="/assets/vendors/slick-carousel/slick-theme.css">
 <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css">
+<link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="/assets/vendors/wallox-icons/style.css">
+<link rel="stylesheet" href="/assets/css/icon-shim.css">
 </noscript>
 <style>
 /* Inline critical overrides - beats any cached external CSS */
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
-/* CWV: Auto-dismiss preloader — delay gives wallox.js time to initialize + hero image to become visible */
+/* CWV: Auto-dismiss preloader â€" delay gives wallox.js time to initialize + hero image to become visible */
 @keyframes dismissPreloader { 0% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
 .preloader { animation: dismissPreloader 600ms ease forwards; animation-delay: 900ms; }
 /* === STATIC HERO (no Owl carousel, no wallox.js dep for LCP) === */
@@ -78,7 +82,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
 /* Hero bg img positioning (same as before) */
 .hero-static .main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
-/* CSS-only text entrance animations — fire on load, no JS required */
+/* CSS-only text entrance animations â€" fire on load, no JS required */
 @keyframes heroSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
 .hero-static .main-slider-one__sub-title { animation: heroSlideUp 0.55s ease 0.15s both; }
 .hero-static .main-slider-one__title__box:nth-child(1) h2 { animation: heroSlideUp 0.55s ease 0.3s both; }
@@ -92,6 +96,13 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 
 /* CWV: Stabilize about-one layout */
 .about-one { contain: layout; }
+/* A11y: Darken about-one body text from #7E7C76 (3.86:1) to #666 (5.74:1) to pass WCAG AA contrast */
+.about-one__top__text { color: #666 !important; }
+/* A11y: FA icon space reservation — prevents CLS when FontAwesome loads async.
+   Inline icons (.fa-solid etc) take 0 space without FA CSS; reserving 1em prevents layout shifts. */
+.fa-solid, .fa-regular, .fa-brands, .fa {
+  display: inline-block; min-width: 1em; font-style: normal;
+}
 /* CWV: Tagline letter-spacing via CSS - eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
@@ -241,14 +252,14 @@ function contactFormSection() {
               </div>
             </div>
           </form>
-          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We Respond In Minutes. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#AE360E);">${CLIENT.phone}</a></p>
+          <p style="margin-top:16px;font-size:13px;color:#aaa;text-align:center;">We Respond In Minutes. Prefer to call? <a href="tel:${CLIENT.phoneTel}" style="color:var(--wallox-base,#AE360E);text-decoration:underline;">${CLIENT.phone}</a></p>
         </div>
       </div>
 
       <!-- Contact Info -->
       <div class="col-lg-6">
         <div class="wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="150ms" style="padding:20px 10px;">
-          <span style="color:var(--wallox-base,#AE360E);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
+          <span style="color:#fff;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;">Reach Us Directly</span>
           <h3 style="color:#fff;margin-top:8px;margin-bottom:30px;">We Respond In Minutes</h3>
           <ul class="list-unstyled" style="line-height:2.6;">
             <li><i class="fa-solid fa-phone" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:#fff;">${CLIENT.phone}</a></li>
@@ -310,6 +321,7 @@ function wrapBody(content) {
 <div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
 <div class="page-wrapper">
 ${content}
+</main>
 <!-- FOOTER -->
 </div>
 ${mobileNav()}
@@ -358,6 +370,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 
