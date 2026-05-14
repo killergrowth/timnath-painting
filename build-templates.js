@@ -135,13 +135,13 @@ function htmlScripts() {
 <script>
 // Active nav: runs immediately + after 200ms to override wallox.js theme defaults
 function setActiveNav() {
-  var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+  var path = window.location.pathname.replace(/\\/index\\.html$/, '/').replace(/\\.html$/, '/').replace(/\\/?$/, '/');
   var items = document.querySelectorAll('.main-menu__list > li');
   items.forEach(function(li){ li.classList.remove('current'); });
   items.forEach(function(li){
     var a = li.querySelector('a');
     if (!a) return;
-    var href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+    var href = (a.getAttribute('href') || '').replace(/\\/index\\.html$/, '/').replace(/\\.html$/, '/').replace(/\\/?$/, '/');
     if (!href || href === '#/' || href === '#') return;
     if (path === href || (href.length > 1 && path.startsWith(href))) {
       li.classList.add('current');
@@ -367,6 +367,7 @@ document.addEventListener('DOMContentLoaded', function () {
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 
