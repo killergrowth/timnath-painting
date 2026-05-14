@@ -30,10 +30,10 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons-v2/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons-v2/favicon-16x16.png">
 <link rel="manifest" href="/assets/images/favicons-v2/site.webmanifest">
-<!-- Self-hosted fonts — eliminates Google Fonts external round-trips -->
+<!-- Self-hosted fonts - eliminates Google Fonts external round-trips -->
 <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plusjakarta-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Critical CSS — render-blocking (above-fold layout + icons affect visible content) -->
+<!-- Critical CSS - render-blocking (above-fold layout + icons affect visible content) -->
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/vendors/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="/assets/vendors/fontawesome/css/all.min.css">
@@ -46,7 +46,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/css/timnath-overrides.css">
 <!-- Preload FontAwesome webfont to prevent header layout shift -->
 <link rel="preload" href="/assets/vendors/fontawesome/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
-<!-- Non-critical CSS — deferred async (no layout impact above fold) -->
+<!-- Non-critical CSS - deferred async (no layout impact above fold) -->
 <link rel="preload" href="/assets/vendors/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/bootstrap-select/bootstrap-select.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/jquery-ui/jquery-ui.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -66,14 +66,14 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <link rel="stylesheet" href="/assets/vendors/jarallax/jarallax.css">
 </noscript>
 <style>
-/* Inline critical overrides — beats any cached external CSS */
+/* Inline critical overrides - beats any cached external CSS */
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
-/* CWV: Auto-dismiss preloader after 400ms via CSS — covers initial carousel CLS without blocking LCP on window.load */
+/* CWV: Auto-dismiss preloader — delay gives wallox.js time to initialize + hero image to become visible */
 @keyframes dismissPreloader { 0% { opacity:1; visibility:visible; } 100% { opacity:0; visibility:hidden; pointer-events:none; } }
-.preloader { animation: dismissPreloader 200ms ease forwards; animation-delay: 400ms; }
-/* CWV: Pre-Owl carousel containment — use absolute+visibility instead of display:none.
+.preloader { animation: dismissPreloader 600ms ease forwards; animation-delay: 900ms; }
+/* CWV: Pre-Owl carousel containment - use absolute+visibility instead of display:none.
    display:none + .owl-loaded removal briefly shows slides 2+3 in block flow before Owl sets
    them position:absolute, causing a 373px section-height spike = 0.398 CLS on about-one. */
 .main-slider-one__carousel:not(.owl-loaded) { overflow: hidden; }
@@ -81,17 +81,17 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .main-slider-one__carousel:not(.owl-loaded) .main-slider-one__item ~ .main-slider-one__item {
   position: absolute; top: 0; left: 0; width: 100%; visibility: hidden; pointer-events: none;
 }
-/* CWV: Hero LCP img — fills the .main-slider-one__bg container the same way the CSS bg-image did */
+/* CWV: Hero LCP img - fills the .main-slider-one__bg container the same way the CSS bg-image did */
 .main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
-/* CWV: Hero transition speed — reduce 1000ms wallox fade to 200ms */
+/* CWV: Hero transition speed - reduce 1000ms wallox fade to 200ms */
 .main-slider-one__bg { transition-duration: 200ms, 200ms !important; }
 
 /* CWV: Stabilize about-one layout */
 .about-one { contain: layout; }
-/* CWV: Tagline letter-spacing via CSS — eliminates fixTaglines JS setTimeout (which caused CLS) */
+/* CWV: Tagline letter-spacing via CSS - eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
-/* CWV: Reduce hero animation delays — theme defaults are 1300–1700ms which feels broken without preloader */
+/* CWV: Reduce hero animation delays - theme defaults are 1300-1700ms which feels broken without preloader */
 .main-slider-one .active .main-slider-one__bg { transition-delay: 0ms !important; }
 .main-slider-one .active .main-slider-one__sub-title { transition-delay: 100ms !important; }
 .main-slider-one .active .main-slider-one__title__box h2 { transition-delay: 200ms !important; }
