@@ -162,6 +162,13 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K8ZXCK8V');</script>
+<!-- End Google Tag Manager -->
 <!-- Feedbucket feedback widget -->
 <script type="text/javascript">
  (function(k) {
@@ -372,6 +379,10 @@ function serviceCarouselItems() {
 
 function wrapBody(content) {
   return `<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8ZXCK8V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <!-- preloader removed: static hero is visible on first paint, no Owl carousel or opacity:0 initial states remain.
      jQuery fadeOut() at window.load was pushing LCP to ~9s by causing a display:none transition at that time.
      Preloader reinstated with CSS auto-dismiss (700ms delay, 500ms fade) — fires before window.load, no LCP impact. -->

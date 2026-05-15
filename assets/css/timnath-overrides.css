@@ -236,3 +236,10 @@
 .main-slider-one__item {
   height: auto !important;
 }
+
+/* About page - What We Do: right-align Learn More buttons on mobile */
+@media (max-width: 767px) {
+  .about-services-grid .feature-two__item {
+    justify-content: space-between !important;
+  }
+}

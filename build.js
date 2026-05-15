@@ -404,7 +404,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="90%"><div class="progress-box__number count-text">90%</div></div></div>
         </div>
         <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
-          <img src="/assets/images/about/about-kitchen.jpg" alt="Interior painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
+          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
         </div>
       </div>
     </div>
@@ -672,7 +672,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, interior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}
+  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}
 ${T.wrapBody(content)}`);
 }
 // â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
