@@ -162,7 +162,14 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
-
+<!-- Feedbucket feedback widget -->
+<script type="text/javascript">
+ (function(k) {
+ let s=document.createElement('script');s.defer=true;
+ s.src="https://cdn.feedbucket.app/assets/feedbucket.js";
+ s.dataset.feedbucket=k;document.head.appendChild(s);
+ })('unHnhjucA9iBv9bu4nxg')
+</script>
 </head>`;
 }
 
