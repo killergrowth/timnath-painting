@@ -869,7 +869,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  const head = T.htmlHead('Project Gallery | Timnath Painting', 'Browse completed painting projects by Timnath Painting across Northern Colorado. Exterior, interior, HOA, commercial and more.');
+  const head = T.htmlHead('Project Gallery | Timnath Painting', 'Browse completed painting projects by Timnath Painting across Northern Colorado. Exterior, HOA, commercial, fence staining and more.');
   const fullPage = head.replace('</head>', `<style>${galleryCSS}</style></head>`);
 
   const bodyScript = `

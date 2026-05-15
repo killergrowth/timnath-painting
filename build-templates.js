@@ -421,6 +421,8 @@ document.addEventListener('DOMContentLoaded', function () {
         thankYou.innerHTML = '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>';
         var note = form.parentElement && form.parentElement.querySelector('.contact-preview-note');
         if (note) note.style.display = 'none';
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'form_submit_success', form_type: 'quote_form' });
         form.replaceWith(thankYou);
       } else {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
