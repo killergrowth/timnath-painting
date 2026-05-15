@@ -168,7 +168,7 @@ function buildHomepage() {
       lines: ['Premium Exterior', 'Painting and More'],
       btn1: { t: 'Get a Free Quote', h: '/contact.html' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
-      subText: 'Professional painting done right—on time, on budget, and built to last.'
+      subText: 'Professional painting done right-on time, on budget, and built to last.'
     },
   ];
 
@@ -411,7 +411,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
   </div>
 </section>
 
-<section style="padding:80px 0;">
+<section class="about-services-grid" style="padding:80px 0;">
   <div class="container">
     <div class="sec-title text-center">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Our Services</p></div>
@@ -421,13 +421,13 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
       ${SERVICES.map(s => `<div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;">
           <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></p>
-          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
+          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">Learn More</a>
         </div>
       </div>`).join('\n')}
       <div class="col-md-6 col-lg-4">
         <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;background:#f4ede4;">
           <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html" style="color:#AE360E;">See Areas We Serve</a></p>
-          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">View All Areas</a>
+          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">View All Areas</a>
         </div>
       </div>
     </div>
@@ -436,7 +436,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about.html')}
+  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about')}
 ${T.wrapBody(content)}`);
 }
 
@@ -529,14 +529,14 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
       <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
           <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-location-dot"></i></div>
           <h4 style="margin-bottom:8px;">Address</h4>
-          <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}<br>Serving Northern Colorado</p>
+          <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</p><p style="margin:4px 0 0;">Serving Northern Colorado</p>
         </div>
       </div>
       <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
           <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
           <h4 style="margin-bottom:8px;">Phone</h4>
           <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-          <p style="margin-top:6px;font-size:13px;color:#666;">Monâ€"Sat: 7amâ€"6pm</p>
+          <p style="margin-top:6px;font-size:13px;color:#666;">Mon&ndash;Sat: 7am&ndash;6pm</p>
         </div>
       </div>
       <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
@@ -588,7 +588,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
   </div>
 </section>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact.html')}
+  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact')}
 ${T.wrapBody(content)}`);
 }
 
