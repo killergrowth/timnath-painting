@@ -1,7 +1,7 @@
 {
   "rating": 5,
-  "userRatingCount": 33,
-  "fetchedAt": "2026-05-10T11:00:59.790Z",
+  "userRatingCount": 38,
+  "fetchedAt": "2026-05-17T11:07:44.226Z",
   "reviews": [
     {
       "author": "Preston Alexander",
@@ -34,7 +34,7 @@
     {
       "author": "Steve Anderson",
       "rating": 5,
-      "relativeTime": "5 months ago",
+      "relativeTime": "6 months ago",
       "text": "Josh and Brett did a fantastic job not only painting the outside of our house but helping us select the right colors. We get so many compliments. They are the best!",
       "publishTime": "2025-11-14T21:49:21.877558707Z"
     }
