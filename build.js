@@ -446,7 +446,7 @@ function buildServiceHub(slug) {
   if (!d) { console.warn('No data for', slug); return; }
 
   const cityLinksHTML = CITIES.map(c =>
-    `<a href="/${slug}/${c.slug}/index.html" class="wallox-btn wallox-btn--border" style="margin:4px 4px 4px 0;">${c.label}</a>`
+    `<a href="/${slug}-${c.slug}/index.html" class="wallox-btn wallox-btn--border" style="margin:4px 4px 4px 0;">${c.label}</a>`
   ).join('\n');
 
   const content = `
