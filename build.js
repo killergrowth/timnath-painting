@@ -594,12 +594,19 @@ ${T.wrapBody(content)}`);
 
 // Ã¢"â'¬Ã¢"â'¬ Areas Served INDEX Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
 function buildServiceAreas() {
-  const cityGrid = CITIES.map(c => `
+  const cityGrid = CITIES.map(c => {
+    const serviceLinks = SERVICES.map(s =>
+      `<li style="margin-bottom:2px;"><a href="/${s.slug}-${c.slug}/index.html" style="font-size:13px;color:#5a5650;text-decoration:none;display:flex;align-items:center;gap:6px;padding:3px 0;"><i class="fa-solid fa-angle-right" style="color:#AE360E;font-size:10px;"></i>${s.label}</a></li>`
+    ).join('');
+    return `
   <div class="col-md-6 col-lg-4 col-xl-3">
     <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#f4ede4;padding:25px;border-radius:8px;margin-bottom:20px;">
-      <h4 style="margin-bottom:0;"><a href="/areas-served/${c.slug}/index.html" style="color:#201B10;text-decoration:none;">${c.label}, CO</a></h4>
+      <h4 style="margin-bottom:14px;"><a href="/areas-served/${c.slug}/index.html" style="color:#201B10;text-decoration:none;">${c.label}, CO</a></h4>
+      <ul style="list-style:none;padding:0;margin:0 0 14px;">${serviceLinks}</ul>
+      <a href="/areas-served/${c.slug}/index.html" style="font-size:12px;font-weight:700;color:#AE360E;text-decoration:none;text-transform:uppercase;letter-spacing:1px;">All services in ${c.label} &rarr;</a>
     </div>
-  </div>`).join('\n');
+  </div>`;
+  }).join('\n');
 
   const content = `
 ${T.topbar()}
@@ -685,11 +692,12 @@ function buildCityHub(city) {
       <div style="flex-shrink:0;width:32px;height:32px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;margin-top:2px;">
         <i class="fa-solid fa-check"></i>
       </div>
-      <div>
+      <div style="flex:1;">
         <div style="font-weight:700;color:#201B10;margin-bottom:4px;">
-          ${s.label} in ${d.label}, CO
+          <a href="/${s.slug}-${city.slug}/index.html" style="color:#201B10;text-decoration:none;">${s.label} in ${d.label}, CO</a>
         </div>
-        <div style="color:#5a5650;font-size:14px;line-height:1.6;">${s.tagline}</div>
+        <div style="color:#5a5650;font-size:14px;line-height:1.6;margin-bottom:6px;">${s.tagline}</div>
+        <a href="/${s.slug}-${city.slug}/index.html" style="font-size:12px;font-weight:700;color:#AE360E;text-decoration:none;">Learn more &rarr;</a>
       </div>
     </li>`).join('');
 
