@@ -33,7 +33,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <!-- Self-hosted fonts - eliminates Google Fonts external round-trips -->
 <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/plusjakarta-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
-<!-- All CSS async — critical styles are inlined below -->
+<!-- All CSS async - critical styles are inlined below -->
 <link rel="preload" href="/assets/css/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/vendors/bootstrap/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="preload" href="/assets/css/wallox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -73,13 +73,13 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 </noscript>
 <style>
 /* ============================================================
-   CRITICAL CSS — inlined to eliminate ALL render-blocking CSS
+   CRITICAL CSS - inlined to eliminate ALL render-blocking CSS
    ============================================================ */
 
 /* 1. CSS variables (from wallox.css :root) */
 :root{--wallox-font:"Plus Jakarta Sans",sans-serif;--wallox-text:#7E7C76;--wallox-text-dark:#2E2A20;--wallox-base:#AE360E;--wallox-gray:#F4EDE4;--wallox-white:#fff;--wallox-border-color:#E4DACC}
 
-/* 2. Bootstrap container — minimal, so bootstrap.min.css can load async */
+/* 2. Bootstrap container - minimal, so bootstrap.min.css can load async */
 .container,.container-fluid{width:100%;padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
 @media(min-width:576px){.container{max-width:540px}}
 @media(min-width:768px){.container{max-width:720px}}
@@ -92,7 +92,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 /* 3. Page wrapper */
 .page-wrapper{position:relative;margin:0 auto;width:100%;min-width:300px;overflow:hidden}
 
-/* 4. HERO SIZING — critical for LCP paint. Without this, hero collapses and image can't render. */
+/* 4. HERO SIZING - critical for LCP paint. Without this, hero collapses and image can't render. */
 .main-slider-one{position:relative;overflow:hidden}
 .main-slider-one__item{position:relative;padding-top:115px;padding-bottom:158px;height:803px;background-color:#F4EDE4}
 @media(max-width:1350px){.main-slider-one__item{height:auto}}
@@ -127,7 +127,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
-/* Preloader: CSS auto-dismiss after 700ms (no jQuery/window.load dependency — avoids LCP delay) */
+/* Preloader: CSS auto-dismiss after 700ms (no jQuery/window.load dependency - avoids LCP delay) */
 @keyframes dismissPreloader{0%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}
 .preloader{animation:dismissPreloader 500ms ease forwards;animation-delay:700ms;}
 /* .real-image: GSAP xPercent reveal removed. Images visible by default. */
@@ -158,7 +158,11 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
   display: inline-block; min-width: 1em; font-style: normal;
 }
 
-/* CWV: Tagline letter-spacing via CSS - eliminates fixTaglines JS setTimeout (which caused CLS) */
+/* Header: prevent both CTA button + hamburger showing at same time at mid-widths */
+@media(max-width:1199px){.main-header__right__link{display:none!important}}
+@media(min-width:1200px){.mobile-nav__btn{display:none!important}}
+
+/* CWV: Tagline letter-spacing via CSS — eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
@@ -385,7 +389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <!-- preloader removed: static hero is visible on first paint, no Owl carousel or opacity:0 initial states remain.
      jQuery fadeOut() at window.load was pushing LCP to ~9s by causing a display:none transition at that time.
-     Preloader reinstated with CSS auto-dismiss (700ms delay, 500ms fade) — fires before window.load, no LCP impact. -->
+     Preloader reinstated with CSS auto-dismiss (700ms delay, 500ms fade) - fires before window.load, no LCP impact. -->
 <div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
 <div class="page-wrapper">
 ${content}
