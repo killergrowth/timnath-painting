@@ -1,7 +1,7 @@
 ﻿'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
-function htmlHead(title, desc, canonicalUrl, preloadImage) {
+function htmlHead(title, desc, canonicalUrl, preloadImage, noindex = false) {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +9,7 @@ function htmlHead(title, desc, canonicalUrl, preloadImage) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>${title}</title>
 <meta name="description" content="${desc}">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="${noindex ? 'noindex, nofollow' : 'index, follow'}">
 ${canonicalUrl ? `<link rel="canonical" href="${canonicalUrl}">` : ''}
 ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '-mobile.webp')}" media="(max-width:800px)">
 <link rel="preload" as="image" href="${preloadImage.replace(/\.(jpg|jpeg)$/i, '.webp')}" media="(min-width:801px)">` : ''}

@@ -979,6 +979,211 @@ CITIES.forEach(buildCityHub);
 buildGallery();
 buildUploadAdmin();
 
+// ══ SERVICE + LOCATION PAGES ════════════════════════════════════════════════════════
+// URL: /[service-slug]-[city-slug]/index.html
+// All pages are noindex until scheduled rollout.
+function buildServiceLocation(service, city) {
+  const sd = SERVICE_DATA[service.slug];
+  const cd = CITY_DATA[city.slug];
+  if (!sd || !cd) { console.warn('Missing data:', service.slug, city.slug); return; }
+
+  const pageSlug   = `${service.slug}-${city.slug}`;
+  const canonical  = `https://timnathpainting.com/${pageSlug}/`;
+  const h1Title    = `${service.label} in ${cd.label}, CO`;
+  const metaTitle  = `${service.label} in ${cd.label}, CO | Timnath Painting`;
+  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Painter Certified, $2M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
+
+  // Blended FAQs: 2 service-specific + up to 3 city-specific
+  const blendedFaqs = [
+    ...sd.faqs.slice(0, 2).map(f => ({ q: f.q, a: f.a })),
+    ...cd.faqs.slice(0, 3).map(f => ({ q: f.q, a: f.a })),
+  ];
+
+  const schema = JSON.stringify([
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: h1Title,
+      serviceType: service.label,
+      description: metaDesc,
+      provider: {
+        '@type': 'LocalBusiness',
+        name: CLIENT.name,
+        telephone: CLIENT.phone,
+        email: CLIENT.email,
+        url: 'https://timnathpainting.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '4836 Becker Dr',
+          addressLocality: 'Timnath',
+          addressRegion: 'CO',
+          postalCode: CLIENT.zip,
+          addressCountry: 'US'
+        }
+      },
+      areaServed: { '@type': 'City', name: cd.label }
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: blendedFaqs.map(f => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a }
+      }))
+    }
+  ]);
+
+  // Other services this city page links to
+  const otherServiceLinks = SERVICES
+    .filter(s => s.slug !== service.slug)
+    .map(s => `<li><a href="/${s.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#201B10;font-size:14px;text-decoration:none;border-bottom:1px solid #e4dacc;">${s.label} in ${cd.label}, CO</a></li>`)
+    .join('');
+
+  // Other cities for this service
+  const otherCityLinks = CITIES
+    .filter(c => c.slug !== city.slug)
+    .map(c => `<a href="/${service.slug}-${c.slug}/index.html" style="display:inline-block;margin:4px 4px 4px 0;padding:5px 12px;background:#f4ede4;border-radius:4px;font-size:13px;color:#201B10;text-decoration:none;border:1px solid #e4dacc;">${c.label}</a>`)
+    .join('');
+
+  const whyFeatures = [
+    { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$2M general liability coverage. Certificates of insurance available on request within 24 hours.' },
+    { icon: 'fa-solid fa-leaf',          title: 'Eco-Painter Certified',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
+    { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
+    { icon: 'fa-solid fa-clock',         title: 'We Respond In Minutes',              text: 'Every quote request gets a response within minutes during business hours. On-site assessments scheduled fast.' },
+  ];
+
+  const content = `
+${T.topbar()}
+<!-- HEADER -->
+${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.label}</a></li><li><span>${cd.label}, CO</span></li>`)}
+
+<script type="application/ld+json">${schema}</script>
+
+<section style="padding:80px 0;">
+  <div class="container">
+    <div class="row gutter-y-30">
+
+      <!-- MAIN CONTENT -->
+      <div class="col-lg-8">
+
+        <!-- H1 + City Intro -->
+        <div style="margin-bottom:32px;">
+          <h1 style="font-size:32px;font-weight:700;color:#201B10;margin-bottom:10px;">${h1Title}</h1>
+          <p style="font-size:15px;color:#5a5650;margin-bottom:0;"><strong>${cd.context}.</strong></p>
+        </div>
+
+        ${cd.intro.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:18px;">${p}</p>`).join('')}
+
+        <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+        <!-- Service Intro -->
+        <div style="margin-bottom:32px;">
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">${sd.tagline}</p>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:16px;">${sd.heroTitle.includes(cd.label) ? sd.heroTitle : sd.heroTitle + ' &#8212; ' + cd.label + ', CO'}</h2>
+          ${sd.intro.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:16px;">${p}</p>`).join('')}
+        </div>
+
+        <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+        <!-- Process -->
+        <div style="margin-bottom:32px;">
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">how we work</p>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:16px;">Our ${service.label} Process in ${cd.label}</h2>
+          ${sd.process.split('\n\n').map(p => `<p style="color:#5a5650;line-height:1.8;margin-bottom:16px;">${p}</p>`).join('')}
+        </div>
+
+        <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+        <!-- Why Us -->
+        <div style="margin-bottom:32px;">
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">why choose us</p>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Why ${cd.label} Homeowners Choose Timnath Painting</h2>
+          <ul style="list-style:none;padding:0;margin:0;">
+            ${whyFeatures.map(f => `<li style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid #e4dacc;"><div style="flex-shrink:0;width:36px;height:36px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;"><i class="${f.icon}"></i></div><div><div style="font-weight:700;color:#201B10;margin-bottom:4px;">${f.title}</div><div style="color:#5a5650;font-size:14px;line-height:1.6;">${f.text}</div></div></li>`).join('')}
+          </ul>
+        </div>
+
+        <hr style="border:none;border-top:1px dashed #ddd;margin:32px 0;">
+
+        <!-- FAQs -->
+        <div style="margin-bottom:32px;">
+          <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions &#8212; ${service.label} in ${cd.label}, CO</h2>
+          ${T.faqBlock(blendedFaqs, pageSlug + '-faq')}
+        </div>
+
+        <!-- Other Cities for This Service -->
+        <div style="padding:24px;background:#f4ede4;border-radius:8px;margin-bottom:32px;">
+          <p style="font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#AE360E;margin-bottom:10px;">${service.label} in Other NoCo Cities</p>
+          <div>${otherCityLinks}</div>
+        </div>
+
+        <!-- Bottom CTA -->
+        <div style="background:#201B10;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:16px;">
+          <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get a Free Quote in ${cd.label}?</h4>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond within minutes and provide free on-site assessments.</p>
+        </div>
+
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="col-lg-4">
+
+        <div style="background:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
+          <h4 style="margin-bottom:16px;color:#201B10;">Get a Free Quote</h4>
+          <ul class="list-unstyled" style="line-height:2.4;margin-bottom:16px;">
+            <li><i class="fa-solid fa-phone" style="color:#AE360E;margin-right:8px;"></i><a href="tel:${CLIENT.phoneTel}" style="font-weight:700;font-size:18px;color:#201B10;">${CLIENT.phone}</a></li>
+            <li><i class="fa-solid fa-envelope" style="color:#AE360E;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
+            <li><i class="fa-solid fa-location-dot" style="color:#AE360E;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
+          </ul>
+          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
+        </div>
+
+        <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
+          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
+          <ul class="list-unstyled" style="line-height:2.2;margin:0;">
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Free On-Site Quotes</li>
+          </ul>
+        </div>
+
+        <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;margin-bottom:24px;">
+          <p style="color:#201B10;margin-bottom:14px;font-size:15px;font-weight:600;">Our Services in ${cd.label}, CO</p>
+          <ul class="list-unstyled" style="margin:0;">
+            ${otherServiceLinks}
+            <li><a href="/${service.slug}-${city.slug}/index.html" style="display:block;padding:8px 0;color:#AE360E;font-size:14px;font-weight:700;text-decoration:none;">${service.label} in ${cd.label} &rarr;</a></li>
+          </ul>
+        </div>
+
+        <div style="padding:28px;border:1px solid #e4dacc;border-radius:8px;">
+          <p style="color:#201B10;margin-bottom:14px;font-size:15px;font-weight:600;">Other Areas for ${service.label}</p>
+          <div>${otherCityLinks}</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+${T.contactFormSection()}`;
+
+  write(`${pageSlug}/index.html`,
+    `${T.htmlHead(metaTitle, metaDesc, canonical, null, true)}
+${T.wrapBody(content)}`);
+}
+
+// Build all 40 service+location combos
+SERVICES.forEach(service => {
+  CITIES.forEach(city => {
+    buildServiceLocation(service, city);
+  });
+});
+
 // Always sync functions/ into dist/ so CF Pages deploys include the API workers
 copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
 
