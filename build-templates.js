@@ -248,10 +248,7 @@ function mobileNav() {
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
       <li><i class="fa-solid fa-phone"></i><a href="tel:${CLIENT.phoneTel}">${CLIENT.phone}</a></li>
     </ul>
-    <div class="mobile-nav__social">
-      <a href="${CLIENT.facebook}"><i class="fa-brands fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
-      <a href="${CLIENT.instagram}"><i class="fa-brands fa-instagram"></i><span class="sr-only">Instagram</span></a>
-    </div>
+
   </div>
 </div>
 <a href="#" data-target="html" class="scroll-to-target scroll-to-top">
