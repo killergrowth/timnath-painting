@@ -38,8 +38,8 @@ const SERVICE_DATA = {
   'exterior-painting': {
     title: 'Exterior Painting in Northern Colorado',
     metaTitle: 'Exterior Painting Northern Colorado | Timnath Painting',
-    metaDesc: "Exterior painting built for Colorado\\'s climate. Licensed, eco-certified, 7-10 year coatings. Northern Colorado homes. (970) 236-8271",
-    tagline: "Built for Colorado\\'s Climate",
+    metaDesc: "Exterior painting built for Colorado\'s climate. Licensed, eco-certified, 7-10 year coatings. Northern Colorado homes. (970) 236-8271",
+    tagline: "Built for Colorado\'s Climate",
     heroTitle: 'Exterior Painting in Northern Colorado That Lasts 10+ Years',
     intro: `Northern Colorado sees 28+ freeze-thaw cycles every year. UV radiation hits 10-15% harder at altitude. Wood siding expands and contracts with temperature swings that can exceed 60 degrees in a single day. Cheap paint jobs fail in 3-4 years here.
 
@@ -53,7 +53,7 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
 <strong>Project Management:</strong> You get a dedicated project lead, progress updates throughout the job, and full site cleanup. No subcontractors. No volume rushing.`,
     sidingTypes: [
       { type: 'Fiber Cement (HardiePlank / HardieBoard)', desc: 'The most common siding in newer Northern Colorado HOA communities. Holds paint extremely well when primed with an alkyd or 100% acrylic masonry primer. Must be clean and fully dry before coating. 7–10 year system lifespans are realistic with proper prep.' },
-      { type: 'Wood / Cedar', desc: "Natural wood demands oil-based primer on every bare surface. Checks, splits, and open grain get caulked with flexible elastomeric sealant. Colorado\\'s dry climate pulls moisture out of wood faster than coastal climates &mdash; older wood siding requires more prep time, and we factor that into every quote." },
+      { type: 'Wood / Cedar', desc: "Natural wood demands oil-based primer on every bare surface. Checks, splits, and open grain get caulked with flexible elastomeric sealant. Colorado\'s dry climate pulls moisture out of wood faster than coastal climates &mdash; older wood siding requires more prep time, and we factor that into every quote." },
       { type: 'T1-11 Plywood', desc: 'Common on older homes and outbuildings. The vertical grooves trap moisture and debris year-round. Requires aggressive cleaning and an elastomeric or 100% acrylic topcoat that can bridge hairline cracks without peeling.' },
       { type: 'Vinyl Siding', desc: 'Paintable with the correct adhesion primer. Color selection matters here &mdash; going significantly darker than the original factory color can cause thermal expansion stress and may void manufacturer warranties. We assess this before quoting and advise accordingly.' },
       { type: 'Stucco', desc: 'Takes paint well and holds up to Colorado climate when prepared correctly. Surface cracks are addressed with elastomeric caulk or flexible patching compound before any topcoat. We use masonry primer as the base coat on all stucco surfaces.' },
@@ -65,18 +65,20 @@ We are Eco-Painter Certified. That is a real credential covering application pra
 $2M general liability coverage means that if something goes wrong on your property, you are protected. We provide a certificate of insurance within 24 hours to any HOA board or property manager who requests one.`,
     timeline: `Most residential exterior painting projects in Northern Colorado take 3–5 business days, weather-dependent.
 
-<strong>Day 1 &mdash; Prep:</strong> Surface assessment, pressure washing, scraping all loose paint, caulking gaps and joints, spot priming bare surfaces. This is the most important day on the job. Prep determines how long the paint lasts.
+<strong>Prep Phase:</strong> Surface assessment, pressure washing, scraping all loose paint, caulking gaps and joints, spot priming bare surfaces. This is the most important day on the job. Prep determines how long the paint lasts.
 
 <strong>Days 2–3 &mdash; First Coat:</strong> Top-to-bottom application. Trim is cut in before rolling or spraying field areas. South and west exposures are scheduled for morning application to avoid midday heat blistering.
 
 <strong>Days 3–4 &mdash; Second Coat:</strong> Full second coat on all surfaces. Three coats on high-UV exposures. Detail work on trim, fascia, and soffits.
 
-<strong>Final Day &mdash; Cleanup &amp; Walkthrough:</strong> Site cleanup, touch-ups, and a final walkthrough with you before any invoice is issued. You do not need to be home during the project &mdash; we coordinate access at the quote stage and send photos throughout.`,
+<strong>Final Day &mdash; Cleanup &amp; Walkthrough:</strong> Site cleanup, touch-ups, and a final walkthrough with you before any invoice is issued. You do not need to be home during the project &mdash; we coordinate access at the quote stage and send photos throughout.
+
+We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
-      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Board-approved color matching and documentation for HOA compliance.' },
-      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains that protect wood grain through Colorado summers.' },
-      { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck and siding stain systems for natural wood surfaces.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, minimal disruption, $2M liability.' },
+      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $2M liability, owned crew — not subcontractors.' },
+      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
+      { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
     faqs: [
       { q: 'How long does exterior paint last in Colorado?', a: 'Budget paint jobs typically last 3-4 years in Northern Colorado due to freeze-thaw cycles and high UV exposure. Premium systems with proper surface prep and high-grade acrylic or elastomeric coatings last 7-10 years. We use Sherwin-Williams Duration and Benjamin Moore Aura &mdash; both formulated for extreme temperature cycling and UV resistance.' },
@@ -120,17 +122,20 @@ We eliminate that risk. We use spectrophotometer color matching and coordinate d
 Our $2M general liability policy covers multi-unit projects. Certificates of insurance are available within 24 hours to any property manager or board that requests one. We have never had a board wait on a COI from us.`,
     timeline: `HOA project timelines depend on unit count, but here is how a standard Timnath or Windsor neighborhood project runs.
 
-<strong>Week 1 &mdash; Color Approval:</strong> We submit color samples and documentation to the architectural review committee. Most Northern Colorado HOAs turn approvals in 2–4 weeks. We build this into the project timeline and never start coating without written approval in hand.
+<strong>Color Approval Phase:</strong> We submit color samples and documentation to the architectural review committee. Most Northern Colorado HOAs turn approvals in 2–4 weeks. We build this into the project timeline and never start coating without written approval in hand.
 
-<strong>Week 2–3 &mdash; Prep:</strong> Pressure washing, scraping, caulking, and priming across all approved units. We work sequentially through the community to keep the timeline predictable for residents.
+<strong>Prep Phase:</strong> Pressure washing, scraping, caulking, and priming across all approved units. We work sequentially through the community to keep the timeline predictable for residents.
 
-<strong>Weeks 3–5 &mdash; Coating:</strong> Two-coat minimum on all surfaces. We document color codes used for each unit for future reference.
+<strong>Coating Phase:</strong> Two-coat minimum on all surfaces. We document color codes used for each unit for future reference.
 
-<strong>Final &mdash; Walkthrough:</strong> Board representative or property manager walkthrough before any final invoice is issued. We address any punch list items same-day.`,
+<strong>Final &mdash; Walkthrough:</strong> Board representative or property manager walkthrough before any final invoice is issued. We address any punch list items same-day.
+
+We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
-      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year systems for individual homes in Northern Colorado.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $2M liability, no subcontractors.' },
-      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Community fence staining for HOA common areas and individual lots.' },
+      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $2M liability, owned crew — not subcontractors.' },
+      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
+      { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
     faqs: [
       { q: 'Do you handle HOA color approval documentation?', a: 'Yes. We work with HOA architectural review committees to confirm approved colors, provide color samples, and submit all required documentation. We have worked with dozens of local HOAs in Timnath, Windsor, and Severance and know their standards and timelines.' },
@@ -172,16 +177,20 @@ Timnath Painting brings an owned crew to every commercial project. The same peop
 We carry $2M general liability insurance and workers\' compensation on all crew members. COI is available within 24 hours. For property management companies that need to be listed as additional insured, we accommodate that at no cost.`,
     timeline: `Commercial project timelines depend on building size and schedule constraints, but here is how a standard Northern Colorado commercial repaint runs.
 
-<strong>Week 1 &mdash; Assessment and Scheduling:</strong> On-site assessment, scope confirmation, COI delivery, and schedule build. We identify any after-hours or weekend requirements and lock in access protocols with building management.
+<strong>Assessment &amp; Scheduling:</strong> On-site assessment, scope confirmation, COI delivery, and schedule build. We identify any after-hours or weekend requirements and lock in access protocols with building management.
 
-<strong>Weeks 1–2 &mdash; Prep:</strong> Pressure washing, scraping, substrate repairs, priming. We work around your operating hours. Most prep can be completed during evening shifts.
+<strong>Prep Phase:</strong> Pressure washing, scraping, substrate repairs, priming. We work around your operating hours. Most prep can be completed during evening shifts.
 
-<strong>Weeks 2–3 &mdash; Coating:</strong> First and second coat application. Elastomeric systems require specific dry times between coats that we factor into the schedule. We do not rush dry times.
+<strong>Coating Phase:</strong> First and second coat application. Elastomeric systems require specific dry times between coats that we factor into the schedule. We do not rush dry times.
 
-<strong>Final &mdash; Punch List:</strong> Property manager walkthrough, punch list documentation, and touch-up completion before invoice.`,
+<strong>Final &mdash; Punch List:</strong> Property manager walkthrough, punch list documentation, and touch-up completion before invoice.
+
+We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
-      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Multi-unit HOA coordination with full color documentation.' },
-      { label: 'Exterior Painting', slug: 'exterior-painting', desc: 'Residential exterior systems rated for 7–10 years.' },
+      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
+      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
+      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
+      { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
     faqs: [
       { q: 'Can you paint after hours or on weekends?', a: 'Yes. Timnath Painting schedules commercial crews for evenings, overnight shifts, and weekends in Northern Colorado. Retail storefronts, medical offices, and multi-family buildings often require after-hours work. We coordinate site access, lighting requirements, and security protocols before beginning.' },
@@ -222,15 +231,18 @@ We eliminate that outcome. We prep the wood correctly, select the right product 
 Our work comes with a workmanship guarantee. If the stain fails early due to our application, we come back and address it.`,
     timeline: `Fence staining projects in Northern Colorado typically take 1–2 days, depending on fence length and prep condition.
 
-<strong>Day 1 &mdash; Prep:</strong> Power washing to remove dirt, mildew, and failing stain. Application of wood brightener on weathered or gray wood. Allow to dry completely &mdash; typically 24–48 hours before stain application.
+<strong>Prep Phase:</strong> Power washing to remove dirt, mildew, and failing stain. Application of wood brightener on weathered or gray wood. Allow to dry completely &mdash; typically 24–48 hours before stain application.
 
-<strong>Day 2 &mdash; Stain Application:</strong> First coat of penetrating stain applied by brush, roller, or airless sprayer depending on fence profile. Second coat applied wet-on-wet on new or bare wood, or after dry time on previously stained surfaces.
+<strong>Stain Application:</strong> First coat of penetrating stain applied by brush, roller, or airless sprayer depending on fence profile. Second coat applied wet-on-wet on new or bare wood, or after dry time on previously stained surfaces.
 
-<strong>Dry and Cure:</strong> Most penetrating stains are dry to touch within 2–4 hours and fully cured within 24–48 hours. We advise keeping pets and sprinklers off the fence during cure time.`,
+<strong>Cure &amp; Ready to Use:</strong> Most penetrating stains are dry to touch within 2–4 hours and fully cured within 24–48 hours. We advise keeping pets and sprinklers off the fence during cure time.
+
+We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
-      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year exterior paint systems for your home.' },
-      { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, siding, and natural wood staining services.' },
-      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Community fence and exterior painting for HOA properties.' },
+      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
+      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $2M liability, owned crew — not subcontractors.' },
+      { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
     faqs: [
       { q: 'How long does fence stain last in Colorado?', a: 'Penetrating semi-transparent stains last 3–5 years on properly prepared wood in Northern Colorado. Solid stains and paints often fail sooner because they form a film that peels under freeze-thaw stress. UV exposure at altitude accelerates degradation, so south and west-facing sections may need restaining sooner.' },
@@ -272,17 +284,20 @@ We test wood moisture before any product goes on. We select stain formulations b
 We are Eco-Painter Certified and use products that meet Colorado\'s VOC compliance standards. For homeowners in HOA communities, we coordinate color approval before any stain product is opened.`,
     timeline: `Exterior staining timelines depend on surface area and wood condition, but here is how a standard Northern Colorado project runs.
 
-<strong>Day 1 &mdash; Assessment and Prep:</strong> We assess the existing finish, test moisture content, and begin cleaning. Power washing and mildew treatment are completed on day one. Wood brightener is applied where needed and allowed to work overnight.
+<strong>Assessment &amp; Prep Phase:</strong> We assess the existing finish, test moisture content, and begin cleaning. Power washing and mildew treatment are completed on day one. Wood brightener is applied where needed and allowed to work overnight.
 
-<strong>Day 2 &mdash; Dry and Inspect:</strong> Wood must be fully dry before staining &mdash; we confirm moisture levels are in the acceptable range before proceeding. On log homes with deep checking, we caulk any open splits with stainable caulk.
+<strong>Dry &amp; Inspect:</strong> Wood must be fully dry before staining &mdash; we confirm moisture levels are in the acceptable range before proceeding. On log homes with deep checking, we caulk any open splits with stainable caulk.
 
-<strong>Day 2–3 &mdash; Stain Application:</strong> First coat applied by brush, roller, or sprayer depending on surface profile. Log homes and shake siding are always brush-applied for penetration. Flat siding can be sprayed and back-brushed.
+<strong>Stain Application:</strong> First coat applied by brush, roller, or sprayer depending on surface profile. Log homes and shake siding are always brush-applied for penetration. Flat siding can be sprayed and back-brushed.
 
-<strong>Final Coat and Cure:</strong> Second coat applied after appropriate dry time. Most penetrating stains cure within 24–48 hours for light use and 72 hours for full weather exposure.`,
+<strong>Final Coat &amp; Cure:</strong> Second coat applied after appropriate dry time. Most penetrating stains cure within 24–48 hours for light use and 72 hours for full weather exposure.
+
+We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
-      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems for non-wood or previously painted surfaces.' },
-      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stain systems for all fence types in Northern Colorado.' },
-      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color coordination and multi-unit work for HOA communities.' },
+      { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
+      { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $2M liability, owned crew — not subcontractors.' },
+      { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
     ],
     faqs: [
       { q: 'What types of exterior surfaces can be stained?', a: 'We stain wood siding (cedar, pine, redwood, T1-11), log homes, wood decks, pergolas, fences, wood trim, and shake siding. Each surface type requires specific stain formulation and prep approach. Composite or PVC surfaces are not candidates for staining.' },
@@ -304,7 +319,7 @@ const CITY_DATA = {
     label: 'Timnath',
     state: 'CO',
     context: 'Fast-growing community along the I-25 corridor with high-end new construction and HOA neighborhoods',
-    intro: `Timnath is one of the fastest-growing communities in Northern Colorado, with new construction neighborhoods and established HOA communities spreading east of I-25. The homes here are newer and premium &mdash; and the expectation for exterior appearance matches. Colorado\\'s 28+ freeze-thaw cycles and intense UV exposure hit every home in Timnath the same way, regardless of age. Paint systems that aren't designed for Zone 5b conditions fail early.\n\nTimnath Painting is based here. We know the neighborhoods, the HOA requirements, and the local conditions better than anyone. Licensed, Insured, and Eco-Painter Certified with $2M general liability coverage.`,
+    intro: `Timnath is one of the fastest-growing communities in Northern Colorado, with new construction neighborhoods and established HOA communities spreading east of I-25. The homes here are newer and premium &mdash; and the expectation for exterior appearance matches. Colorado\'s 28+ freeze-thaw cycles and intense UV exposure hit every home in Timnath the same way, regardless of age. Paint systems that aren't designed for Zone 5b conditions fail early.\n\nTimnath Painting is based here. We know the neighborhoods, the HOA requirements, and the local conditions better than anyone. Licensed, Insured, and Eco-Painter Certified with $2M general liability coverage.`,
     faqs: [
       { q: 'Do you serve the Timnath area?', a: 'Yes &mdash; Timnath is our home base. We serve all neighborhoods in Timnath including newer HOA communities east of I-25. We\x27re on-site in Timnath regularly and can typically schedule faster here than in other cities.' },
       { q: 'Do you work with HOAs in Timnath?', a: 'Yes. Many Timnath neighborhoods have HOA color approval requirements. We handle the approval documentation, provide color samples, and submit to the architectural review committee on your behalf. Most HOA approvals in this area take 2–4 weeks, which we build into every project timeline.' },
@@ -356,7 +371,7 @@ const CITY_DATA = {
     label: 'Loveland',
     state: 'CO',
     context: 'Mid-sized Larimer County city with established neighborhoods, growing south end, and scenic Front Range setting',
-    intro: `Loveland sits along the Front Range at the foot of the Big Thompson Canyon &mdash; scenic, but that also means direct UV exposure, wind, and temperature swings that challenge exterior paint systems year-round. The city has a mix of established mid-century neighborhoods near downtown and newer developments spreading south and east toward Johnstown. Both require proper exterior coating systems to survive Northern Colorado\\'s climate.\n\nTimnath Painting serves Loveland with the same Eco-Painter Certified crew, premium Sherwin-Williams and Benjamin Moore coatings, and thorough prep that protects every project for 7–10 years. Licensed, Insured, $2M general liability.`,
+    intro: `Loveland sits along the Front Range at the foot of the Big Thompson Canyon &mdash; scenic, but that also means direct UV exposure, wind, and temperature swings that challenge exterior paint systems year-round. The city has a mix of established mid-century neighborhoods near downtown and newer developments spreading south and east toward Johnstown. Both require proper exterior coating systems to survive Northern Colorado\'s climate.\n\nTimnath Painting serves Loveland with the same Eco-Painter Certified crew, premium Sherwin-Williams and Benjamin Moore coatings, and thorough prep that protects every project for 7–10 years. Licensed, Insured, $2M general liability.`,
     faqs: [
       { q: 'Does Timnath Painting serve Loveland, CO?', a: 'Yes. Loveland is within our standard service area. We serve all areas of Loveland including established neighborhoods near downtown, the south end near the Centerra area, and outlying properties.' },
       { q: 'How does the Front Range climate affect exterior paint in Loveland?', a: 'Loveland\'s location at the base of the Big Thompson Canyon means increased wind exposure on top of Northern Colorado\'s standard UV and freeze-thaw cycles. Paint systems need to be flexible enough to handle thermal cycling and tough enough to resist UV degradation. We specify coatings rated for exactly these conditions.' },
