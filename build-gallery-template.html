@@ -178,7 +178,7 @@
     <div class="mobile-nav__container"></div>
     <ul class="mobile-nav__contact list-unstyled">
       <li><i class="fa-solid fa-envelope"></i><a href="mailto:josh@timnathpainting.com">josh@timnathpainting.com</a></li>
-      <li><i class="fa-solid fa-phone"></i><a href="tel:9702368271">(970) 236-8271</a></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:9706703965">(970) 670-3965</a></li>
     </ul>
   </div>
 </div>
@@ -212,7 +212,7 @@ setActiveNav(); setTimeout(setActiveNav, 200);
   var visiblePhotos = [];
   var currentIndex = 0;
 
-  // ── Lightbox ────────────────────────────────────────────────────────────────
+  // â”€â”€ Lightbox â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   function openLightbox(index) {
     currentIndex = index;
     var p = visiblePhotos[currentIndex];
@@ -270,7 +270,7 @@ setActiveNav(); setTimeout(setActiveNav, 200);
     if (Math.abs(diff) > 50) { if (diff > 0) showNext(); else showPrev(); }
   }, { passive: true });
 
-  // ── Filtering ───────────────────────────────────────────────────────────────
+  // â”€â”€ Filtering â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   function setFilter(tag) {
     activeTag = tag;
     document.querySelectorAll('#filterBar .filter-btn').forEach(function (b) {
@@ -307,7 +307,7 @@ setActiveNav(); setTimeout(setActiveNav, 200);
     });
   }
 
-  // ── Render ──────────────────────────────────────────────────────────────────
+  // â”€â”€ Render â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   function renderPhotos(photos) {
     var container = document.getElementById('galleryContainer');
     if (!photos.length) {
@@ -353,7 +353,7 @@ setActiveNav(); setTimeout(setActiveNav, 200);
     });
   }
 
-  // ── Load ────────────────────────────────────────────────────────────────────
+  // â”€â”€ Load â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   fetch('/api/photos')
     .then(function (r) { return r.json(); })
     .then(function (data) {

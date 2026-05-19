@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 /**
  * build.js  -  Timnath Painting Site Builder
  * Generates all pillar pages from data + templates
@@ -387,7 +387,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  certificates available on request</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Limited project capacity to maintain quality control</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Daily progress updates  -  no chasing us down</li>
+          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Weekly progress updates  -  no chasing us down</li>
         </ul>
       </div>
       <div class="col-lg-6">
@@ -436,7 +436,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about')}
+  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 670-3965", 'https://timnathpainting.com/about')}
 ${T.wrapBody(content)}`);
 }
 
@@ -588,7 +588,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
   </div>
 </section>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact')}
+  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
 ${T.wrapBody(content)}`);
 }
 
@@ -816,7 +816,7 @@ ${T.contactFormSection()}`;
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
       `Painting Services in ${d.label}, CO | Timnath Painting`,
-      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 236-8271.`,
+      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 670-3965.`,
       `https://timnathpainting.com/areas-served/${city.slug}/`
     )}
 ${T.wrapBody(content)}`);
@@ -1058,7 +1058,7 @@ function buildServiceLocation(service, city) {
     { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$2M general liability coverage. Certificates of insurance available on request within 24 hours.' },
     { icon: 'fa-solid fa-leaf',          title: 'Eco-Painter Certified',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
     { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
-    { icon: 'fa-solid fa-clock',         title: 'We Respond In Minutes',              text: 'Every quote request gets a response within minutes during business hours. On-site assessments scheduled fast.' },
+    { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
   ];
 
   const content = `
