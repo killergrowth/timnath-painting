@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
 function htmlHead(title, desc, canonicalUrl, preloadImage, noindex = false) {
@@ -430,11 +430,11 @@ document.addEventListener('DOMContentLoaded', function () {
         form.replaceWith(thankYou);
       } else {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
-        alert('Something went wrong. Please call us at (970) 236-8271.');
+        alert('Something went wrong. Please call us at (970) 670-3965.');
       }
     } catch (err) {
       if (btn) { btn.disabled = false; btn.textContent = orig; }
-      alert('Something went wrong. Please call us at (970) 236-8271.');
+      alert('Something went wrong. Please call us at (970) 670-3965.');
     }
   });
 });

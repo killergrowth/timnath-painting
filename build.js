@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 /**
  * build.js  -  Timnath Painting Site Builder
  * Generates all pillar pages from data + templates
@@ -436,7 +436,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 236-8271", 'https://timnathpainting.com/about')}
+  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 670-3965", 'https://timnathpainting.com/about')}
 ${T.wrapBody(content)}`);
 }
 
@@ -680,7 +680,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
   </div>
 </section>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 236-8271', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 236-8271.', 'https://timnathpainting.com/contact')}
+  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
 ${T.wrapBody(content)}`);
 }
 
@@ -865,7 +865,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="background:#201B10;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:32px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get Started in ${d.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond within minutes and always provide free on-site quotes.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or use the form below. We respond same-day and always provide free on-site quotes.</p>
         </div>
       </div>
 
@@ -908,7 +908,7 @@ ${T.contactFormSection()}`;
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
       `Painting Services in ${d.label}, CO | Timnath Painting`,
-      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 236-8271.`,
+      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 670-3965.`,
       `https://timnathpainting.com/areas-served/${city.slug}/`
     )}
 ${T.wrapBody(content)}`);
@@ -1222,7 +1222,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         <!-- Bottom CTA -->
         <div style="background:#201B10;color:#f4ede4;border-radius:8px;padding:28px 32px;margin-top:16px;">
           <h4 style="color:#fff;margin:0 0 10px;font-size:20px;">Ready to Get a Free Quote in ${cd.label}?</h4>
-          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond within minutes and provide free on-site assessments.</p>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.8);">Call or text <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a> or fill out the form below. We respond same-day and provide free on-site assessments.</p>
         </div>
 
       </div>
