@@ -1491,13 +1491,14 @@ function buildGetAQuote() {
 .gaq-proof-item i{color:#AE360E;margin-top:3px;font-size:16px;flex-shrink:0;}
 .gaq-proof-item p{margin:0;color:#2E2A20;font-size:14px;line-height:1.5;}
 .gaq-proof-item strong{display:block;font-size:14px;font-weight:700;}
+.gaq-subtext{font-size:18px;font-weight:600;color:#AE360E;margin:0 0 20px;letter-spacing:-0.01em;}
 </style>
 <main>
 <section class="gaq-wrap">
   <div class="container">
     <div class="gaq-grid">
       <div>
-        <h1 class="gaq-headline">An Honest Painting Quote &mdash; No Pressure, No Surprises, No Runaround</h1>
+        <h1 class="gaq-headline">An Honest Painting Quote</h1><p class="gaq-subtext">No Pressure, No Surprises, No Runaround</p>
         <p class="gaq-subhead">Tell us about your project and we&rsquo;ll get back to you within a few hours. No sales pitch. Just a straight answer.</p>
         <ul class="gaq-trust-list">
           <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado &mdash; we know the conditions, the HOAs, and the neighborhoods.</span></li>
@@ -1523,7 +1524,7 @@ function buildGetAQuote() {
               <button type="submit" class="gaq-submit">Send My Free Quote Request</button>
             </div>
           </form>
-          <p class="gaq-trust-line"><i class="fa-solid fa-clock"></i> We respond within 2 hours during business hours</p>
+          <p class="gaq-trust-line"><i class="fa-solid fa-clock"></i> We respond fast</p>
         </div>
       </div>
     </div>
