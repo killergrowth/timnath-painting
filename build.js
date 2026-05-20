@@ -1451,7 +1451,7 @@ function buildGetAQuote() {
   const FOOTER_MINIMAL_HTML  = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'),  'utf8');
 
   function inject(html) {
-    return html.replace('<!-- HEADER -->', HEADER_STRIPPED_HTML).replace('<!-- FOOTER -->', FOOTER_MINIMAL_HTML);
+    return html.replace('<!-- HEADER -->', HEADER).replace('<!-- FOOTER -->', FOOTER_MINIMAL_HTML);
   }
 
   const head = T.htmlHead(
