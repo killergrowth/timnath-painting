@@ -101,7 +101,7 @@ const newFn = `function buildServiceHub(slug) {
           \${d.whyUs.split('\\n\\n').map(p => \`<p class="wow fadeInUp" data-wow-duration="1500ms" style="color:#e8e0d8;line-height:1.8;">\${p}</p>\`).join('\\n')}
           <ul class="list-unstyled" style="margin-top:20px;line-height:2.2;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Colorado</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Eco-Friendly. No-VOC Products.</span></li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No-VOC Products.</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$2M General Liability &mdash; COI on request</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Sherwin-Williams &amp; Benjamin Moore Approved</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
@@ -185,7 +185,7 @@ const newFn = `function buildServiceHub(slug) {
             <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
             <ul class="list-unstyled" style="line-height:2;">
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
+              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>

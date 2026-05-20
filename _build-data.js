@@ -11,7 +11,7 @@ const CLIENT = {
   facebook: 'https://facebook.com/timnathpainting',
   instagram: 'https://instagram.com/timnathpainting',
   tagline: 'Northern Colorado\'s Premium Painting Contractor',
-  description: 'Premium painting contractor serving Timnath, Windsor, Severance & Northern Colorado. Licensed, insured, Eco-Friendly. No-VOC Products.. Call or text (970) 670-3965.',
+  description: 'Premium painting contractor serving Timnath, Windsor, Severance & Northern Colorado. Licensed, insured, No-VOC Products.. Call or text (970) 670-3965.',
 };
 
 const SERVICES = [

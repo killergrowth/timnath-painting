@@ -205,7 +205,7 @@ function buildHomepage() {
 
   const features = [
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
-    { icon:'fa-solid fa-paint-roller', title:'Eco-Friendly. No-VOC Products.', link:'/about.html' },
+    { icon:'fa-solid fa-paint-roller', title:'No-VOC Products.', link:'/about.html' },
     { icon:'fa-solid fa-users', title:'$2M Liability Coverage', link:'/about.html' },
     { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/contact.html' },
   ];
@@ -400,7 +400,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
         <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most painting contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
         <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="margin-top:20px;">
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Eco-Friendly. No-VOC Products.  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
+          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> No-VOC Products.  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  certificates available on request</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Limited project capacity to maintain quality control</li>
@@ -535,7 +535,7 @@ function buildServiceHub(slug) {
           ${d.whyUs.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" style="color:#e8e0d8;line-height:1.8;">${p}</p>`).join('\n')}
           <ul class="list-unstyled" style="margin-top:20px;line-height:2.2;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Colorado</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Eco-Friendly. No-VOC Products.</span></li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No-VOC Products.</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$2M General Liability &mdash; COI on request</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Sherwin-Williams &amp; Benjamin Moore Approved</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
@@ -619,7 +619,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
             <ul class="list-unstyled" style="line-height:2;">
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
+              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
@@ -715,7 +715,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <h4 style="color:#ae360e;margin-bottom:20px;">Quick Info</h4>
           <ul class="list-unstyled" style="line-height:2.5;">
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability  -  COI on request</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>We Know Our Crews</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
@@ -827,7 +827,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;"><i class="fa-solid fa-medal"></i></div>
         <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">Why Timnath?</h4>
-        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">Eco-Friendly. No-VOC Products. $2M liability. We know our crews. See what sets us apart.</p>
+        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">No-VOC Products. $2M liability. We know our crews. See what sets us apart.</p>
         <a href="/about.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Our Story <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div></div>
@@ -966,7 +966,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
           <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
@@ -1261,7 +1261,7 @@ function buildServiceLocation(service, city) {
 
   const whyFeatures = [
     { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$2M general liability coverage. Certificates of insurance available on request within 24 hours.' },
-    { icon: 'fa-solid fa-leaf',          title: 'Eco-Friendly. No-VOC Products.',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
+    { icon: 'fa-solid fa-leaf',          title: 'No-VOC Products.',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
     { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
     { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
   ];
@@ -1357,7 +1357,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
           <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
