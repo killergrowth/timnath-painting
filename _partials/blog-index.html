@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+{{page_meta}}
+{{base_head}}
+<style>
+.kg-blog-card a { color: #AE360E; }
+.kg-blog-card h2 a { color: #201B10; text-decoration: none; }
+.kg-blog-card h2 a:hover { color: #AE360E; }
+.kg-pagination a { color: #AE360E !important; }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8ZXCK8V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
+<div class="page-wrapper">
+{{header}}
+<section class="page-header">
+  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+  <div class="container">
+    <h2 class="page-header__title">{{page_title}}</h2>
+    <div class="wallox-breadcrumb">
+      <ul class="wallox-breadcrumb__list list-unstyled">
+        <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><span>Blog</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section style="padding:60px 0 80px;">
+  <div class="container">
+    <div style="max-width:860px;margin:0 auto;padding:0 20px;">
+      {{posts_html}}
+      {{pagination_html}}
+    </div>
+  </div>
+</section>
+{{footer}}
+</div>
+<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
+    <div class="logo-box"><a href="/"><img src="/assets/images/logo-vertical-white.png" width="140" alt="Timnath Painting" style="display:block;margin:0 auto;" loading="lazy"></a></div>
+    <div class="mobile-nav__container"></div>
+    <ul class="mobile-nav__contact list-unstyled">
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:josh@timnathpainting.com">josh@timnathpainting.com</a></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:9706703965">(970) 670-3965</a></li>
+    </ul>
+  </div>
+</div>
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+  <span class="scroll-to-top__text">back top</span>
+  <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+</a>
+<script src="/assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+<script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="/assets/vendors/wow/wow.js"></script>
+<script src="/assets/js/wallox.js"></script>
+<script>
+function setActiveNav() {
+  var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+  var items = document.querySelectorAll('.main-menu__list > li');
+  items.forEach(function(li){ li.classList.remove('current'); });
+  items.forEach(function(li){
+    var a = li.querySelector('a');
+    if (!a) return;
+    var href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+    if (!href || href === '#/' || href === '#') return;
+    if (path === href || (href.length > 1 && path.startsWith(href))) li.classList.add('current');
+  });
+}
+setActiveNav();
+setTimeout(setActiveNav, 200);
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
----
+﻿---
 slug: commercial-painting-cost-fort-collins-co
 title: 'Commercial Painting Cost: How to Budget Your Project in Fort Collins, CO'
 status: draft
@@ -106,6 +106,6 @@ Here's a practical framework for budgeting a commercial paint project before you
 
 The commercial painting cost for Fort Collins, CO properties varies based on all the factors above — but the single best thing you can do is get a detailed on-site estimate from a licensed, insured contractor who knows the region's climate demands.
 
-Timnath Painting carries $2M in liability coverage, is Eco-Painter Certified, and has experience with Northern Colorado's specific coating requirements. We serve [Fort Collins](/areas-served/fort-collins-co/), [Windsor](/areas-served/windsor-co/), Timnath, and surrounding communities.
+Timnath Painting carries $2M in liability coverage, uses premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore, and has experience with Northern Colorado's specific coating requirements. We serve [Fort Collins](/areas-served/fort-collins-co/), [Windsor](/areas-served/windsor-co/), Timnath, and surrounding communities.
 
 **Ready to get a number you can actually build a budget around?** [Request a free on-site quote](/contact/) and we'll walk the property with you and give you an itemized estimate — no vague ranges, no surprises.

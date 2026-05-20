@@ -1,15 +1,15 @@
 ---
 slug: spring-exterior-painting-fort-collins-co
 title: 'Spring Exterior Painting Guide: Is Your Home Ready After Winter?'
-status: draft
-publishDate: null
+status: published
+publishDate: '2026-05-06T13:45:00.000Z'
 scheduledDate: null
 excerpt: >-
   Northern Colorado winters are brutal on exterior paint. Here's how to inspect
   your home and know what needs repair — before spring booking fills up.
-featuredImage: null
-inlineImage1: null
-inlineImage2: null
+featuredImage: blog-posts/images/spring-exterior-painting-fort-collins-co.jpg
+inlineImage1: blog-posts/images/spring-exterior-painting-fort-collins-co-inline1.jpg
+inlineImage2: blog-posts/images/spring-exterior-painting-fort-collins-co-inline2.jpg
 imagePrompt: >-
   I need an image of a Northern Colorado home exterior in early spring with snow
   melting in the yard, showing weathered paint peeling near window trim and wood
@@ -33,13 +33,13 @@ sheetRow: 62
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:59:10.329Z'
-updatedAt: '2026-05-19T20:59:10.329Z'
+updatedAt: '2026-05-20T14:05:50.362Z'
 ---
 Every spring on the Front Range follows the same pattern: the snow pulls back, temps climb into the 50s, and homeowners start noticing things. Peeling trim. Faded siding. Hairline cracks around windows that weren't there last fall.
 
 That's not coincidence — that's Northern Colorado winter doing what it does. If you're thinking about a [spring exterior painting project in Fort Collins or the surrounding area](/exterior-painting/), this guide walks you through exactly what to look for, how to decide what needs repair vs. a full repaint, and when to get on the schedule before the season books out.
 
----
+***
 
 ## What Freeze-Thaw Cycles Actually Do to Paint
 
@@ -51,44 +51,50 @@ Add in **UV radiation that runs 10–15% higher than lower-elevation regions** a
 
 Paint systems that weren't formulated with these conditions in mind — or that were applied without proper prep — rarely make it more than 4–5 years. Our [exterior painting systems](/exterior-painting/) are spec'd specifically for this climate, which is why we stand behind a 7–10 year lifespan.
 
----
+***
 
 ## The Spring Inspection: What to Check
 
 Before you call anyone, walk the perimeter of your house and look for these:
 
 ### Peeling, Cracking, or Bubbling Paint
+
 This is the most obvious sign. Pay close attention to areas that hold moisture — around windows, under roof overhangs, near ground-level siding. Cracking that runs along wood grain usually means the wood substrate has been cycling too. Bubbling often points to trapped moisture.
 
 ### Chalking
+
 Run your hand across the siding. If it comes away with a chalky residue, the paint binder has broken down from UV exposure. Mild chalking is normal after years of sun. Heavy chalking means you're past the protection threshold.
 
 ### Checking Around Caulk Lines
+
 Caulk around windows, doors, and trim joints takes as much abuse as paint — sometimes more. Look for gaps, shrinkage, or spots where caulk has pulled away entirely. These are water intrusion points that need to be addressed before any painting begins.
 
 ### Soft or Spongy Siding
+
 Gently press on areas that look suspicious. Soft spots indicate wood rot beneath the surface. This needs to be repaired — not painted over.
 
----
+***
 
 ## Repair vs. Repaint: How to Think About It
 
 Not everything you find requires a full repaint. Here's a quick framework:
 
 **Spot repaint / touch-up candidates:**
-- Isolated peeling on trim with otherwise solid paint underneath
-- Minor caulk gaps with no underlying damage
-- Small areas of surface chalking on otherwise sound paint
+
+* Isolated peeling on trim with otherwise solid paint underneath
+* Minor caulk gaps with no underlying damage
+* Small areas of surface chalking on otherwise sound paint
 
 **Full repaint candidates:**
-- Peeling that's widespread or happening in multiple areas
-- Any area with heavy chalking — new paint won't bond well to a broken binder
-- Paint that's 8+ years old and showing general fatigue, even if it doesn't look terrible yet
-- Any section where moisture has been sitting long enough to raise questions about what's underneath
+
+* Peeling that's widespread or happening in multiple areas
+* Any area with heavy chalking — new paint won't bond well to a broken binder
+* Paint that's 8+ years old and showing general fatigue, even if it doesn't look terrible yet
+* Any section where moisture has been sitting long enough to raise questions about what's underneath
 
 The honest answer is: if you're finding damage in multiple spots after one inspection pass, spot repairs are usually a short-term fix. The same conditions that caused one area to fail have been affecting the whole surface.
 
----
+***
 
 ## The Spring Booking Timeline on the Front Range
 
@@ -100,7 +106,7 @@ If you want your project done in May or June, the time to schedule a quote is no
 
 We offer **free on-site quotes** with no pressure and no obligation. If your home is borderline — some areas holding, some not — we'll tell you honestly what we think needs doing and what can wait.
 
----
+***
 
 ## Ready to Find Out Where Your Home Stands?
 

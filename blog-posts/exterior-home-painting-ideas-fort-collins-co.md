@@ -1,4 +1,4 @@
----
+﻿---
 slug: exterior-home-painting-ideas-fort-collins-co
 title: Exterior Home Painting Ideas That Actually Transform Curb Appeal
 status: draft
@@ -95,4 +95,4 @@ If you're in Fort Collins, Timnath, Windsor, or the surrounding area and want a 
 
 ---
 
-*Timnath Painting serves homeowners throughout [Fort Collins](/areas-served/fort-collins-co/), [Timnath](/areas-served/timnath-co/), [Windsor](/areas-served/windsor-co/), and greater Northern Colorado. Licensed, insured, and Eco-Painter Certified.*
+*Timnath Painting serves homeowners throughout [Fort Collins](/areas-served/fort-collins-co/), [Timnath](/areas-served/timnath-co/), [Windsor](/areas-served/windsor-co/), and greater Northern Colorado. Licensed, insured, and using premium eco-friendly, no-VOC products.*

@@ -1,4 +1,4 @@
----
+﻿---
 slug: best-exterior-painters-fort-collins-co
 title: 'Best Exterior Painters: How to Find One in Your Area'
 status: draft
@@ -109,4 +109,4 @@ Painters who work here regularly know this. Painters who don't may not.
 
 If you're in the Timnath, Windsor, or Fort Collins area and you want a straight answer about what your home actually needs — not a pushy sales pitch — we'll come out, look at what you've got, and give you an honest assessment.
 
-We're [Eco-Painter Certified](/about/), carry $2M in liability coverage, and back our work with a 7–10 year system warranty. [Request a free on-site quote](/contact/) and see what a properly vetted exterior painter looks like in person.
+We carry $2M in liability coverage, and back our work with a 7–10 year system warranty. [Request a free on-site quote](/contact/) and see what a properly vetted exterior painter looks like in person.

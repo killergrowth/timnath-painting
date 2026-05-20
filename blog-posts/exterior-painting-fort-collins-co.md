@@ -1,4 +1,4 @@
----
+﻿---
 slug: exterior-painting-fort-collins-co
 title: 'Exterior Painting in Fort Collins and the Front Range: What''s Different'
 status: draft
@@ -91,7 +91,7 @@ These ranges assume proper surface prep, premium exterior coatings, and full tri
 
 We serve Fort Collins and the surrounding Northern Colorado communities from our base in Timnath. If you're in Windsor, Severance, Wellington, Loveland, or Greeley, you're in our regular service area. You can see the [areas we serve](/areas-served/) for a full breakdown, including our [Fort Collins service area page](/areas-served/fort-collins-co/).
 
-Our [exterior painting service](/exterior-painting/) is built around climate-specific product selection and proper prep — not the fastest turnaround at the lowest price. We're also [Eco-Painter Certified](/about/) and carry $2M in liability coverage, which matters when you're trusting someone with a significant investment.
+Our [exterior painting service](/exterior-painting/) is built around climate-specific product selection and proper prep — not the fastest turnaround at the lowest price. We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore, and carry $2M in liability coverage, which matters when you're trusting someone with a significant investment.
 
 ---
 

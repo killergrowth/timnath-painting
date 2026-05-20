@@ -222,7 +222,7 @@ Timnath Painting specializes in exterior staining for natural wood surfaces acro
 
 We test wood moisture before any product goes on. We select stain formulations based on wood species, existing coating condition, and UV exposure \u2014 not just whatever is on the shelf. And we do not stain in direct midday sun or within 48 hours of rain. Application timing in Colorado\\'s climate matters more than most contractors acknowledge.
 
-We are Eco-Painter Certified and use products that meet Colorado\\'s VOC compliance standards. For homeowners in HOA communities, we coordinate color approval before any stain product is opened.\`,
+We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore that meet Colorado\\'s VOC compliance standards. For homeowners in HOA communities, we coordinate color approval before any stain product is opened.\`,
     timeline: \`Exterior staining timelines depend on surface area and wood condition, but here is how a standard Northern Colorado project runs.
 
 <strong>Day 1 \u2014 Assessment and Prep:</strong> We assess the existing finish, test moisture content, and begin cleaning. Power washing and mildew treatment are completed on day one. Wood brightener is applied where needed and allowed to work overnight.

@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 /**
  * build.js  -  Timnath Painting Site Builder
  * Generates all pillar pages from data + templates
@@ -10,6 +10,7 @@ const fs   = require('fs');
 const path = require('path');
 const { CLIENT, SERVICES, CITIES, SERVICE_DATA, CITY_DATA } = require('./_build-data.js');
 const T = require('./build-templates.js');
+const { buildBlog } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\blog-build');
 
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
@@ -204,7 +205,7 @@ function buildHomepage() {
 
   const features = [
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
-    { icon:'fa-solid fa-paint-roller', title:'Eco-Painter Certified', link:'/about.html' },
+    { icon:'fa-solid fa-paint-roller', title:'Eco-Friendly. No-VOC Products.', link:'/about.html' },
     { icon:'fa-solid fa-users', title:'$2M Liability Coverage', link:'/about.html' },
     { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/contact.html' },
   ];
@@ -256,10 +257,10 @@ ${T.topbar()}
             </div>
             <h3 class="sec-title__title">Paint Systems Built for Colorado's Climate</h3>
           </div>
-          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Northern Colorado sees 28+ freeze-thaw cycles a year. UV radiation hits 10-15% harder at altitude. Cheap paint fails in 3-4 years here. ${CLIENT.name} builds exterior systems that last 7-10 years using premium Sherwin-Williams and Benjamin Moore coatings, applied by an Eco-Painter Certified crew with $2M general liability coverage.</p>
+          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Northern Colorado sees 28+ freeze-thaw cycles a year. UV radiation hits 10-15% harder at altitude. Cheap paint fails in 3-4 years here. ${CLIENT.name} builds exterior systems that last 7-10 years using premium Sherwin-Williams and Benjamin Moore coatings, using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $2M general liability coverage.</p>
           <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Eco-Painter Certified applicators</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> applicators using premium eco-friendly, no-VOC products</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Sherwin-Williams &amp; Benjamin Moore approved</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  COI on request</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews. No volume rushing.</li>
@@ -331,6 +332,22 @@ ${T.topbar()}
 
 <!-- REVIEWS -->
 
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 ${T.contactFormSection()}`;
 
   // Inject reviews section and schema
@@ -383,7 +400,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
         <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most painting contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
         <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="margin-top:20px;">
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Eco-Painter Certified  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
+          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Eco-Friendly. No-VOC Products.  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  certificates available on request</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Limited project capacity to maintain quality control</li>
@@ -430,6 +447,22 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">View All Areas</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -502,7 +535,7 @@ function buildServiceHub(slug) {
           ${d.whyUs.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" style="color:#e8e0d8;line-height:1.8;">${p}</p>`).join('\n')}
           <ul class="list-unstyled" style="margin-top:20px;line-height:2.2;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Colorado</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Eco-Painter Certified</span></li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Eco-Friendly. No-VOC Products.</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$2M General Liability &mdash; COI on request</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Sherwin-Williams &amp; Benjamin Moore Approved</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
@@ -586,7 +619,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
             <ul class="list-unstyled" style="line-height:2;">
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Painter Certified</li>
+              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
@@ -599,6 +632,22 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
 </section>
 
 ${serviceReviewsSection}
+
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
 
 ${T.contactFormSection()}`;
 
@@ -666,7 +715,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <h4 style="color:#ae360e;margin-bottom:20px;">Quick Info</h4>
           <ul class="list-unstyled" style="line-height:2.5;">
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability  -  COI on request</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>We Know Our Crews</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
@@ -716,6 +765,22 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
   </div>
 </section>
 
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 ${T.contactFormSection()}`;
 
   write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://timnathpainting.com/areas-served/')}
@@ -755,17 +820,33 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
       <h3 class="sec-title__title">Professional Painting Services in Northern Colorado</h3>
-      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with Eco-Painter Certified crews and premium Sherwin-Williams and Benjamin Moore coatings.</p>
+      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with crews using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.</p>
     </div>
     <div class="row gutter-y-30">${serviceGrid}
     <div class="col-lg-4 col-md-6">
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;"><i class="fa-solid fa-medal"></i></div>
         <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">Why Timnath?</h4>
-        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">Eco-Painter Certified. $2M liability. We know our crews. See what sets us apart.</p>
+        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">Eco-Friendly. No-VOC Products. $2M liability. We know our crews. See what sets us apart.</p>
         <a href="/about.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Our Story <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div></div>
+  </div>
+</section>
+
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
   </div>
 </section>
 
@@ -885,7 +966,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
           <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
@@ -899,6 +980,22 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -966,6 +1063,22 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
   <img id="lightbox-img" src="" alt="">
   <div id="lightbox-caption"></div>
 </div>
+
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
 
 ${T.contactFormSection()}`;
 
@@ -1091,7 +1204,7 @@ function buildServiceLocation(service, city) {
   const canonical  = `https://timnathpainting.com/${pageSlug}/`;
   const h1Title    = `${service.label} in ${cd.label}, CO`;
   const metaTitle  = `${service.label} in ${cd.label}, CO | Timnath Painting`;
-  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Painter Certified, $2M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
+  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Friendly & No-VOC, $2M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
 
   // Blended FAQs: 2 service-specific + up to 3 city-specific
   const blendedFaqs = [
@@ -1148,7 +1261,7 @@ function buildServiceLocation(service, city) {
 
   const whyFeatures = [
     { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$2M general liability coverage. Certificates of insurance available on request within 24 hours.' },
-    { icon: 'fa-solid fa-leaf',          title: 'Eco-Painter Certified',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
+    { icon: 'fa-solid fa-leaf',          title: 'Eco-Friendly. No-VOC Products.',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
     { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
     { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
   ];
@@ -1244,7 +1357,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
           <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Painter Certified</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Eco-Friendly. No-VOC Products.</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
@@ -1270,6 +1383,22 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
   </div>
 </section>
 
+
+<section style="padding:80px 0;background:#F4EDE4;">
+  <div class="container">
+    <div class="sec-title text-center" style="margin-bottom:40px;">
+      <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
+      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+    </div>
+    <div class="row gutter-y-30">
+      <!-- RECENT_POSTS -->
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="/blog/" class="wallox-btn wallox-btn--base">See All Posts <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
 ${T.contactFormSection()}`;
 
   write(`${pageSlug}/index.html`,
@@ -1286,6 +1415,16 @@ SERVICES.forEach(service => {
 
 // Always sync functions/ into dist/ so CF Pages deploys include the API workers
 copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
+
+// Build blog
+buildBlog({
+  srcDir: ROOT,
+  distDir: DIST,
+  siteId: 'timnath-painting',
+  postsPerPage: 10,
+  domain: 'timnathpainting.com',
+  siteName: 'Timnath Painting'
+});
 
 console.log('\n✓ All pillar pages built successfully.');
 

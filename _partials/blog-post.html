@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#">
+<head>
+{{page_meta}}
+{{base_head}}
+<style>
+/* === Timnath Blog Post Styles === */
+.kg-blog-layout { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+.kg-blog-content { min-width: 0; }
+.kg-post-hero { width: 100%; max-height: 440px; object-fit: cover; border-radius: 6px; margin-bottom: 28px; }
+.kg-post-meta { font-size: 0.88rem; color: #888; margin-bottom: 24px; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; border-bottom: 1px solid #E4DACC; padding-bottom: 16px; }
+.kg-post-meta span { display: flex; align-items: center; gap: 6px; }
+.kg-post-body { color: #444; font-size: 16px; line-height: 1.8; font-family: var(--wallox-font, "Plus Jakarta Sans", sans-serif); }
+.kg-post-body h1 { color: #201B10; font-size: 28px; font-weight: 800; margin: 32px 0 14px; }
+.kg-post-body h2 { color: #201B10; font-size: 22px; font-weight: 700; margin: 32px 0 14px; padding-top: 12px; border-top: 2px solid #F4EDE4; }
+.kg-post-body h2:first-child { border-top: none; padding-top: 0; margin-top: 0; }
+.kg-post-body h3 { color: #2E2A20; font-size: 18px; font-weight: 700; margin: 24px 0 10px; }
+.kg-post-body p { margin: 0 0 18px; }
+.kg-post-body ul, .kg-post-body ol { margin: 0 0 18px 24px; }
+.kg-post-body li { margin-bottom: 8px; line-height: 1.7; }
+.kg-post-body p > img { float: right; max-width: 42%; height: auto; border-radius: 6px; margin: 4px 0 24px 32px; }
+.kg-post-body p { overflow: hidden; }
+.kg-post-body h2, .kg-post-body h3 { clear: both; }
+@media (max-width: 600px) { .kg-post-body p > img { float: none; max-width: 100%; margin: 16px 0; display: block; } }
+.kg-post-body a { color: #AE360E; }
+.kg-post-body strong { color: #201B10; }
+.kg-post-body blockquote { border-left: 4px solid #AE360E; background: #fdf8f6; padding: 16px 20px; margin: 24px 0; color: #444; }
+.kg-post-body hr { border: none; border-top: 1px dashed #E4DACC; margin: 28px 0; }
+.kg-cta-box { border-radius: 6px; padding: 28px 32px; margin-top: 40px; }
+.kg-cta-box h4 { margin: 0 0 10px; font-size: 20px; color: #fff; }
+.kg-cta-box p { margin: 0; font-size: 15px; line-height: 1.6; color: rgba(255,255,255,0.88); }
+.kg-cta-box a { color: #ffcc80; font-weight: 700; }
+.kg-post-back { margin-top: 32px; padding-top: 20px; border-top: 1px solid #E4DACC; }
+</style>
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8ZXCK8V" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
+<div class="page-wrapper">
+{{header}}
+<section class="page-header">
+  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+  <div class="container">
+    <h2 class="page-header__title">{{title}}</h2>
+    <div class="wallox-breadcrumb">
+      <ul class="wallox-breadcrumb__list list-unstyled">
+        <li><a href="/"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><span>{{title}}</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section style="padding:60px 0 0;">
+  <div class="container">
+    <div class="kg-blog-layout">
+      <div class="kg-blog-content">
+        {{featured_image_html}}
+        <div class="kg-post-meta">
+          {{date_html}}
+          {{author_html}}
+        </div>
+        <div class="kg-post-body">
+          {{content}}
+        </div>
+        <div class="kg-cta-box" style="background:#AE360E;">
+          <h4>Ready for a Free Quote?</h4>
+          <p>Timnath Painting serves Timnath, Windsor, Severance, Fort Collins, and all of Northern Colorado.
+            Call or text <a href="tel:9706703965">(970) 670-3965</a> — or <a href="/contact.html">request a quote online</a>.</p>
+        </div>
+        <div class="kg-post-back">
+          <a href="/blog/" style="color:#AE360E;font-weight:600;">&larr; Back to Blog</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{footer}}
+</div>
+<div class="mobile-nav__wrapper">
+  <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+  <div class="mobile-nav__content">
+    <span class="mobile-nav__close mobile-nav__toggler"><i class="fa-solid fa-xmark"></i></span>
+    <div class="logo-box"><a href="/"><img src="/assets/images/logo-vertical-white.png" width="140" alt="Timnath Painting" style="display:block;margin:0 auto;" loading="lazy"></a></div>
+    <div class="mobile-nav__container"></div>
+    <ul class="mobile-nav__contact list-unstyled">
+      <li><i class="fa-solid fa-envelope"></i><a href="mailto:josh@timnathpainting.com">josh@timnathpainting.com</a></li>
+      <li><i class="fa-solid fa-phone"></i><a href="tel:9706703965">(970) 670-3965</a></li>
+    </ul>
+  </div>
+</div>
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top">
+  <span class="scroll-to-top__text">back top</span>
+  <span class="scroll-to-top__wrapper"><span class="scroll-to-top__inner"></span></span>
+</a>
+<script src="/assets/vendors/jquery/jquery-3.7.0.min.js"></script>
+<script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendors/jquery-appear/jquery.appear.min.js"></script>
+<script src="/assets/vendors/wow/wow.js"></script>
+<script src="/assets/js/wallox.js"></script>
+<script>
+function setActiveNav() {
+  var path = window.location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+  var items = document.querySelectorAll('.main-menu__list > li');
+  items.forEach(function(li){ li.classList.remove('current'); });
+  items.forEach(function(li){
+    var a = li.querySelector('a');
+    if (!a) return;
+    var href = (a.getAttribute('href') || '').replace(/\/index\.html$/, '/').replace(/\.html$/, '/').replace(/\/?$/, '/');
+    if (!href || href === '#/' || href === '#') return;
+    if (path === href || (href.length > 1 && path.startsWith(href))) li.classList.add('current');
+  });
+}
+setActiveNav();
+setTimeout(setActiveNav, 200);
+</script>
+</body>
+</html>

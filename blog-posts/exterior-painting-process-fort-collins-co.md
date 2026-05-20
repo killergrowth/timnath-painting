@@ -1,4 +1,4 @@
----
+﻿---
 slug: exterior-painting-process-fort-collins-co
 title: What Happens During a Professional Exterior Painting Job?
 status: draft
@@ -109,7 +109,7 @@ A lot of painting contractors rush through prep to get to paint faster. That's h
 
 The [professional exterior painting process](/exterior-painting/) we follow — thorough prep, proper priming, climate-appropriate products, and a real inspection at the end — is how we consistently deliver systems that last 7–10 years in Fort Collins, Windsor, and across Northern Colorado.
 
-We're Eco-Painter Certified, fully licensed and insured, and carry $2M in liability coverage. You're not just hiring painters — you're hiring a team that stands behind the work.
+We're fully licensed and insured, and carry $2M in liability coverage. You're not just hiring painters — you're hiring a team that stands behind the work.
 
 ---
 

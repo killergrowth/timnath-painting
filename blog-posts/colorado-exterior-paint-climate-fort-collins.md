@@ -1,4 +1,4 @@
----
+﻿---
 slug: colorado-exterior-paint-climate-fort-collins
 title: 'How Colorado''s Climate Damages Exterior Paint (UV, Freeze-Thaw, and Snow)'
 status: draft
@@ -82,6 +82,6 @@ The difference comes down to product selection and surface prep. High-build elas
 
 ## Built for Colorado, Not the National Average
 
-At Timnath Painting, we spec [exterior paint systems](/exterior-painting/) specifically for Front Range conditions — the UV load, the freeze-thaw cycles, the snowpack exposure. We're Eco-Painter Certified, licensed, insured to $2M liability, and every quote is on-site and free.
+At Timnath Painting, we spec [exterior paint systems](/exterior-painting/) specifically for Front Range conditions — the UV load, the freeze-thaw cycles, the snowpack exposure. We're eco-friendly & no-VOC, licensed, insured to $2M liability, and every quote is on-site and free.
 
 If your home's paint is showing any of the signs above, it's worth a conversation before it becomes a wood repair project. [Reach out for a free quote](/contact/) — we serve Timnath, Windsor, Fort Collins, and surrounding Northern Colorado communities.

@@ -1489,13 +1489,13 @@
     {
       "slug": "best-time-paint-exterior-fort-collins-co",
       "title": "Best Time of Year to Paint Your Home's Exterior in Colorado",
-      "status": "draft",
-      "publishDate": null,
+      "status": "published",
+      "publishDate": "2026-05-19T14:02:00.000Z",
       "scheduledDate": null,
       "excerpt": "Colorado's climate makes timing everything. Here's when to schedule exterior painting in Fort Collins and Northern Colorado to get the best results.",
-      "featuredImage": null,
-      "inlineImage1": null,
-      "inlineImage2": null,
+      "featuredImage": "blog-posts/images/best-time-paint-exterior-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/best-time-paint-exterior-fort-collins-co-inline1.jpg",
+      "inlineImage2": "blog-posts/images/best-time-paint-exterior-fort-collins-co-inline2.jpg",
       "imagePrompt": "I need an image of a professional painter rolling exterior paint onto a beautiful two-story home in Northern Colorado on a clear sunny day in late spring, with the Rocky Mountains faintly visible in the background and green grass in the yard.",
       "imagePrompt2": "I need an image of a close-up of a freshly painted home exterior in Fort Collins Colorado showing crisp clean trim and smooth siding finish in warm afternoon light.",
       "imagePrompt3": "I need an image of a painted fence and home exterior in a Northern Colorado neighborhood in early fall with golden light and mature trees, showing a polished finished result after professional painting.",
@@ -1511,7 +1511,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:55:55.190Z",
-      "updatedAt": "2026-05-19T20:55:55.190Z"
+      "updatedAt": "2026-05-20T14:06:28.699Z"
     },
     {
       "slug": "colorado-exterior-paint-climate-fort-collins",
@@ -1624,13 +1624,13 @@
     {
       "slug": "spring-exterior-painting-fort-collins-co",
       "title": "Spring Exterior Painting Guide: Is Your Home Ready After Winter?",
-      "status": "draft",
-      "publishDate": null,
+      "status": "published",
+      "publishDate": "2026-05-06T13:45:00.000Z",
       "scheduledDate": null,
       "excerpt": "Northern Colorado winters are brutal on exterior paint. Here's how to inspect your home and know what needs repair — before spring booking fills up.",
-      "featuredImage": null,
-      "inlineImage1": null,
-      "inlineImage2": null,
+      "featuredImage": "blog-posts/images/spring-exterior-painting-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/spring-exterior-painting-fort-collins-co-inline1.jpg",
+      "inlineImage2": "blog-posts/images/spring-exterior-painting-fort-collins-co-inline2.jpg",
       "imagePrompt": "I need an image of a Northern Colorado home exterior in early spring with snow melting in the yard, showing weathered paint peeling near window trim and wood siding under soft morning light. Photorealistic, no text.",
       "imagePrompt2": "I need an image of a close-up of paint peeling and cracking on wood siding with visible freeze-thaw damage, photographed in natural daylight on a residential home in a Colorado neighborhood. Photorealistic, no text.",
       "imagePrompt3": "I need an image of a professional painter pressure washing and prepping a home exterior in Fort Collins Colorado on a clear spring day, ladder leaned against the side of the house. Photorealistic, no text.",
@@ -1646,18 +1646,18 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:59:10.329Z",
-      "updatedAt": "2026-05-19T20:59:10.329Z"
+      "updatedAt": "2026-05-20T14:05:50.362Z"
     },
     {
       "slug": "exterior-paint-fade-colorado-front-range",
       "title": "Why Colorado Homes Fade Faster — and What Paint Actually Holds Up",
-      "status": "draft",
-      "publishDate": null,
+      "status": "published",
+      "publishDate": "2026-05-14T13:52:00.000Z",
       "scheduledDate": null,
       "excerpt": "Colorado's altitude and UV intensity wreck cheap exterior paint fast. Here's what actually holds up on Front Range homes and why it matters.",
-      "featuredImage": null,
-      "inlineImage1": null,
-      "inlineImage2": null,
+      "featuredImage": "blog-posts/images/exterior-paint-fade-colorado-front-range.jpg",
+      "inlineImage1": "blog-posts/images/exterior-paint-fade-colorado-front-range-inline1.jpg",
+      "inlineImage2": "blog-posts/images/exterior-paint-fade-colorado-front-range-inline2.jpg",
       "imagePrompt": "I need an image of a well-maintained Northern Colorado home exterior with fresh, vibrant paint in the foreground and the Rocky Mountain foothills visible in the background under a bright blue Colorado sky, photorealistic and professional.",
       "imagePrompt2": "I need an image of a close-up side-by-side comparison of two exterior painted wood surfaces — one chalky and faded, one still rich and uniform in color — on a home siding in a Colorado residential neighborhood, photorealistic.",
       "imagePrompt3": "I need an image of a professional painter applying exterior paint to a Front Range Colorado home with a brush and roller, showing clean prep work and a quality finish on a sunny day, photorealistic.",
@@ -1673,7 +1673,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:59:50.402Z",
-      "updatedAt": "2026-05-19T20:59:50.402Z"
+      "updatedAt": "2026-05-20T14:47:10.116Z"
     }
   ]
 }

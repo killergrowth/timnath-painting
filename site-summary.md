@@ -1,4 +1,4 @@
-# Site Summary: Timnath Painting
+﻿# Site Summary: Timnath Painting
 
 Generated: 2026-05-12T21:02:56.530Z
 
@@ -18,7 +18,7 @@ Straightforward, confident, and credibility-forward. The brand leads with facts 
 
 **Key Differentiators / Selling Points**
 - **7–10 year paint systems** — positioned as outlasting standard contractor work
-- **Eco-Painter Certified** — environmental credential that sets them apart locally
+- **Eco-Friendly. No-VOC Products.** — environmental credential that sets them apart locally
 - **$2M liability coverage** — communicates professionalism and protects the homeowner
 - **Licensed and insured** — baseline trust signal, prominently featured
 - **Climate-specific expertise** — paint systems specifically chosen for Northern Colorado's altitude, UV exposure, and freeze-thaw stress
