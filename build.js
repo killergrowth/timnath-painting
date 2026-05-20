@@ -27,6 +27,8 @@ function copyDir(src, dest) {
 }
 
 const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
+const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
+const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
 // Custom SVG icons â€" inline with brand color
 const RED = '#AE360E';
@@ -45,6 +47,14 @@ function write(relPath, html) {
   const dest = path.join(DIST, relPath);
   ensureDir(path.dirname(dest));
   fs.writeFileSync(dest, injectPartials(html), 'utf8');
+  console.log('Built:', relPath);
+}
+
+function writeStripped(relPath, html) {
+  const dest = path.join(DIST, relPath);
+  ensureDir(path.dirname(dest));
+  const result = html.replace('<!-- HEADER -->', HEADER_STRIPPED).replace('<!-- FOOTER -->', FOOTER_MINIMAL);
+  fs.writeFileSync(dest, result, 'utf8');
   console.log('Built:', relPath);
 }
 
@@ -167,7 +177,7 @@ function buildHomepage() {
       bg: 'slider-3-1.jpg',
       sub: 'Northern Colorado Painting Contractor',
       lines: ['Premium Exterior', 'Painting and More'],
-      btn1: { t: 'Get a Free Quote', h: '/contact.html' },
+      btn1: { t: 'Get a Free Quote', h: '/get-a-quote/' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
       subText: 'Professional painting done right-on time, on budget, and built to last.'
     },
@@ -371,7 +381,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
         <div style="overflow:visible;">
           <img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Timnath Painting" style="width:100%;max-width:460px;display:block;margin:0 auto;">
           <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Josh Funk, Owner</p>
-          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
+          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
         </div>
       </div>
       <div class="col-lg-6">
@@ -613,7 +623,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
               <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base);margin-right:8px;"></i><a href="mailto:${CLIENT.email}">${CLIENT.email}</a></li>
               <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base);margin-right:8px;"></i>${CLIENT.city}, ${CLIENT.state}</li>
             </ul>
-            <a href="/contact.html" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
+            <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
           </div>
           <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
             <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
@@ -959,7 +969,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
             <li><i class="fa-solid fa-envelope" style="color:#AE360E;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
             <li><i class="fa-solid fa-location-dot" style="color:#AE360E;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
           </ul>
-          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
+          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
         </div>
 
         <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
@@ -1350,7 +1360,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
             <li><i class="fa-solid fa-envelope" style="color:#AE360E;margin-right:8px;"></i><a href="mailto:${CLIENT.email}" style="color:#5a5650;">${CLIENT.email}</a></li>
             <li><i class="fa-solid fa-location-dot" style="color:#AE360E;margin-right:8px;"></i><span style="color:#5a5650;">Based in ${CLIENT.city}, ${CLIENT.state}</span></li>
           </ul>
-          <a href="/contact.html" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
+          <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="display:block;text-align:center;">Request a Quote</a>
         </div>
 
         <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
@@ -1432,3 +1442,151 @@ console.log('\n✓ All pillar pages built successfully.');
 
 
 
+
+// ============================================================
+// GET A QUOTE PAGE — High-conversion standalone landing page
+// ============================================================
+function buildGetAQuote() {
+  const HEADER_STRIPPED_HTML = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
+  const FOOTER_MINIMAL_HTML  = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'),  'utf8');
+
+  function inject(html) {
+    return html.replace('<!-- HEADER -->', HEADER_STRIPPED_HTML).replace('<!-- FOOTER -->', FOOTER_MINIMAL_HTML);
+  }
+
+  const head = T.htmlHead(
+    'Get a Free Painting Quote | Timnath Painting | (970) 670-3965',
+    'Request a free painting quote from Timnath Painting. No pressure, no surprises. Serving Timnath, Windsor, Fort Collins & Northern Colorado. We respond within 2 hours.',
+    'https://timnathpainting.com/get-a-quote/'
+  );
+
+  const html = head + `
+<!-- HEADER -->
+<div class="page-wrapper" style="display:flex;flex-direction:column;min-height:100vh;">
+<style>
+.gaq-wrap{flex:1;background:#F4EDE4;padding:52px 0 64px;}
+.gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+@media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:32px;}}
+.gaq-headline{color:#201B10;font-size:clamp(26px,3.2vw,42px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 18px;}
+.gaq-subhead{color:#5a5650;font-size:17px;line-height:1.65;margin:0 0 32px;}
+.gaq-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.gaq-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
+.gaq-trust-list li i{color:#AE360E;margin-top:2px;flex-shrink:0;font-size:16px;}
+.gaq-card{background:#fff;border-radius:14px;padding:32px 32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.09);}
+.gaq-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
+.gaq-input:focus{outline:none;border-color:#AE360E;}
+.gaq-input::placeholder{color:#a09890;}
+.gaq-fields{display:flex;flex-direction:column;gap:12px;}
+.gaq-submit{width:100%;padding:14px 20px;background:#AE360E;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
+.gaq-submit:hover{background:#922d0a;}
+.gaq-trust-line{text-align:center;color:#5a5650;font-size:13px;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;}
+.gaq-trust-line i{color:#AE360E;}
+.gaq-social-proof{margin-top:40px;padding-top:36px;border-top:1px solid #e4dacc;display:grid;grid-template-columns:auto 1fr 1fr 1fr;gap:24px;align-items:center;}
+@media(max-width:700px){.gaq-social-proof{grid-template-columns:1fr 1fr;}}
+.gaq-stars{color:#f59e0b;font-size:20px;letter-spacing:2px;}
+.gaq-rating-wrap{display:flex;flex-direction:column;gap:2px;}
+.gaq-rating-num{font-size:28px;font-weight:800;color:#201B10;line-height:1;}
+.gaq-rating-label{color:#5a5650;font-size:13px;}
+.gaq-proof-item{display:flex;align-items:flex-start;gap:10px;}
+.gaq-proof-item i{color:#AE360E;margin-top:3px;font-size:16px;flex-shrink:0;}
+.gaq-proof-item p{margin:0;color:#2E2A20;font-size:14px;line-height:1.5;}
+.gaq-proof-item strong{display:block;font-size:14px;font-weight:700;}
+</style>
+<main>
+<section class="gaq-wrap">
+  <div class="container">
+    <div class="gaq-grid">
+      <div>
+        <h1 class="gaq-headline">An Honest Painting Quote &mdash; No Pressure, No Surprises, No Runaround</h1>
+        <p class="gaq-subhead">Tell us about your project and we&rsquo;ll get back to you within a few hours. No sales pitch. Just a straight answer.</p>
+        <ul class="gaq-trust-list">
+          <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado &mdash; we know the conditions, the HOAs, and the neighborhoods.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $2M general liability. COI available on request within 24 hours.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number &mdash; no games.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Premium Sherwin-Williams &amp; Benjamin Moore coatings. No-VOC products. Systems built to last 7&ndash;10 years in Colorado's climate.</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="gaq-card">
+          <form id="gaq-form" action="/submit" method="POST">
+            <div class="gaq-fields">
+              <input class="gaq-input" type="text" name="name" placeholder="First name *" required autocomplete="given-name">
+              <input class="gaq-input" type="tel" name="phone" placeholder="Phone number *" required autocomplete="tel">
+              <select class="gaq-input" name="service" required>
+                <option value="" disabled selected>Service type *</option>
+                <option value="interior-painting">Interior Painting</option>
+                <option value="exterior-painting">Exterior Painting</option>
+                <option value="cabinet-painting">Cabinet Painting</option>
+                <option value="other">Other</option>
+              </select>
+              <textarea class="gaq-input" name="message" rows="3" placeholder="Anything else we should know? (optional)"></textarea>
+              <button type="submit" class="gaq-submit">Send My Free Quote Request</button>
+            </div>
+          </form>
+          <p class="gaq-trust-line"><i class="fa-solid fa-clock"></i> We respond within 2 hours during business hours</p>
+        </div>
+      </div>
+    </div>
+    <div class="gaq-social-proof">
+      <div class="gaq-rating-wrap">
+        <div class="gaq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="gaq-rating-num">4.9</div>
+        <div class="gaq-rating-label">Google Reviews</div>
+      </div>
+      <div class="gaq-proof-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <p><strong>Local to Northern Colorado</strong>Based in Timnath &mdash; serving Timnath, Windsor, Fort Collins, Loveland &amp; the I-25 corridor.</p>
+      </div>
+      <div class="gaq-proof-item">
+        <i class="fa-solid fa-shield-halved"></i>
+        <p><strong>Licensed &amp; Insured</strong>$2M general liability. COI on request within 24 hours.</p>
+      </div>
+      <div class="gaq-proof-item">
+        <i class="fa-solid fa-tag"></i>
+        <p><strong>Free Estimates &mdash; No Obligation</strong>On-site assessment, no-pressure quote. You decide if it makes sense.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<!-- FOOTER -->
+</div>
+<script>
+(function(){
+  var form = document.getElementById('gaq-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var orig = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+    fetch('/submit', { method: 'POST', body: new FormData(form) })
+      .then(function(r){ return r.json(); })
+      .then(function(data) {
+        if (data.ok) {
+          var card = form.closest('.gaq-card');
+          card.innerHTML = '<div style="padding:32px 8px;text-align:center;"><div style="font-size:40px;margin-bottom:16px;color:#AE360E;">&#10003;</div><p style="font-size:20px;font-weight:700;color:#AE360E;margin-bottom:8px;">Got it &mdash; thanks!</p><p style="color:#5a5650;font-size:15px;line-height:1.65;">We received your request and will be in touch within 2 hours. If it\\'s urgent, call us at <a href="tel:9706703965" style="color:#AE360E;font-weight:600;">(970) 670-3965</a>.</p></div>';
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'form_submit_success', form_type: 'get_a_quote' });
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = orig; }
+          alert('Something went wrong. Please call us at (970) 670-3965.');
+        }
+      })
+      .catch(function() {
+        if (btn) { btn.disabled = false; btn.textContent = orig; }
+        alert('Something went wrong. Please call us at (970) 670-3965.');
+      });
+  });
+})();
+</script>
+</body>
+</html>`;
+
+  const dest = path.join(DIST, 'get-a-quote/index.html');
+  ensureDir(path.dirname(dest));
+  fs.writeFileSync(dest, inject(html), 'utf8');
+  console.log('Built: get-a-quote/index.html');
+}
+
+buildGetAQuote();
