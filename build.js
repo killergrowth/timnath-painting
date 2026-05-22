@@ -217,7 +217,7 @@ function buildHomepage() {
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
     { icon:'fa-solid fa-paint-roller', title:'No-VOC Products.', link:'/about.html' },
     { icon:'fa-solid fa-users', title:'$2M Liability Coverage', link:'/about.html' },
-    { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/contact.html' },
+    { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/get-a-quote/' },
   ];
 
   const content = `
@@ -1498,23 +1498,10 @@ function buildGetAQuote() {
         </ul>
       </div>
       <div>
-        <div class="gaq-card">
-          <form id="gaq-form" action="/submit" method="POST">
-            <div class="gaq-fields">
-              <input class="gaq-input" type="text" name="name" placeholder="First name *" required autocomplete="given-name">
-              <input class="gaq-input" type="tel" name="phone" placeholder="Phone number *" required autocomplete="tel">
-              <select class="gaq-input" name="service" required>
-                <option value="" disabled selected>Service type *</option>
-                <option value="interior-painting">Interior Painting</option>
-                <option value="exterior-painting">Exterior Painting</option>
-                <option value="cabinet-painting">Cabinet Painting</option>
-                <option value="other">Other</option>
-              </select>
-              <textarea class="gaq-input" name="message" rows="3" placeholder="Anything else we should know? (optional)"></textarea>
-              <button type="submit" class="gaq-submit">Send My Free Quote Request</button>
-            </div>
-          </form>
-          <p class="gaq-trust-line"><i class="fa-solid fa-clock"></i> We respond fast</p>
+                <div class="gaq-card" style="padding:24px;">
+          <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
+          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
         </div>
       </div>
     </div>
@@ -1542,35 +1529,6 @@ function buildGetAQuote() {
 </main>
 <!-- FOOTER -->
 </div>
-<script>
-(function(){
-  var form = document.getElementById('gaq-form');
-  if (!form) return;
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var btn = form.querySelector('button[type="submit"]');
-    var orig = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-    fetch('/submit', { method: 'POST', body: new FormData(form) })
-      .then(function(r){ return r.json(); })
-      .then(function(data) {
-        if (data.ok) {
-          var card = form.closest('.gaq-card');
-          card.innerHTML = '<div style="padding:32px 8px;text-align:center;"><div style="font-size:40px;margin-bottom:16px;color:#AE360E;">&#10003;</div><p style="font-size:20px;font-weight:700;color:#AE360E;margin-bottom:8px;">Got it &mdash; thanks!</p><p style="color:#5a5650;font-size:15px;line-height:1.65;">We received your request and will be in touch within 2 hours. If it\\'s urgent, call us at <a href="tel:9706703965" style="color:#AE360E;font-weight:600;">(970) 670-3965</a>.</p></div>';
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: 'form_submit_success', form_type: 'get_a_quote' });
-        } else {
-          if (btn) { btn.disabled = false; btn.textContent = orig; }
-          alert('Something went wrong. Please call us at (970) 670-3965.');
-        }
-      })
-      .catch(function() {
-        if (btn) { btn.disabled = false; btn.textContent = orig; }
-        alert('Something went wrong. Please call us at (970) 670-3965.');
-      });
-  });
-})();
-</script>
 </body>
 </html>`;
 
