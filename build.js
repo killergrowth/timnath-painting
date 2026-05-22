@@ -1454,9 +1454,10 @@ function buildGetAQuote() {
 <!-- HEADER -->
 <div class="page-wrapper" style="display:flex;flex-direction:column;min-height:100vh;">
 <style>
-.gaq-wrap{flex:1;background:#F4EDE4;padding:52px 0 64px;}
-.gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
-@media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:32px;}}
+.gaq-wrap{flex:1;background:#F4EDE4;padding:28px 0 64px;}
+.gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:24px;}}
+@media(max-width:900px){.gaq-col-copy{order:2;}.gaq-col-form{order:1;}}
 .gaq-headline{color:#201B10;font-size:clamp(26px,3.2vw,42px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 18px;}
 .gaq-subhead{color:#5a5650;font-size:17px;line-height:1.65;margin:0 0 32px;}
 .gaq-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
@@ -1487,7 +1488,7 @@ function buildGetAQuote() {
 <section class="gaq-wrap">
   <div class="container">
     <div class="gaq-grid">
-      <div>
+      <div class="gaq-col-copy">
         <h1 class="gaq-headline">An Honest Painting Quote</h1><p class="gaq-subtext">No Pressure, No Surprises, No Runaround</p>
         <p class="gaq-subhead">Tell us about your project and we&rsquo;ll get back to you within a few hours. No sales pitch. Just a straight answer.</p>
         <ul class="gaq-trust-list">
@@ -1497,7 +1498,7 @@ function buildGetAQuote() {
           <li><i class="fa-solid fa-check"></i><span>Premium Sherwin-Williams &amp; Benjamin Moore coatings. No-VOC products. Systems built to last 7&ndash;10 years in Colorado's climate.</span></li>
         </ul>
       </div>
-      <div>
+      <div class="gaq-col-form">
                 <div class="gaq-card" style="padding:24px;">
           <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
           <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
