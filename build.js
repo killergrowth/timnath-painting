@@ -1455,9 +1455,10 @@ function buildGetAQuote() {
 <div class="page-wrapper" style="display:flex;flex-direction:column;min-height:100vh;">
 <style>
 .gaq-wrap{flex:1;background:#F4EDE4;padding:20px 0 64px;}
-.gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
-@media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:24px;}}
 .gaq-page-header{margin-bottom:16px;}
+.gaq-trust-strip{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:12px 28px;}
+.gaq-trust-strip li{display:flex;align-items:center;gap:8px;color:#2E2A20;font-size:14px;font-weight:500;}
+.gaq-trust-strip li i{color:#AE360E;font-size:14px;flex-shrink:0;}
 .gaq-headline{color:#201B10;font-size:clamp(24px,2.4vw,34px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
 .gaq-subhead{color:#5a5650;font-size:17px;line-height:1.65;margin:0 0 32px;}
 .gaq-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
@@ -1491,23 +1492,17 @@ function buildGetAQuote() {
       <h1 class="gaq-headline">An Honest Painting Quote</h1>
       <p class="gaq-subtext">No Pressure, No Surprises, No Runaround</p>
     </div>
-    <div class="gaq-grid">
-      <div class="gaq-col-form">
-        <div class="gaq-card" style="padding:24px;">
-          <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
-          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
-        </div>
-      </div>
-      <div class="gaq-col-copy">
-        <ul class="gaq-trust-list">
-          <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado &mdash; we know the conditions, the HOAs, and the neighborhoods.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $2M general liability. COI available on request within 24 hours.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number &mdash; no games.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>Premium Sherwin-Williams &amp; Benjamin Moore coatings. No-VOC products. Systems built to last 7&ndash;10 years in Colorado's climate.</span></li>
-        </ul>
-      </div>
+    <div class="gaq-card" style="padding:24px;margin-bottom:24px;">
+      <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
+      <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
+      <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
     </div>
+    <ul class="gaq-trust-strip">
+      <li><i class="fa-solid fa-check"></i>Licensed &amp; Insured &mdash; $2M liability</li>
+      <li><i class="fa-solid fa-check"></i>Free on-site estimates, no obligation</li>
+      <li><i class="fa-solid fa-check"></i>Premium Sherwin-Williams &amp; Benjamin Moore coatings</li>
+      <li><i class="fa-solid fa-check"></i>Local to Northern Colorado</li>
+    </ul>
     <div class="gaq-social-proof">
       <div class="gaq-rating-wrap">
         <div class="gaq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
