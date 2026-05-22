@@ -1455,10 +1455,10 @@ function buildGetAQuote() {
 <div class="page-wrapper" style="display:flex;flex-direction:column;min-height:100vh;">
 <style>
 .gaq-wrap{flex:1;background:#F4EDE4;padding:20px 0 64px;}
-.gaq-page-header{margin-bottom:16px;}
+.gaq-page-header{margin-bottom:20px;text-align:center;}
 .gaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 @media(max-width:900px){.gaq-grid{grid-template-columns:1fr;gap:24px;}}
-.gaq-headline{color:#201B10;font-size:clamp(24px,2.4vw,34px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
+.gaq-headline{color:#201B10;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
 .gaq-subhead{color:#5a5650;font-size:17px;line-height:1.65;margin:0 0 32px;}
 .gaq-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
 .gaq-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
