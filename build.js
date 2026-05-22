@@ -704,11 +704,21 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <h3 class="sec-title__title" style="margin-bottom:8px;">Get a Free Quote</h3>
         </div>
         <p style="margin-top:0;">Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few minutes  -  and always provide honest, no-obligation quotes.</p>
-        <div style="margin-top:30px;">
-          <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
-          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
-        </div>
+        <form class="contact-one__form" id="quote-form" action="/submit" method="POST" style="margin-top:30px;">
+            <div class="row gutter-y-20">
+              <div class="col-md-6"><input type="text" name="name" placeholder="Your Name *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
+              <div class="col-md-6"><input type="email" name="email" placeholder="Email Address *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
+              <div class="col-md-6"><input type="text" name="phone" placeholder="Phone Number" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
+              <div class="col-md-6">
+                <select name="service" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;">
+                  <option value="">Service Needed</option>
+                  ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
+                </select>
+              </div>
+              <div class="col-12"><textarea name="message" placeholder="Tell us about your project" rows="5" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></textarea></div>
+              <div class="col-12"><button type="submit" class="wallox-btn wallox-btn--base">Send Message</button></div>
+            </div>
+          </form>
       </div>
       <div class="col-lg-4">
         <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
