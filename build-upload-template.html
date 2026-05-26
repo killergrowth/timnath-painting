@@ -335,7 +335,7 @@ function toast(msg, type = 'success') {
 // ── Auth ───────────────────────────────────────────────
 function init() {
   const saved = sessionStorage.getItem(SESSION_KEY);
-  if (saved) { adminPassword = saved; showPanel(); }
+  if (saved) { adminPassword = saved; document.getElementById('loginScreen').style.display = 'none'; showPanel(); }
   else { document.getElementById('loginScreen').style.display = ''; }
   document.getElementById('passwordInput').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
 }
