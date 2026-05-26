@@ -30,7 +30,7 @@ const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
 const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
-// Custom SVG icons â€" inline with brand color
+// Custom SVG icons ï¿½" inline with brand color
 const RED = '#AE360E';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -58,10 +58,10 @@ function writeStripped(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ Setup Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Setup Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) â€" desktop is pre-compressed in source
+// Generate mobile hero variant (800px @ q68 ~70KB) ï¿½" desktop is pre-compressed in source
 // Source: assets/images/backgrounds/timnath-hero.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
@@ -78,9 +78,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html â€" built by buildHomepage()
+// Root index.html ï¿½" built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED â€" site is live)
+// Copy coming-soon landing page to root (DISABLED ï¿½" site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -92,7 +92,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json â€" Pages Functions handle routing now
+// Remove _worker.js and _routes.json ï¿½" Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -101,9 +101,9 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// Ã¢"â'¬Ã¢"â'¬ HOMEPAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ HOMEPAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildHomepage() {
-  // â"€â"€ Reviews data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+  // ï¿½"ï¿½ï¿½"ï¿½ Reviews data ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
@@ -367,7 +367,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(finalContent)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ ABOUT PAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ ABOUT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildAbout() {
   const content = `
 ${T.topbar()}
@@ -426,10 +426,6 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <h4 class="progress-box__title">Customer Satisfaction Rate</h4>
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
         </div>
-        <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-          <h4 class="progress-box__title">Premium Coating Systems</h4>
-          <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="90%"><div class="progress-box__number count-text">90%</div></div></div>
-        </div>
         <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
           <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
         </div>
@@ -483,7 +479,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ SERVICE HUB PAGES Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ SERVICE HUB PAGES Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -667,7 +663,7 @@ ${T.wrapBody(content)}`);
 
 
 
-// Ã¢"â'¬Ã¢"â'¬ CONTACT PAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ CONTACT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -743,7 +739,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ Areas Served INDEX Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Areas Served INDEX Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => {
     const serviceLinks = SERVICES.map(s =>
@@ -797,7 +793,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ RUN ALL Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ RUN ALL Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -950,7 +946,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions â€" ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions ï¿½" ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -1022,7 +1018,7 @@ ${T.wrapBody(content)}`);
 }
 
 // â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function buildGallery_OLD() { // OLD â€" replaced by template-based version below
+function buildGallery_OLD() { // OLD ï¿½" replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -1444,7 +1440,7 @@ console.log('\n? All pillar pages built successfully.');
 
 
 // ============================================================
-// GET A QUOTE PAGE — High-conversion standalone landing page
+// GET A QUOTE PAGE ï¿½ High-conversion standalone landing page
 // ============================================================
 function buildGetAQuote() {
   const HEADER_STRIPPED_HTML = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
