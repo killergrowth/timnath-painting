@@ -1,9 +1,9 @@
 ---
 slug: painting-brick-exterior-fort-collins-co
 title: How to Paint a Brick Exterior Without Damaging It
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-11-24T14:00:00.000Z
 excerpt: >-
   Painting brick is permanent. Here's what Northern Colorado homeowners need to
   know before making a decision you can't easily undo.

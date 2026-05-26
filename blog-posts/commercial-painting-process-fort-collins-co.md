@@ -3,9 +3,9 @@ slug: commercial-painting-process-fort-collins-co
 title: >-
   Commercial Painting 101: What the Process Looks Like for Fort Collins CO
   Businesses
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-10-02T13:00:00.000Z
 excerpt: >-
   Considering commercial exterior painting in Fort Collins CO? Here's exactly
   what the process looks like, step by step.

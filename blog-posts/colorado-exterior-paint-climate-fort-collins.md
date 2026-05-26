@@ -1,9 +1,9 @@
 ﻿---
 slug: colorado-exterior-paint-climate-fort-collins
 title: 'How Colorado''s Climate Damages Exterior Paint (UV, Freeze-Thaw, and Snow)'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-12-08T14:00:00.000Z
 excerpt: >-
   Colorado's 300 sun days, 26+ freeze-thaw cycles, and heavy snowfall destroy
   exterior paint faster than most homeowners realize. Here's why.

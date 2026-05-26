@@ -1,9 +1,9 @@
 ---
 slug: exterior-painting-contractor-fort-collins-co
 title: How to Choose an Exterior Painting Contractor (Without Getting Burned)
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-09T13:00:00.000Z
 excerpt: >-
   Not all painting contractors are equal. Here are the 7 things every Fort
   Collins homeowner should verify before signing anything.

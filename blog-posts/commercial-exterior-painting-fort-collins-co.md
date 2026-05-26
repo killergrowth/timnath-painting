@@ -1,9 +1,9 @@
 ---
 slug: commercial-exterior-painting-fort-collins-co
 title: 'Commercial Exterior Painting: Why It''s Different From Residential'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-10-09T13:00:00.000Z
 excerpt: >-
   Commercial exterior painting isn't just residential work at a bigger scale.
   Here's what separates the two — and why it matters in Fort Collins.

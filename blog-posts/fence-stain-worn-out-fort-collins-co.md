@@ -1,9 +1,9 @@
 ---
 slug: fence-stain-worn-out-fort-collins-co
 title: Signs Your Fence Stain Is Worn Out and Needs a Refresh
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-09-18T13:00:00.000Z
 excerpt: >-
   Faded color, rough texture, and water that soaks right in are all signs your
   fence stain is worn out — here's how to catch it before rot sets in.

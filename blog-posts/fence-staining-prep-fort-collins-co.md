@@ -1,9 +1,9 @@
 ---
 slug: fence-staining-prep-fort-collins-co
 title: How to Prep a Fence for Staining (What Pros Actually Do)
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-09-04T13:00:00.000Z
 excerpt: >-
   Most stain jobs fail because of bad prep, not bad stain. Here's exactly how
   professionals prep a fence in Fort Collins before a single drop goes on.

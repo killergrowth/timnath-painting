@@ -1,9 +1,9 @@
 ---
 slug: exterior-paint-colors-curb-appeal-fort-collins
 title: Best Exterior Paint Colors for Curb Appeal and Resale Value in Fort Collins
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-07-03T13:00:00.000Z
 excerpt: >-
   Not all exterior paint colors sell homes. Here's what Northern Colorado buyers
   actually respond to — and what photographs well on Zillow.

@@ -3,9 +3,9 @@ slug: exterior-painting-diy-vs-professional-fort-collins
 title: >-
   Hiring an Exterior Painter vs DIY: The Real Cost Comparison for Fort Collins
   Homeowners
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-08-07T13:00:00.000Z
 excerpt: >-
   Thinking about painting your home yourself? Here's what DIY exterior painting
   actually costs in Northern Colorado — time, tools, and mistakes included.

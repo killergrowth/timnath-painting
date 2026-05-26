@@ -1,9 +1,9 @@
 ---
 slug: questions-to-ask-exterior-painter-fort-collins
 title: 10 Questions to Ask Before Hiring an Exterior Painter in Fort Collins
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-12T13:00:00.000Z
 excerpt: >-
   Before you hire anyone to paint your home's exterior, use this checklist to
   vet contractors and avoid costly mistakes in Northern Colorado.

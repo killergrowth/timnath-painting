@@ -1,9 +1,9 @@
 ---
 slug: fence-staining-vs-painting-fort-collins-co
 title: 'Fence Staining vs Fence Painting: Pros, Cons & Cost (Fort Collins, CO)'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-08-28T13:00:00.000Z
 excerpt: >-
   Trying to decide between fence staining and painting in Northern Colorado?
   Here's what actually lasts — and what it'll cost you.

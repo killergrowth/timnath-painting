@@ -1,9 +1,9 @@
 ---
 slug: exterior-painting-estimate-fort-collins-co
 title: 'Exterior Painting Estimates: Why Prices Vary and What''s Fair'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-05T13:00:00.000Z
 excerpt: >-
   Getting wildly different bids for your exterior paint job? Here's what's
   actually inside an estimate — and how to compare them fairly.

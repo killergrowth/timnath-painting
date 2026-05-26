@@ -1,9 +1,9 @@
 ---
 slug: exterior-painting-prep-fort-collins-co
 title: How to Prepare Your Home for Exterior Painting
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-07-10T13:00:00.000Z
 excerpt: >-
   Before the first brush stroke hits your siding, the real work begins. Here's
   what proper exterior painting prep looks like in Fort Collins, CO.

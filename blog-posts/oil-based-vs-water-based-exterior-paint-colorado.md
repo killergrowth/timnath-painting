@@ -3,9 +3,9 @@ slug: oil-based-vs-water-based-exterior-paint-colorado
 title: >-
   Oil-Based vs Water-Based Exterior Paint: What's Actually Better for Colorado
   Homes
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-08-04T13:00:00.000Z
 excerpt: >-
   Torn between oil-based and water-based exterior paint? Here's the honest
   breakdown for Northern Colorado homeowners.

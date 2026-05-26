@@ -1,9 +1,9 @@
 ---
 slug: exterior-painting-cost-fort-collins-co
 title: 'How Much Does Exterior House Painting Cost in Fort Collins, CO?'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-05-30T13:00:00.000Z
 excerpt: >-
   Real price ranges for Northern Colorado homes, the factors that push costs up
   or down, and how to get a fair estimate without getting burned.
