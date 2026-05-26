@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 /**
  * build.js  -  Timnath Painting Site Builder
  * Generates all pillar pages from data + templates
@@ -1431,6 +1431,48 @@ buildBlog({
   domain: 'timnathpainting.com',
   siteName: 'Timnath Painting'
 });
+
+// ── Spread recent posts to all inner pages ──────────────────────────────────
+(function spreadRecentPosts() {
+  const blogIndexPath = path.join(ROOT, 'blog-posts', 'blog-index.json');
+  if (!fs.existsSync(blogIndexPath)) return;
+  const blogData = JSON.parse(fs.readFileSync(blogIndexPath, 'utf8'));
+  const featTpl = fs.readFileSync(path.join(PARTS, 'blog-featured.html'), 'utf8');
+  const published = (blogData.posts || []).filter(p => p.status === 'published' && p.publishDate);
+  published.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  const recent = published.slice(0, 3);
+  if (!recent.length) return;
+  const cards = recent.map(post => {
+    const d = new Date(post.publishDate);
+    const day = !isNaN(d) ? String(d.getUTCDate()).padStart(2, '0') : '';
+    const monthYear = !isNaN(d) ? d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }) + '/' + String(d.getUTCFullYear()).slice(-2) : '';
+    const img = post.featuredImage ? (post.featuredImage.startsWith('/') ? post.featuredImage : '/' + post.featuredImage) : '/blog-posts/images/' + post.slug + '.jpg';
+    const url = '/blog/' + post.slug + '/';
+    const title = (post.title || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const excerpt = '<p>' + (post.excerpt || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').slice(0, 140) + '...</p>';
+    return featTpl
+      .replace(/\{\{url\}\}/g, url)
+      .replace(/\{\{image\}\}/g, img)
+      .replace(/\{\{title\}\}/g, title)
+      .replace(/\{\{day\}\}/g, day)
+      .replace(/\{\{month_year\}\}/g, monthYear)
+      .replace(/\{\{excerpt_html\}\}/g, excerpt);
+  }).join('\n');
+  function walkDir(dir) {
+    fs.readdirSync(dir).forEach(name => {
+      const full = path.join(dir, name);
+      if (fs.statSync(full).isDirectory()) { walkDir(full); return; }
+      if (!name.endsWith('.html')) return;
+      if (full === path.join(DIST, 'index.html')) return;
+      let html = fs.readFileSync(full, 'utf8');
+      if (!html.includes('<!-- RECENT_POSTS -->')) return;
+      html = html.replace('<!-- RECENT_POSTS -->', cards);
+      fs.writeFileSync(full, html, 'utf8');
+    });
+  }
+  walkDir(DIST);
+  console.log('  Recent posts injected into all inner pages.');
+})();
 
 console.log('\n? All pillar pages built successfully.');
 
