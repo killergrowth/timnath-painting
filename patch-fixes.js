@@ -13,7 +13,7 @@ let content = fs.readFileSync(filePath, 'utf8');
 const ALL_SERVICES = {
   'exterior-painting':  { label: 'Exterior Painting',   desc: '7\u201310 year paint systems built for Colorado\'s freeze-thaw cycles.' },
   'hoa-painting':       { label: 'HOA Painting',         desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
-  'commercial-painting':{ label: 'Commercial Painting',  desc: 'After-hours scheduling, $2M liability, owned crew \u2014 not subcontractors.' },
+  'commercial-painting':{ label: 'Commercial Painting',  desc: 'After-hours scheduling, $1M liability, owned crew \u2014 not subcontractors.' },
   'fence-staining':     { label: 'Fence Staining',       desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
   'exterior-staining':  { label: 'Exterior Staining',    desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
 };

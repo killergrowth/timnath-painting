@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 // One-shot patch: replaces the exterior-painting SERVICE_DATA entry with expanded content
 // Run from repo root: node patch-exterior-content.js
 // Safe to delete after running.
@@ -28,7 +28,7 @@ const newSection = `  'exterior-painting': {
     heroTitle: 'Exterior Painting in Northern Colorado That Lasts 10+ Years',
     intro: \`Northern Colorado sees 28+ freeze-thaw cycles every year. UV radiation hits 10-15% harder at altitude. Wood siding expands and contracts with temperature swings that can exceed 60 degrees in a single day. Cheap paint jobs fail in 3-4 years here.
 
-Timnath Painting builds exterior painting systems that last 7-10 years using premium prep, Sherwin-Williams and Benjamin Moore coatings, and methods designed specifically for Zone 5b conditions. We are Licensed, Insured, and using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $2M general liability coverage.\`,
+Timnath Painting builds exterior painting systems that last 7-10 years using premium prep, Sherwin-Williams and Benjamin Moore coatings, and methods designed specifically for Zone 5b conditions. We are Licensed, Insured, and using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $1M general liability coverage.\`,
     process: \`Every project starts with a full surface assessment. We identify substrate issues, previous coating failures, and moisture problems before prep begins.
 
 <strong>Surface Preparation:</strong> We scrape all loose and peeling paint, sand smooth transitions, repair wood rot and damaged trim, caulk all gaps and joints with premium elastomeric sealants, and pressure wash to remove dirt, mildew, and chalking.
@@ -45,9 +45,9 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
     ],
     whyUs: \`Our crew is owned, not subcontracted. That matters more than most homeowners realize \u2014 it means the same people who show up day one are there day five. No phone-tag with subs, no quality drop-off when we get busy and send whoever is available.
 
-We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively — covering application practices, environmental compliance, and chemical handling \u2014 not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
+We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively � covering application practices, environmental compliance, and chemical handling \u2014 not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
 
-$2M general liability coverage means that if something goes wrong on your property, you are protected. We provide a certificate of insurance within 24 hours to any HOA board or property manager who requests one.\`,
+$1M general liability coverage means that if something goes wrong on your property, you are protected. We provide a certificate of insurance within 24 hours to any HOA board or property manager who requests one.\`,
     timeline: \`Most residential exterior painting projects in Northern Colorado take 3\u20135 business days, weather-dependent.
 
 <strong>Day 1 &mdash; Prep:</strong> Surface assessment, pressure washing, scraping all loose paint, caulking gaps and joints, spot priming bare surfaces. This is the most important day on the job. Prep determines how long the paint lasts.
@@ -61,7 +61,7 @@ $2M general liability coverage means that if something goes wrong on your proper
       { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Board-approved color matching and documentation for HOA compliance.' },
       { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains that protect wood grain through Colorado summers.' },
       { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck and siding stain systems for natural wood surfaces.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, minimal disruption, $2M liability.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, minimal disruption, $1M liability.' },
     ],
     faqs: [
       { q: 'How long does exterior paint last in Colorado?', a: 'Budget paint jobs typically last 3-4 years in Northern Colorado due to freeze-thaw cycles and high UV exposure. Premium systems with proper surface prep and high-grade acrylic or elastomeric coatings last 7-10 years. We use Sherwin-Williams Duration and Benjamin Moore Aura \u2014 both formulated for extreme temperature cycling and UV resistance.' },

@@ -1,6 +1,6 @@
-﻿'use strict';
+'use strict';
 // Patches HOA, fence staining, exterior staining, and commercial painting SERVICE_DATA
-// Run: node patch-remaining-pages.js â€” safe to delete after.
+// Run: node patch-remaining-pages.js — safe to delete after.
 
 const fs = require('fs');
 const path = require('path');
@@ -8,7 +8,7 @@ const path = require('path');
 const filePath = path.join(__dirname, '_build-data.js');
 let content = fs.readFileSync(filePath, 'utf8');
 
-// â”€â”€â”€ HOA PAINTING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── HOA PAINTING ─────────────────────────────────────────────────────────────
 const HOA_OLD_START = "  'hoa-painting': {";
 const HOA_OLD_END   = "  'commercial-painting':";
 const hoaStart = content.indexOf(HOA_OLD_START);
@@ -22,7 +22,7 @@ const newHoa = `  'hoa-painting': {
     heroTitle: 'HOA Painting in Northern Colorado \u2014 Color Approval to Final Coat',
     intro: \`HOA painting projects require a level of coordination most painting contractors are not set up for. Color approval documentation, multi-unit scheduling that minimizes resident disruption, and precise color matching across dozens of homes \u2014 these are requirements, not extras.
 
-Timnath Painting has worked with HOAs across Timnath, Windsor, and Severance. We understand the approval process, carry $2M general liability insurance with COI on request, and deliver consistent color results across every building we touch.\`,
+Timnath Painting has worked with HOAs across Timnath, Windsor, and Severance. We understand the approval process, carry $1M general liability insurance with COI on request, and deliver consistent color results across every building we touch.\`,
     process: \`HOA projects begin with a meeting with the property manager or board to confirm scope, color palette, scheduling requirements, and documentation needs.
 
 <strong>Color Coordination:</strong> We work directly with HOA architectural review committees to confirm approved colors, obtain approval letters, and document color specifications for every structure.
@@ -40,7 +40,7 @@ Timnath Painting has worked with HOAs across Timnath, Windsor, and Severance. We
 
 We eliminate that risk. We use spectrophotometer color matching and coordinate directly with Sherwin-Williams and Benjamin Moore reps to lock in exact color codes for every project. When we come back the following year for additional units, the color is right.
 
-Our $2M general liability policy covers multi-unit projects. Certificates of insurance are available within 24 hours to any property manager or board that requests one. We have never had a board wait on a COI from us.\`,
+Our $1M general liability policy covers multi-unit projects. Certificates of insurance are available within 24 hours to any property manager or board that requests one. We have never had a board wait on a COI from us.\`,
     timeline: \`HOA project timelines depend on unit count, but here is how a standard Timnath or Windsor neighborhood project runs.
 
 <strong>Week 1 \u2014 Color Approval:</strong> We submit color samples and documentation to the architectural review committee. Most Northern Colorado HOAs turn approvals in 2\u20134 weeks. We build this into the project timeline and never start coating without written approval in hand.
@@ -52,13 +52,13 @@ Our $2M general liability policy covers multi-unit projects. Certificates of ins
 <strong>Final \u2014 Walkthrough:</strong> Board representative or property manager walkthrough before any final invoice is issued. We address any punch list items same-day.\`,
     relatedServices: [
       { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7\u201310 year systems for individual homes in Northern Colorado.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $2M liability, no subcontractors.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, no subcontractors.' },
       { label: 'Fence Staining', slug: 'fence-staining', desc: 'Community fence staining for HOA common areas and individual lots.' },
     ],
     faqs: [
       { q: 'Do you handle HOA color approval documentation?', a: 'Yes. We work with HOA architectural review committees to confirm approved colors, provide color samples, and submit all required documentation. We have worked with dozens of local HOAs in Timnath, Windsor, and Severance and know their standards and timelines.' },
       { q: 'Can you coordinate multi-unit HOA projects?', a: 'Yes. We sequence multi-unit projects to minimize resident disruption and maintain consistent scheduling. Property managers receive regular progress updates. We coordinate resident communications when required.' },
-      { q: 'Do you provide certificates of insurance for HOA projects?', a: 'Yes. Timnath Painting carries $2M general liability insurance. Certificates of insurance are provided on request, typically within 24 hours.' },
+      { q: 'Do you provide certificates of insurance for HOA projects?', a: 'Yes. Timnath Painting carries $1M general liability insurance. Certificates of insurance are provided on request, typically within 24 hours.' },
       { q: 'What does HOA exterior painting cost?', a: 'HOA painting costs depend on number of units, building size, surface condition, and color change requirements. We provide per-unit pricing and bulk project estimates. Call (970) 236-8271 for a site assessment and quote.' },
       { q: 'How do you ensure color consistency across multiple units?', a: 'We use spectrophotometer color matching and lock in exact Sherwin-Williams or Benjamin Moore color codes at the start of the project. Every unit is painted from the same batch formula. When we return for future phases, we pull the documented color codes to match exactly.' },
       { q: 'Can you work with an HOA property management company?', a: 'Yes. Most of our HOA work is coordinated through property management companies. We handle all communication, documentation, and scheduling through the property manager and only escalate to the board when approval decisions require it.' },
@@ -70,7 +70,7 @@ Our $2M general liability policy covers multi-unit projects. Certificates of ins
 
 content = content.substring(0, hoaStart) + newHoa + content.substring(hoaEnd);
 
-// â”€â”€â”€ COMMERCIAL PAINTING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── COMMERCIAL PAINTING ───────────────────────────────────────────────────────
 const COMM_OLD_START = "  'commercial-painting': {";
 const COMM_OLD_END   = "  'fence-staining':";
 const commStart = content.indexOf(COMM_OLD_START);
@@ -79,10 +79,10 @@ const commEnd   = content.indexOf(COMM_OLD_END);
 const newComm = `  'commercial-painting': {
     title: 'Commercial Painting in Northern Colorado',
     metaTitle: 'Commercial Painting Northern Colorado | Timnath Painting',
-    metaDesc: "Commercial painting in Northern Colorado. After-hours scheduling, minimal disruption, $2M liability. Call Timnath Painting: (970) 236-8271",
+    metaDesc: "Commercial painting in Northern Colorado. After-hours scheduling, minimal disruption, $1M liability. Call Timnath Painting: (970) 236-8271",
     tagline: 'After-Hours Scheduling. Zero Disruption.',
     heroTitle: 'Commercial Painting in Northern Colorado \u2014 Built Around Your Schedule',
-    intro: \`Timnath Painting provides commercial painting in Northern Colorado for strip malls, office buildings, and multi-family properties along the I-25 corridor. We specialize in after-hours scheduling, use commercial-grade coatings built for Colorado\\'s 28+ annual freeze-thaw cycles, and carry $2M general liability insurance with certificates available on request.
+    intro: \`Timnath Painting provides commercial painting in Northern Colorado for strip malls, office buildings, and multi-family properties along the I-25 corridor. We specialize in after-hours scheduling, use commercial-grade coatings built for Colorado\\'s 28+ annual freeze-thaw cycles, and carry $1M general liability insurance with certificates available on request.
 
 Your commercial property takes the same beating from Colorado\\'s climate as any home. But unlike residential work, your repaint cannot shut down your business for two weeks.\`,
     process: \`We start with a site assessment and schedule consultation. Most commercial clients need after-hours or weekend work to avoid disrupting operations. We accommodate that.
@@ -102,7 +102,7 @@ Your commercial property takes the same beating from Colorado\\'s climate as any
 
 Timnath Painting brings an owned crew to every commercial project. The same people who assess the job are the ones who do the work. We do not pass commercial projects off to subs when we get busy.
 
-We carry $2M general liability insurance and workers\\' compensation on all crew members. COI is available within 24 hours. For property management companies that need to be listed as additional insured, we accommodate that at no cost.\`,
+We carry $1M general liability insurance and workers\\' compensation on all crew members. COI is available within 24 hours. For property management companies that need to be listed as additional insured, we accommodate that at no cost.\`,
     timeline: \`Commercial project timelines depend on building size and schedule constraints, but here is how a standard Northern Colorado commercial repaint runs.
 
 <strong>Week 1 \u2014 Assessment and Scheduling:</strong> On-site assessment, scope confirmation, COI delivery, and schedule build. We identify any after-hours or weekend requirements and lock in access protocols with building management.
@@ -118,7 +118,7 @@ We carry $2M general liability insurance and workers\\' compensation on all crew
     ],
     faqs: [
       { q: 'Can you paint after hours or on weekends?', a: 'Yes. Timnath Painting schedules commercial crews for evenings, overnight shifts, and weekends in Northern Colorado. Retail storefronts, medical offices, and multi-family buildings often require after-hours work. We coordinate site access, lighting requirements, and security protocols before beginning.' },
-      { q: 'Do you provide certificates of insurance for commercial projects?', a: 'Yes. We carry $2M general liability insurance and provide COI on request, typically within 24 hours. We also carry workers\\' compensation for all crew members. We can list property management companies as additional insured.' },
+      { q: 'Do you provide certificates of insurance for commercial projects?', a: 'Yes. We carry $1M general liability insurance and provide COI on request, typically within 24 hours. We also carry workers\\' compensation for all crew members. We can list property management companies as additional insured.' },
       { q: 'What coatings do you use for commercial properties?', a: 'We specify elastomeric and industrial-grade acrylics from Sherwin-Williams and Benjamin Moore for commercial properties. Elastomeric coatings bridge hairline cracks and flex with temperature swings. We do not use residential-grade paints on commercial projects.' },
       { q: 'What does commercial painting cost per square foot?', a: 'Commercial painting in Northern Colorado typically costs $2.50\u2013$5.50 per square foot for standard exteriors with good existing paint. Complex projects with substrate repairs, elastomeric coatings, or difficult access run higher. We provide detailed written quotes after site assessment.' },
       { q: 'Do you work with property management companies?', a: 'Yes. Most of our commercial work is coordinated with property management companies. We handle documentation, scheduling, and access coordination through the property manager and provide regular progress updates throughout the project.' },
@@ -130,7 +130,7 @@ We carry $2M general liability insurance and workers\\' compensation on all crew
 
 content = content.substring(0, commStart) + newComm + content.substring(commEnd);
 
-// â”€â”€â”€ FENCE STAINING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── FENCE STAINING ────────────────────────────────────────────────────────────
 const FENCE_OLD_START = "  'fence-staining': {";
 const FENCE_OLD_END   = "  'exterior-staining':";
 const fenceStart = content.indexOf(FENCE_OLD_START);
@@ -189,7 +189,7 @@ Our work comes with a workmanship guarantee. If the stain fails early due to our
 
 content = content.substring(0, fenceStart) + newFence + content.substring(fenceEnd);
 
-// â”€â”€â”€ EXTERIOR STAINING â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── EXTERIOR STAINING ─────────────────────────────────────────────────────────
 const STAIN_OLD_START = "  'exterior-staining': {";
 const STAIN_OLD_END   = '\n};\n\nconst CITY_DATA';
 const stainStart = content.indexOf(STAIN_OLD_START);
