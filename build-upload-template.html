@@ -373,6 +373,7 @@ async function convertIfHeic(file) {
     /\.(heic|heif)$/i.test(file.name);
   if (!isHeic) return file;
   try {
+    if (typeof heic2any === 'undefined') return file;
     const blob = await heic2any({ blob: file, toType: 'image/jpeg', quality: 0.85 });
     const result = Array.isArray(blob) ? blob[0] : blob;
     return new File([result], file.name.replace(/\.(heic|heif)$/i, '.jpg'), { type: 'image/jpeg' });
@@ -382,13 +383,9 @@ async function convertIfHeic(file) {
   }
 }
 
-async function handleFiles(files) {
+function handleFiles(files) {
   if (!files.length) return;
-  const converting = document.getElementById('uploadStatus');
-  const hasHeic = files.some(f => f.type === 'image/heic' || f.type === 'image/heif' || /\.(heic|heif)$/i.test(f.name));
-  if (hasHeic && converting) converting.textContent = 'Converting HEIC photos...';
-  const converted = await Promise.all(files.map(f => convertIfHeic(f)));
-  selectedFiles = [...selectedFiles, ...converted];
+  selectedFiles = [...selectedFiles, ...files];
   renderQueue();
 }
 
@@ -456,7 +453,8 @@ async function uploadAll() {
     status.textContent = `Uploading ${i + 1} of ${selectedFiles.length}...`;
 
     try {
-      const compressed = await compressImage(selectedFiles[i]);
+      const ready = await convertIfHeic(selectedFiles[i]);
+      const compressed = await compressImage(ready);
       const fd = new FormData();
       fd.append('password', adminPassword);
       fd.append('photo', compressed, compressed.name);
