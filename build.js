@@ -442,15 +442,15 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
     </div>
     <div class="row gutter-y-30" style="margin-top:40px;">
       ${SERVICES.map(s => `<div class="col-md-6 col-lg-4">
-        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;">
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:140px;">
           <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></p>
-          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">Learn More</a>
+          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
         </div>
       </div>`).join('\n')}
       <div class="col-md-6 col-lg-4">
-        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;background:#f4ede4;">
-          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html" style="color:#AE360E;">See Areas We Serve</a></p>
-          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">View All Areas</a>
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:140px;">
+          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html">See Areas We Serve</a></p>
+          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">View All Areas</a>
         </div>
       </div>
     </div>
