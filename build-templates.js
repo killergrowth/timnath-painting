@@ -1,4 +1,4 @@
-﻿'use strict';
+'use strict';
 const { CLIENT, SERVICES } = require('./_build-data.js');
 
 function htmlHead(title, desc, canonicalUrl, preloadImage, noindex = false) {
@@ -137,7 +137,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .hero-static .main-slider-one__bg { opacity: 1 !important; transform: none !important; transition: none !important; }
 /* Hero bg img positioning (same as before) */
 .hero-static .main-slider-one__bg img { position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center; }
-/* CSS-only text entrance animations â€" fire on load, no JS required */
+/* CSS-only text entrance animations �" fire on load, no JS required */
 @keyframes heroSlideUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:none; } }
 .hero-static .main-slider-one__sub-title { animation: heroSlideUp 0.55s ease 0.15s both; }
 .hero-static .main-slider-one__title__box:nth-child(1) h2 { animation: heroSlideUp 0.55s ease 0.3s both; }
@@ -162,7 +162,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 @media(max-width:1199px){.main-header__right__link{display:none!important}}
 @media(min-width:1200px){.mobile-nav__btn{display:none!important}}
 
-/* CWV: Tagline letter-spacing via CSS — eliminates fixTaglines JS setTimeout (which caused CLS) */
+/* CWV: Tagline letter-spacing via CSS � eliminates fixTaglines JS setTimeout (which caused CLS) */
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
@@ -226,7 +226,7 @@ function topbar() { return ''; /* topbar now embedded in header partial */ }
 
 function pageHeader(title, crumbs) {
   return `<section class="page-header">
-  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+  <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/timnath-hero.jpg);"></div>
   <div class="container">
     <h2 class="page-header__title">${title}</h2>
     <div class="wallox-breadcrumb"><ul class="wallox-breadcrumb__list list-unstyled">
