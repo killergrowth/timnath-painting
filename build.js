@@ -244,7 +244,7 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-1-1.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
+          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-house-new.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
           <div class="about-one__funfact count-box">
             <h3 class="about-one__count"><span class="count-text" data-stop="28" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">freeze-thaw<br>cycles per year</p>
