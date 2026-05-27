@@ -329,7 +329,7 @@ function contactFormSection() {
             <li><i class="fa-solid fa-envelope" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><a href="mailto:${CLIENT.email}" style="color:#ddd;">${CLIENT.email}</a></li>
             <li><i class="fa-solid fa-location-dot" style="color:var(--wallox-base,#AE360E);margin-right:12px;"></i><span style="color:#ddd;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</span></li>
           </ul>
-          <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; No-VOC Products. &bull; $2M General Liability</p>
+          <p style="margin-top:30px;font-style:italic;color:#bbb;">Licensed &amp; Insured &bull; No-VOC Products. &bull; $1M General Liability</p>
         </div>
       </div>
 
