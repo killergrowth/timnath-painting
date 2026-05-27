@@ -109,11 +109,14 @@ function buildHomepage() {
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards
-  const reviewCards = reviewData.reviews.map(r => {
+  // Build review cards — filter 5-star only, max 6 total, first 3 always visible, cards 4-6 desktop-only
+  const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
+  const reviewCards = fiveStarReviews.map((r, idx) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
     const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    return `<div class="col-md-6 col-lg-4">
+    // Cards 4-6 (index 3+) are hidden on mobile, visible on desktop (lg+)
+    const extraClass = idx >= 3 ? ' d-none d-lg-block' : '';
+    return `<div class="col-md-6 col-lg-4${extraClass}">
   <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;">
     <div style="color:#AE360E;margin-bottom:12px;font-size:15px;">
       <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
