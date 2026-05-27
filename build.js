@@ -115,7 +115,7 @@ function buildHomepage() {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
     const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
     // Cards 4-6 (index 3+) are hidden on mobile, visible on desktop (lg+)
-    const extraClass = idx >= 3 ? ' d-none d-lg-block' : '';
+    const extraClass = idx >= 3 ? ' review-desktop-only' : '';
     return `<div class="col-md-6 col-lg-4${extraClass}">
   <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;">
     <div style="color:#AE360E;margin-bottom:12px;font-size:15px;">

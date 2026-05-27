@@ -202,6 +202,10 @@
   text-align: center !important;
   gap: 16px !important;
 }
+/* Reviews: hide extra cards on mobile, show on desktop */
+.review-desktop-only { display: none !important; }
+@media (min-width: 992px) { .review-desktop-only { display: block !important; } }
+
 /* Fix breadcrumb separator - replace missing icomoon char with Font Awesome angle */
 .wallox-breadcrumb__list li:not(:last-of-type)::after {
   content: "\f105" !important;
