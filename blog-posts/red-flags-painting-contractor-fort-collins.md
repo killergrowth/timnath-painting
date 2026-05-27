@@ -1,9 +1,9 @@
 ---
 slug: red-flags-painting-contractor-fort-collins
 title: Red Flags When Vetting a Painting Contractor in Fort Collins
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-16T13:00:00.000Z
 excerpt: >-
   Not every painting contractor is worth hiring. Here are the specific red flags
   that separate legit pros from contractors who'll leave you stuck.

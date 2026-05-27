@@ -1,9 +1,9 @@
 ﻿---
 slug: exterior-home-painting-ideas-fort-collins-co
 title: Exterior Home Painting Ideas That Actually Transform Curb Appeal
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-30T13:00:00.000Z
 excerpt: >-
   Most homeowners stop at picking a new body color. These exterior painting
   ideas go further — doors, trim, two-tone combos, and more.

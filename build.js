@@ -30,7 +30,7 @@ const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
 const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
-// Custom SVG icons â€" inline with brand color
+// Custom SVG icons �" inline with brand color
 const RED = '#AE360E';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -58,15 +58,15 @@ function writeStripped(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ Setup Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� Setup â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) â€" desktop is pre-compressed in source
-// Source: assets/images/backgrounds/slider-3-1.webp (151KB @ 1440px q50)
+// Generate mobile hero variant (800px @ q68 ~70KB) �" desktop is pre-compressed in source
+// Source: assets/images/backgrounds/timnath-hero.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
-  const heroSrc = path.join(DIST, 'assets', 'images', 'backgrounds', 'slider-3-1.webp');
-  const heroMobile = path.join(DIST, 'assets', 'images', 'backgrounds', 'slider-3-1-mobile.webp');
+  const heroSrc = path.join(DIST, 'assets', 'images', 'backgrounds', 'timnath-hero.webp');
+  const heroMobile = path.join(DIST, 'assets', 'images', 'backgrounds', 'timnath-hero-mobile.webp');
   if (fs.existsSync(heroSrc) && !fs.existsSync(heroMobile)) {
     sharp(heroSrc).resize(800, null, { withoutEnlargement: true }).webp({ quality: 68 })
       .toFile(heroMobile).then(() => {}).catch(() => {});
@@ -78,9 +78,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html â€" built by buildHomepage()
+// Root index.html �" built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED â€" site is live)
+// Copy coming-soon landing page to root (DISABLED �" site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -92,7 +92,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json â€" Pages Functions handle routing now
+// Remove _worker.js and _routes.json �" Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -101,19 +101,22 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// Ã¢"â'¬Ã¢"â'¬ HOMEPAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� HOMEPAGE â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 function buildHomepage() {
-  // â"€â"€ Reviews data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
+  // �"��"� Reviews data �"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"��"�
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards
-  const reviewCards = reviewData.reviews.map(r => {
+  // Build review cards — filter 5-star only, max 6 total, first 3 always visible, cards 4-6 desktop-only
+  const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
+  const reviewCards = fiveStarReviews.map((r, idx) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
     const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    return `<div class="col-md-6 col-lg-4">
+    // Cards 4-6 (index 3+) are hidden on mobile, visible on desktop (lg+)
+    const extraClass = idx >= 3 ? ' review-desktop-only' : '';
+    return `<div class="col-md-6 col-lg-4${extraClass}">
   <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;">
     <div style="color:#AE360E;margin-bottom:12px;font-size:15px;">
       <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
@@ -174,7 +177,7 @@ function buildHomepage() {
 
   const sliders = [
     {
-      bg: 'slider-3-1.jpg',
+      bg: 'timnath-hero.jpg',
       sub: 'Northern Colorado Painting Contractor',
       lines: ['Premium Exterior', 'Painting and More'],
       btn1: { t: 'Get a Free Quote', h: '/get-a-quote/' },
@@ -216,7 +219,7 @@ function buildHomepage() {
   const features = [
     { icon:'fa-solid fa-lightbulb', title:'10 Year Systems', link:'/exterior-painting/index.html' },
     { icon:'fa-solid fa-paint-roller', title:'No-VOC Products.', link:'/about.html' },
-    { icon:'fa-solid fa-users', title:'$2M Liability Coverage', link:'/about.html' },
+    { icon:'fa-solid fa-users', title:'$1M Liability Coverage', link:'/about.html' },
     { icon:'fa-solid fa-shield-halved', title:'Free On-Site Quotes', link:'/get-a-quote/' },
   ];
 
@@ -244,7 +247,7 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-1-1.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
+          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-house-new.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
           <div class="about-one__funfact count-box">
             <h3 class="about-one__count"><span class="count-text" data-stop="28" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">freeze-thaw<br>cycles per year</p>
@@ -267,12 +270,12 @@ ${T.topbar()}
             </div>
             <h3 class="sec-title__title">Paint Systems Built for Colorado's Climate</h3>
           </div>
-          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Northern Colorado sees 28+ freeze-thaw cycles a year. UV radiation hits 10-15% harder at altitude. Cheap paint fails in 3-4 years here. ${CLIENT.name} builds exterior systems that last 7-10 years using premium Sherwin-Williams and Benjamin Moore coatings, using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $2M general liability coverage.</p>
+          <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Northern Colorado sees 28+ freeze-thaw cycles a year. UV radiation hits 10-15% harder at altitude. Cheap paint fails in 3-4 years here. ${CLIENT.name} builds exterior systems that last 7-10 years using premium Sherwin-Williams and Benjamin Moore coatings, using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $1M general liability coverage.</p>
           <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> applicators using premium eco-friendly, no-VOC products</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Sherwin-Williams &amp; Benjamin Moore approved</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  COI on request</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $1M general liability  -  COI on request</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews. No volume rushing.</li>
           </ul>
         </div>
@@ -363,11 +366,11 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/slider-3-1.jpg')}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/timnath-hero.jpg')}
 ${T.wrapBody(finalContent)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ ABOUT PAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� ABOUT PAGE â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 function buildAbout() {
   const content = `
 ${T.topbar()}
@@ -411,7 +414,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
         <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="margin-top:20px;">
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> No-VOC Products.  -  approved Sherwin-Williams &amp; Benjamin Moore applicator</li>
-          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $2M general liability  -  certificates available on request</li>
+          <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $1M general liability  -  certificates available on request</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Limited project capacity to maintain quality control</li>
           <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Weekly progress updates  -  no chasing us down</li>
@@ -425,10 +428,6 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
         <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
           <h4 class="progress-box__title">Customer Satisfaction Rate</h4>
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
-        </div>
-        <div class="why-choose-one__progress progress-box wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-          <h4 class="progress-box__title">Premium Coating Systems</h4>
-          <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="90%"><div class="progress-box__number count-text">90%</div></div></div>
         </div>
         <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
           <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
@@ -446,15 +445,15 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
     </div>
     <div class="row gutter-y-30" style="margin-top:40px;">
       ${SERVICES.map(s => `<div class="col-md-6 col-lg-4">
-        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;">
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:140px;">
           <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/${s.slug}/index.html">${s.label}</a></p>
-          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">Learn More</a>
+          <a href="/${s.slug}/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">Learn More</a>
         </div>
       </div>`).join('\n')}
       <div class="col-md-6 col-lg-4">
-        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;background:#f4ede4;">
-          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html" style="color:#AE360E;">See Areas We Serve</a></p>
-          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;margin-left:auto;">View All Areas</a>
+        <div class="feature-two__item wow fadeInUp" data-wow-duration="1500ms" style="padding:30px;border:1px solid #e4dacc;border-radius:8px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:space-between;min-height:140px;">
+          <p class="feature-two__item__title" style="margin-bottom:10px;"><a href="/areas-served/index.html">See Areas We Serve</a></p>
+          <a href="/areas-served/index.html" class="wallox-btn wallox-btn--base" style="margin-top:10px;">View All Areas</a>
         </div>
       </div>
     </div>
@@ -483,7 +482,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ SERVICE HUB PAGES Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� SERVICE HUB PAGES â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -546,7 +545,7 @@ function buildServiceHub(slug) {
           <ul class="list-unstyled" style="margin-top:20px;line-height:2.2;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Licensed &amp; Insured in Colorado</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No-VOC Products.</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$2M General Liability &mdash; COI on request</span></li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$1M General Liability &mdash; COI on request</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Sherwin-Williams &amp; Benjamin Moore Approved</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
           </ul>
@@ -630,7 +629,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <ul class="list-unstyled" style="line-height:2;">
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability</li>
+              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$1M General Liability</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
             </ul>
@@ -667,7 +666,7 @@ ${T.wrapBody(content)}`);
 
 
 
-// Ã¢"â'¬Ã¢"â'¬ CONTACT PAGE Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� CONTACT PAGE â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -700,15 +699,25 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
     <div class="row gutter-y-30" style="margin-top:60px;">
       <div class="col-lg-8">
         <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
-          <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">get in touch</p></div>
-          <h3 class="sec-title__title" style="margin-bottom:8px;">Get a Free Quote</h3>
+          <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">contact us</p></div>
+          <h3 class="sec-title__title" style="margin-bottom:8px;">How Can We Help?</h3>
         </div>
         <p style="margin-top:0;">Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few minutes  -  and always provide honest, no-obligation quotes.</p>
-        <div style="margin-top:30px;">
-          <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
-          <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
-          <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
-        </div>
+        <form class="contact-one__form" id="quote-form" action="/submit" method="POST" style="margin-top:30px;">
+            <div class="row gutter-y-20">
+              <div class="col-md-6"><input type="text" name="name" placeholder="Your Name *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
+              <div class="col-md-6"><input type="email" name="email" placeholder="Email Address *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
+              <div class="col-md-6"><input type="text" name="phone" placeholder="Phone Number" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
+              <div class="col-md-6">
+                <select name="service" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;">
+                  <option value="">Service Needed</option>
+                  ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
+                </select>
+              </div>
+              <div class="col-12"><textarea name="message" placeholder="Tell us about your project" rows="5" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></textarea></div>
+              <div class="col-12"><button type="submit" class="wallox-btn wallox-btn--base">Send Message</button></div>
+            </div>
+          </form>
       </div>
       <div class="col-lg-4">
         <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
@@ -716,7 +725,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
           <ul class="list-unstyled" style="line-height:2.5;">
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$2M General Liability  -  COI on request</li>
+            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$1M General Liability  -  COI on request</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>We Know Our Crews</li>
             <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
           </ul>
@@ -733,7 +742,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ Areas Served INDEX Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� Areas Served INDEX â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => {
     const serviceLinks = SERVICES.map(s =>
@@ -787,7 +796,7 @@ ${T.contactFormSection()}`;
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"â'¬Ã¢"â'¬ RUN ALL Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬Ã¢"â'¬
+// â"�'�â"�'� RUN ALL â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�â"�'�
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -827,7 +836,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
       <div style="background:#fff;border-radius:10px;padding:32px 24px;text-align:center;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;align-items:center;">
         <div style="font-size:48px;color:#AE360E;margin-bottom:16px;line-height:1;"><i class="fa-solid fa-medal"></i></div>
         <h4 style="font-size:20px;font-weight:700;color:#201B10;margin-bottom:8px;">Why Timnath?</h4>
-        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">No-VOC Products. $2M liability. We know our crews. See what sets us apart.</p>
+        <p style="color:#5a5650;font-size:14px;margin-bottom:24px;flex:1;">No-VOC Products. $1M liability. We know our crews. See what sets us apart.</p>
         <a href="/about.html" class="wallox-btn wallox-btn--base" style="font-size:14px;padding:10px 22px;">Our Story <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div></div>
@@ -855,7 +864,7 @@ ${T.contactFormSection()}`;
   write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}
 ${T.wrapBody(content)}`);
 }
-// â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══ CITY HUB PAGES ══════════════════════════════════════════════════════════
 function buildCityHub(city) {
   const d = CITY_DATA[city.slug];
   if (!d) { console.warn('No city data for', city.slug); return; }
@@ -940,7 +949,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions â€" ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions �" ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -967,7 +976,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$1M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Free On-Site Quotes</li>
@@ -1005,14 +1014,14 @@ ${T.contactFormSection()}`;
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
       `Painting Services in ${d.label}, CO | Timnath Painting`,
-      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $2M liability. Call (970) 670-3965.`,
+      `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $1M liability. Call (970) 670-3965.`,
       `https://timnathpainting.com/areas-served/${city.slug}/`
     )}
 ${T.wrapBody(content)}`);
 }
 
-// â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function buildGallery_OLD() { // OLD â€" replaced by template-based version below
+// ══ GALLERY PAGE ══════════════════════════════════════════════════════════
+function buildGallery_OLD() { // OLD �" replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -1172,7 +1181,7 @@ function buildGallery() {
   console.log('Built: gallery/index.html');
 }
 
-// â•â• UPLOAD ADMIN PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// ══ UPLOAD ADMIN PAGE ═════════════════════════════════════════════════════════
 function buildUploadAdmin() {
   // Read the pre-built upload page from the dist template file if it exists,
   // otherwise write the standalone file directly (not injected through wrapBody
@@ -1192,7 +1201,7 @@ CITIES.forEach(buildCityHub);
 buildGallery();
 buildUploadAdmin();
 
-// ══ SERVICE + LOCATION PAGES ════════════════════════════════════════════════════════
+// -- SERVICE + LOCATION PAGES --------------------------------------------------------
 // URL: /[service-slug]-[city-slug]/index.html
 // All pages are noindex until scheduled rollout.
 function buildServiceLocation(service, city) {
@@ -1204,7 +1213,7 @@ function buildServiceLocation(service, city) {
   const canonical  = `https://timnathpainting.com/${pageSlug}/`;
   const h1Title    = `${service.label} in ${cd.label}, CO`;
   const metaTitle  = `${service.label} in ${cd.label}, CO | Timnath Painting`;
-  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Friendly & No-VOC, $2M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
+  const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Friendly & No-VOC, $1M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
 
   // Blended FAQs: 2 service-specific + up to 3 city-specific
   const blendedFaqs = [
@@ -1260,7 +1269,7 @@ function buildServiceLocation(service, city) {
     .join('');
 
   const whyFeatures = [
-    { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$2M general liability coverage. Certificates of insurance available on request within 24 hours.' },
+    { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$1M general liability coverage. Certificates of insurance available on request within 24 hours.' },
     { icon: 'fa-solid fa-leaf',          title: 'No-VOC Products.',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
     { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
     { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
@@ -1358,7 +1367,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$2M General Liability</li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>\$1M General Liability</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>SW &amp; BM Approved</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>We Know Our Crews</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Free On-Site Quotes</li>
@@ -1426,7 +1435,49 @@ buildBlog({
   siteName: 'Timnath Painting'
 });
 
-console.log('\n✓ All pillar pages built successfully.');
+// ── Spread recent posts to all inner pages ──────────────────────────────────
+(function spreadRecentPosts() {
+  const blogIndexPath = path.join(ROOT, 'blog-posts', 'blog-index.json');
+  if (!fs.existsSync(blogIndexPath)) return;
+  const blogData = JSON.parse(fs.readFileSync(blogIndexPath, 'utf8'));
+  const featTpl = fs.readFileSync(path.join(PARTS, 'blog-featured.html'), 'utf8');
+  const published = (blogData.posts || []).filter(p => p.status === 'published' && p.publishDate);
+  published.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+  const recent = published.slice(0, 3);
+  if (!recent.length) return;
+  const cards = recent.map(post => {
+    const d = new Date(post.publishDate);
+    const day = !isNaN(d) ? String(d.getUTCDate()).padStart(2, '0') : '';
+    const monthYear = !isNaN(d) ? d.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' }) + '/' + String(d.getUTCFullYear()).slice(-2) : '';
+    const img = post.featuredImage ? (post.featuredImage.startsWith('/') ? post.featuredImage : '/' + post.featuredImage) : '/blog-posts/images/' + post.slug + '.jpg';
+    const url = '/blog/' + post.slug + '/';
+    const title = (post.title || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    const excerpt = '<p>' + (post.excerpt || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').slice(0, 140) + '...</p>';
+    return featTpl
+      .replace(/\{\{url\}\}/g, url)
+      .replace(/\{\{image\}\}/g, img)
+      .replace(/\{\{title\}\}/g, title)
+      .replace(/\{\{day\}\}/g, day)
+      .replace(/\{\{month_year\}\}/g, monthYear)
+      .replace(/\{\{excerpt_html\}\}/g, excerpt);
+  }).join('\n');
+  function walkDir(dir) {
+    fs.readdirSync(dir).forEach(name => {
+      const full = path.join(dir, name);
+      if (fs.statSync(full).isDirectory()) { walkDir(full); return; }
+      if (!name.endsWith('.html')) return;
+      if (full === path.join(DIST, 'index.html')) return;
+      let html = fs.readFileSync(full, 'utf8');
+      if (!html.includes('<!-- RECENT_POSTS -->')) return;
+      html = html.replace('<!-- RECENT_POSTS -->', cards);
+      fs.writeFileSync(full, html, 'utf8');
+    });
+  }
+  walkDir(DIST);
+  console.log('  Recent posts injected into all inner pages.');
+})();
+
+console.log('\n? All pillar pages built successfully.');
 
 
 
@@ -1434,7 +1485,7 @@ console.log('\n✓ All pillar pages built successfully.');
 
 
 // ============================================================
-// GET A QUOTE PAGE — High-conversion standalone landing page
+// GET A QUOTE PAGE � High-conversion standalone landing page
 // ============================================================
 function buildGetAQuote() {
   const HEADER_STRIPPED_HTML = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
@@ -1494,6 +1545,7 @@ function buildGetAQuote() {
     <div class="gaq-grid">
       <div class="gaq-col-form">
         <div class="gaq-card" style="padding:24px;">
+          <h3 style="margin:0 0 16px;font-size:20px;font-weight:700;color:#201B10;">Schedule Your Free Quote</h3>
           <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
           <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
           <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
@@ -1502,7 +1554,7 @@ function buildGetAQuote() {
       <div class="gaq-col-copy">
         <ul class="gaq-trust-list">
           <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado &mdash; we know the conditions, the HOAs, and the neighborhoods.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $2M general liability. COI available on request within 24 hours.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $1M general liability. COI available on request within 24 hours.</span></li>
           <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number &mdash; no games.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Premium Sherwin-Williams &amp; Benjamin Moore coatings. No-VOC products. Systems built to last 7&ndash;10 years in Colorado's climate.</span></li>
         </ul>
@@ -1520,7 +1572,7 @@ function buildGetAQuote() {
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-shield-halved"></i>
-        <p><strong>Licensed &amp; Insured</strong>$2M general liability. COI on request within 24 hours.</p>
+        <p><strong>Licensed &amp; Insured</strong>$1M general liability. COI on request within 24 hours.</p>
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-tag"></i>

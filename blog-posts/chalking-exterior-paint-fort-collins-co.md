@@ -1,9 +1,9 @@
 ---
 slug: chalking-exterior-paint-fort-collins-co
 title: What Causes Chalking Paint on Your Home's Exterior?
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-12-04T14:00:00.000Z
 excerpt: >-
   That white powdery residue on your siding isn't dirt — it's chalking paint.
   Here's what causes it, how to test for it, and when it's time to repaint.

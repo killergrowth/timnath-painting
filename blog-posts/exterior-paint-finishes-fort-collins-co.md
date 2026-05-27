@@ -1,9 +1,9 @@
 ---
 slug: exterior-paint-finishes-fort-collins-co
 title: 'Exterior Paint Finishes: Satin, Eggshell, Flat — Which to Use Where'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-08-11T13:00:00.000Z
 excerpt: >-
   Not sure which exterior paint finish to use on your home? Here's a
   surface-by-surface breakdown built for Northern Colorado's climate.

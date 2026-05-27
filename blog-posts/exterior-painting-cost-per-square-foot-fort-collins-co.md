@@ -1,9 +1,9 @@
 ---
 slug: exterior-painting-cost-per-square-foot-fort-collins-co
 title: 'Exterior Painting Cost Per Square Foot: What Colorado Homeowners Pay'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-02T13:00:00.000Z
 excerpt: >-
   Get real exterior painting cost ranges for Fort Collins, CO homes — broken
   down by sq ft, surface type, and prep level.

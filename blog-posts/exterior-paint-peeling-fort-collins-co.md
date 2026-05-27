@@ -1,9 +1,9 @@
 ---
 slug: exterior-paint-peeling-fort-collins-co
 title: Why Is My Exterior Paint Peeling? Causes and What to Do
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-08-18T13:00:00.000Z
 excerpt: >-
   Exterior paint peeling in Fort Collins CO is a common headache — here are the
   real causes and exactly how to fix them.

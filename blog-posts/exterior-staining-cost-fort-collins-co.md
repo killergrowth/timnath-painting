@@ -1,9 +1,9 @@
 ﻿---
 slug: exterior-staining-cost-fort-collins-co
 title: 'Exterior Staining Cost: What to Budget for Your Home in Fort Collins, CO'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-11-10T14:00:00.000Z
 excerpt: >-
   Real numbers for exterior staining cost in Fort Collins, CO — by surface,
   stain type, and what Colorado prep actually adds to your project.

@@ -1,9 +1,9 @@
 ﻿---
 slug: hail-damage-exterior-repainting-fort-collins-co
 title: 'Hail Damage and Exterior Repainting: What Colorado Homeowners Should Know'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-12-15T14:00:00.000Z
 excerpt: >-
   Hail damage does more than dent your siding — it destroys your paint system.
   Here's how Fort Collins area homeowners should document, claim, and repaint.

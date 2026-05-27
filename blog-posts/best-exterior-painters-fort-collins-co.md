@@ -1,9 +1,9 @@
 ﻿---
 slug: best-exterior-painters-fort-collins-co
 title: 'Best Exterior Painters: How to Find One in Your Area'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-06-23T13:00:00.000Z
 excerpt: >-
   Finding the best exterior painters in Fort Collins, CO means knowing what to
   look for beyond price. Here's the framework that actually matters.

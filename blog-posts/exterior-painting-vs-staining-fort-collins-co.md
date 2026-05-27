@@ -1,9 +1,9 @@
 ---
 slug: exterior-painting-vs-staining-fort-collins-co
 title: 'Exterior Painting vs Exterior Staining: Which Is Right for Your Home?'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-07-31T13:00:00.000Z
 excerpt: >-
   Paint or stain? For Northern Colorado homeowners, the answer depends on your
   surface, your goals, and how Colorado's climate plays into both.

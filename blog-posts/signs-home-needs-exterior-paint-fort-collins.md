@@ -1,9 +1,9 @@
 ---
 slug: signs-home-needs-exterior-paint-fort-collins
 title: Signs Your Home Needs a Fresh Coat of Exterior Paint
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-08-14T13:00:00.000Z
 excerpt: >-
   Not sure if your home is due for new paint? Here are the key warning signs
   Fort Collins area homeowners should watch for before damage gets expensive.

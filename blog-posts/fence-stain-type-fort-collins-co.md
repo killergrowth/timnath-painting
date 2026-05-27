@@ -1,9 +1,9 @@
 ---
 slug: fence-stain-type-fort-collins-co
 title: 'Semi-Transparent vs Solid Fence Stain: Which Should You Choose?'
-status: draft
+status: scheduled
 publishDate: null
-scheduledDate: null
+scheduledDate: 2026-09-01T13:00:00.000Z
 excerpt: >-
   Not sure which fence stain is right for your Northern Colorado home? Here's
   how to choose the right finish for your wood's age, condition, and goals.
