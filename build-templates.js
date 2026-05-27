@@ -361,7 +361,7 @@ function faqBlock(faqs, groupName) {
 
 function serviceCarouselItems() {
   const items = SERVICES.map(s => `<div class="item"><div class="service-one__item">
-    <div class="service-one__item__thumb"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado" loading="lazy"></div>
+    <div class="service-one__item__thumb" style="height:260px;overflow:hidden;"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
       <p class="service-one__item__tagline">${s.tagline}</p>

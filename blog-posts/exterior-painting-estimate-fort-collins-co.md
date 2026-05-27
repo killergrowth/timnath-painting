@@ -3,12 +3,12 @@ slug: exterior-painting-estimate-fort-collins-co
 title: 'Exterior Painting Estimates: Why Prices Vary and What''s Fair'
 status: scheduled
 publishDate: null
-scheduledDate: 2026-06-05T13:00:00.000Z
+scheduledDate: '2026-06-05T13:00:00.000Z'
 excerpt: >-
   Getting wildly different bids for your exterior paint job? Here's what's
   actually inside an estimate — and how to compare them fairly.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/exterior-painting-estimate-fort-collins-co.jpg
+inlineImage1: blog-posts/images/exterior-painting-estimate-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a professional painter standing on a ladder reviewing a
@@ -35,7 +35,7 @@ sheetRow: 4
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:21:19.043Z'
-updatedAt: '2026-05-19T20:21:19.043Z'
+updatedAt: '2026-05-27T20:02:32.159Z'
 ---
 You called three painters. You got three completely different numbers. One came in at $2,800. One at $5,400. One at $7,100. Same house. Same square footage. What's going on?
 
@@ -45,12 +45,12 @@ If you're shopping for an exterior painting estimate in Fort Collins, CO or anyw
 
 A complete estimate isn't just a number for labor and paint. A thorough bid should itemize or at minimum account for:
 
-- **Surface preparation** — power washing, scraping, sanding, caulking, and priming
-- **Paint product and quantity** — brand, product line, number of coats, and coverage calculations
-- **Number of coats** — one coat is a touch-up, two coats is a paint job
-- **Trim, soffits, and doors** — often priced separately or bundled (confirm which)
-- **Crew size and estimated timeline**
-- **Insurance and licensing** — these cost money, and legit contractors price them in
+* **Surface preparation** — power washing, scraping, sanding, caulking, and priming
+* **Paint product and quantity** — brand, product line, number of coats, and coverage calculations
+* **Number of coats** — one coat is a touch-up, two coats is a paint job
+* **Trim, soffits, and doors** — often priced separately or bundled (confirm which)
+* **Crew size and estimated timeline**
+* **Insurance and licensing** — these cost money, and legit contractors price them in
 
 If a bid is missing any of these components, it's not an apples-to-apples comparison. It may not even be a complete job.
 
