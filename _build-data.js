@@ -16,7 +16,7 @@ const CLIENT = {
 
 const SERVICES = [
   { label: 'Exterior Painting',   slug: 'exterior-painting',   icon: 'fa-solid fa-house',             img: 'img-4932-exterior.jpg', tagline: 'Coatings built to handle Colorado freeze-thaw cycles &mdash; rated for 7-10 years.' },
-  { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'service-4-3.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
+  { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'photo-hoa-painting.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
   { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'photo-commercial-painting.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
   { label: 'Fence Staining',      slug: 'fence-staining',      icon: null,        img: 'photo-fence-staining.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
   { label: 'Exterior Staining',   slug: 'exterior-staining',   icon: null,              img: 'photo-exterior-staining.jpg', tagline: 'Deck and siding stain systems applied by applicators using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.' },
@@ -60,7 +60,7 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
     ],
     whyUs: `Our crew is owned, not subcontracted. That matters more than most homeowners realize &mdash; it means the same people who show up day one are there day five. No phone-tag with subs, no quality drop-off when we get busy and send whoever is available.
 
-We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively — covering application practices, environmental compliance, and chemical handling &mdash; not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
+We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively ï¿½ covering application practices, environmental compliance, and chemical handling &mdash; not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
 
 $1M general liability coverage means that if something goes wrong on your property, you are protected. We provide a certificate of insurance within 24 hours to any HOA board or property manager who requests one.`,
     timeline: `Most residential exterior painting projects in Northern Colorado take 3â€“5 business days, weather-dependent.
@@ -332,7 +332,7 @@ const CITY_DATA = {
     label: 'Windsor',
     state: 'CO',
     context: 'Established and growing community with lakefront properties, HOA neighborhoods, and premium residential builds',
-    intro: `Windsor combines established neighborhoods near Lake Windsor with newer HOA communities growing along the US-34 and I-25 corridors. The range of home styles &mdash; from lakefront properties to newer planned communities &mdash; means painting needs vary widely. What doesn\'t vary is Colorado\'s climate: 28+ freeze-thaw cycles per year, intense UV at altitude, and temperature swings that push coating systems to their limits.\n\nTimnath Painting serves all of Windsor with the same licensed, insured crew — using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore — that we bring to every project. No subcontractors. No volume rushing. Premium Sherwin-Williams and Benjamin Moore coatings with $1M general liability coverage.`,
+    intro: `Windsor combines established neighborhoods near Lake Windsor with newer HOA communities growing along the US-34 and I-25 corridors. The range of home styles &mdash; from lakefront properties to newer planned communities &mdash; means painting needs vary widely. What doesn\'t vary is Colorado\'s climate: 28+ freeze-thaw cycles per year, intense UV at altitude, and temperature swings that push coating systems to their limits.\n\nTimnath Painting serves all of Windsor with the same licensed, insured crew ï¿½ using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore ï¿½ that we bring to every project. No subcontractors. No volume rushing. Premium Sherwin-Williams and Benjamin Moore coatings with $1M general liability coverage.`,
     faqs: [
       { q: 'Do you serve Windsor, CO?', a: 'Yes. Timnath Painting serves all of Windsor including neighborhoods near Lake Windsor, Eastman Park, and newer communities along Harmony Road and the I-25 corridor. We\'re in Windsor regularly and can provide on-site quotes quickly.' },
       { q: 'Do you handle HOA color approvals in Windsor?', a: 'Yes. Windsor has a number of HOA communities with strict color approval requirements. We handle the full documentation process &mdash; color samples, approval submissions, and compliance letters &mdash; on your behalf.' },
