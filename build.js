@@ -273,7 +273,7 @@ ${T.topbar()}
           <p class="about-one__top__text wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Northern Colorado sees 28+ freeze-thaw cycles a year. UV radiation hits 10-15% harder at altitude. Cheap paint fails in 3-4 years here. ${CLIENT.name} builds exterior systems that last 7-10 years using premium Sherwin-Williams and Benjamin Moore coatings, using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $1M general liability coverage.</p>
           <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Licensed &amp; Insured in Colorado</li>
-            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> applicators using premium eco-friendly, no-VOC products</li>
+            <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Applicators using premium eco-friendly, no-VOC products</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> Sherwin-Williams &amp; Benjamin Moore approved</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> $1M general liability  -  COI on request</li>
             <li class="about-one__list__item"><i class="fa-solid fa-check"></i> We Know Our Crews. No volume rushing.</li>
