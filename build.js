@@ -1411,7 +1411,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
 ${T.contactFormSection()}`;
 
   write(`${pageSlug}/index.html`,
-    `${T.htmlHead(metaTitle, metaDesc, canonical, null, true)}
+    `${T.htmlHead(metaTitle, metaDesc, canonical, null, false)}
 ${T.wrapBody(content)}`);
 }
 
