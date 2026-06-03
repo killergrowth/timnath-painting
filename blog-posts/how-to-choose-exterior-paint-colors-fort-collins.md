@@ -5,13 +5,13 @@ title: >-
   Northern Colorado Guide)
 status: scheduled
 publishDate: null
-scheduledDate: 2026-07-07T13:00:00.000Z
+scheduledDate: '2026-07-07T13:00:00.000Z'
 excerpt: >-
   Picking the right exterior paint colors in Fort Collins means balancing HOA
   rules, architectural style, and NoCo's intense sunlight. Here's how to choose
   with confidence.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/how-to-choose-exterior-paint-colors-fort-collins.jpg
+inlineImage1: blog-posts/images/how-to-choose-exterior-paint-colors-fort-collins-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a beautifully painted craftsman-style home in a Northern
@@ -37,7 +37,7 @@ sheetRow: 13
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:27:07.585Z'
-updatedAt: '2026-05-19T20:27:07.585Z'
+updatedAt: '2026-06-01T19:59:16.962Z'
 ---
 Choosing exterior paint colors sounds like a creative decision — and it is — but it's also a structural one. Get it right and your home looks like it belongs. Get it wrong and it sticks out in the worst way, or worse, it fades and chips inside three years because the color wasn't built for Colorado's climate.
 
@@ -47,9 +47,9 @@ If you're in Fort Collins, Windsor, Timnath, or anywhere in Northern Colorado, y
 
 Your home's architecture is the first filter. A color palette that looks sharp on a craftsman bungalow will feel completely wrong on a stucco Spanish-style home, and vice versa.
 
-- **Craftsman and ranch homes** tend to work well with earthy tones — warm tans, muted greens, and deep browns. These echo the natural materials (stone, wood accents) that craftsman architecture relies on.
-- **Modern and contemporary builds** can handle bolder contrasts — charcoal siding with bright white trim, or deep navy with black hardware.
-- **Traditional two-stories** in suburban NoCo subdivisions usually stay safe with classic neutrals: greige, warm white, or soft gray with coordinated shutters and trim.
+* **Craftsman and ranch homes** tend to work well with earthy tones — warm tans, muted greens, and deep browns. These echo the natural materials (stone, wood accents) that craftsman architecture relies on.
+* **Modern and contemporary builds** can handle bolder contrasts — charcoal siding with bright white trim, or deep navy with black hardware.
+* **Traditional two-stories** in suburban NoCo subdivisions usually stay safe with classic neutrals: greige, warm white, or soft gray with coordinated shutters and trim.
 
 If you're not sure what architectural style your home falls into, look at the roofline, window shapes, and any decorative details. Those elements should guide your palette before you pick up a swatch.
 
@@ -74,9 +74,9 @@ Northern Colorado light is not like light anywhere else in the country. At altit
 
 A proven starting point: **body color, trim color, accent color**. That's it.
 
-- **Body:** The dominant color on your siding. Usually the most neutral of the three.
-- **Trim:** Windows, fascia, corners. Typically lighter or darker than the body to add definition.
-- **Accent:** Front door, shutters, or specific architectural details. This is where you can take a small risk — a deep red door or a muted black shutter goes a long way.
+* **Body:** The dominant color on your siding. Usually the most neutral of the three.
+* **Trim:** Windows, fascia, corners. Typically lighter or darker than the body to add definition.
+* **Accent:** Front door, shutters, or specific architectural details. This is where you can take a small risk — a deep red door or a muted black shutter goes a long way.
 
 Most homes that look "off" are either missing trim contrast or trying to use too many colors at once. Simplify the palette and the home reads cleaner.
 

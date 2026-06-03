@@ -7,8 +7,8 @@ scheduledDate: '2026-06-23T13:00:00.000Z'
 excerpt: >-
   Finding the best exterior painters in Fort Collins, CO means knowing what to
   look for beyond price. Here's the framework that actually matters.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/best-exterior-painters-fort-collins-co.jpg
+inlineImage1: blog-posts/images/best-exterior-painters-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a professional painter carefully applying paint to the
@@ -35,7 +35,7 @@ sheetRow: 9
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:24:22.377Z'
-updatedAt: '2026-05-29T13:25:38.591Z'
+updatedAt: '2026-06-01T19:40:53.160Z'
 ---
 ## "Best" Doesn't Mean Cheapest — Here's What It Actually Means
 

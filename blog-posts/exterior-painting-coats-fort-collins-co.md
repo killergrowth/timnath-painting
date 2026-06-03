@@ -3,12 +3,12 @@ slug: exterior-painting-coats-fort-collins-co
 title: How Many Coats of Exterior Paint Does Your Home Actually Need?
 status: scheduled
 publishDate: null
-scheduledDate: 2026-07-17T13:00:00.000Z
+scheduledDate: '2026-07-17T13:00:00.000Z'
 excerpt: >-
   The "2-coat minimum" rule sounds simple — but the honest answer depends on
   your surface, paint quality, and color change.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/exterior-painting-coats-fort-collins-co.jpg
+inlineImage1: blog-posts/images/exterior-painting-coats-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a professional painter applying exterior paint to the side
@@ -33,7 +33,7 @@ sheetRow: 16
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:29:04.216Z'
-updatedAt: '2026-05-19T20:29:04.216Z'
+updatedAt: '2026-06-02T13:07:17.343Z'
 ---
 ## The "2-Coat Rule" Isn't a Rule — It's a Starting Point
 
@@ -41,7 +41,7 @@ Ask ten homeowners how many coats of exterior paint a house needs and you'll get
 
 The actual number depends on several factors that most paint companies and big-box store employees won't walk you through. Here's what actually determines how many coats your home needs.
 
----
+***
 
 ## Factor 1: The Condition of Your Current Surface
 
@@ -51,7 +51,7 @@ In those situations, a proper primer coat is non-negotiable — and that primer 
 
 **What pros do:** Assess the surface before quoting coats. Bare or compromised areas get spot-primed or full-primed before any finish coat touches the wall.
 
----
+***
 
 ## Factor 2: How Dramatically the Color Is Changing
 
@@ -61,7 +61,7 @@ Going from dark brown to white? That's a different job. Dark pigments bleed thro
 
 Color-change jobs are one of the most underestimated cost drivers in exterior painting estimates. If a painter quotes two coats on a major color change without mentioning this, that's a red flag.
 
----
+***
 
 ## Factor 3: Paint Quality and Formulation
 
@@ -71,7 +71,7 @@ Higher-quality paints offer better hide, better flexibility (critical for wood t
 
 **Rule of thumb:** Better paint usually means fewer coats needed to hit coverage, but it also means longer intervals between repaints. That's the trade-off worth making.
 
----
+***
 
 ## Factor 4: Surface Porosity and Material Type
 
@@ -79,7 +79,7 @@ Wood siding, stucco, fiber cement, and brick all absorb paint differently. Bare 
 
 Stucco can be similar. Its textured, porous surface requires more material to achieve even coverage than a smooth surface would. Factor in that many Northern Colorado homes have stucco or T1-11 siding, and "two coats fits all" starts to fall apart quickly.
 
----
+***
 
 ## What Professional Painters in Northern Colorado Actually Do
 
@@ -95,7 +95,7 @@ A proper professional process looks like this:
 
 The key word is *inspection*. Skipping that step — rushing coat two before coat one dries or without checking coverage — is how corners get cut.
 
----
+***
 
 ## The Bottom Line
 

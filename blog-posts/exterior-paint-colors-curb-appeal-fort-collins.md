@@ -3,12 +3,12 @@ slug: exterior-paint-colors-curb-appeal-fort-collins
 title: Best Exterior Paint Colors for Curb Appeal and Resale Value in Fort Collins
 status: scheduled
 publishDate: null
-scheduledDate: 2026-07-03T13:00:00.000Z
+scheduledDate: '2026-07-03T13:00:00.000Z'
 excerpt: >-
   Not all exterior paint colors sell homes. Here's what Northern Colorado buyers
   actually respond to — and what photographs well on Zillow.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/exterior-paint-colors-curb-appeal-fort-collins.jpg
+inlineImage1: blog-posts/images/exterior-paint-colors-curb-appeal-fort-collins-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a beautifully painted two-story home in a Northern Colorado
@@ -35,7 +35,7 @@ sheetRow: 12
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:26:24.223Z'
-updatedAt: '2026-05-19T20:26:24.223Z'
+updatedAt: '2026-06-01T19:55:52.211Z'
 ---
 # Best Exterior Paint Colors for Curb Appeal and Resale Value in Fort Collins
 
@@ -43,7 +43,7 @@ If you're planning to sell your home — or just want it to look better than eve
 
 Here's what the research says, what Fort Collins and Windsor buyers actually respond to, and how to choose a palette that holds up in Colorado's climate and photographs well on Zillow.
 
----
+***
 
 ## Why Exterior Color Affects Resale Value
 
@@ -51,7 +51,7 @@ A 2023 Zillow analysis found that homes with certain exterior paint colors sold 
 
 The reason is simple: buyers can't easily imagine themselves in a home that screams "someone else's style." Neutral doesn't mean boring — it means broadly appealing. And broadly appealing moves faster at higher prices.
 
----
+***
 
 ## Neutrals That Win in Northern Colorado
 
@@ -59,14 +59,14 @@ Fort Collins and Windsor neighborhoods skew toward earth tones, warm grays, and 
 
 **Top-performing neutral palettes right now:**
 
-- **Warm greige** (think Sherwin-Williams "Accessible Beige" or Benjamin Moore "Revere Pewter") — timeless, photographs warm, broad buyer appeal
-- **Soft white with warm undertones** — reads as clean and fresh without the sterile feel of a bright white
-- **Earthy sage or muted olive** — trending upward in Colorado; pairs well with natural stone accents common in the region
-- **Charcoal or deep navy as an accent** — works well on doors, shutters, or trim without overwhelming the main body color
+* **Warm greige** (think Sherwin-Williams "Accessible Beige" or Benjamin Moore "Revere Pewter") — timeless, photographs warm, broad buyer appeal
+* **Soft white with warm undertones** — reads as clean and fresh without the sterile feel of a bright white
+* **Earthy sage or muted olive** — trending upward in Colorado; pairs well with natural stone accents common in the region
+* **Charcoal or deep navy as an accent** — works well on doors, shutters, or trim without overwhelming the main body color
 
 If you're prepping for a [Fort Collins exterior painting](/exterior-painting/) project before listing, these are the palettes we'd recommend without hesitation.
 
----
+***
 
 ## HOA-Safe Color Choices
 
@@ -76,7 +76,7 @@ The good news: most HOA palettes are already aligned with what sells. They tend 
 
 Not sure what your HOA allows? We've worked with dozens of HOA communities across [Northern Colorado](/areas-served/) and can help navigate the process. A free on-site quote is a good time to walk through options together.
 
----
+***
 
 ## Colors That Photograph Well on Zillow
 
@@ -85,17 +85,19 @@ Here's one angle most homeowners miss: your exterior color needs to work in a ph
 High-UV Colorado sunlight washes out cool grays and stark whites in listing photos. Warm tones hold better. Mid-value colors (not too light, not too dark) retain contrast and detail. Deep, saturated colors can look dramatic in person but muddy or oppressive on a screen.
 
 **What photographs well:**
-- Warm whites and creams
-- Medium greige tones
-- Soft blues and muted greens (especially with white trim)
-- Dark charcoal or black trim for sharp contrast and definition
+
+* Warm whites and creams
+* Medium greige tones
+* Soft blues and muted greens (especially with white trim)
+* Dark charcoal or black trim for sharp contrast and definition
 
 **What doesn't:**
-- Bright white in direct sunlight — tends to blow out
-- Cool blue-grays — often read as flat or lavender on screen
-- Yellow or gold tones — date quickly and polarize buyers
 
----
+* Bright white in direct sunlight — tends to blow out
+* Cool blue-grays — often read as flat or lavender on screen
+* Yellow or gold tones — date quickly and polarize buyers
+
+***
 
 ## Bold Colors: When They Work
 
@@ -103,7 +105,7 @@ Not every home needs to play it safe. If your neighborhood skews more contempora
 
 The key is containment — keep the bold element to one focal point (usually the door or garage) and let the body color stay grounded. That balance is what gets homes shared on Instagram and remembered by buyers who saw six houses in a day.
 
----
+***
 
 ## The Colorado Variable: Paint That Actually Holds Its Color
 
@@ -111,7 +113,7 @@ Choosing the right color is only half the equation. In Northern Colorado, paint 
 
 Our [exterior painting](/exterior-painting/) work uses 7–10 year paint systems specifically selected for Colorado's climate. That's not a marketing line — it's why we lead with product specs, not just color swatches.
 
----
+***
 
 ## Ready to Choose Your Palette?
 

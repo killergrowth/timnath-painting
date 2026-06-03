@@ -742,7 +742,7 @@ ${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
   </div>
 </section>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior or interior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
+  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
 ${T.wrapBody(content)}`);
 }
 

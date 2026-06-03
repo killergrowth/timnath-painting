@@ -3,12 +3,12 @@ slug: exterior-painting-prep-fort-collins-co
 title: How to Prepare Your Home for Exterior Painting
 status: scheduled
 publishDate: null
-scheduledDate: 2026-07-10T13:00:00.000Z
+scheduledDate: '2026-07-10T13:00:00.000Z'
 excerpt: >-
   Before the first brush stroke hits your siding, the real work begins. Here's
   what proper exterior painting prep looks like in Fort Collins, CO.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/exterior-painting-prep-fort-collins-co.jpg
+inlineImage1: blog-posts/images/exterior-painting-prep-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a professional painter power washing the exterior siding of
@@ -33,7 +33,7 @@ sheetRow: 14
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:27:46.107Z'
-updatedAt: '2026-05-19T20:27:46.107Z'
+updatedAt: '2026-06-01T20:20:35.143Z'
 ---
 ## What Happens Before the First Brush Stroke
 
@@ -43,7 +43,7 @@ Skip it, and you're not just wasting money on a paint job. You're accelerating t
 
 Here's exactly what thorough exterior painting prep looks like, and why each step matters.
 
----
+***
 
 ## Step 1: Power Washing
 
@@ -55,7 +55,7 @@ For Northern Colorado homes, mildew buildup is a real concern, especially on nor
 
 After washing, the surface needs to dry completely — typically 24–48 hours before any other work continues.
 
----
+***
 
 ## Step 2: Scraping and Sanding
 
@@ -65,7 +65,7 @@ Hand scraping removes the worst of it. Sanding feathers the edges of remaining p
 
 This step is labor-intensive and unglamorous. It's also the single biggest difference between a 2-year paint job and a 7-year one.
 
----
+***
 
 ## Step 3: Caulking
 
@@ -75,35 +75,36 @@ Old, cracked caulk gets removed and replaced — not painted over. Paintable pol
 
 **What gets skipped:** Running a quick bead of caulk over existing failed caulk instead of cutting it out. New caulk bonded to failed caulk doesn't solve anything — it just delays the same failure by a season.
 
----
+***
 
 ## Step 4: Priming
 
 Bare wood absorbs paint unevenly and raises grain as it soaks in moisture from the coating. Bare spots — anywhere scraping or sanding hit raw substrate — need primer before topcoat.
 
 Primer does three things:
-- Seals the substrate so topcoat lays evenly
-- Improves adhesion of the finish coat
-- Provides a chemical bond between surface and paint
+
+* Seals the substrate so topcoat lays evenly
+* Improves adhesion of the finish coat
+* Provides a chemical bond between surface and paint
 
 In Fort Collins and surrounding Northern Colorado communities, we use primers specifically formulated for high UV environments. The finish coat's durability is directly tied to how well it's anchored — and primer is that anchor.
 
 For [exterior painting](/exterior-painting/) work on homes throughout the region, this step is non-negotiable on any bare or heavily sanded area.
 
----
+***
 
 ## What Happens If You Skip the Prep
 
 Prep skipping shows up fast in Colorado's climate. Common failure modes:
 
-- **Peeling within 1–2 seasons** — usually from painting over dirty or wet surfaces
-- **Bubbling** — moisture trapped under paint that didn't get a chance to dry after washing
-- **Edge cracking** — sanded edges not feathered, or new caulk applied over old
-- **Lap marks and uneven sheen** — bare spots not primed, causing topcoat to absorb differently
+* **Peeling within 1–2 seasons** — usually from painting over dirty or wet surfaces
+* **Bubbling** — moisture trapped under paint that didn't get a chance to dry after washing
+* **Edge cracking** — sanded edges not feathered, or new caulk applied over old
+* **Lap marks and uneven sheen** — bare spots not primed, causing topcoat to absorb differently
 
 A paint job without proper prep isn't just aesthetically disappointing. In a climate with this much UV and freeze-thaw stress, it can mean real damage to siding and trim within a few years.
 
----
+***
 
 ## Fort Collins Exterior Painting Prep Done Right
 

@@ -31,8 +31,8 @@
     {
       "slug": "exterior-painting-cost-per-square-foot-fort-collins-co",
       "title": "Exterior Painting Cost Per Square Foot: What Colorado Homeowners Pay",
-      "status": "scheduled",
-      "publishDate": null,
+      "status": "published",
+      "publishDate": "2026-06-02T13:00:22.298Z",
       "scheduledDate": "2026-06-02T13:00:00.000Z",
       "excerpt": "Get real exterior painting cost ranges for Fort Collins, CO homes — broken down by sq ft, surface type, and prep level.",
       "featuredImage": "blog-posts/images/exterior-painting-cost-per-square-foot-fort-collins-co.jpg",
@@ -53,7 +53,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:20:40.639Z",
-      "updatedAt": "2026-05-27T19:57:06.400Z"
+      "updatedAt": "2026-06-02T13:00:22.298Z"
     },
     {
       "slug": "exterior-painting-estimate-fort-collins-co",
@@ -197,8 +197,8 @@
       "publishDate": null,
       "scheduledDate": "2026-06-23T13:00:00.000Z",
       "excerpt": "Finding the best exterior painters in Fort Collins, CO means knowing what to look for beyond price. Here's the framework that actually matters.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/best-exterior-painters-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/best-exterior-painters-fort-collins-co-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a professional painter carefully applying paint to the exterior of a well-maintained two-story home in a Colorado neighborhood, with mountains visible in the background under a bright blue sky. Photorealistic, natural lighting, no text or logos.",
       "imagePrompt2": "I need an image of a close-up of a painter's hand using a high-quality brush to cut in around a window frame on a home exterior, showing precise, detailed craftsmanship. Photorealistic, well-lit, no text.",
@@ -215,7 +215,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:24:22.377Z",
-      "updatedAt": "2026-05-29T13:25:38.591Z"
+      "updatedAt": "2026-06-01T19:40:53.160Z"
     },
     {
       "slug": "exterior-paint-colors-fort-collins-co",
@@ -224,8 +224,8 @@
       "publishDate": null,
       "scheduledDate": "2026-06-26T13:00:00.000Z",
       "excerpt": "Colorado's climate demands more from exterior paint. Here are the colors that hold up, look great, and fit Northern Colorado neighborhoods.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/exterior-paint-colors-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/exterior-paint-colors-fort-collins-co-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a beautifully painted Colorado home exterior with warm earthy tones, set against a blue sky and Front Range mountain backdrop, showcasing fresh professional paint on a two-story residential home in a Northern Colorado neighborhood.",
       "imagePrompt2": "I need an image of several Sherwin-Williams exterior paint swatches in warm neutrals and earthy greens fanned out on a wooden surface next to a paintbrush, with a Colorado home visible in the background.",
@@ -242,7 +242,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:25:00.861Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-01T19:44:20.775Z"
     },
     {
       "slug": "exterior-home-painting-ideas-fort-collins-co",
@@ -251,8 +251,8 @@
       "publishDate": null,
       "scheduledDate": "2026-06-30T13:00:00.000Z",
       "excerpt": "Most homeowners stop at picking a new body color. These exterior painting ideas go further — doors, trim, two-tone combos, and more.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/exterior-home-painting-ideas-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/exterior-home-painting-ideas-fort-collins-co-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a beautifully painted two-story home in a Northern Colorado neighborhood with a bold navy body color, crisp white trim, and a vibrant red accent front door, photographed in bright natural sunlight with the Rocky Mountain foothills visible in the background.",
       "imagePrompt2": "I need an image of a close-up of a freshly painted front door in a deep forest green with polished black hardware and contrasting white trim surrounding it, on a modern craftsman-style home exterior.",
@@ -269,7 +269,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:25:41.591Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-01T19:52:13.065Z"
     },
     {
       "slug": "exterior-paint-colors-curb-appeal-fort-collins",
@@ -278,8 +278,8 @@
       "publishDate": null,
       "scheduledDate": "2026-07-03T13:00:00.000Z",
       "excerpt": "Not all exterior paint colors sell homes. Here's what Northern Colorado buyers actually respond to — and what photographs well on Zillow.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/exterior-paint-colors-curb-appeal-fort-collins.jpg",
+      "inlineImage1": "blog-posts/images/exterior-paint-colors-curb-appeal-fort-collins-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a beautifully painted two-story home in a Northern Colorado neighborhood with a warm greige or soft white exterior, crisp white trim, and a dark front door, photographed in bright natural sunlight with the Rocky Mountain foothills faintly visible in the background.",
       "imagePrompt2": "I need an image of a row of exterior paint color swatches in neutral tones — warm whites, soft grays, greige, and deep charcoal — laid against a wooden fence or painted siding sample board in an outdoor Colorado setting.",
@@ -296,7 +296,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:26:24.223Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-01T19:55:52.211Z"
     },
     {
       "slug": "how-to-choose-exterior-paint-colors-fort-collins",
@@ -305,8 +305,8 @@
       "publishDate": null,
       "scheduledDate": "2026-07-07T13:00:00.000Z",
       "excerpt": "Picking the right exterior paint colors in Fort Collins means balancing HOA rules, architectural style, and NoCo's intense sunlight. Here's how to choose with confidence.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/how-to-choose-exterior-paint-colors-fort-collins.jpg",
+      "inlineImage1": "blog-posts/images/how-to-choose-exterior-paint-colors-fort-collins-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a beautifully painted craftsman-style home in a Northern Colorado neighborhood with a warm neutral exterior, green landscaping, and bright Colorado blue sky overhead — photorealistic, no text, golden hour lighting.",
       "imagePrompt2": "I need an image of a homeowner holding large paint color swatches up against the exterior siding of a house in bright Colorado sunlight, comparing warm and cool tones side by side — photorealistic, no text, natural outdoor setting.",
@@ -323,7 +323,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:27:07.585Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-01T19:59:16.962Z"
     },
     {
       "slug": "exterior-painting-prep-fort-collins-co",
@@ -332,8 +332,8 @@
       "publishDate": null,
       "scheduledDate": "2026-07-10T13:00:00.000Z",
       "excerpt": "Before the first brush stroke hits your siding, the real work begins. Here's what proper exterior painting prep looks like in Fort Collins, CO.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/exterior-painting-prep-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/exterior-painting-prep-fort-collins-co-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a professional painter power washing the exterior siding of a two-story home in a Northern Colorado neighborhood on a clear sunny day, photorealistic and high quality with no text in the image.",
       "imagePrompt2": "I need an image of a close-up of a painter carefully hand-scraping and caulking peeling paint and gaps around a window frame on a residential home exterior, photorealistic with natural outdoor lighting.",
@@ -350,7 +350,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:27:46.107Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-01T20:20:35.143Z"
     },
     {
       "slug": "how-long-does-exterior-painting-take-fort-collins",
@@ -359,8 +359,8 @@
       "publishDate": null,
       "scheduledDate": "2026-07-14T13:00:00.000Z",
       "excerpt": "Real timelines for exterior painting in Fort Collins and Northern Colorado — by square footage, surface type, and what actually slows jobs down.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/how-long-does-exterior-painting-take-fort-collins.jpg",
+      "inlineImage1": "blog-posts/images/how-long-does-exterior-painting-take-fort-collins-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a professional painter on a ladder applying paint to the exterior of a two-story house in a Northern Colorado neighborhood on a bright, sunny day, with clean siding and crisp trim work visible.",
       "imagePrompt2": "I need an image of a painter performing surface prep work — scraping and sanding weathered wood siding on a Colorado home exterior — showing the careful preparation process before painting begins.",
@@ -377,7 +377,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:28:26.426Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-02T12:54:35.086Z"
     },
     {
       "slug": "exterior-painting-coats-fort-collins-co",
@@ -386,8 +386,8 @@
       "publishDate": null,
       "scheduledDate": "2026-07-17T13:00:00.000Z",
       "excerpt": "The \"2-coat minimum\" rule sounds simple — but the honest answer depends on your surface, paint quality, and color change.",
-      "featuredImage": null,
-      "inlineImage1": null,
+      "featuredImage": "blog-posts/images/exterior-painting-coats-fort-collins-co.jpg",
+      "inlineImage1": "blog-posts/images/exterior-painting-coats-fort-collins-co-inline1.jpg",
       "inlineImage2": null,
       "imagePrompt": "I need an image of a professional painter applying exterior paint to the side of a two-story home in a Northern Colorado neighborhood on a clear sunny day, with visible paint brush strokes and a clean, staged worksite.",
       "imagePrompt2": "I need an image of a close-up of a paint roller applying a thick, even coat of white exterior paint over a weathered wood surface, showing the contrast between the old and new paint layers.",
@@ -404,7 +404,7 @@
       "sheetId": "1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0",
       "sheetGid": "1429273512",
       "createdAt": "2026-05-19T20:29:04.216Z",
-      "updatedAt": "2026-05-26T20:31:08.455Z"
+      "updatedAt": "2026-06-02T13:07:17.343Z"
     },
     {
       "slug": "how-long-does-exterior-paint-last-fort-collins",
