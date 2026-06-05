@@ -5,11 +5,11 @@ title: >-
   Homes
 status: scheduled
 publishDate: null
-scheduledDate: 2026-08-04T13:00:00.000Z
+scheduledDate: '2026-08-04T13:00:00.000Z'
 excerpt: >-
   Torn between oil-based and water-based exterior paint? Here's the honest
   breakdown for Northern Colorado homeowners.
-featuredImage: null
+featuredImage: blog-posts/images/oil-based-vs-water-based-exterior-paint-colorado.png
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-
@@ -35,7 +35,7 @@ sheetRow: 21
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:32:19.039Z'
-updatedAt: '2026-05-19T20:32:19.039Z'
+updatedAt: '2026-06-03T15:37:28.961Z'
 ---
 ## The Short Answer Most Contractors Won't Give You
 
@@ -45,7 +45,7 @@ Here's the truth: **neither is universally better.** But for most Northern Color
 
 Let's break it down the way it actually matters on your home.
 
----
+***
 
 ## Adhesion: The Argument Oil Fans Always Make
 
@@ -55,7 +55,7 @@ That advantage has largely closed. Modern acrylic latex formulations — particu
 
 **Where oil still wins:** Heavily weathered or porous bare wood, metal surfaces, and spots with known adhesion failures. For a standard Colorado home with existing painted siding, latex handles it.
 
----
+***
 
 ## Dry Time: Latex Wins, and It Matters More Here
 
@@ -63,7 +63,7 @@ Oil-based paint can take 24–48 hours to dry between coats. In Colorado's unpre
 
 High-quality latex dries to the touch in 1–2 hours and is ready for a second coat in 4–6 hours. For our crews, that often means completing a two-coat job in a single day — less exposure, better scheduling, and a tighter finished product.
 
----
+***
 
 ## VOCs and Colorado Regulations
 
@@ -71,33 +71,33 @@ This one matters more than most homeowners realize. Colorado has some of the str
 
 Water-based latex paints are low-VOC by nature. If you're working with a licensed contractor, they're already navigating this — but it's worth knowing that the regulatory landscape in Colorado is actively shifting away from traditional oil-based products.
 
----
+***
 
 ## Durability in Colorado's Climate: The Real Test
 
 Here's where local knowledge matters. Northern Colorado throws a specific combination of stressors at exterior paint:
 
-- **28+ freeze-thaw cycles per year** — paint that can't flex with temperature swings will crack and peel
-- **UV radiation 10–15% higher than lower-elevation regions** — color fade and film degradation happen faster here
-- **Low humidity** — helps with dry time but accelerates chalking on lower-quality formulations
+* **28+ freeze-thaw cycles per year** — paint that can't flex with temperature swings will crack and peel
+* **UV radiation 10–15% higher than lower-elevation regions** — color fade and film degradation happen faster here
+* **Low humidity** — helps with dry time but accelerates chalking on lower-quality formulations
 
 Oil-based paint hardens over time. That rigidity that gave it great initial adhesion becomes a weakness — it becomes brittle, cracks with substrate movement, and is more susceptible to freeze-thaw damage over a long paint life.
 
 Modern 100% acrylic latex remains flexible through temperature extremes, holds up better under sustained UV exposure, and has proven multi-decade track records in high-altitude climates. For Colorado exteriors, that flexibility isn't a nice-to-have — it's the reason quality [exterior painting](/exterior-painting/) systems last 7–10 years instead of 3–5.
 
----
+***
 
 ## When Oil-Based Still Makes Sense
 
 We're not anti-oil. There are still legitimate use cases:
 
-- **Bare wood trim in rough condition** — oil primer followed by a latex topcoat is a time-tested hybrid approach
-- **Wrought iron or metal features** — oil-based alkyd holds better on metal
-- **Stain-blocking primer applications** — oil-based primers outperform latex for heavy tannin bleed or severe water staining
+* **Bare wood trim in rough condition** — oil primer followed by a latex topcoat is a time-tested hybrid approach
+* **Wrought iron or metal features** — oil-based alkyd holds better on metal
+* **Stain-blocking primer applications** — oil-based primers outperform latex for heavy tannin bleed or severe water staining
 
 In most of these scenarios, the answer isn't oil-based paint from can to finish — it's an oil-based primer with a latex finish coat on top. You get the adhesion benefits of oil without sacrificing the long-term durability of acrylic.
 
----
+***
 
 ## The Bottom Line for Northern Colorado Homeowners
 

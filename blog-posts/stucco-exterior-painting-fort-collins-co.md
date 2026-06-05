@@ -7,7 +7,7 @@ scheduledDate: 2026-11-27T14:00:00.000Z
 excerpt: >-
   Stucco needs more than paint — it needs the right process. Here's what Fort
   Collins homeowners should know before hiring a painter.
-featuredImage: null
+featuredImage: blog-posts/images/stucco-exterior-painting-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

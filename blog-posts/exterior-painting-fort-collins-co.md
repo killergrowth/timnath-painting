@@ -1,4 +1,4 @@
-﻿---
+---
 slug: exterior-painting-fort-collins-co
 title: 'Exterior Painting in Fort Collins and the Front Range: What''s Different'
 status: scheduled
@@ -7,7 +7,7 @@ scheduledDate: 2026-12-11T14:00:00.000Z
 excerpt: >-
   Fort Collins homes face unique painting challenges — altitude, HOAs, and
   Colorado's climate all factor in. Here's what local homeowners need to know.
-featuredImage: null
+featuredImage: blog-posts/images/exterior-painting-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

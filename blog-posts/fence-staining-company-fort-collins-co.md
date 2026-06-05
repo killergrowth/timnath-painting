@@ -8,7 +8,7 @@ excerpt: >-
   Not all fence staining companies deliver the same results. Here are the
   questions every Northern Colorado homeowner should ask before signing
   anything.
-featuredImage: null
+featuredImage: blog-posts/images/fence-staining-company-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

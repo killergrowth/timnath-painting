@@ -10,7 +10,7 @@ excerpt: >-
   A step-by-step guide for Timnath and Windsor homeowners navigating HOA
   exterior paint color approval — from ACC forms to what happens if you're
   denied.
-featuredImage: null
+featuredImage: blog-posts/images/hoa-paint-color-approval-timnath-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

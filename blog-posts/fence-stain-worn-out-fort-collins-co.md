@@ -7,7 +7,7 @@ scheduledDate: 2026-09-18T13:00:00.000Z
 excerpt: >-
   Faded color, rough texture, and water that soaks right in are all signs your
   fence stain is worn out — here's how to catch it before rot sets in.
-featuredImage: null
+featuredImage: blog-posts/images/fence-stain-worn-out-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

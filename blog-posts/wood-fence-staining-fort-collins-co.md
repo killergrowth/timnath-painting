@@ -7,7 +7,7 @@ scheduledDate: 2026-08-25T13:00:00.000Z
 excerpt: >-
   Colorado's UV exposure and freeze-thaw cycles destroy untreated wood fast.
   Here's exactly how to stain your fence the right way.
-featuredImage: null
+featuredImage: blog-posts/images/wood-fence-staining-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

@@ -9,7 +9,7 @@ scheduledDate: 2026-10-02T13:00:00.000Z
 excerpt: >-
   Considering commercial exterior painting in Fort Collins CO? Here's exactly
   what the process looks like, step by step.
-featuredImage: null
+featuredImage: blog-posts/images/commercial-painting-process-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

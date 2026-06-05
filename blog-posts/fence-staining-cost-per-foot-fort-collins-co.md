@@ -10,7 +10,7 @@ excerpt: >-
   Wondering what fence staining costs per linear foot in Fort Collins, CO?
   Here's the real breakdown by height, material, and prep so you can
   sanity-check any quote.
-featuredImage: null
+featuredImage: blog-posts/images/fence-staining-cost-per-foot-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

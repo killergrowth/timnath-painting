@@ -7,7 +7,7 @@ scheduledDate: 2026-11-13T14:00:00.000Z
 excerpt: >-
   Staining or painting your home's exterior? For cedar and wood-heavy homes in
   Northern Colorado, the 10-year data makes a clear case.
-featuredImage: null
+featuredImage: blog-posts/images/exterior-staining-vs-painting-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

@@ -7,7 +7,7 @@ scheduledDate: 2026-11-24T14:00:00.000Z
 excerpt: >-
   Painting brick is permanent. Here's what Northern Colorado homeowners need to
   know before making a decision you can't easily undo.
-featuredImage: null
+featuredImage: blog-posts/images/painting-brick-exterior-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

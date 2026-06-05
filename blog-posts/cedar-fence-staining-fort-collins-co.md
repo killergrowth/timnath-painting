@@ -7,7 +7,7 @@ scheduledDate: 2026-09-15T13:00:00.000Z
 excerpt: >-
   Cedar is everywhere in Northern Colorado — but stain it wrong and you'll deal
   with tannin bleed, peeling, and premature failure. Here's how to do it right.
-featuredImage: null
+featuredImage: blog-posts/images/cedar-fence-staining-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

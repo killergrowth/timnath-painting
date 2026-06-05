@@ -7,7 +7,7 @@ scheduledDate: 2026-10-20T13:00:00.000Z
 excerpt: >-
   HOA exterior painting costs vary widely — here's how communities in Timnath
   and Windsor budget, assess, and plan for a full repaint.
-featuredImage: null
+featuredImage: blog-posts/images/hoa-painting-cost-timnath-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

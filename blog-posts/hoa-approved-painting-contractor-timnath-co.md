@@ -8,7 +8,7 @@ excerpt: >-
   Before you hire a painter, your HOA has to approve them. Here's exactly what
   HOAs in Timnath and Northern Colorado look for — and how to find a contractor
   who clears the bar.
-featuredImage: null
+featuredImage: blog-posts/images/hoa-approved-painting-contractor-timnath-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

@@ -9,7 +9,7 @@ scheduledDate: 2026-10-23T13:00:00.000Z
 excerpt: >-
   Learn how to navigate HOA painting approval in Timnath, CO — what gets
   rejected, common violations, and how to submit correctly the first time.
-featuredImage: null
+featuredImage: blog-posts/images/hoa-painting-compliance-timnath-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

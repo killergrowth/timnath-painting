@@ -7,7 +7,7 @@ scheduledDate: 2026-11-20T14:00:00.000Z
 excerpt: >-
   Vinyl siding can be painted — but in Northern Colorado's climate, the wrong
   approach leads to warping, peeling, and voided warranties.
-featuredImage: null
+featuredImage: blog-posts/images/painting-vinyl-siding-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

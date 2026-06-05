@@ -7,7 +7,7 @@ scheduledDate: 2026-11-17T14:00:00.000Z
 excerpt: >-
   Colorado's intense UV and freeze-thaw cycles shorten stain life fast. Here's
   what to realistically expect — and when it's time to restain.
-featuredImage: null
+featuredImage: blog-posts/images/how-long-does-exterior-staining-last-colorado.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

@@ -7,7 +7,7 @@ scheduledDate: 2026-08-11T13:00:00.000Z
 excerpt: >-
   Not sure which exterior paint finish to use on your home? Here's a
   surface-by-surface breakdown built for Northern Colorado's climate.
-featuredImage: null
+featuredImage: blog-posts/images/exterior-paint-finishes-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

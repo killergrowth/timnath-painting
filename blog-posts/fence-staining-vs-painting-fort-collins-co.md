@@ -7,7 +7,7 @@ scheduledDate: 2026-08-28T13:00:00.000Z
 excerpt: >-
   Trying to decide between fence staining and painting in Northern Colorado?
   Here's what actually lasts — and what it'll cost you.
-featuredImage: null
+featuredImage: blog-posts/images/fence-staining-vs-painting-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

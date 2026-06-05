@@ -7,7 +7,7 @@ scheduledDate: 2026-09-25T13:00:00.000Z
 excerpt: >-
   Not all painters are built for commercial work. Here's how to vet commercial
   painting companies in Fort Collins, CO before you sign anything.
-featuredImage: null
+featuredImage: blog-posts/images/commercial-painting-companies-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

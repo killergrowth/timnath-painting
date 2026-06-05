@@ -7,7 +7,7 @@ scheduledDate: 2026-09-01T13:00:00.000Z
 excerpt: >-
   Not sure which fence stain is right for your Northern Colorado home? Here's
   how to choose the right finish for your wood's age, condition, and goals.
-featuredImage: null
+featuredImage: blog-posts/images/fence-stain-type-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

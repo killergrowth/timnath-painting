@@ -7,7 +7,7 @@ scheduledDate: 2026-10-06T13:00:00.000Z
 excerpt: >-
   Commercial painting planning in Fort Collins, CO doesn't have to shut you
   down. Here's how smart scheduling keeps your business running.
-featuredImage: null
+featuredImage: blog-posts/images/commercial-painting-planning-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

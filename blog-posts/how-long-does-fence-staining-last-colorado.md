@@ -7,7 +7,7 @@ scheduledDate: 2026-09-08T13:00:00.000Z
 excerpt: >-
   Fence stain lifespan in Colorado depends on stain type, wood species, and sun
   exposure. Here's what to expect — and when to act before damage sets in.
-featuredImage: null
+featuredImage: blog-posts/images/how-long-does-fence-staining-last-colorado.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

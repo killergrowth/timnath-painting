@@ -9,7 +9,7 @@ scheduledDate: 2026-08-21T13:00:00.000Z
 excerpt: >-
   Real fence staining cost ranges for Fort Collins and Northern Colorado — by
   fence size, material, and stain type — plus what drives price up or down.
-featuredImage: null
+featuredImage: blog-posts/images/fence-staining-cost-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

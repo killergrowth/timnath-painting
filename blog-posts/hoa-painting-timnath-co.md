@@ -7,7 +7,7 @@ scheduledDate: 2026-10-16T13:00:00.000Z
 excerpt: >-
   HOA exterior painting in Timnath, CO involves approval steps, color rules, and
   shared costs. Here's exactly what to expect before the first brush hits.
-featuredImage: null
+featuredImage: blog-posts/images/hoa-painting-timnath-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-

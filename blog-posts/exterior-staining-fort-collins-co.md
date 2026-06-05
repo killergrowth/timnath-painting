@@ -8,7 +8,7 @@ excerpt: >-
   Everything Northern Colorado homeowners need to know about exterior staining —
   surfaces, prep, cost vs. paint, and why Colorado's climate changes the
   equation.
-featuredImage: null
+featuredImage: blog-posts/images/exterior-staining-fort-collins-co.jpg
 inlineImage1: null
 inlineImage2: null
 imagePrompt: >-
