@@ -689,14 +689,14 @@ ${T.topbar()}
 .contact-input::placeholder{color:#a09890;}
 .contact-select{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;}
 .contact-textarea{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;resize:vertical;}
-.contact-submit{width:100%;padding:14px 20px;background:#AE360E;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
+.contact-submit{display:inline-block;padding:12px 28px;background:#AE360E;color:#fff;border:none;border-radius:100px;font-size:15px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
 .contact-submit:hover{background:#922d0a;}
 .contact-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
 .contact-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
 .contact-trust-list li i{color:#AE360E;margin-top:2px;flex-shrink:0;font-size:16px;}
-.contact-info-cards{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.contact-info-cards{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 @media(max-width:700px){.contact-info-cards{grid-template-columns:1fr;}}
-.contact-info-card{text-align:center;padding:36px 24px;background:#fff;border-radius:12px;border:1px solid #e4dacc;}
+.contact-info-card{text-align:center;padding:24px 16px;background:#fff;border-radius:12px;border:1px solid #e4dacc;}
 </style>
 <main>
 <section class="contact-wrap">
@@ -709,7 +709,7 @@ ${T.topbar()}
       <div>
         <div class="contact-card">
           <h3 style="margin:0 0 6px;font-size:20px;font-weight:700;color:#201B10;">Send Us a Message</h3>
-          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Fill out the form and we will get back to you within minutes during business hours.</p>
+          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Use the form below or call us directly. Every message gets a personal reply from Josh.</p>
           <form id="contact-form" action="/submit" method="POST">
             <div style="display:flex;flex-direction:column;gap:12px;">
               <input class="contact-input" type="text" name="name" placeholder="Your Name *" required>
@@ -729,29 +729,29 @@ ${T.topbar()}
         <ul class="contact-trust-list">
           <li><i class="fa-solid fa-phone"></i><span>Call or text us at <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a></span></li>
           <li><i class="fa-solid fa-envelope"></i><span>Email us at <a href="mailto:${CLIENT.email}" style="color:#AE360E;font-weight:700;">${CLIENT.email}</a></span></li>
-          <li><i class="fa-solid fa-check"></i><span>We respond within minutes during business hours.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Serving Timnath and Northern Colorado. We know the area, the HOAs, and the conditions.</span></li>
           <li><i class="fa-solid fa-check"></i><span>No obligation. Just an honest conversation about your project.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Licensed and insured. $1M general liability. COI available within 24 hours.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Every quote is based on a real in-person assessment, not a number pulled from thin air.</span></li>
         </ul>
-      </div>
-    </div>
-    <div class="contact-info-cards">
-      <div class="contact-info-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
-        <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-location-dot"></i></div>
-        <h4 style="margin-bottom:8px;">Address</h4>
-        <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</p><p style="margin:4px 0 0;">Serving Northern Colorado</p>
-      </div>
-      <div class="contact-info-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
-        <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
-        <h4 style="margin-bottom:8px;">Phone</h4>
-        <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-        <p style="margin-top:6px;font-size:13px;color:#666;">Mon-Sat: 7am-6pm</p>
-      </div>
-      <div class="contact-info-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
-        <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-envelope"></i></div>
-        <h4 style="margin-bottom:8px;">Email</h4>
-        <a href="mailto:${CLIENT.email}" style="word-break:break-all;">${CLIENT.email}</a>
+        <div class="contact-info-cards">
+          <div class="contact-info-card">
+            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i></div>
+            <h4 style="margin-bottom:6px;font-size:15px;">Address</h4>
+            <p style="margin:0;font-size:13px;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</p><p style="margin:4px 0 0;font-size:13px;">Serving Northern Colorado</p>
+          </div>
+          <div class="contact-info-card">
+            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
+            <h4 style="margin-bottom:6px;font-size:15px;">Phone</h4>
+            <a href="tel:${CLIENT.phoneTel}" style="font-size:16px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
+            <p style="margin-top:4px;font-size:12px;color:#666;">Mon-Sat: 7am-6pm</p>
+          </div>
+          <div class="contact-info-card">
+            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-envelope"></i></div>
+            <h4 style="margin-bottom:6px;font-size:15px;">Email</h4>
+            <a href="mailto:${CLIENT.email}" style="word-break:break-all;font-size:13px;">${CLIENT.email}</a>
+          </div>
+        </div>
       </div>
     </div>
     <div style="margin-top:60px;">
