@@ -735,22 +735,18 @@ ${T.topbar()}
           <li><i class="fa-solid fa-check"></i><span>Every quote is based on a real in-person assessment, not a number pulled from thin air.</span></li>
         </ul>
         <div class="contact-info-cards">
-          <div class="contact-info-card">
-            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-location-dot"></i></div>
-            <h4 style="margin-bottom:6px;font-size:15px;">Address</h4>
-            <p style="margin:0;font-size:13px;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</p><p style="margin:4px 0 0;font-size:13px;">Serving Northern Colorado</p>
-          </div>
-          <div class="contact-info-card">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Timnath+Painting+Timnath+CO" target="_blank" rel="noopener noreferrer" class="contact-info-card" style="text-decoration:none;display:block;">
+            <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-diamond-turn-right"></i></div>
+            <h4 style="margin-bottom:0;font-size:15px;color:#201B10;">Directions</h4>
+          </a>
+          <a href="tel:${CLIENT.phoneTel}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-phone"></i></div>
-            <h4 style="margin-bottom:6px;font-size:15px;">Phone</h4>
-            <a href="tel:${CLIENT.phoneTel}" style="font-size:16px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-            <p style="margin-top:4px;font-size:12px;color:#666;">Mon-Sat: 7am-6pm</p>
-          </div>
-          <div class="contact-info-card">
+            <h4 style="margin-bottom:0;font-size:15px;color:#201B10;">Call or Text</h4>
+          </a>
+          <a href="mailto:${CLIENT.email}" class="contact-info-card" style="text-decoration:none;display:block;">
             <div style="font-size:28px;color:var(--wallox-base);margin-bottom:10px;"><i class="fa-solid fa-envelope"></i></div>
-            <h4 style="margin-bottom:6px;font-size:15px;">Email</h4>
-            <a href="mailto:${CLIENT.email}" style="word-break:break-all;font-size:13px;">${CLIENT.email}</a>
-          </div>
+            <h4 style="margin-bottom:0;font-size:15px;color:#201B10;">Email</h4>
+          </a>
         </div>
       </div>
     </div>
