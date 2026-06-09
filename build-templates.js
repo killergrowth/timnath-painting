@@ -127,9 +127,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .main-header { background-color: #201B10 !important; }
 .main-header__inner { padding: 0 !important; }
 .main-header__logo { display: none !important; }
-/* Preloader: JS controls dismiss (see wrapBody script). CSS fallback at 4s in case JS fails. */
-@keyframes dismissPreloader{0%{opacity:1;visibility:visible}100%{opacity:0;visibility:hidden;pointer-events:none}}
-.preloader{animation:dismissPreloader 500ms ease forwards;animation-delay:4000ms;}
+
 /* .real-image: GSAP xPercent reveal removed. Images visible by default. */
 .real-image { overflow: hidden; }
 /* === STATIC HERO (no Owl carousel, no wallox.js dep for LCP) === */
@@ -385,26 +383,7 @@ function wrapBody(content) {
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8ZXCK8V"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<!-- preloader removed: static hero is visible on first paint, no Owl carousel or opacity:0 initial states remain.
-     jQuery fadeOut() at window.load was pushing LCP to ~9s by causing a display:none transition at that time.
-     Preloader reinstated with CSS auto-dismiss (700ms delay, 500ms fade) - fires before window.load, no LCP impact. -->
-<div class="preloader"><div class="preloader__image" style="background-image:url(/assets/images/logo-vertical-white.png);"></div></div>
-<script>
-// Hold preloader until all async CSS has loaded — prevents unstyled content flash
-!function(){
-  var p=document.querySelector('.preloader');
-  if(!p)return;
-  p.style.cssText='animation:none!important;opacity:1!important;visibility:visible!important;pointer-events:auto;';
-  var links=[].slice.call(document.head.querySelectorAll('link[rel="preload"][as="style"]'));
-  var n=links.length||1,done=0;
-  function finish(){if(++done>=n){setTimeout(function(){p.style.transition='opacity 0.45s ease';p.style.opacity='0';setTimeout(function(){p.style.visibility='hidden';p.style.pointerEvents='none';},450);},30);}}
-  links.forEach(function(l){
-    if(l.sheet){finish();}
-    else{l.addEventListener('load',finish);l.addEventListener('error',finish);}
-  });
-  setTimeout(function(){done=n-1;finish();},3500);
-}();
-</script>
+
 <div class="page-wrapper">
 ${content}
 </main>

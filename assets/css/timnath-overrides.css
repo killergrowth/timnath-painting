@@ -30,22 +30,7 @@
   padding-bottom: 16px !important;
 }
 
-/* Preloader - slower, smoother pulse instead of rapid flip */
-@keyframes logoPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(0.92); }
-}
-.preloader__image {
-  width: 280px !important;
-  height: 280px !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  animation-name: logoPulse !important;
-  animation-duration: 2.5s !important;
-  animation-iteration-count: infinite !important;
-  animation-timing-function: ease-in-out !important;
-}
+
 
 /* Why Choose section - hide animated gold decorative shapes */
 .why-choose-one__thumb-box,
