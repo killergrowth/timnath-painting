@@ -1544,12 +1544,13 @@ function buildGetAQuote() {
   <div class="container">
     <div class="gaq-page-header">
       <h1 class="gaq-headline">An Honest Painting Quote</h1>
-      <p class="gaq-subtext">No Pressure, No Surprises, No Runaround</p>
+      <p class="gaq-subtext">We'll come to your location and give you a no obligation estimate</p>
     </div>
     <div class="gaq-grid">
       <div class="gaq-col-form">
         <div class="gaq-card" style="padding:24px;">
-          <h3 style="margin:0 0 16px;font-size:20px;font-weight:700;color:#201B10;">Schedule Your Free Quote</h3>
+          <h3 style="margin:0 0 12px;font-size:20px;font-weight:700;color:#201B10;">Schedule Your Free In-Home Quote</h3>
+          <p style="margin:0 0 16px;font-size:14px;color:#5a5650;line-height:1.55;">One of our estimators will visit your home to assess the project and give you an accurate, honest price - no guessing, no online estimates.</p>
           <div id="2d355475-e9e2-4025-be1d-9768705789fb-4555532"></div>
           <link rel="stylesheet" href="https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css" media="screen" />
           <script src="https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js" clienthub_id="2d355475-e9e2-4025-be1d-9768705789fb-4555532" form_url="https://clienthub.getjobber.com/client_hubs/2d355475-e9e2-4025-be1d-9768705789fb/public/work_request/embedded_work_request_form?form_id=4555532"></script>
@@ -1557,9 +1558,9 @@ function buildGetAQuote() {
       </div>
       <div class="gaq-col-copy">
         <ul class="gaq-trust-list">
-          <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado &mdash; we know the conditions, the HOAs, and the neighborhoods.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Local to Timnath and Northern Colorado. We know the conditions, the HOAs, and the neighborhoods.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Licensed &amp; Insured with $1M general liability. COI available on request within 24 hours.</span></li>
-          <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number &mdash; no games.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>No obligation. Free on-site assessment. We show up, look at the job, and give you a real number. No games.</span></li>
           <li><i class="fa-solid fa-check"></i><span>Premium Sherwin-Williams &amp; Benjamin Moore coatings. No-VOC products. Systems built to last 7&ndash;10 years in Colorado's climate.</span></li>
         </ul>
       </div>
@@ -1572,7 +1573,7 @@ function buildGetAQuote() {
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-location-dot"></i>
-        <p><strong>Local to Northern Colorado</strong>Based in Timnath &mdash; serving Timnath, Windsor, Fort Collins, Loveland &amp; the I-25 corridor.</p>
+        <p><strong>Local to Northern Colorado</strong>Based in Timnath. Serving Timnath, Windsor, Fort Collins, Loveland &amp; the I-25 corridor.</p>
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-shield-halved"></i>
@@ -1580,7 +1581,7 @@ function buildGetAQuote() {
       </div>
       <div class="gaq-proof-item">
         <i class="fa-solid fa-tag"></i>
-        <p><strong>Free Estimates &mdash; No Obligation</strong>On-site assessment, no-pressure quote. You decide if it makes sense.</p>
+        <p><strong>Free Estimates - No Obligation</strong>We come to your home, assess the project in person, and give you a real number. No online guessing games.</p>
       </div>
     </div>
   </div>
