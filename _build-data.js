@@ -16,8 +16,8 @@ const CLIENT = {
 
 const SERVICES = [
   { label: 'Exterior Painting',   slug: 'exterior-painting',   icon: 'fa-solid fa-house',             img: 'exterior-green-house.jpg', tagline: 'Coatings built to handle Colorado freeze-thaw cycles &mdash; rated for 7-10 years.' },
-  { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'photo-hoa-painting.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
-  { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'photo-commercial-painting.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
+  { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'photo-hoa-painting-new.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
+  { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'photo-commercial-painting-new2.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
   { label: 'Fence Staining',      slug: 'fence-staining',      icon: null,        img: 'photo-fence-staining.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
   { label: 'Exterior Staining',   slug: 'exterior-staining',   icon: null,              img: 'photo-exterior-staining.jpg', tagline: 'Deck and siding stain systems applied by applicators using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.' },
 ];
