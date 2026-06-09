@@ -184,7 +184,7 @@ function buildHomepage() {
       bg: 'hero-real-exterior.jpg',
       sub: 'Northern Colorado Painting Contractor',
       lines: ['Premium Exterior', 'Painting and More'],
-      btn1: { t: 'Get a Free Quote', h: '/get-a-quote/' },
+      btn1: { t: 'Schedule A Free Consultation', h: '/get-a-quote/' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
       subText: 'Professional painting done right—on time, on budget, and built to last.'
     },
