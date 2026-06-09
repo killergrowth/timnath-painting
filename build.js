@@ -675,72 +675,92 @@ function buildContact() {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader('Contact Timnath Painting', '<li><span>Contact</span></li>')}
-
-<section class="contact-one" style="padding:80px 0;">
+<div class="page-wrapper" style="display:flex;flex-direction:column;min-height:100vh;">
+<style>
+.contact-wrap{flex:1;background:#F4EDE4;padding:20px 0 64px;}
+.contact-page-header{margin-bottom:20px;text-align:center;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:24px;}}
+.contact-headline{color:#201B10;font-size:clamp(28px,3.8vw,52px);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin:0 0 8px;}
+.contact-subtext{font-size:16px;font-weight:600;color:#AE360E;margin:0;letter-spacing:-0.01em;}
+.contact-card{background:#fff;border-radius:14px;padding:32px 32px 28px;box-shadow:0 4px 24px rgba(0,0,0,0.09);}
+.contact-input{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;transition:border-color 0.15s;}
+.contact-input:focus{outline:none;border-color:#AE360E;}
+.contact-input::placeholder{color:#a09890;}
+.contact-select{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;}
+.contact-textarea{width:100%;padding:11px 14px;border:1.5px solid #e4dacc;border-radius:8px;font-size:15px;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);color:#201B10;background:#fff;box-sizing:border-box;resize:vertical;}
+.contact-submit{width:100%;padding:14px 20px;background:#AE360E;color:#fff;border:none;border-radius:100px;font-size:16px;font-weight:700;font-family:var(--wallox-font,"Plus Jakarta Sans",sans-serif);cursor:pointer;margin-top:4px;transition:background 0.2s;}
+.contact-submit:hover{background:#922d0a;}
+.contact-trust-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px;}
+.contact-trust-list li{display:flex;align-items:flex-start;gap:12px;color:#2E2A20;font-size:15px;line-height:1.5;}
+.contact-trust-list li i{color:#AE360E;margin-top:2px;flex-shrink:0;font-size:16px;}
+.contact-info-cards{margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:700px){.contact-info-cards{grid-template-columns:1fr;}}
+.contact-info-card{text-align:center;padding:36px 24px;background:#fff;border-radius:12px;border:1px solid #e4dacc;}
+</style>
+<main>
+<section class="contact-wrap">
   <div class="container">
-    <div class="row gutter-y-30">
-      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
-          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-location-dot"></i></div>
-          <h4 style="margin-bottom:8px;">Address</h4>
-          <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</p><p style="margin:4px 0 0;">Serving Northern Colorado</p>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
-          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
-          <h4 style="margin-bottom:8px;">Phone</h4>
-          <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
-          <p style="margin-top:6px;font-size:13px;color:#666;">Mon&ndash;Sat: 7am&ndash;6pm</p>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex"><div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms" style="text-align:center;padding:36px 24px;background:#f4ede4;border-radius:12px;border:1px solid #e4dacc;width:100%;">
-          <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-envelope"></i></div>
-          <h4 style="margin-bottom:8px;">Email</h4>
-          <a href="mailto:${CLIENT.email}" style="word-break:break-all;">${CLIENT.email}</a>
-        </div>
-      </div>
+    <div class="contact-page-header">
+      <h1 class="contact-headline">Get In Touch With Timnath Painting</h1>
+      <p class="contact-subtext">We respond fast and always keep it honest</p>
     </div>
-    <div class="row gutter-y-30" style="margin-top:60px;">
-      <div class="col-lg-8">
-        <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:12px;">
-          <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">contact us</p></div>
-          <h3 class="sec-title__title" style="margin-bottom:8px;">How Can We Help?</h3>
-        </div>
-        <p style="margin-top:0;">Ready to transform your home or business with professional painting? We respond quickly  -  usually within a few minutes  -  and always provide honest, no-obligation quotes.</p>
-        <form class="contact-one__form" id="quote-form" action="/submit" method="POST" style="margin-top:30px;">
-            <div class="row gutter-y-20">
-              <div class="col-md-6"><input type="text" name="name" placeholder="Your Name *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
-              <div class="col-md-6"><input type="email" name="email" placeholder="Email Address *" required style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
-              <div class="col-md-6"><input type="text" name="phone" placeholder="Phone Number" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></div>
-              <div class="col-md-6">
-                <select name="service" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;">
-                  <option value="">Service Needed</option>
-                  ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
-                </select>
-              </div>
-              <div class="col-12"><textarea name="message" placeholder="Tell us about your project" rows="5" style="width:100%;padding:15px;border:1px solid #ddd;border-radius:4px;margin-bottom:15px;"></textarea></div>
-              <div class="col-12"><button type="submit" class="wallox-btn wallox-btn--base">Send Message</button></div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-card">
+          <h3 style="margin:0 0 6px;font-size:20px;font-weight:700;color:#201B10;">Send Us a Message</h3>
+          <p style="margin:0 0 20px;font-size:14px;color:#5a5650;line-height:1.55;">Fill out the form and we will get back to you within minutes during business hours.</p>
+          <form id="contact-form" action="/submit" method="POST">
+            <div style="display:flex;flex-direction:column;gap:12px;">
+              <input class="contact-input" type="text" name="name" placeholder="Your Name *" required>
+              <input class="contact-input" type="email" name="email" placeholder="Email Address *" required>
+              <input class="contact-input" type="tel" name="phone" placeholder="Phone Number">
+              <select class="contact-select" name="service">
+                <option value="">Service Needed</option>
+                ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
+              </select>
+              <textarea class="contact-textarea" name="message" placeholder="Tell us about your project" rows="5"></textarea>
+              <button type="submit" class="contact-submit">Send Message</button>
             </div>
           </form>
-      </div>
-      <div class="col-lg-4">
-        <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
-          <h4 style="color:#ae360e;margin-bottom:20px;">Quick Info</h4>
-          <ul class="list-unstyled" style="line-height:2.5;">
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured in Colorado</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$1M General Liability  -  COI on request</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>We Know Our Crews</li>
-            <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Free on-site quotes</li>
-          </ul>
         </div>
       </div>
+      <div>
+        <ul class="contact-trust-list">
+          <li><i class="fa-solid fa-phone"></i><span>Call or text us at <a href="tel:${CLIENT.phoneTel}" style="color:#AE360E;font-weight:700;">${CLIENT.phone}</a></span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>Email us at <a href="mailto:${CLIENT.email}" style="color:#AE360E;font-weight:700;">${CLIENT.email}</a></span></li>
+          <li><i class="fa-solid fa-check"></i><span>We respond within minutes during business hours.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Serving Timnath and Northern Colorado. We know the area, the HOAs, and the conditions.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>No obligation. Just an honest conversation about your project.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Licensed and insured. $1M general liability. COI available within 24 hours.</span></li>
+        </ul>
+      </div>
     </div>
-    <div class="contact-map" style="margin-top:60px;">
+    <div class="contact-info-cards">
+      <div class="contact-info-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+        <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-location-dot"></i></div>
+        <h4 style="margin-bottom:8px;">Address</h4>
+        <p style="margin:0;">${CLIENT.city}, ${CLIENT.state} ${CLIENT.zip}</p><p style="margin:4px 0 0;">Serving Northern Colorado</p>
+      </div>
+      <div class="contact-info-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+        <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-phone"></i></div>
+        <h4 style="margin-bottom:8px;">Phone</h4>
+        <a href="tel:${CLIENT.phoneTel}" style="font-size:20px;font-weight:700;color:var(--wallox-base);display:block;">${CLIENT.phone}</a>
+        <p style="margin-top:6px;font-size:13px;color:#666;">Mon-Sat: 7am-6pm</p>
+      </div>
+      <div class="contact-info-card wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
+        <div style="font-size:36px;color:var(--wallox-base);margin-bottom:12px;"><i class="fa-solid fa-envelope"></i></div>
+        <h4 style="margin-bottom:8px;">Email</h4>
+        <a href="mailto:${CLIENT.email}" style="word-break:break-all;">${CLIENT.email}</a>
+      </div>
+    </div>
+    <div style="margin-top:60px;">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d97168.06445598403!2d-105.03495221370565!3d40.44202459799552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa4047ac4cc01168b%3A0x5ca0bf376555449f!2sTimnath%20Painting!5e0!3m2!1sen!2sus!4v1777530014876!5m2!1sen!2sus" width="100%" height="450" style="border:0;border-radius:8px;display:block;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
-</section>`;
+</section>
+</main>
+</div>`;
 
   write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
 ${T.wrapBody(content)}`);
