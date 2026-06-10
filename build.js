@@ -109,25 +109,18 @@ function buildHomepage() {
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards — filter 5-star only, max 6 total, first 3 always visible, cards 4-6 desktop-only
+  // Build review cards — filter 5-star only, max 6 total, carousel slides
   const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
-  const reviewCards = fiveStarReviews.map((r, idx) => {
+  const reviewCards = fiveStarReviews.map((r) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
     const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    // Cards 4-6 (index 3+) are hidden on mobile, visible on desktop (lg+)
-    const extraClass = idx >= 3 ? ' review-desktop-only' : '';
-    return `<div class="col-md-6 col-lg-4${extraClass}">
-  <div class="wow fadeInUp" data-wow-duration="1500ms" style="background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;">
-    <div style="color:#AE360E;margin-bottom:12px;font-size:15px;">
-      <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-    </div>
+    return `<div class="rv-slide">
+  <div class="rv-card">
+    <div style="color:#AE360E;margin-bottom:12px;font-size:15px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
     <p style="font-size:14px;color:#5a5650;line-height:1.8;margin-bottom:20px;flex:1;">&ldquo;${escapedText}&rdquo;</p>
     <div style="display:flex;align-items:center;gap:12px;">
       <div style="width:38px;height:38px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:15px;flex-shrink:0;">${initial}</div>
-      <div>
-        <strong style="font-size:14px;color:#201B10;display:block;">${r.author}</strong>
-        <span style="font-size:12px;color:#999;">${r.relativeTime}</span>
-      </div>
+      <div><strong style="font-size:14px;color:#201B10;display:block;">${r.author}</strong><span style="font-size:12px;color:#999;">${r.relativeTime}</span></div>
     </div>
   </div>
 </div>`;

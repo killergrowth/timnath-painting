@@ -1,4 +1,19 @@
 <section class="reviews-section" style="padding:80px 0;background:#f9f5f1;">
+<style>
+.rv-carousel-wrap{position:relative;overflow:hidden;}
+.rv-track{display:flex;transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);}
+.rv-slide{flex:0 0 calc(33.333% - 14px);margin-right:20px;box-sizing:border-box;}
+@media(max-width:991px){.rv-slide{flex:0 0 calc(50% - 10px);}}
+@media(max-width:599px){.rv-slide{flex:0 0 100%;}}
+.rv-card{background:#fff;border-radius:10px;padding:28px 24px;border:1px solid rgba(0,0,0,0.07);height:100%;display:flex;flex-direction:column;}
+.rv-nav{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:36px;}
+.rv-btn{width:44px;height:44px;border-radius:50%;border:2px solid #AE360E;background:#fff;color:#AE360E;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;transition:background 0.2s,color 0.2s;flex-shrink:0;}
+.rv-btn:hover{background:#AE360E;color:#fff;}
+.rv-btn:disabled{opacity:0.35;cursor:default;}
+.rv-dots{display:flex;gap:6px;}
+.rv-dot{width:8px;height:8px;border-radius:50%;background:#d4ccc4;border:none;padding:0;cursor:pointer;transition:background 0.2s;}
+.rv-dot.active{background:#AE360E;}
+</style>
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:48px;">
       <div class="d-flex align-items-center justify-content-center">
@@ -16,12 +31,67 @@
         Rating: <strong style="color:#201B10;"><!-- RATING_VALUE --></strong>
       </div>
     </div>
-    <div class="row gutter-y-30">
-      <!-- REVIEW_CARDS -->
+    <div class="rv-carousel-wrap">
+      <div class="rv-track" id="rv-track">
+        <!-- REVIEW_CARDS -->
+      </div>
     </div>
-    <div class="text-center" style="margin-top:40px;">
+    <div class="rv-nav">
+      <button class="rv-btn" id="rv-prev" aria-label="Previous reviews"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="rv-dots" id="rv-dots"></div>
+      <button class="rv-btn" id="rv-next" aria-label="Next reviews"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+    <div class="text-center" style="margin-top:32px;">
       <a href="https://maps.app.goo.gl/ZmPa6ZybegVChtbc9" target="_blank" rel="noopener noreferrer"
          class="wallox-btn wallox-btn--border">See All Google Reviews <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </div>
+<script>
+(function(){
+  var track=document.getElementById('rv-track');
+  var prevBtn=document.getElementById('rv-prev');
+  var nextBtn=document.getElementById('rv-next');
+  var dotsWrap=document.getElementById('rv-dots');
+  if(!track||!prevBtn||!nextBtn)return;
+  var slides=track.querySelectorAll('.rv-slide');
+  var total=slides.length;
+  if(total<=1){prevBtn.style.display='none';nextBtn.style.display='none';return;}
+  function getVisible(){return window.innerWidth<600?1:window.innerWidth<992?2:3;}
+  var current=0;
+  var pages=0;
+  function buildDots(p){
+    dotsWrap.innerHTML='';
+    for(var i=0;i<p;i++){
+      var d=document.createElement('button');
+      d.className='rv-dot'+(i===0?' active':'');
+      d.setAttribute('aria-label','Page '+(i+1));
+      (function(idx){d.addEventListener('click',function(){goTo(idx);});})(i);
+      dotsWrap.appendChild(d);
+    }
+  }
+  function goTo(page){
+    var v=getVisible();
+    pages=Math.max(1,total-v+1);
+    if(page<0)page=0;
+    if(page>=pages)page=pages-1;
+    current=page;
+    var slideW=slides[0].getBoundingClientRect().width+20;
+    track.style.transform='translateX(-'+(current*slideW)+'px)';
+    prevBtn.disabled=(current===0);
+    nextBtn.disabled=(current>=pages-1);
+    var dots=dotsWrap.querySelectorAll('.rv-dot');
+    dots.forEach(function(d,i){d.className='rv-dot'+(i===current?' active':'');});
+  }
+  function init(){
+    var v=getVisible();
+    pages=Math.max(1,total-v+1);
+    buildDots(pages);
+    goTo(0);
+  }
+  prevBtn.addEventListener('click',function(){goTo(current-1);});
+  nextBtn.addEventListener('click',function(){goTo(current+1);});
+  window.addEventListener('resize',function(){init();});
+  init();
+})();
+</script>
 </section>
