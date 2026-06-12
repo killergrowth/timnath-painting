@@ -10,8 +10,8 @@ const fs   = require('fs');
 const path = require('path');
 const { CLIENT, SERVICES, CITIES, SERVICE_DATA, CITY_DATA } = require('./_build-data.js');
 const T = require('./build-templates.js');
-const { buildBlog } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\blog-build');
-const { generateSitemap } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\gen-sitemap');
+const { buildBlog } = require('./_lib/blog-build');
+const { generateSitemap } = require('./_lib/gen-sitemap');
 
 const SITE_DOMAIN = 'timnathpainting.com';
 const ROOT = __dirname;
