@@ -1,7 +1,7 @@
 {
   "rating": 5,
   "userRatingCount": 39,
-  "fetchedAt": "2026-06-07T11:48:35.097Z",
+  "fetchedAt": "2026-06-12T16:28:48.876Z",
   "reviews": [
     {
       "author": "Preston Alexander",
@@ -25,18 +25,18 @@
       "publishTime": "2026-02-26T14:57:40.596859815Z"
     },
     {
-      "author": "Candy Fields",
+      "author": "Nathan",
       "rating": 5,
-      "relativeTime": "7 months ago",
-      "text": "I’ve worked with Josh on several different home projects over the years, everything from bathroom remodels to exterior painting, and every experience has been outstanding. Their attention to detail, quality of work, and professionalism are second to none. The team is dependable, courteous, and always keeps me updated throughout the process. Each project has turned out beautifully and on schedule. It’s rare to find a company that delivers such consistent, high-quality results—I highly recommend them to anyone looking for a reliable and skilled remodeling and painting team.",
-      "publishTime": "2025-10-23T00:19:12.657551755Z"
+      "relativeTime": "a month ago",
+      "text": "Josh is an awesome person to work with. He cares for his projects but also the customer behind the work. I would recommend him to anyone who needs painting work done on their home or business!",
+      "publishTime": "2026-04-24T18:24:23.773374494Z"
     },
     {
-      "author": "Steve Anderson",
+      "author": "Jacob Smith",
       "rating": 5,
-      "relativeTime": "6 months ago",
-      "text": "Josh and Brett did a fantastic job not only painting the outside of our house but helping us select the right colors. We get so many compliments. They are the best!",
-      "publishTime": "2025-11-14T21:49:21.877558707Z"
+      "relativeTime": "a month ago",
+      "text": "Josh did some general contracting work for me.   Basement and bathroom remodel did an excellent job.  Very good communicator.   Would Definitely hire him again for any general contracting or painting.",
+      "publishTime": "2026-04-29T02:29:57.122903365Z"
     }
   ]
 }
