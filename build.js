@@ -163,10 +163,6 @@ function buildHomepage() {
   if (reviewData.reviews.length > 0) {
     schemaObj.review = reviewData.reviews.map(r => ({
       '@type': 'Review',
-      itemReviewed: {
-        '@type': 'LocalBusiness',
-        name: CLIENT.name
-      },
       author: { '@type': 'Person', name: r.author },
       reviewRating: { '@type': 'Rating', ratingValue: r.rating, bestRating: 5, worstRating: 1 },
       reviewBody: r.text,
