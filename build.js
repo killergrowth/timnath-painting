@@ -192,7 +192,7 @@ function buildHomepage() {
       src="/assets/images/backgrounds/${bgWebp}"
       srcset="/assets/images/backgrounds/${bgMobile} 800w, /assets/images/backgrounds/${bgWebp} 1440w"
       sizes="(max-width:800px) 100vw, 1440px"
-      alt="" width="1440" height="960"
+      alt="Exterior painting services in Northern Colorado by Timnath Painting" width="1440" height="960"
       fetchpriority="high" decoding="sync"
       style="position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center;">
   </div>

@@ -18,6 +18,7 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 <meta property="og:site_name" content="Timnath Painting">
 <meta property="og:title" content="${title}">
 <meta property="og:description" content="${desc}">
+<meta property="og:url" content="${canonicalUrl || 'https://timnathpainting.com/'}">
 <meta property="og:image" content="https://timnathpainting.com/assets/images/social-share.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
