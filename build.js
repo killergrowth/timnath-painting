@@ -14,6 +14,8 @@ const { buildBlog } = require('./_lib/blog-build');
 const { generateSitemap } = require('./_lib/gen-sitemap');
 
 const SITE_DOMAIN = 'timnathpainting.com';
+const SITE_ID     = 'timnath-painting';
+const { injectScripts, loadSiteScripts } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\inject-scripts');
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
 const PARTS = path.join(ROOT, '_partials');
@@ -46,6 +48,7 @@ function injectPartials(html) {
 }
 
 function write(relPath, html) {
+  html = injectScripts(html, loadSiteScripts(SITE_ID));
   const dest = path.join(DIST, relPath);
   ensureDir(path.dirname(dest));
   fs.writeFileSync(dest, injectPartials(html), 'utf8');
@@ -112,7 +115,7 @@ function buildHomepage() {
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards â€” filter 5-star only, max 6 total, carousel slides
+  // Build review cards — filter 5-star only, max 6 total, carousel slides
   const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
   const reviewCards = fiveStarReviews.map((r) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
@@ -178,7 +181,7 @@ function buildHomepage() {
       lines: ['Premium Exterior', 'Painting and More'],
       btn1: { t: 'Schedule A Free Consultation', h: '/get-a-quote/' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
-      subText: 'Professional painting done rightâ€”on time, on budget, and built to last.'
+      subText: 'Professional painting done right—on time, on budget, and built to last.'
     },
   ];
 
@@ -243,7 +246,7 @@ ${T.topbar()}
     <div class="row align-items-start gutter-y-30">
       <div class="col-lg-6">
         <div class="about-one__thumb">
-          <div class="about-one__thumb__item real-image"><img src="/assets/images/about/about-house-new.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></div>
+          <div class="about-one__thumb__item real-image"><picture><source srcset="/assets/images/about/about-house-new.webp" type="image/webp"><img src="/assets/images/about/about-house-new.jpg" loading="lazy" width="570" height="600" alt="${CLIENT.name}  -  Professional Painting in Northern Colorado"></picture></div>
           <div class="about-one__funfact count-box">
             <h3 class="about-one__count"><span class="count-text" data-stop="28" data-speed="1500"></span><span>+</span></h3>
             <p class="about-one__funfact__text">freeze-thaw<br>cycles per year</p>
@@ -327,10 +330,10 @@ ${T.topbar()}
       <div class="col-lg-6">
         <div class="why-choose-one__right">
           <div class="why-choose-one__thumb wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="100ms">
-            <img src="/assets/images/resources/why-choose-1-1.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"><div class="why-choose-one__thumb-box"></div>
+            <picture><source srcset="/assets/images/resources/why-choose-1-1.webp" type="image/webp"><img src="/assets/images/resources/why-choose-1-1.jpg" loading="lazy" width="490" height="460" alt="${CLIENT.name} crew at work"></picture><div class="why-choose-one__thumb-box"></div>
           </div>
           <div class="why-choose-one__thumb-two wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="300ms">
-            <img src="/assets/images/resources/why-choose-1-2.jpg" loading="lazy" width="490" height="460" alt="Premium exterior painting result">
+            <picture><source srcset="/assets/images/resources/why-choose-1-2.webp" type="image/webp"><img src="/assets/images/resources/why-choose-1-2.jpg" loading="lazy" width="490" height="460" alt="Premium exterior painting result"></picture>
           </div>
           <div class="why-choose-one__thumb-box-two"></div>
         </div>
@@ -362,7 +365,7 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/timnath-hero.jpg')}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/hero-real-exterior.jpg')}
 ${T.wrapBody(finalContent)}`);
 }
 

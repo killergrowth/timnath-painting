@@ -165,21 +165,8 @@ ${preloadImage ? `<link rel="preload" as="image" href="${preloadImage.replace(/\
 .sec-title__tagline { letter-spacing: 0.5px !important; word-spacing: normal !important; }
 .sec-title__tagline .char, .sec-title__tagline .word { display: inline !important; letter-spacing: 0.5px !important; }
 </style>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-K8ZXCK8V');</script>
-<!-- End Google Tag Manager -->
-<!-- Feedbucket feedback widget -->
-<script type="text/javascript">
- (function(k) {
- let s=document.createElement('script');s.defer=true;
- s.src="https://cdn.feedbucket.app/assets/feedbucket.js";
- s.dataset.feedbucket=k;document.head.appendChild(s);
- })('unHnhjucA9iBv9bu4nxg')
-</script>
+
+
 </head>`;
 }
 
@@ -360,7 +347,7 @@ function faqBlock(faqs, groupName) {
 
 function serviceCarouselItems() {
   const items = SERVICES.map(s => `<div class="item"><div class="service-one__item">
-    <div class="service-one__item__thumb" style="height:260px;overflow:hidden;"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></div>
+    <div class="service-one__item__thumb" style="height:260px;overflow:hidden;"><picture><source srcset="/assets/images/service/${s.img.replace(/\.(jpg|jpeg)$/i, '.webp')}" type="image/webp"><img src="/assets/images/service/${s.img}" alt="${s.label} in Northern Colorado" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></picture></div>
     <div class="service-one__item__content">
       <h4 class="service-one__item__title"><a href="/${s.slug}/index.html">${s.label}</a></h4>
       <p class="service-one__item__tagline">${s.tagline}</p>
@@ -380,10 +367,6 @@ function serviceCarouselItems() {
 
 function wrapBody(content) {
   return `<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K8ZXCK8V"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <div class="page-wrapper">
 ${content}
@@ -432,6 +415,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 });
+</script>
+<!-- Web Vitals → GA4 (real user Core Web Vitals measurement) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M1XTQPEKLW"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-M1XTQPEKLW', {send_page_view: false});
+</script>
+<script type="module">
+import {onLCP, onCLS, onINP, onFCP, onTTFB} from 'https://unpkg.com/web-vitals@4/dist/web-vitals.attribution.js';
+function sendVital(m) {
+  gtag('event', m.name, {
+    event_category: 'Web Vitals',
+    value: Math.round(m.name === 'CLS' ? m.delta * 1000 : m.delta),
+    event_label: m.id,
+    metric_rating: m.rating,
+    non_interaction: true
+  });
+}
+onLCP(sendVital);
+onCLS(sendVital);
+onINP(sendVital);
+onFCP(sendVital);
+onTTFB(sendVital);
 </script>
 </body>
 </html>`;

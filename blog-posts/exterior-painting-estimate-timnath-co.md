@@ -1,8 +1,8 @@
 ---
 slug: exterior-painting-estimate-timnath-co
 title: 'How to Get an Accurate Exterior Painting Estimate in Timnath, CO'
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-06-19T13:00:00.000Z'
 scheduledDate: '2026-06-19T13:00:00.000Z'
 excerpt: >-
   Before you call a painter, know what to prep. Here's exactly what you need for
