@@ -1,19 +1,12 @@
 {
   "rating": 5,
-  "userRatingCount": 39,
-  "fetchedAt": "2026-06-14T11:58:25.522Z",
+  "userRatingCount": 40,
+  "fetchedAt": "2026-06-21T12:11:01.288Z",
   "reviews": [
-    {
-      "author": "Preston Alexander",
-      "rating": 5,
-      "relativeTime": "3 months ago",
-      "text": "I've had the opportunity to work with Josh on a few different occasions, and he is absolutely fantastic to work with. He and his team provide quality work and they are great at communicating and making it a very pleasant experience for clients. If you are in need of painting, these are the people to work with.",
-      "publishTime": "2026-03-03T17:37:15.008168851Z"
-    },
     {
       "author": "Wells Dycus",
       "rating": 5,
-      "relativeTime": "2 weeks ago",
+      "relativeTime": "3 weeks ago",
       "text": "We’ve known Josh for years and have worked with him on several projects. He has great communication skills and offers top notch services. I’d highly recommend him!",
       "publishTime": "2026-05-28T14:41:15.916151035Z"
     },
@@ -25,18 +18,25 @@
       "publishTime": "2026-02-26T15:01:05.417339073Z"
     },
     {
-      "author": "Michael Weant",
-      "rating": 5,
-      "relativeTime": "3 months ago",
-      "text": "If you’re looking for a professional painting company in Timnath, Colorado, I highly recommend Timnath Painting. Josh, the owner, runs an outstanding local business and truly cares about quality and customer satisfaction. Highly recommend to anyone in Timnath, Fort Collins, Windsor, or Northern Colorado looking for top-quality painting services!",
-      "publishTime": "2026-02-26T14:57:40.596859815Z"
-    },
-    {
       "author": "Nathan",
       "rating": 5,
       "relativeTime": "a month ago",
       "text": "Josh is an awesome person to work with. He cares for his projects but also the customer behind the work. I would recommend him to anyone who needs painting work done on their home or business!",
       "publishTime": "2026-04-24T18:24:23.773374494Z"
+    },
+    {
+      "author": "Preston Alexander",
+      "rating": 5,
+      "relativeTime": "3 months ago",
+      "text": "I've had the opportunity to work with Josh on a few different occasions, and he is absolutely fantastic to work with. He and his team provide quality work and they are great at communicating and making it a very pleasant experience for clients. If you are in need of painting, these are the people to work with.",
+      "publishTime": "2026-03-03T17:37:15.008168851Z"
+    },
+    {
+      "author": "Jacob Smith",
+      "rating": 5,
+      "relativeTime": "a month ago",
+      "text": "Josh did some general contracting work for me.   Basement and bathroom remodel did an excellent job.  Very good communicator.   Would Definitely hire him again for any general contracting or painting.",
+      "publishTime": "2026-04-29T02:29:57.122903365Z"
     }
   ]
 }
