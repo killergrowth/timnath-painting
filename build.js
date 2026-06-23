@@ -715,6 +715,7 @@ ${T.topbar()}
                 ${SERVICES.map(s => `<option value="${s.slug}">${s.label}</option>`).join('')}
               </select>
               <textarea class="contact-textarea" name="message" placeholder="Tell us about your project" rows="5"></textarea>
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" style="margin-bottom:4px;"></div>
               <button type="submit" class="contact-submit">Send Message</button>
             </div>
           </form>
@@ -1612,3 +1613,4 @@ function buildGetAQuote() {
 buildGetAQuote();
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
+

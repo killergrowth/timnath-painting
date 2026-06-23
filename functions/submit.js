@@ -139,6 +139,23 @@ export async function onRequestPost({ request, env }) {
     const service = form.get('service') || '';
     const message = form.get('message') || '';
 
+    // --- Cloudflare Turnstile verification ---
+    const turnstileToken = form.get('cf-turnstile-response') || '';
+    const turnstileSecret = env.TURNSTILE_SECRET || '1x0000000000000000000000000000000AA'; // fallback = test secret
+    const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: `secret=${encodeURIComponent(turnstileSecret)}&response=${encodeURIComponent(turnstileToken)}`,
+    });
+    const verifyData = await verifyRes.json();
+    if (!verifyData.success) {
+      return new Response(JSON.stringify({ ok: false, error: 'Bot check failed. Please try again.' }), {
+        status: 400,
+        headers: JSON_HEADERS,
+      });
+    }
+    // --- end Turnstile verification ---
+
     const accessToken = await getGmailAccessToken(
       env.GMAIL_SERVICE_EMAIL,
       env.GMAIL_PRIVATE_KEY,

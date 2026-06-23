@@ -296,6 +296,7 @@ function contactFormSection() {
                   style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fff;border-radius:5px;padding:10px 14px;width:100%;min-height:110px;"></textarea>
               </div>
               <div class="form-one__control form-one__control--full" style="grid-column:1/-1;">
+                <div class="cf-turnstile" data-sitekey="0x4AAAAAADpT5f2gM80jpJHh" data-theme="dark" style="margin-bottom:12px;"></div>
                 <button type="submit" class="wallox-btn wallox-btn--base" style="width:100%;">Request a Quote</button>
               </div>
             </div>
@@ -384,37 +385,52 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
   if (funfact) { funfact.style.transform = "none"; }
 });
 </script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-  var form = document.getElementById('quote-form');
-  if (!form) return;
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
-    var btn = form.querySelector('button[type="submit"]');
-    var orig = btn ? btn.textContent : '';
-    if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
-    try {
-      var res = await fetch('/submit', { method: 'POST', body: new FormData(form) });
-      var data = await res.json();
-      if (data.ok) {
-        var thankYou = document.createElement('div');
-        thankYou.style.cssText = 'padding:40px 24px;text-align:center;';
-        thankYou.innerHTML = '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>';
-        var note = form.parentElement && form.parentElement.querySelector('.contact-preview-note');
-        if (note) note.style.display = 'none';
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'form_submit_success', form_type: 'quote_form' });
-        form.replaceWith(thankYou);
-      } else {
+(function () {
+  function attachFormHandler(formId, formType, successHtml) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var orig = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending...'; }
+      try {
+        var res = await fetch('/submit', { method: 'POST', body: new FormData(form) });
+        var data = await res.json();
+        if (data.ok) {
+          var thankYou = document.createElement('div');
+          thankYou.style.cssText = 'padding:40px 24px;text-align:center;';
+          thankYou.innerHTML = successHtml;
+          var note = form.parentElement && form.parentElement.querySelector('.contact-preview-note');
+          if (note) note.style.display = 'none';
+          window.dataLayer = window.dataLayer || [];
+          window.dataLayer.push({ event: 'form_submit_success', form_type: formType });
+          form.replaceWith(thankYou);
+        } else {
+          if (btn) { btn.disabled = false; btn.textContent = orig; }
+          if (window.turnstile) window.turnstile.reset();
+          alert('Something went wrong. Please call us at (970) 670-3965.');
+        }
+      } catch (err) {
         if (btn) { btn.disabled = false; btn.textContent = orig; }
+        if (window.turnstile) window.turnstile.reset();
         alert('Something went wrong. Please call us at (970) 670-3965.');
       }
-    } catch (err) {
-      if (btn) { btn.disabled = false; btn.textContent = orig; }
-      alert('Something went wrong. Please call us at (970) 670-3965.');
-    }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    attachFormHandler(
+      'quote-form', 'quote_form',
+      '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Thank you!</p><p style="color:rgba(255,255,255,0.85);font-size:15px;line-height:1.7;">We received your request and will be in touch within a few minutes.</p>'
+    );
+    attachFormHandler(
+      'contact-form', 'contact_form',
+      '<p style="color:#AE360E;font-size:22px;font-weight:700;margin-bottom:12px;">Message Sent!</p><p style="color:#5a5650;font-size:15px;line-height:1.7;">We received your message and will get back to you same-day. Josh replies to everything personally.</p>'
+    );
   });
-});
+}());
 </script>
 <!-- Web Vitals → GA4 (real user Core Web Vitals measurement) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-M1XTQPEKLW"></script>
@@ -446,6 +462,7 @@ onTTFB(sendVital);
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 
