@@ -1,8 +1,8 @@
 ---
 slug: exterior-paint-colors-fort-collins-co
 title: Best Exterior Paint Colors for Colorado Homes
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-06-26T13:00:00.000Z'
 scheduledDate: '2026-06-26T13:00:00.000Z'
 excerpt: >-
   Colorado's climate demands more from exterior paint. Here are the colors that
