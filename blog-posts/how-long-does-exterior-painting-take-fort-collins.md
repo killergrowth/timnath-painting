@@ -1,16 +1,17 @@
 ---
 slug: how-long-does-exterior-painting-take-fort-collins
 title: How Long Does Exterior Painting Take? (By Project Size)
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-07-14T13:00:39.285Z'
 scheduledDate: '2026-07-14T13:00:00.000Z'
 excerpt: >-
   Real timelines for exterior painting in Fort Collins and Northern Colorado —
   by square footage, surface type, and what actually slows jobs down.
-featuredImage: blog-posts/images/how-long-does-exterior-painting-take-fort-collins.jpg
+featuredImage: null
 inlineImage1: >-
   blog-posts/images/how-long-does-exterior-painting-take-fort-collins-inline1.jpg
-inlineImage2: null
+inlineImage2: >-
+  blog-posts/images/how-long-does-exterior-painting-take-fort-collins-inline2.jpg
 imagePrompt: >-
   I need an image of a professional painter on a ladder applying paint to the
   exterior of a two-story house in a Northern Colorado neighborhood on a bright,

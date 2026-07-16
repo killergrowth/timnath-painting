@@ -3,8 +3,8 @@ slug: how-to-choose-exterior-paint-colors-fort-collins
 title: >-
   How to Choose Exterior Paint Colors That Fit Your Neighborhood (Fort Collins &
   Northern Colorado Guide)
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-07-07T13:00:45.434Z'
 scheduledDate: '2026-07-07T13:00:00.000Z'
 excerpt: >-
   Picking the right exterior paint colors in Fort Collins means balancing HOA

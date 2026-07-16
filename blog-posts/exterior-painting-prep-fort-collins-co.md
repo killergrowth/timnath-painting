@@ -1,8 +1,8 @@
 ---
 slug: exterior-painting-prep-fort-collins-co
 title: How to Prepare Your Home for Exterior Painting
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-07-10T13:00:36.659Z'
 scheduledDate: '2026-07-10T13:00:00.000Z'
 excerpt: >-
   Before the first brush stroke hits your siding, the real work begins. Here's
