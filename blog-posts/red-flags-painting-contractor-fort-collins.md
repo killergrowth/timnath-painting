@@ -34,7 +34,8 @@ sheetRow: 7
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:23:08.272Z'
-updatedAt: '2026-05-27T20:22:39.049Z'
+updatedAt: '2026-07-16T16:12:50.248Z'
+gbpGenerated: true
 ---
 ## Red Flags When Vetting a Painting Contractor in Fort Collins
 

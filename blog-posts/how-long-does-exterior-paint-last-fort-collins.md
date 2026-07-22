@@ -1,8 +1,8 @@
 ---
 slug: how-long-does-exterior-paint-last-fort-collins
 title: How Long Does Exterior House Paint Last in Fort Collins and Northern Colorado?
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-07-21T13:00:13.412Z'
 scheduledDate: 2026-07-21T13:00:00.000Z
 excerpt: >-
   National paint lifespan averages don't apply here. Colorado's UV, freeze-thaw

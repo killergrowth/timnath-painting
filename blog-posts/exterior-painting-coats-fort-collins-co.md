@@ -1,8 +1,8 @@
 ---
 slug: exterior-painting-coats-fort-collins-co
 title: How Many Coats of Exterior Paint Does Your Home Actually Need?
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-07-17T13:00:07.489Z'
 scheduledDate: '2026-07-17T13:00:00.000Z'
 excerpt: >-
   The "2-coat minimum" rule sounds simple — but the honest answer depends on
