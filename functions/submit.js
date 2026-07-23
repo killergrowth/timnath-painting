@@ -29,7 +29,9 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
   });
   const signingInput = `${headerB64}.${claimB64}`;
 
-  const b64 = privateKeyPem.replace(/-----[A-Z ]+-----/g, '').replace(/\s+/g, '');
+  // Normalize key: handle both literal \\n strings and real newlines
+  const normalizedKey = privateKeyPem.replace(/\\n/g, '\n');
+  const b64 = normalizedKey.replace(/-----[A-Z ]+-----/g, '').replace(/\s+/g, '');
   const decoded = atob(b64);
   const keyBuffer = new Uint8Array(decoded.length);
   for (let i = 0; i < decoded.length; i++) keyBuffer[i] = decoded.charCodeAt(i);
@@ -56,7 +58,7 @@ async function getGmailAccessToken(serviceEmail, privateKeyPem, impersonateEmail
   return data.access_token;
 }
 
-function buildHtmlEmail(name, email, phone, service, message) {
+function buildHtmlEmail(name, email, phone, address, service, message) {
   const serviceLabel = service ? service.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()) : 'Not specified';
   return `<!DOCTYPE html>
 <html>
@@ -96,8 +98,12 @@ function buildHtmlEmail(name, email, phone, service, message) {
               <td style="padding:12px 16px;background:#f9f5f0;font-size:15px;color:#2E2A20;">${phone || 'Not provided'}</td>
             </tr>
             <tr>
-              <td style="padding:12px 16px;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Service</td>
-              <td style="padding:12px 16px;font-size:15px;color:#2E2A20;">${serviceLabel}</td>
+              <td style="padding:12px 16px;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Address</td>
+              <td style="padding:12px 16px;font-size:15px;color:#2E2A20;">${address || 'Not provided'}</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px;background:#f9f5f0;font-size:12px;color:#888;text-transform:uppercase;letter-spacing:1px;">Service</td>
+              <td style="padding:12px 16px;background:#f9f5f0;font-size:15px;color:#2E2A20;">${serviceLabel}</td>
             </tr>
           </table>
 
@@ -136,6 +142,7 @@ export async function onRequestPost({ request, env }) {
     const name    = form.get('name')    || '(no name)';
     const email   = form.get('email')   || '';
     const phone   = form.get('phone')   || '';
+    const address = form.get('address') || '';
     const service = form.get('service') || '';
     const message = form.get('message') || '';
 
@@ -163,13 +170,12 @@ export async function onRequestPost({ request, env }) {
     );
 
     const subject = 'New Quote Request - Timnath Painting';
-    const htmlBody = buildHtmlEmail(name, email, phone, service, message);
+    const htmlBody = buildHtmlEmail(name, email, phone, address, service, message);
 
     // Build MIME multipart message (HTML only)
     const mimeLines = [
       `From: Timnath Painting <${env.GMAIL_FROM}>`,
       `To: ${env.GMAIL_TO}`,
-      `Cc: josh@timnathpainting.com`,
       `Subject: ${subject}`,
       `MIME-Version: 1.0`,
       `Content-Type: text/html; charset=UTF-8`,
