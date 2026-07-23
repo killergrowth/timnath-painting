@@ -239,25 +239,119 @@
       </div>
     </div>
 
-    <!-- Our Work Gallery -->
+        <!-- Our Work Gallery -->
     <div style="margin-top:56px;">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;">
         <p style="font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin:0;">Our Work</p>
         <a href="/gallery/" style="font-size:13px;font-weight:700;color:#AE360E;text-decoration:none;">View Full Gallery &rarr;</a>
       </div>
-      <div style="columns:4 220px;column-gap:16px;">
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1780059581876_eokrg" alt="Exterior house painting Northern Colorado" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818733832_jjto9" alt="Residential painting Timnath CO" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818729263_zzst1" alt="House painting Windsor Colorado" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818728343_oe1jm" alt="Exterior painting Fort Collins CO" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818727553_c7ao3" alt="Home exterior painting Northern Colorado" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818726373_iv8gn" alt="Professional painting contractor Timnath" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818720933_8gmnd" alt="Exterior house painting Severance CO" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
-        <a href="/gallery/" style="display:block;margin-bottom:16px;break-inside:avoid;"><img src="https://timnathpainting.com/api/photo/img_1779818716780_pa1xk" alt="Residential exterior painting NoCo" loading="lazy" style="width:100%;border-radius:8px;display:block;"></a>
+
+      <!-- Desktop: 4-col grid | Mobile: carousel with arrows -->
+      <style>
+        .gw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+        .gw-grid a{display:block;}
+        .gw-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;display:block;transition:transform .2s,box-shadow .2s;}
+        .gw-grid img:hover{transform:scale(1.03);box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+        .gw-carousel-wrap{display:none;}
+        @media(max-width:767px){
+          .gw-grid{display:none;}
+          .gw-carousel-wrap{display:block;position:relative;}
+          .gw-track-outer{overflow:hidden;border-radius:10px;}
+          .gw-track{display:flex;transition:transform .35s cubic-bezier(.25,.46,.45,.94);}
+          .gw-slide{flex:0 0 100%;position:relative;}
+          .gw-slide img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;display:block;}
+          .gw-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+            width:52px;height:52px;border-radius:50%;border:3px solid #fff;cursor:pointer;
+            background:#AE360E;color:#fff;font-size:24px;font-weight:900;
+            display:flex;align-items:center;justify-content:center;
+            box-shadow:0 4px 18px rgba(0,0,0,0.4);transition:background .2s,transform .15s;}
+          .gw-btn:hover{background:#8f2a0a;}
+          .gw-btn:active{transform:translateY(-50%) scale(0.92);}
+          .gw-prev{left:10px;}
+          .gw-next{right:10px;}
+          .gw-dots{display:flex;gap:6px;justify-content:center;margin-top:14px;}
+          .gw-dot{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;
+            background:#d4ccc4;transition:background .2s;}
+          .gw-dot.active{background:#AE360E;}
+          .gw-counter{text-align:center;margin-top:8px;font-size:12px;color:#9E9A95;font-weight:600;}
+        }
+      </style>
+
+      <!-- Desktop grid -->
+      <div class="gw-grid">
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1780059581876_eokrg" alt="Exterior house painting Northern Colorado" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818733832_jjto9" alt="Residential painting Timnath CO" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818729263_zzst1" alt="House painting Windsor Colorado" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818728343_oe1jm" alt="Exterior painting Fort Collins CO" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818727553_c7ao3" alt="Home exterior painting Northern Colorado" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818726373_iv8gn" alt="Professional painting contractor Timnath" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818720933_8gmnd" alt="Exterior house painting Severance CO" loading="lazy"></a>
+        <a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818716780_pa1xk" alt="Residential exterior painting NoCo" loading="lazy"></a>
       </div>
+
+      <!-- Mobile carousel -->
+      <div class="gw-carousel-wrap">
+        <button class="gw-btn gw-prev" id="gw-prev" aria-label="Previous photo">&#8249;</button>
+        <div class="gw-track-outer">
+          <div class="gw-track" id="gw-track">
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1780059581876_eokrg" alt="Exterior house painting Northern Colorado" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818733832_jjto9" alt="Residential painting Timnath CO" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818729263_zzst1" alt="House painting Windsor Colorado" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818728343_oe1jm" alt="Exterior painting Fort Collins CO" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818727553_c7ao3" alt="Home exterior painting Northern Colorado" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818726373_iv8gn" alt="Professional painting contractor Timnath" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818720933_8gmnd" alt="Exterior house painting Severance CO" loading="lazy"></a></div>
+            <div class="gw-slide"><a href="/gallery/"><img src="https://timnathpainting.com/api/photo/img_1779818716780_pa1xk" alt="Residential exterior painting NoCo" loading="lazy"></a></div>
+          </div>
+        </div>
+        <button class="gw-btn gw-next" id="gw-next" aria-label="Next photo">&#8250;</button>
+        <div class="gw-dots" id="gw-dots"></div>
+        <div class="gw-counter" id="gw-counter">1 / 8</div>
+      </div>
+
+      <script>
+      (function(){
+        var track = document.getElementById('gw-track');
+        var prev  = document.getElementById('gw-prev');
+        var next  = document.getElementById('gw-next');
+        var dots  = document.getElementById('gw-dots');
+        var counter = document.getElementById('gw-counter');
+        if (!track) return;
+        var slides = track.querySelectorAll('.gw-slide');
+        var total  = slides.length;
+        var cur    = 0;
+        // Build dots
+        for (var i = 0; i < total; i++) {
+          var d = document.createElement('button');
+          d.className = 'gw-dot' + (i === 0 ? ' active' : '');
+          d.setAttribute('aria-label', 'Photo ' + (i + 1));
+          (function(idx){ d.addEventListener('click', function(){ go(idx); }); })(i);
+          dots.appendChild(d);
+        }
+        function go(n) {
+          if (n < 0) n = total - 1;
+          if (n >= total) n = 0;
+          cur = n;
+          track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+          var dotEls = dots.querySelectorAll('.gw-dot');
+          dotEls.forEach(function(d, i){ d.className = 'gw-dot' + (i === cur ? ' active' : ''); });
+          counter.textContent = (cur + 1) + ' / ' + total;
+          prev.disabled = false;
+          next.disabled = false;
+        }
+        prev.addEventListener('click', function(){ go(cur - 1); });
+        next.addEventListener('click', function(){ go(cur + 1); });
+        // Touch/swipe support
+        var startX = 0;
+        track.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive:true});
+        track.addEventListener('touchend',   function(e){ var dx = e.changedTouches[0].clientX - startX; if (Math.abs(dx) > 40) { go(dx < 0 ? cur + 1 : cur - 1); } }, {passive:true});
+      })();
+      </script>
     </div>
   </div>
 </section>
+
+
 
 <!-- ── Reviews ── -->
 <section class="lp-reviews">
