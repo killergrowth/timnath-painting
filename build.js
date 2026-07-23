@@ -1611,6 +1611,22 @@ function buildGetAQuote() {
 }
 
 buildGetAQuote();
+
+// ── Sign-Up Landing Page (Ad traffic, noindex, excluded from sitemap) ──
+(function buildSignUp() {
+  const src = path.join(ROOT, 'sign-up.html');
+  if (!fs.existsSync(src)) { console.log('sign-up.html not found, skipping.'); return; }
+  let html = fs.readFileSync(src, 'utf8');
+  const headPartial = fs.readFileSync(path.join(PARTS, 'head.html'), 'utf8');
+  html = html.replace('<!-- HEAD_PARTIAL -->', headPartial);
+  html = html.replace('<!-- HEADER -->', HEADER_STRIPPED).replace('<!-- FOOTER -->', FOOTER_MINIMAL);
+  html = injectScripts(html, loadSiteScripts(SITE_ID));
+  const dest = path.join(DIST, 'sign-up/index.html');
+  ensureDir(path.dirname(dest));
+  fs.writeFileSync(dest, html, 'utf8');
+  console.log('Built: sign-up/index.html (noindex, excluded from sitemap)');
+})();
+
 // Generate sitemap from actual dist/ contents
-generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN });
+generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN, excludeSlugs: ['sign-up'] });
 
