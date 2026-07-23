@@ -120,7 +120,6 @@ function buildHtmlEmail(name, email, phone, address, service, message) {
         <tr><td style="background:#2E2A20;padding:24px 40px;text-align:center;border-radius:0 0 8px 8px;">
           <p style="margin:0;color:#888;font-size:12px;">
             Timnath Painting &bull; Timnath, CO 80547 &bull;
-            <a href="mailto:josh@timnathpainting.com" style="color:#DF9E42;">josh@timnathpainting.com</a>
           </p>
         </td></tr>
 
