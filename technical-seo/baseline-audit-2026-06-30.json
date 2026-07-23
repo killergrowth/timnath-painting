@@ -1,0 +1,89 @@
+{
+  "clientSlug": "timnath-painting",
+  "clientName": "Timnath Painting",
+  "domain": "timnathpainting.com",
+  "runDate": "2026-06-30",
+  "type": "baseline",
+  "checksRun": 12,
+  "checksPassed": 6,
+  "checksFailed": 6,
+  "openCritical": 1,
+  "openWarnings": 5,
+  "pagesIndexed": 0,
+  "onpageScore": 95.19,
+  "domainChecks": {
+    "sitemap": true,
+    "robotsTxt": true,
+    "ssl": true,
+    "httpsRedirect": true
+  },
+  "pageHealth": {
+    "broken4xx": 1,
+    "broken5xx": 0,
+    "brokenLinks": 35,
+    "duplicateTitles": 0,
+    "duplicateContent": 2,
+    "missingTitles": 0,
+    "missingDescriptions": 0,
+    "missingH1": 17,
+    "missingAltText": 13,
+    "renderBlocking": 1,
+    "slowPages": 0,
+    "linksToRedirects": 61
+  },
+  "pagespeed": {
+    "mobile": {
+      "performance": 45,
+      "seo": null,
+      "accessibility": null,
+      "bestPractices": null,
+      "lcp": "12.1 s",
+      "cls": "0.456",
+      "fcp": "3.3 s",
+      "tbt": "120 ms"
+    },
+    "desktop": {
+      "performance": 63,
+      "seo": null,
+      "accessibility": null,
+      "bestPractices": null,
+      "lcp": "1.2 s",
+      "cls": "0.722",
+      "fcp": "0.4 s",
+      "tbt": "270 ms"
+    }
+  },
+  "issuesFlagged": [
+    {
+      "checkId": "W5",
+      "severity": "critical",
+      "description": "35 broken internal links"
+    },
+    {
+      "checkId": "V2",
+      "severity": "warning",
+      "description": "2 duplicate content pages"
+    },
+    {
+      "checkId": "V3",
+      "severity": "warning",
+      "description": "1 broken pages (4xx)"
+    },
+    {
+      "checkId": "M6",
+      "severity": "warning",
+      "description": "17 pages missing H1 tags"
+    },
+    {
+      "checkId": "M9",
+      "severity": "warning",
+      "description": "13 pages missing image alt text"
+    },
+    {
+      "checkId": "W4",
+      "severity": "warning",
+      "description": "Render-blocking resources on 1 pages"
+    }
+  ],
+  "notes": "Baseline audit — Month 1 one-time run"
+}

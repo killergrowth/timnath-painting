@@ -6,7 +6,6 @@
   <title>Free Painting Estimate | Timnath Painting | Northern Colorado</title>
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://timnathpainting.com/sign-up/">
-  <!-- Favicons -->
   <!-- HEAD_PARTIAL -->
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -18,12 +17,12 @@
     .lp-hero{
       position:relative;
       background:url('/assets/images/backgrounds/hero-real-exterior.jpg') center center/cover no-repeat;
-      min-height:480px;
+      min-height:520px;
       display:flex;align-items:center;
     }
     .lp-hero__overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(32,27,16,0.85) 0%,rgba(32,27,16,0.45) 100%);}
-    .lp-hero__inner{position:relative;z-index:2;width:100%;max-width:1140px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center;}
-    .lp-hero__copy{color:#fff;}
+    .lp-hero__inner{position:relative;z-index:2;width:100%;max-width:1140px;margin:0 auto;padding:60px 20px;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:flex-start;}
+    .lp-hero__copy{color:#fff;padding-top:24px;}
     .lp-hero__eyebrow{display:inline-block;background:#AE360E;color:#fff;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:2px;margin-bottom:18px;}
     .lp-hero__h1{font-size:clamp(28px,4vw,46px);font-weight:800;line-height:1.15;margin-bottom:18px;color:#fff;}
     .lp-hero__h1 span{color:#DF9E42;}
@@ -111,7 +110,6 @@
     .lp-area__copy p{color:rgba(255,255,255,0.7);font-size:15px;line-height:1.8;margin-bottom:24px;}
     .lp-area__list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;}
     .lp-area__list li{color:rgba(255,255,255,0.85);font-size:14px;font-weight:600;}
-    .lp-area__list li::before{content:'&#x1F4CD; ';}
     .lp-area__cta{display:inline-flex;align-items:center;gap:10px;background:#AE360E;color:#fff;font-weight:700;font-size:15px;padding:14px 28px;border-radius:100px;margin-top:28px;transition:background .2s;}
     .lp-area__cta:hover{background:#8f2a0a;}
 
@@ -127,6 +125,7 @@
     /* ── Responsive ── */
     @media(max-width:1024px){
       .lp-hero__inner{grid-template-columns:1fr;max-width:640px;}
+      .lp-hero__copy{padding-top:0;}
       .lp-form-card{background:rgba(255,255,255,0.97);}
       .lp-services{grid-template-columns:1fr 1fr;}
       .lp-why__inner{grid-template-columns:1fr;}
@@ -331,7 +330,6 @@
       <a href="tel:9706703965" class="lp-area__cta"><i class="fa-solid fa-phone"></i> Call (970) 670-3965</a>
     </div>
     <div>
-      <!-- Intentionally left empty on mobile — area copy speaks for itself -->
       <img src="/assets/images/about/about-1-1.jpg" alt="Timnath Painting serving Northern Colorado" loading="lazy" style="width:100%;border-radius:10px;object-fit:cover;max-height:400px;">
     </div>
   </div>

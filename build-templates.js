@@ -214,7 +214,7 @@ function pageHeader(title, crumbs) {
   return `<section class="page-header">
   <div class="page-header__bg" style="background-image:url(/assets/images/backgrounds/timnath-hero.jpg);"></div>
   <div class="container">
-    <h2 class="page-header__title">${title}</h2>
+    <h1 class="page-header__title">${title}</h1>
     <div class="wallox-breadcrumb"><ul class="wallox-breadcrumb__list list-unstyled">
       <li><a href="/index.html"><i class="fa-solid fa-house"></i> Home</a></li>
       ${crumbs}
@@ -462,6 +462,7 @@ onTTFB(sendVital);
 }
 
 module.exports = { htmlHead, htmlScripts, topbar, pageHeader, mobileNav, contactFormSection, faqBlock, serviceCarouselItems, wrapBody };
+
 
 
 
