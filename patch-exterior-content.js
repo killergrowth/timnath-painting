@@ -35,7 +35,7 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
 
 <strong>Coating Application:</strong> We use Sherwin-Williams Duration, Emerald, or SuperPaint, and Benjamin Moore Aura or Regal Select. Two-coat minimum on all surfaces. Three coats on south and west exposures where UV is most intense.
 
-<strong>Project Management:</strong> You get a dedicated project lead, progress updates throughout the job, and full site cleanup. No subcontractors. No volume rushing.\`,
+<strong>Project Management:</strong> You get a dedicated project lead, progress updates throughout the job, and full site cleanup. No volume rushing.\`,
     sidingTypes: [
       { type: 'Fiber Cement (HardiePlank / HardieBoard)', desc: 'The most common siding in newer Northern Colorado HOA communities. Holds paint extremely well when primed with an alkyd or 100% acrylic masonry primer. Must be clean and fully dry before coating. 7\u201310 year system lifespans are realistic with proper prep.' },
       { type: 'Wood / Cedar', desc: "Natural wood demands oil-based primer on every bare surface. Checks, splits, and open grain get caulked with flexible elastomeric sealant. Colorado's dry climate pulls moisture out of wood faster than coastal climates \u2014 older wood siding requires more prep time, and we factor that into every quote." },
@@ -43,9 +43,9 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
       { type: 'Vinyl Siding', desc: 'Paintable with the correct adhesion primer. Color selection matters here \u2014 going significantly darker than the original factory color can cause thermal expansion stress and may void manufacturer warranties. We assess this before quoting and advise accordingly.' },
       { type: 'Stucco', desc: 'Takes paint well and holds up to Colorado climate when prepared correctly. Surface cracks are addressed with elastomeric caulk or flexible patching compound before any topcoat. We use masonry primer as the base coat on all stucco surfaces.' },
     ],
-    whyUs: \`Our crew is owned, not subcontracted. That matters more than most homeowners realize \u2014 it means the same people who show up day one are there day five. No phone-tag with subs, no quality drop-off when we get busy and send whoever is available.
+    whyUs: \`The same crew that shows up on day one is there on day five. No quality drop-off when we get busy, no sending whoever is available.
 
-We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively — covering application practices, environmental compliance, and chemical handling \u2014 not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
+We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively ï¿½ covering application practices, environmental compliance, and chemical handling \u2014 not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
 
 $1M general liability coverage means that if something goes wrong on your property, you are protected. We provide a certificate of insurance within 24 hours to any HOA board or property manager who requests one.\`,
     timeline: \`Most residential exterior painting projects in Northern Colorado take 3\u20135 business days, weather-dependent.

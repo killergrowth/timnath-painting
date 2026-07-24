@@ -546,7 +546,7 @@ function buildServiceHub(slug) {
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No-VOC Products.</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">$1M General Liability &mdash; COI on request</span></li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">Sherwin-Williams &amp; Benjamin Moore Approved</span></li>
-            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">No subcontractors. We know our crews.</span></li>
+            <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:10px;"></i><span style="color:#fff;">We Know Our Crews.</span></li>
           </ul>
         </div>` : '';
 
@@ -630,7 +630,6 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>$1M General Liability</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>SW &amp; BM Approved</li>
-              <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No Subcontractors</li>
             </ul>
           </div>
         </div>
@@ -1287,7 +1286,7 @@ function buildServiceLocation(service, city) {
   const whyFeatures = [
     { icon: 'fa-solid fa-shield-halved', title: 'Licensed &amp; Insured in Colorado', text: '$1M general liability coverage. Certificates of insurance available on request within 24 hours.' },
     { icon: 'fa-solid fa-leaf',          title: 'No-VOC Products.',              text: 'Approved Sherwin-Williams and Benjamin Moore applicator. Products and methods that protect your home and the environment.' },
-    { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'No subcontractors. The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
+    { icon: 'fa-solid fa-users',         title: 'We Know Our Crews',                  text: 'The crew you meet on day one finishes the job. No volume rushing, no shortcuts.' },
     { icon: 'fa-solid fa-clock',         title: 'Same-Day Response',              text: 'Every quote request gets a same-day response during business hours. On-site assessments scheduled fast.' },
   ];
 
@@ -1621,6 +1620,23 @@ buildGetAQuote();
   html = html.replace('<!-- HEAD_PARTIAL -->', headPartial);
   html = html.replace('<!-- HEADER -->', HEADER_STRIPPED).replace('<!-- FOOTER -->', FOOTER_MINIMAL);
   html = injectScripts(html, loadSiteScripts(SITE_ID));
+
+  // Dynamic reviews from data/reviews.json
+  const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
+  const reviewData = fs.existsSync(reviewsFile)
+    ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
+    : { rating: null, userRatingCount: 0, reviews: [] };
+  const fiveStarReviews = reviewData.reviews.filter(function(r) { return r.rating === 5; }).slice(0, 3);
+  const reviewCards = fiveStarReviews.map(function(r) {
+    const escapedText = (r.text || '').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    return '<div class="lp-review-card">' +
+      '<div class="lp-review-stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>' +
+      '<p class="lp-review-text">&ldquo;' + escapedText + '&rdquo;</p>' +
+      '<div class="lp-review-author">' + r.author + '</div>' +
+      '</div>';
+  }).join('\n');
+  html = html.replace('<!-- REVIEW_CARDS -->', reviewCards || '');
+
   const dest = path.join(DIST, 'sign-up/index.html');
   ensureDir(path.dirname(dest));
   fs.writeFileSync(dest, html, 'utf8');

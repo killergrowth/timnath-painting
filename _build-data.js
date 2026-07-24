@@ -17,7 +17,7 @@ const CLIENT = {
 const SERVICES = [
   { label: 'Exterior Painting',   slug: 'exterior-painting',   icon: 'fa-solid fa-house',             img: 'exterior-green-house.jpg', tagline: 'Coatings built to handle Colorado freeze-thaw cycles &mdash; rated for 7-10 years.' },
   { label: 'HOA Painting',        slug: 'hoa-painting',        icon: null,          img: 'photo-hoa-painting-new.jpg', tagline: 'Board-approved color matching and documentation for HOA compliance.' },
-  { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'photo-commercial-painting-new2.jpg', tagline: 'Minimal disruption scheduling. Crew-owned, not subcontracted.' },
+  { label: 'Commercial Painting', slug: 'commercial-painting', icon: 'fa-solid fa-building',  img: 'photo-commercial-painting-new2.jpg', tagline: 'Minimal disruption scheduling. After-hours and weekend availability.' },
   { label: 'Fence Staining',      slug: 'fence-staining',      icon: null,        img: 'photo-fence-staining.jpg', tagline: 'Oil-based penetrating stains that protect wood grain through Colorado summers.' },
   { label: 'Exterior Staining',   slug: 'exterior-staining',   icon: null,              img: 'photo-exterior-staining.jpg', tagline: 'Deck and siding stain systems applied by applicators using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.' },
 ];
@@ -50,7 +50,7 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
 
 <strong>Coating Application:</strong> We use Sherwin-Williams Duration, Emerald, or SuperPaint, and Benjamin Moore Aura or Regal Select. Two-coat minimum on all surfaces. Three coats on south and west exposures where UV is most intense.
 
-<strong>Project Management:</strong> You get a dedicated project lead, progress updates throughout the job, and full site cleanup. No subcontractors. No volume rushing.`,
+<strong>Project Management:</strong> You get a dedicated project lead, progress updates throughout the job, and full site cleanup. No volume rushing.`,
     sidingTypes: [
       { type: 'Fiber Cement (HardiePlank / HardieBoard)', desc: 'The most common siding in newer Northern Colorado HOA communities. Holds paint extremely well when primed with an alkyd or 100% acrylic masonry primer. Must be clean and fully dry before coating. 7–10 year system lifespans are realistic with proper prep.' },
       { type: 'Wood / Cedar', desc: "Natural wood demands oil-based primer on every bare surface. Checks, splits, and open grain get caulked with flexible elastomeric sealant. Colorado\'s dry climate pulls moisture out of wood faster than coastal climates &mdash; older wood siding requires more prep time, and we factor that into every quote." },
@@ -58,7 +58,7 @@ Timnath Painting builds exterior painting systems that last 7-10 years using pre
       { type: 'Vinyl Siding', desc: 'Paintable with the correct adhesion primer. Color selection matters here &mdash; going significantly darker than the original factory color can cause thermal expansion stress and may void manufacturer warranties. We assess this before quoting and advise accordingly.' },
       { type: 'Stucco', desc: 'Takes paint well and holds up to Colorado climate when prepared correctly. Surface cracks are addressed with elastomeric caulk or flexible patching compound before any topcoat. We use masonry primer as the base coat on all stucco surfaces.' },
     ],
-    whyUs: `Our crew is owned, not subcontracted. That matters more than most homeowners realize &mdash; it means the same people who show up day one are there day five. No phone-tag with subs, no quality drop-off when we get busy and send whoever is available.
+    whyUs: `The same crew that shows up on day one is there on day five. No quality drop-off when we get busy, no sending whoever is available.
 
 We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore exclusively � covering application practices, environmental compliance, and chemical handling &mdash; not just a marketing badge. It is also why we have access to Sherwin-Williams and Benjamin Moore contractor programs that most local painters do not.
 
@@ -76,7 +76,7 @@ $1M general liability coverage means that if something goes wrong on your proper
 We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
       { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, owned crew — not subcontractors.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, same-day response.' },
       { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
       { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
@@ -133,7 +133,7 @@ Our $1M general liability policy covers multi-unit projects. Certificates of ins
 We provide regular updates throughout your project and are available by phone or text at any stage. You will never wonder where things stand.`,
     relatedServices: [
       { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, owned crew — not subcontractors.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, same-day response.' },
       { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
       { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
@@ -167,12 +167,10 @@ Your commercial property takes the same beating from Colorado\'s climate as any 
     buildingTypes: [
       { type: 'Retail and Strip Mall Exteriors', desc: 'Storefronts and retail centers along the I-25 corridor need coatings that hold up to high UV and freeze-thaw cycles without peeling or fading within two years. We schedule retail projects after hours and on weekends to avoid disrupting business operations.' },
       { type: 'Office Buildings', desc: 'Office exterior repaints require COI documentation and often coordination with building management companies. We handle both. Elastomeric coatings on office buildings bridge hairline cracks in EIFS and stucco exteriors that are common after Colorado winters.' },
-      { type: 'Multi-Family and Apartment Complexes', desc: 'Large multi-family repaints require consistent color matching across multiple buildings and phased scheduling to avoid displacing residents. We bring owned crews &mdash; not subs &mdash; to every phase of a multi-family project.' },
+      { type: 'Multi-Family and Apartment Complexes', desc: 'Large multi-family repaints require consistent color matching across multiple buildings and phased scheduling to avoid displacing residents. We bring the same crew to every phase of a multi-family project, so color consistency and quality standards hold across every building.' },
       { type: 'Industrial and Warehouse Exteriors', desc: 'Metal panels, concrete block, and corrugated steel all require specific primer and topcoat systems. We specify industrial-grade coatings rated for Northern Colorado\'s UV intensity and temperature extremes.' },
     ],
-    whyUs: `Commercial painting bids are easy to get. Reliable execution is harder to find. Most commercial painting contractors in Northern Colorado use subcontractors, which means the crew on day one may not be the crew on day five. Quality variation and scheduling gaps are the result.
-
-Timnath Painting brings an owned crew to every commercial project. The same people who assess the job are the ones who do the work. We do not pass commercial projects off to subs when we get busy.
+    whyUs: `Commercial painting bids are easy to get. Reliable execution is harder to find. The crew that assesses your project is the crew that does the work. The same people show up on day one and day five — no quality variation, no scheduling gaps.
 
 We carry $1M general liability insurance and workers\' compensation on all crew members. COI is available within 24 hours. For property management companies that need to be listed as additional insured, we accommodate that at no cost.`,
     timeline: `Commercial project timelines depend on building size and schedule constraints, but here is how a standard Northern Colorado commercial repaint runs.
@@ -199,7 +197,7 @@ We provide regular updates throughout your project and are available by phone or
       { q: 'What does commercial painting cost per square foot?', a: 'Commercial painting in Northern Colorado typically costs $2.50–$5.50 per square foot for standard exteriors with good existing paint. Complex projects with substrate repairs, elastomeric coatings, or difficult access run higher. We provide detailed written quotes after site assessment.' },
       { q: 'Do you work with property management companies?', a: 'Yes. Most of our commercial work is coordinated with property management companies. We handle documentation, scheduling, and access coordination through the property manager and provide regular progress updates throughout the project.' },
       { q: 'Can you paint EIFS or stucco commercial exteriors?', a: 'Yes. EIFS and stucco are common on commercial buildings along the I-25 corridor. Hairline cracks are addressed with elastomeric caulk before coating. We use elastomeric topcoats that bridge minor crack movement and resist Colorado freeze-thaw cycles.' },
-      { q: 'Do you handle large multi-building commercial projects?', a: 'Yes. We have completed multi-building projects across apartment complexes and office parks in Northern Colorado. We bring owned crews to every phase &mdash; not subcontractors &mdash; so color consistency and quality standards hold across every building.' },
+      { q: 'Do you handle large multi-building commercial projects?', a: 'Yes. We have completed multi-building projects across apartment complexes and office parks in Northern Colorado. We bring the same crew to every phase so color consistency and quality standards hold across every building.' },
     ],
   },
     'fence-staining': {
@@ -241,7 +239,7 @@ We provide regular updates throughout your project and are available by phone or
     relatedServices: [
       { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
       { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, owned crew — not subcontractors.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, same-day response.' },
       { label: 'Exterior Staining', slug: 'exterior-staining', desc: 'Deck, log home, and wood siding stain systems for natural wood surfaces.' },
     ],
     faqs: [
@@ -296,7 +294,7 @@ We provide regular updates throughout your project and are available by phone or
     relatedServices: [
       { label: 'Exterior Painting', slug: 'exterior-painting', desc: '7–10 year paint systems built for Colorado\'s freeze-thaw cycles.' },
       { label: 'HOA Painting', slug: 'hoa-painting', desc: 'Color approval documentation and multi-unit scheduling for HOA communities.' },
-      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, owned crew — not subcontractors.' },
+      { label: 'Commercial Painting', slug: 'commercial-painting', desc: 'After-hours scheduling, $1M liability, same-day response.' },
       { label: 'Fence Staining', slug: 'fence-staining', desc: 'Penetrating stains for cedar, pine, and pressure-treated fences.' },
     ],
     faqs: [
@@ -332,7 +330,7 @@ const CITY_DATA = {
     label: 'Windsor',
     state: 'CO',
     context: 'Established and growing community with lakefront properties, HOA neighborhoods, and premium residential builds',
-    intro: `Windsor combines established neighborhoods near Lake Windsor with newer HOA communities growing along the US-34 and I-25 corridors. The range of home styles &mdash; from lakefront properties to newer planned communities &mdash; means painting needs vary widely. What doesn\'t vary is Colorado\'s climate: 28+ freeze-thaw cycles per year, intense UV at altitude, and temperature swings that push coating systems to their limits.\n\nTimnath Painting serves all of Windsor with the same licensed, insured crew � using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore � that we bring to every project. No subcontractors. No volume rushing. Premium Sherwin-Williams and Benjamin Moore coatings with $1M general liability coverage.`,
+    intro: `Windsor combines established neighborhoods near Lake Windsor with newer HOA communities growing along the US-34 and I-25 corridors. The range of home styles &mdash; from lakefront properties to newer planned communities &mdash; means painting needs vary widely. What doesn\'t vary is Colorado\'s climate: 28+ freeze-thaw cycles per year, intense UV at altitude, and temperature swings that push coating systems to their limits.\n\nTimnath Painting serves all of Windsor with the same licensed, insured crew � using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore � that we bring to every project. No volume rushing. Premium Sherwin-Williams and Benjamin Moore coatings with $1M general liability coverage.`,
     faqs: [
       { q: 'Do you serve Windsor, CO?', a: 'Yes. Timnath Painting serves all of Windsor including neighborhoods near Lake Windsor, Eastman Park, and newer communities along Harmony Road and the I-25 corridor. We\'re in Windsor regularly and can provide on-site quotes quickly.' },
       { q: 'Do you handle HOA color approvals in Windsor?', a: 'Yes. Windsor has a number of HOA communities with strict color approval requirements. We handle the full documentation process &mdash; color samples, approval submissions, and compliance letters &mdash; on your behalf.' },
@@ -358,7 +356,7 @@ const CITY_DATA = {
     label: 'Fort Collins',
     state: 'CO',
     context: 'Larimer County seat with a diverse housing stock ranging from historic Craftsman homes to newer neighborhoods',
-    intro: `Fort Collins is the largest city in Northern Colorado and has one of the most diverse housing stocks in the region &mdash; historic Craftsman and Victorian homes in Old Town, mid-century builds in established neighborhoods, and newer subdivisions spreading south and east. Each era of construction comes with its own set of coating challenges. Historic homes require careful prep, lead paint awareness, and specialty primers. Newer builds need proper topcoat systems, not just builder repaints.\n\nTimnath Painting serves Fort Collins with the same standards we apply everywhere &mdash; Licensed, Insured, and using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $1M general liability. No subcontractors.`,
+    intro: `Fort Collins is the largest city in Northern Colorado and has one of the most diverse housing stocks in the region &mdash; historic Craftsman and Victorian homes in Old Town, mid-century builds in established neighborhoods, and newer subdivisions spreading south and east. Each era of construction comes with its own set of coating challenges. Historic homes require careful prep, lead paint awareness, and specialty primers. Newer builds need proper topcoat systems, not just builder repaints.\n\nTimnath Painting serves Fort Collins with the same standards we apply everywhere &mdash; Licensed, Insured, and using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore. $1M general liability.`,
     faqs: [
       { q: 'Does Timnath Painting serve Fort Collins?', a: 'Yes. We serve all areas of Fort Collins including Old Town, Midtown, and newer developments in southeast Fort Collins. Fort Collins is within our standard service area with no travel surcharges.' },
       { q: 'Can you paint historic homes in Old Town Fort Collins?', a: 'Yes. Older homes in Old Town require special attention &mdash; lead paint testing and containment on pre-1978 homes, oil-based primers for chalky or bare wood surfaces, and careful prep to avoid damaging historic trim detail. We\'re experienced with the specific challenges of older Fort Collins housing stock.' },
