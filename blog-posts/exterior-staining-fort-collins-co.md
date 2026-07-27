@@ -34,7 +34,7 @@ sheetRow: 48
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:50:03.830Z'
-updatedAt: '2026-07-22T13:26:01.386Z'
+updatedAt: '2026-07-27T16:35:17.190Z'
 gbpGenerated: true
 ---
 ## What Is Exterior Staining — and Is It Right for Your Home?
