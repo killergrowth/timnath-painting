@@ -8,7 +8,7 @@ excerpt: >-
   Real numbers for exterior staining cost in Fort Collins, CO — by surface,
   stain type, and what Colorado prep actually adds to your project.
 featuredImage: blog-posts/images/exterior-staining-cost-fort-collins-co.jpg
-inlineImage1: null
+inlineImage1: blog-posts/images/exterior-staining-cost-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a professional painter applying semi-transparent stain to a
