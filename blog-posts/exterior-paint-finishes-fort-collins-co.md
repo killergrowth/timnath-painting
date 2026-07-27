@@ -3,7 +3,7 @@ slug: exterior-paint-finishes-fort-collins-co
 title: 'Exterior Paint Finishes: Satin, Eggshell, Flat — Which to Use Where'
 status: scheduled
 publishDate: null
-scheduledDate: 2026-08-11T13:00:00.000Z
+scheduledDate: '2026-08-11T13:00:00.000Z'
 excerpt: >-
   Not sure which exterior paint finish to use on your home? Here's a
   surface-by-surface breakdown built for Northern Colorado's climate.
@@ -34,7 +34,8 @@ sheetRow: 23
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:33:40.448Z'
-updatedAt: '2026-05-19T20:33:40.448Z'
+updatedAt: '2026-07-27T16:27:07.577Z'
+gbpGenerated: true
 ---
 ## The Finish Question Nobody Explains Well
 
@@ -44,7 +45,7 @@ Most homeowners freeze. Flat, eggshell, satin, semi-gloss — it sounds like a c
 
 Here's the plain-language breakdown, surface by surface.
 
----
+***
 
 ## What "Finish" Actually Means
 
@@ -52,7 +53,7 @@ Paint finish refers to the sheen level — how much light the dried paint reflec
 
 For exterior work in the Fort Collins, CO area, durability has to be part of the equation. A finish that works great in mild climates may fail early here.
 
----
+***
 
 ## Flat / Matte Finish
 
@@ -64,7 +65,7 @@ The downside outdoors? It's the least washable and the least resistant to moistu
 
 **Use it when:** Your walls are smooth, well-prepped, and you're on a sheltered elevation. Avoid it on surfaces that stay wet after rain or are hit by irrigation systems.
 
----
+***
 
 ## Eggshell Finish
 
@@ -74,7 +75,7 @@ Eggshell sits in the sweet spot for most [exterior painting](https://timnathpain
 
 For the typical residential home in Timnath, Windsor, or Fort Collins, eggshell on the main body is a solid default. It gives a professional appearance without the clinical look of high-gloss, and it handles sun and wind exposure better than flat.
 
----
+***
 
 ## Satin Finish
 
@@ -86,7 +87,7 @@ Trim work — the boards around your windows, the fascia along your roofline, th
 
 In Colorado's high-UV environment, satin finishes on trim also tend to retain color longer before chalking or fading, which matters when you're trying to get a 7–10 year system out of your paint job.
 
----
+***
 
 ## Semi-Gloss and Gloss Finish
 
@@ -98,24 +99,24 @@ Porch ceilings are another good candidate. They trap moisture if not properly fi
 
 One note: gloss and semi-gloss finishes amplify imperfections. If the surface isn't prepped cleanly — filling, sanding, priming — the sheen will highlight every flaw. Prep work matters more, not less, the higher you go on sheen.
 
----
+***
 
 ## Colorado-Specific Considerations
 
 Fort Collins and the surrounding Northern Colorado area sit at roughly 5,000 feet. That elevation means:
 
-- **UV exposure 10–15% higher** than sea level — accelerates fading and chalking, especially on south- and west-facing walls
-- **28+ freeze-thaw cycles per year** — paint that wasn't applied with proper adhesion will crack, peel, and fail at surface joints
-- **Low humidity + high wind** — dry conditions can cause flat finishes to chalk faster and make repainting harder
+* **UV exposure 10–15% higher** than sea level — accelerates fading and chalking, especially on south- and west-facing walls
+* **28+ freeze-thaw cycles per year** — paint that wasn't applied with proper adhesion will crack, peel, and fail at surface joints
+* **Low humidity + high wind** — dry conditions can cause flat finishes to chalk faster and make repainting harder
 
 These aren't abstract concerns — they're the reason finish selection matters here in a way it might not in Denver or down in the foothills. The [areas we serve](https://timnathpainting.com/areas-served/) across Northern Colorado all deal with these same conditions.
 
----
+***
 
 ## Quick Reference: Finish by Surface
 
 | Surface | Recommended Finish |
-|---|---|
+| ------- | ------------------ |
 | Main siding / body walls | Eggshell |
 | Trim, fascia, window frames | Satin |
 | Front door | Semi-gloss or Gloss |
@@ -123,7 +124,7 @@ These aren't abstract concerns — they're the reason finish selection matters h
 | Porch ceiling | Semi-gloss |
 | Smooth new construction siding | Flat or Eggshell |
 
----
+***
 
 ## Still Not Sure? That's What the Quote Is For
 
