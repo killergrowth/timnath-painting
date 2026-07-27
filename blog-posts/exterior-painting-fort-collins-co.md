@@ -3,13 +3,13 @@ slug: exterior-painting-fort-collins-co
 title: 'Exterior Painting in Fort Collins and the Front Range: What''s Different'
 status: scheduled
 publishDate: null
-scheduledDate: 2026-12-11T14:00:00.000Z
+scheduledDate: '2026-12-11T14:00:00.000Z'
 excerpt: >-
   Fort Collins homes face unique painting challenges — altitude, HOAs, and
   Colorado's climate all factor in. Here's what local homeowners need to know.
 featuredImage: blog-posts/images/exterior-painting-fort-collins-co.jpg
 inlineImage1: null
-inlineImage2: null
+inlineImage2: blog-posts/images/exterior-painting-fort-collins-co-inline2.jpg
 imagePrompt: >-
   I need an image of a freshly painted two-story craftsman-style home in Fort
   Collins, Colorado with a blue sky and the Front Range mountains visible in the
@@ -33,7 +33,8 @@ sheetRow: 59
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:57:13.241Z'
-updatedAt: '2026-05-19T20:57:13.241Z'
+updatedAt: '2026-07-27T16:06:32.707Z'
+gbpGenerated: true
 ---
 ## Exterior Painting in Fort Collins Isn't the Same as Anywhere Else
 
@@ -41,7 +42,7 @@ If you've gotten quotes from contractors who work across multiple states or just
 
 Altitude, UV exposure, temperature swings, HOA requirements, and the region's specific architectural styles all shape what a quality paint job actually looks like here. Here's what matters if you're a Fort Collins-area homeowner thinking about an exterior repaint.
 
----
+***
 
 ## The Altitude Factor Is Real
 
@@ -49,7 +50,7 @@ Fort Collins sits at roughly 5,000 feet. That elevation means UV radiation runs 
 
 The other variable is freeze-thaw cycling. The Front Range doesn't get the sustained deep freezes of the Midwest, but it cycles above and below 32°F repeatedly through late fall, winter, and early spring. Paint systems that aren't formulated to flex through those cycles will crack and peel within a few years. For most Fort Collins homes, a properly selected and applied paint system should hold up 7–10 years — not the 3–5 you'd get with a budget approach.
 
----
+***
 
 ## Fort Collins Architecture: What You're Actually Painting
 
@@ -63,7 +64,7 @@ Fort Collins has a diverse housing stock that shapes both the prep work required
 
 If you're in an older neighborhood near Old Town, you may also be dealing with lead paint on trim or siding — something worth flagging to any contractor you're evaluating.
 
----
+***
 
 ## HOA Requirements in Fort Collins
 
@@ -73,19 +74,19 @@ Before scheduling any exterior work, pull your HOA's architectural guidelines an
 
 We work in HOA communities throughout the Fort Collins area regularly and can help walk through what the submission process looks like if you're not sure where to start.
 
----
+***
 
 ## What Does Exterior Painting Cost in Fort Collins?
 
 Pricing in the Fort Collins market varies based on home size, siding type, prep condition, and product selection. Ballpark ranges for a typical single-family home:
 
-- **1,500–2,000 sq ft ranch or small two-story:** $3,500–$6,000
-- **2,000–3,000 sq ft two-story:** $5,500–$9,000
-- **Larger or more complex homes (trim detail, multiple stories, wood siding):** $9,000+
+* **1,500–2,000 sq ft ranch or small two-story:** $3,500–$6,000
+* **2,000–3,000 sq ft two-story:** $5,500–$9,000
+* **Larger or more complex homes (trim detail, multiple stories, wood siding):** $9,000+
 
 These ranges assume proper surface prep, premium exterior coatings, and full trim work. Quotes significantly below these ranges typically reflect skipped prep steps, thin product application, or inexperienced labor — all of which show up in how the paint holds over the next 2–3 Colorado winters.
 
----
+***
 
 ## Our Service Area Around Fort Collins
 
@@ -93,7 +94,7 @@ We serve Fort Collins and the surrounding Northern Colorado communities from our
 
 Our [exterior painting service](/exterior-painting/) is built around climate-specific product selection and proper prep — not the fastest turnaround at the lowest price. We use premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore, and carry $2M in liability coverage, which matters when you're trusting someone with a significant investment.
 
----
+***
 
 ## Get a Free On-Site Quote
 
