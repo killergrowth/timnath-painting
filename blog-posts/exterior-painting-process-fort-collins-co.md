@@ -8,8 +8,8 @@ excerpt: >-
   A day-by-day walkthrough of what to expect from a professional exterior
   painting job in Fort Collins, CO — from prep to final inspection.
 featuredImage: blog-posts/images/exterior-painting-process-fort-collins-co.jpg
-inlineImage1: null
-inlineImage2: null
+inlineImage1: blog-posts/images/exterior-painting-process-fort-collins-co-inline1.jpg
+inlineImage2: blog-posts/images/exterior-painting-process-fort-collins-co-inline2.jpg
 imagePrompt: >-
   I need an image of a professional painter in work gear pressure washing the
   exterior of a two-story Colorado home on a bright sunny day, with mountains
