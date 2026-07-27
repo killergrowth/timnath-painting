@@ -3,7 +3,7 @@ slug: exterior-staining-cost-fort-collins-co
 title: 'Exterior Staining Cost: What to Budget for Your Home in Fort Collins, CO'
 status: scheduled
 publishDate: null
-scheduledDate: 2026-11-10T14:00:00.000Z
+scheduledDate: '2026-11-10T14:00:00.000Z'
 excerpt: >-
   Real numbers for exterior staining cost in Fort Collins, CO — by surface,
   stain type, and what Colorado prep actually adds to your project.
@@ -34,7 +34,8 @@ sheetRow: 49
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:50:41.958Z'
-updatedAt: '2026-05-19T20:50:41.958Z'
+updatedAt: '2026-07-27T16:41:30.750Z'
+gbpGenerated: true
 ---
 ## What Does Exterior Staining Actually Cost in Fort Collins?
 
@@ -44,36 +45,38 @@ The real number depends on what you're staining, what product you're using, and 
 
 Here's a practical breakdown homeowners in Fort Collins, Timnath, and Windsor can actually plan around.
 
----
+***
 
 ## Cost by Surface Type
 
 ### Fence Staining
+
 Fence staining is the most common exterior staining project for residential homeowners. Expect:
 
-- **Basic wood privacy fence (150–200 linear ft):** $600–$1,400
-- **Split-rail or open-style fence:** $400–$900
-- **Larger ranch-style or multi-section fencing:** $1,500–$3,000+
+* **Basic wood privacy fence (150–200 linear ft):** $600–$1,400
+* **Split-rail or open-style fence:** $400–$900
+* **Larger ranch-style or multi-section fencing:** $1,500–$3,000+
 
 Price per linear foot typically runs **$4–$8**, depending on fence height, board condition, and stain type. Two-sided fences cost more — both faces need coverage.
 
 ### Deck and Exterior Wood Staining
+
 Horizontal surfaces take more abuse than vertical ones, especially in Colorado where snow sits on surfaces and UV degrades finishes faster.
 
-- **Small deck (150–250 sq ft):** $500–$1,100
-- **Mid-size deck (250–500 sq ft):** $900–$2,000
-- **Large deck or multi-level:** $2,000–$4,500+
+* **Small deck (150–250 sq ft):** $500–$1,100
+* **Mid-size deck (250–500 sq ft):** $900–$2,000
+* **Large deck or multi-level:** $2,000–$4,500+
 
 If your deck has existing peeling stain or graying wood, **prep costs will add $150–$500** before a single drop of new stain goes on.
 
----
+***
 
 ## Stain Type Changes the Math
 
 Not all stains are the same price — or the same value.
 
 | Stain Type | Cost Range (materials) | Lifespan (Colorado) |
-|---|---|---|
+| ---------- | ---------------------- | ------------------- |
 | Solid stain | $35–$60/gal | 4–7 years |
 | Semi-transparent | $30–$55/gal | 3–5 years |
 | Clear/natural | $25–$45/gal | 1–3 years |
@@ -82,7 +85,7 @@ For Northern Colorado specifically, solid and semi-transparent stains outperform
 
 Our [exterior staining services](/exterior-staining/) default to products engineered for Colorado's climate conditions, not generalist big-box options.
 
----
+***
 
 ## What Drives Prep Costs in Colorado
 
@@ -90,26 +93,26 @@ Prep is where most estimates fall apart — and where contractors cut corners.
 
 In Fort Collins and surrounding areas, prep typically includes:
 
-- **Pressure washing:** $100–$250 for fences and decks
-- **Wood brightener treatment:** $75–$150 (opens wood grain, improves adhesion)
-- **Sanding or stripping old stain:** $150–$500 depending on severity
-- **Caulking gaps or replacing boards:** $50–$300+
+* **Pressure washing:** $100–$250 for fences and decks
+* **Wood brightener treatment:** $75–$150 (opens wood grain, improves adhesion)
+* **Sanding or stripping old stain:** $150–$500 depending on severity
+* **Caulking gaps or replacing boards:** $50–$300+
 
 Skip the prep and you're paying full price for a stain job that fails in 2 years instead of 7. We don't cut that corner — and if a contractor is quoting you unusually low, ask what's included in prep.
 
----
+***
 
 ## Total Project Estimates: Real Numbers
 
 To give you something to plan around, here are realistic all-in numbers for common projects in the Fort Collins area:
 
-- **Standard 6-ft cedar privacy fence (160 linear ft), semi-transparent stain, full prep:** $1,100–$1,800
-- **Composite-adjacent wood deck (300 sq ft), solid stain, pressure wash + brightener:** $1,200–$2,200
-- **Combination fence + deck project, full prep:** $2,200–$4,000+
+* **Standard 6-ft cedar privacy fence (160 linear ft), semi-transparent stain, full prep:** $1,100–$1,800
+* **Composite-adjacent wood deck (300 sq ft), solid stain, pressure wash + brightener:** $1,200–$2,200
+* **Combination fence + deck project, full prep:** $2,200–$4,000+
 
 These are not minimums. They reflect quality product, proper prep, and licensed work with $2M liability coverage — not a one-person crew with a roller and a bucket.
 
----
+***
 
 ## Why It Costs More to Do It Right the First Time
 
@@ -119,7 +122,7 @@ Colorado's climate is genuinely harder on exterior wood than most of the country
 
 Our 7–10 year paint and stain systems are built around that reality. You're not overpaying for a premium — you're pricing in durability.
 
----
+***
 
 ## Get an Accurate Number for Your Project
 
