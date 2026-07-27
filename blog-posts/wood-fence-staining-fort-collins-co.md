@@ -3,12 +3,12 @@ slug: wood-fence-staining-fort-collins-co
 title: 'Wood Fence Staining: Complete Guide for Colorado Homeowners'
 status: scheduled
 publishDate: null
-scheduledDate: 2026-08-25T13:00:00.000Z
+scheduledDate: '2026-08-25T13:00:00.000Z'
 excerpt: >-
   Colorado's UV exposure and freeze-thaw cycles destroy untreated wood fast.
   Here's exactly how to stain your fence the right way.
 featuredImage: blog-posts/images/wood-fence-staining-fort-collins-co.jpg
-inlineImage1: null
+inlineImage1: blog-posts/images/wood-fence-staining-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a freshly stained cedar wood privacy fence in a Northern
@@ -34,7 +34,8 @@ sheetRow: 27
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:36:09.356Z'
-updatedAt: '2026-05-19T20:36:09.356Z'
+updatedAt: '2026-07-27T16:01:36.803Z'
+gbpGenerated: true
 ---
 ## Why Colorado Is Hard on Wood Fences
 
@@ -42,7 +43,7 @@ A wood fence in Fort Collins or Timnath isn't living in a forgiving climate. At 
 
 The good news: a properly stained fence can last 3–5 years between applications and resist everything Colorado throws at it — if you do it right. This guide covers the full process, start to finish.
 
----
+***
 
 ## Step 1: Wait on a New Fence
 
@@ -50,30 +51,32 @@ This is the mistake we see most often. If your fence was just installed, **do no
 
 New lumber — especially pressure-treated wood — needs time to dry out and cure. Staining too early traps moisture inside the wood, which causes the finish to peel and fail within a season. The general rule:
 
-- **Pressure-treated lumber:** Wait 6–12 months
-- **Cedar or redwood:** Wait 2–4 weeks minimum, longer if it was kiln-dried
+* **Pressure-treated lumber:** Wait 6–12 months
+* **Cedar or redwood:** Wait 2–4 weeks minimum, longer if it was kiln-dried
 
 A simple splash test tells you when wood is ready: pour a small amount of water on the surface. If it beads up, the wood is still too wet to stain. If it absorbs, you're good to go.
 
----
+***
 
 ## Step 2: Prep the Surface — Don't Skip This
 
 No stain performs well on dirty, grayed, or weathered wood. Prep is where most DIY fence projects go wrong.
 
 **For new or unweathered fences:**
-- Lightly sand rough spots
-- Remove dust and debris
-- Let dry completely before applying stain
+
+* Lightly sand rough spots
+* Remove dust and debris
+* Let dry completely before applying stain
 
 **For existing fences that have weathered:**
-- Pressure wash at 1,200–1,500 PSI (too high strips wood fibers)
-- Use a wood brightener or cleaner to remove gray oxidation and mill glaze
-- Let dry 24–48 hours — longer in humid conditions
+
+* Pressure wash at 1,200–1,500 PSI (too high strips wood fibers)
+* Use a wood brightener or cleaner to remove gray oxidation and mill glaze
+* Let dry 24–48 hours — longer in humid conditions
 
 Proper prep is non-negotiable in Colorado. Stain applied over a dirty or damp surface will peel, bubble, or fail to penetrate the wood grain.
 
----
+***
 
 ## Step 3: Choosing the Right Stain
 
@@ -89,34 +92,36 @@ Not all stains hold up equally in high-UV, high-altitude environments. Here's ho
 
 For our [fence staining](/fence-staining/) projects across Northern Colorado, we consistently lean toward penetrating oil-based semi-transparent stains for cedar fences — they hold up through the freeze-thaw season better than most alternatives.
 
----
+***
 
 ## Step 4: Application
 
 Timing matters. Apply stain:
-- When temps are between 50°F and 90°F
-- On a dry day with no rain in the forecast for 24–48 hours
-- Out of direct midday sun when possible — hot wood causes stain to dry too fast and lap marks form
+
+* When temps are between 50°F and 90°F
+* On a dry day with no rain in the forecast for 24–48 hours
+* Out of direct midday sun when possible — hot wood causes stain to dry too fast and lap marks form
 
 **Application methods:**
-- **Brush and roller:** Most control, best penetration into tight grain. Slower but produces the best finish.
-- **Sprayer:** Fastest for large surfaces. Requires backbrushing to work stain into grain and avoid overspray on neighboring surfaces.
+
+* **Brush and roller:** Most control, best penetration into tight grain. Slower but produces the best finish.
+* **Sprayer:** Fastest for large surfaces. Requires backbrushing to work stain into grain and avoid overspray on neighboring surfaces.
 
 Apply thin, even coats. Two light coats almost always outperform one heavy coat. Follow manufacturer dry times between coats.
 
----
+***
 
 ## Step 5: Maintenance Schedule for Colorado
 
 Even a well-stained fence needs periodic attention. Here's a realistic maintenance timeline for Fort Collins and surrounding areas:
 
-- **Year 1:** Inspect for peeling, cracking, or graying — especially after the first winter
-- **Every 2–3 years:** Full clean and recoat for semi-transparent or transparent stains
-- **Every 4–5 years:** Solid stains typically hold longer before needing reapplication
+* **Year 1:** Inspect for peeling, cracking, or graying — especially after the first winter
+* **Every 2–3 years:** Full clean and recoat for semi-transparent or transparent stains
+* **Every 4–5 years:** Solid stains typically hold longer before needing reapplication
 
 Annual cleaning — even just a garden hose rinse in fall — extends life significantly by preventing dirt and mold from breaking down the finish.
 
----
+***
 
 ## Get a Professional Assessment
 

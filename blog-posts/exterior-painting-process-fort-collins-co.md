@@ -1,8 +1,8 @@
 ---
 slug: exterior-painting-process-fort-collins-co
 title: What Happens During a Professional Exterior Painting Job?
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-07-24T13:00:52.244Z'
 scheduledDate: '2026-07-24T13:00:00.000Z'
 excerpt: >-
   A day-by-day walkthrough of what to expect from a professional exterior
