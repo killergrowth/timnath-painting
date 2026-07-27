@@ -34,7 +34,7 @@ sheetRow: 27
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:36:09.356Z'
-updatedAt: '2026-07-27T16:01:36.803Z'
+updatedAt: '2026-07-27T16:12:24.243Z'
 gbpGenerated: true
 ---
 ## Why Colorado Is Hard on Wood Fences
