@@ -34,7 +34,7 @@ sheetRow: 49
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:50:41.958Z'
-updatedAt: '2026-07-27T16:41:30.750Z'
+updatedAt: '2026-07-27T16:57:36.429Z'
 gbpGenerated: true
 ---
 ## What Does Exterior Staining Actually Cost in Fort Collins?
