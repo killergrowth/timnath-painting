@@ -407,6 +407,7 @@ document.addEventListener("DOMContentLoaded", function fixTransforms() {
           if (note) note.style.display = 'none';
           window.dataLayer = window.dataLayer || [];
           window.dataLayer.push({ event: 'form_submit_success', form_type: formType });
+          if (typeof window.fathom !== 'undefined') { window.fathom.trackEvent('form submit - ' + formType); }
           form.replaceWith(thankYou);
         } else {
           if (btn) { btn.disabled = false; btn.textContent = orig; }
