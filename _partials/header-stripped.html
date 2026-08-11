@@ -1,15 +1,25 @@
-<header style="background:#201B10;padding:14px 0;position:sticky;top:0;z-index:999;">
+<header style="background:#AE360E;padding:12px 0;position:sticky;top:0;z-index:999;">
   <div class="container">
-    <div style="display:flex;align-items:center;justify-content:space-between;">
-      <a href="/" style="display:inline-block;line-height:0;">
-        <picture>
-          <source srcset="/assets/images/logo-top-bar.webp" type="image/webp">
-          <img src="/assets/images/logo-top-bar.png" alt="Timnath Painting" width="163" height="60" style="height:48px;width:auto;filter:brightness(0) invert(1);">
-        </picture>
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;">
+      <a href="/" style="display:inline-block;line-height:0;flex-shrink:0;">
+        <img src="/assets/images/logo-ad-lp.png" alt="Timnath Painting" class="hdr-logo">
       </a>
-      <a href="tel:9706703965" style="color:#fff;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;">
-        <i class="fa-solid fa-phone" style="color:#AE360E;margin-right:7px;"></i>Call or Text: (970) 670-3965
+      <a href="tel:9706703965" class="hdr-btn">
+        <i class="fa-solid fa-phone" style="font-size:13px;flex-shrink:0;"></i>
+        <span class="hdr-full">Call or Text: (970) 670&#x2011;3965</span>
+        <span class="hdr-short">(970) 670&#x2011;3965</span>
       </a>
     </div>
   </div>
+  <style>
+    .hdr-logo{height:48px;width:auto;}
+    .hdr-btn{display:inline-flex;align-items:center;gap:7px;background:#fff;color:#AE360E;text-decoration:none;font-weight:700;font-size:14px;white-space:nowrap;padding:9px 18px;border-radius:100px;line-height:1;flex-shrink:0;}
+    .hdr-short{display:none;}
+    @media(max-width:480px){
+      .hdr-logo{height:34px;}
+      .hdr-btn{font-size:13px;padding:8px 12px;gap:5px;}
+      .hdr-full{display:none;}
+      .hdr-short{display:inline;}
+    }
+  </style>
 </header>

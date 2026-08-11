@@ -3,14 +3,14 @@ slug: how-often-repaint-exterior-fort-collins-co
 title: >-
   How Often Should You Repaint Your Home's Exterior? (Fort Collins & Northern
   Colorado Guide)
-status: scheduled
-publishDate: null
-scheduledDate: 2026-07-28T13:00:00.000Z
+status: published
+publishDate: '2026-07-28T13:00:21.687Z'
+scheduledDate: '2026-07-28T13:00:00.000Z'
 excerpt: >-
   National repainting timelines don't account for Colorado's climate. Here's how
   often to repaint by material in Fort Collins and Northern Colorado.
-featuredImage: null
-inlineImage1: null
+featuredImage: blog-posts/images/how-often-repaint-exterior-fort-collins-co.jpg
+inlineImage1: blog-posts/images/how-often-repaint-exterior-fort-collins-co-inline1.jpg
 inlineImage2: null
 imagePrompt: >-
   I need an image of a freshly painted two-story colonial home exterior in a
@@ -35,7 +35,8 @@ sheetRow: 19
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
 createdAt: '2026-05-19T20:30:59.241Z'
-updatedAt: '2026-05-19T20:30:59.241Z'
+updatedAt: '2026-07-27T16:28:36.154Z'
+gbpGenerated: true
 ---
 ## The Answer Depends on What Your Home Is Made Of — and Where You Live
 
@@ -45,7 +46,7 @@ Up here, your paint is fighting harder than it would in most of the country. We 
 
 Here's the real breakdown — by material.
 
----
+***
 
 ## Repainting Timelines by Exterior Material
 
@@ -77,19 +78,19 @@ If your home has unpainted brick, you likely don't need to do anything — brick
 
 Painted brick in good condition can often go 15+ years between repaints, but inspect it annually for peeling, especially around window and door frames where moisture tends to collect.
 
----
+***
 
 ## How to Know When It's Time — Regardless of Material
 
 More than the calendar, watch for these signals:
 
-- **Peeling or bubbling paint** — moisture is getting underneath the film
-- **Chalking** — run your hand along the siding; if it comes away with a powdery residue, the binder has broken down
-- **Fading or color shift** — UV degradation that won't wash off
-- **Visible bare substrate** — your home is now unprotected
-- **Increased energy bills** — in rare cases, failed exterior coatings contribute to thermal performance issues
+* **Peeling or bubbling paint** — moisture is getting underneath the film
+* **Chalking** — run your hand along the siding; if it comes away with a powdery residue, the binder has broken down
+* **Fading or color shift** — UV degradation that won't wash off
+* **Visible bare substrate** — your home is now unprotected
+* **Increased energy bills** — in rare cases, failed exterior coatings contribute to thermal performance issues
 
----
+***
 
 ## Why Colorado Homes Need More Than a Standard Paint Job
 
@@ -101,6 +102,6 @@ If you're in Fort Collins, Timnath, Windsor, or anywhere in the surrounding area
 
 You can also browse [our exterior painting services](/exterior-painting/) or [see recent work in our gallery](/gallery/) to get a sense of what a properly done repaint looks like compared to what most contractors deliver.
 
----
+***
 
 **Bottom line:** If you're using a national repainting guide for a home in Northern Colorado, you're probably waiting too long. Schedule a free estimate and we'll tell you exactly where your home stands.
