@@ -1456,7 +1456,8 @@ function buildHowItWorks() {
   <link rel="canonical" href="https://timnathpainting.com/how-it-works/">
   ${headPartial}
 </head>
-<body class="page-wrapper">
+<body>
+<div class="page-wrapper">
 ${header}
 
 <main>
@@ -1610,6 +1611,7 @@ ${header}
 </main>
 
 ${footer}
+</div>
 </body>
 </html>`;
 
