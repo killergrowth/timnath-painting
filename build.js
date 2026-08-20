@@ -1512,6 +1512,11 @@ ${header}
               <i class="fa-solid fa-bolt" style="color:#AE360E; margin-right:8px;"></i>
               <strong style="color:#201B10;">Timeline:</strong> Most jobs quoted within 24 hours. Scheduling within 1–2 weeks.
             </div>
+            <div style="margin-top:16px; padding:20px; background:#fff4f0; border-radius:10px; text-align:center;">
+              <p style="font-size:13px; font-weight:700; color:#201B10; margin:0 0 10px;"><i class="fa-solid fa-palette" style="color:#AE360E; margin-right:6px;"></i>Not sure which color?</p>
+              <p style="font-size:13px; color:#5a5650; margin:0 0 12px; line-height:1.6;">Sherwin-Williams offers free in-store design consultations &mdash; or try their color visualizer online.</p>
+              <a href="https://www.sherwin-williams.com/homeowners/color/color-tools/color-visualizer" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:6px; padding:9px 20px; background:#201B10; color:#fff; font-weight:700; font-size:13px; border-radius:100px; text-decoration:none;">Try SW Color Visualizer <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:10px;"></i></a>
+            </div>
           </div>
         </div>
 
@@ -1564,19 +1569,7 @@ ${header}
     </div>
   </section>
 
-  <!-- SW Callout -->
-  <section style="padding:64px 0; background:#f8f5f1;">
-    <div class="container">
-      <div style="max-width:680px; margin:0 auto; background:#fff; border-radius:16px; padding:40px 36px; border:1px solid #e8e3dd; text-align:center;">
-        <i class="fa-solid fa-paint-roller" style="font-size:36px; color:#AE360E; margin-bottom:16px;"></i>
-        <h3 style="font-size:22px; font-weight:800; color:#201B10; margin-bottom:12px;">Not Sure Which Color?</h3>
-        <p style="color:#5a5650; font-size:15px; line-height:1.75; margin-bottom:20px;">Sherwin-Williams offers free in-store design consultations — walk in with your address, HOA palette, or just a vibe, and they'll help you narrow it down. We work with SW and Benjamin Moore products and can match whatever you land on.</p>
-        <a href="https://www.sherwin-williams.com/homeowners/color/color-tools/color-visualizer" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:12px 28px; background:#201B10; color:#fff; font-weight:700; font-size:14px; border-radius:100px; text-decoration:none;">
-          Try the SW Color Visualizer <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:11px;"></i>
-        </a>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Contextual links to service pages -->
   <section style="padding:56px 0; background:#201B10;">
