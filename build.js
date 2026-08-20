@@ -1437,6 +1437,188 @@ SERVICES.forEach(service => {
   });
 });
 
+// ─── HOW IT WORKS / PROCESS PAGE ──────────────────────────────────────────
+function buildHowItWorks() {
+  const outDir = path.join(DIST, 'how-it-works');
+  fs.mkdirSync(outDir, { recursive: true });
+
+  const header = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
+  const footer = fs.readFileSync(path.join(PARTS, 'footer.html'), 'utf8');
+  const headPartial = fs.readFileSync(path.join(PARTS, 'head.html'), 'utf8');
+
+  const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Process | Timnath Painting</title>
+  <meta name="description" content="See how Timnath Painting makes exterior painting simple — from color selection to HOA approval to a finished job. Two tracks: standard and HOA neighborhoods.">
+  <link rel="canonical" href="https://timnathpainting.com/how-it-works/">
+  ${headPartial}
+</head>
+<body class="page-wrapper">
+${header}
+
+<main>
+  <!-- Page Hero -->
+  <section style="background:#201B10; padding:72px 0 56px;">
+    <div class="container text-center">
+      <p style="color:#AE360E; font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Our Process</p>
+      <h1 style="color:#fff; font-size:clamp(32px,5vw,52px); font-weight:800; margin-bottom:16px; line-height:1.15;">We Make This Simple</h1>
+      <p style="color:rgba(255,255,255,0.75); font-size:18px; max-width:560px; margin:0 auto 28px;">Here's exactly what to expect — from picking your color to the last brushstroke.</p>
+      <a href="/get-a-quote/" class="wallox-btn wallox-btn--primary">Get a Free Quote <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section style="padding:64px 0 0; background:#f8f5f1;">
+    <div class="container">
+      <div class="text-center" style="max-width:640px; margin:0 auto 56px;">
+        <h2 style="font-size:clamp(24px,3.5vw,36px); font-weight:800; color:#201B10; margin-bottom:14px;">Pick Your Track</h2>
+        <p style="color:#5a5650; font-size:17px; line-height:1.75;">Most jobs are straightforward. HOA neighborhoods add one extra step — but we've mapped it all out so you know what's coming.</p>
+      </div>
+
+      <!-- Two Track Layout -->
+      <div class="row gutter-y-30" style="margin-bottom:80px;">
+
+        <!-- Track 1: Standard -->
+        <div class="col-lg-6">
+          <div style="background:#fff; border-radius:16px; padding:40px 36px; height:100%; border:2px solid #e8e3dd; box-shadow:0 4px 24px rgba(0,0,0,0.05);">
+            <div style="display:flex; align-items:center; gap:14px; margin-bottom:28px;">
+              <div style="width:52px; height:52px; background:#201B10; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <i class="fa-solid fa-house" style="color:#fff; font-size:22px;"></i>
+              </div>
+              <div>
+                <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#AE360E; margin:0 0 4px;">Standard</p>
+                <h3 style="font-size:22px; font-weight:800; color:#201B10; margin:0;">Interior &amp; Standard Exterior</h3>
+              </div>
+            </div>
+            <div class="process-steps">
+              ${[
+                ['1', 'fa-palette', 'Pick Your Color', 'Browse Sherwin-Williams or Benjamin Moore swatches. Not sure where to start? Sherwin-Williams offers free in-store design consultations.'],
+                ['2', 'fa-phone', 'Call for a Quote', 'We\'ll schedule a free on-site visit. You\'ll have a quote within 24 hours.'],
+                ['3', 'fa-calendar-check', 'We Schedule &amp; Show Up', 'Our crew arrives on time, does the work, and cleans up completely before leaving.'],
+              ].map(([num, icon, title, desc]) => `
+              <div style="display:flex; gap:18px; margin-bottom:28px;">
+                <div style="flex-shrink:0; width:38px; height:38px; border-radius:50%; background:#f0ece7; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; color:#201B10;">${num}</div>
+                <div>
+                  <p style="font-weight:700; color:#201B10; margin:0 0 4px; font-size:15px;"><i class="fa-solid ${icon}" style="color:#AE360E; margin-right:8px; font-size:13px;"></i>${title}</p>
+                  <p style="color:#5a5650; font-size:14px; line-height:1.7; margin:0;">${desc}</p>
+                </div>
+              </div>`).join('')}
+            </div>
+            <div style="margin-top:8px; padding:16px 20px; background:#f8f5f1; border-radius:10px; font-size:14px; color:#5a5650;">
+              <i class="fa-solid fa-bolt" style="color:#AE360E; margin-right:8px;"></i>
+              <strong style="color:#201B10;">Timeline:</strong> Most jobs quoted within 24 hours. Scheduling within 1–2 weeks.
+            </div>
+          </div>
+        </div>
+
+        <!-- Track 2: HOA -->
+        <div class="col-lg-6">
+          <div style="background:#fff; border-radius:16px; padding:40px 36px; height:100%; border:2px solid #AE360E; box-shadow:0 4px 24px rgba(174,54,14,0.08);">
+            <div style="display:flex; align-items:center; gap:14px; margin-bottom:28px;">
+              <div style="width:52px; height:52px; background:#AE360E; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+                <i class="fa-solid fa-building-columns" style="color:#fff; font-size:22px;"></i>
+              </div>
+              <div>
+                <p style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#AE360E; margin:0 0 4px;">HOA Neighborhoods</p>
+                <h3 style="font-size:22px; font-weight:800; color:#201B10; margin:0;">Exterior in HOA Communities</h3>
+              </div>
+            </div>
+            <div class="process-steps">
+              ${[
+                ['1', 'fa-palette', 'Pick Your Color', 'Choose from your HOA\'s approved palette — or check with your board. Sherwin-Williams offers free design consultations if you need a hand.'],
+                ['2', 'fa-file-signature', 'Get HOA Approval', 'Submit your color choice to your HOA board for sign-off. Most boards respond within a week or two. We can provide documentation if needed.'],
+                ['3', 'fa-phone', 'Call Us for a Quote', 'Once you have approval in hand, we\'ll come out, assess the job, and get you a written quote within 24 hours.'],
+                ['4', 'fa-calendar-check', 'We Schedule &amp; Show Up', 'Your crew shows up on time, matches the approved colors exactly, and leaves the site clean.'],
+              ].map(([num, icon, title, desc]) => `
+              <div style="display:flex; gap:18px; margin-bottom:28px;">
+                <div style="flex-shrink:0; width:38px; height:38px; border-radius:50%; background:#fff4f0; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; color:#AE360E;">${num}</div>
+                <div>
+                  <p style="font-weight:700; color:#201B10; margin:0 0 4px; font-size:15px;"><i class="fa-solid ${icon}" style="color:#AE360E; margin-right:8px; font-size:13px;"></i>${title}</p>
+                  <p style="color:#5a5650; font-size:14px; line-height:1.7; margin:0;">${desc}</p>
+                </div>
+              </div>`).join('')}
+            </div>
+            <div style="margin-top:8px; padding:16px 20px; background:#fff4f0; border-radius:10px; font-size:14px; color:#5a5650;">
+              <i class="fa-solid fa-circle-info" style="color:#AE360E; margin-right:8px;"></i>
+              <strong style="color:#201B10;">HOA tip:</strong> Get written approval before we schedule — it's the only variable we can't control for you.
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /row -->
+    </div>
+  </section>
+
+  <!-- Speed Hook -->
+  <section style="background:#AE360E; padding:56px 0;">
+    <div class="container text-center">
+      <h2 style="color:#fff; font-size:clamp(24px,3.5vw,38px); font-weight:800; margin-bottom:14px;">Ready? We Move Fast.</h2>
+      <p style="color:rgba(255,255,255,0.85); font-size:17px; max-width:520px; margin:0 auto 28px;">Once you're ready — approved colors in hand — we'll get you a written quote within 24 hours.</p>
+      <a href="/get-a-quote/" style="display:inline-flex; align-items:center; gap:10px; padding:16px 36px; background:#fff; color:#AE360E; font-weight:800; font-size:16px; border-radius:100px; text-decoration:none;">
+        Request Your Free Quote <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- SW Callout -->
+  <section style="padding:64px 0; background:#f8f5f1;">
+    <div class="container">
+      <div style="max-width:680px; margin:0 auto; background:#fff; border-radius:16px; padding:40px 36px; border:1px solid #e8e3dd; text-align:center;">
+        <i class="fa-solid fa-paint-roller" style="font-size:36px; color:#AE360E; margin-bottom:16px;"></i>
+        <h3 style="font-size:22px; font-weight:800; color:#201B10; margin-bottom:12px;">Not Sure Which Color?</h3>
+        <p style="color:#5a5650; font-size:15px; line-height:1.75; margin-bottom:20px;">Sherwin-Williams offers free in-store design consultations — walk in with your address, HOA palette, or just a vibe, and they'll help you narrow it down. We work with SW and Benjamin Moore products and can match whatever you land on.</p>
+        <a href="https://www.sherwin-williams.com/homeowners/color/color-tools/color-visualizer" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; padding:12px 28px; background:#201B10; color:#fff; font-weight:700; font-size:14px; border-radius:100px; text-decoration:none;">
+          Try the SW Color Visualizer <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:11px;"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contextual links to service pages -->
+  <section style="padding:56px 0; background:#201B10;">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:36px;">
+        <h2 style="color:#fff; font-size:28px; font-weight:800; margin-bottom:8px;">Ready to Learn More?</h2>
+        <p style="color:rgba(255,255,255,0.7); font-size:15px;">Explore our services or jump straight to a quote.</p>
+      </div>
+      <div class="row justify-content-center" style="gap:0;">
+        <div class="col-md-4 col-sm-6" style="padding:8px;">
+          <a href="/exterior-painting/" style="display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:18px 20px; text-decoration:none; color:#fff; transition:background .2s;">
+            <i class="fa-solid fa-house" style="color:#AE360E; font-size:20px; flex-shrink:0;"></i>
+            <span style="font-weight:700; font-size:15px;">Exterior Painting</span>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6" style="padding:8px;">
+          <a href="/hoa-painting/" style="display:flex; align-items:center; gap:12px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:18px 20px; text-decoration:none; color:#fff; transition:background .2s;">
+            <i class="fa-solid fa-building-columns" style="color:#AE360E; font-size:20px; flex-shrink:0;"></i>
+            <span style="font-weight:700; font-size:15px;">HOA Painting</span>
+          </a>
+        </div>
+        <div class="col-md-4 col-sm-6" style="padding:8px;">
+          <a href="/get-a-quote/" style="display:flex; align-items:center; gap:12px; background:#AE360E; border:1px solid #AE360E; border-radius:12px; padding:18px 20px; text-decoration:none; color:#fff; transition:background .2s;">
+            <i class="fa-solid fa-file-lines" style="color:#fff; font-size:20px; flex-shrink:0;"></i>
+            <span style="font-weight:700; font-size:15px;">Get a Free Quote</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+${footer}
+</body>
+</html>`;
+
+  fs.writeFileSync(path.join(outDir, 'index.html'), html, 'utf8');
+  console.log('Built: how-it-works/index.html');
+}
+
+buildHowItWorks();
+
 // Always sync functions/ into dist/ so CF Pages deploys include the API workers
 copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
 
