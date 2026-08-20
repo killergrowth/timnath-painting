@@ -1,11 +1,11 @@
 ---
 slug: exterior-paint-peeling-fort-collins-co
 title: Why Is My Exterior Paint Peeling? Causes and What to Do
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-08-18T13:00:03.145Z'
 scheduledDate: 2026-08-18T13:00:00.000Z
 excerpt: >-
-  Exterior paint peeling in Fort Collins CO is a common headache — here are the
+  Exterior paint peeling in Timnath, Severance, and Windsor is a common headache — here are the
   real causes and exactly how to fix them.
 featuredImage: blog-posts/images/exterior-paint-peeling-fort-collins-co.jpg
 inlineImage1: null
@@ -25,7 +25,7 @@ imagePrompt3: >-
 tags:
   - exterior painting
   - paint peeling
-  - Fort Collins CO
+  - Timnath CO
   - home maintenance
   - Northern Colorado
 author: Timnath Painting
@@ -37,7 +37,7 @@ updatedAt: '2026-05-19T20:34:51.839Z'
 ---
 ## Why Is My Exterior Paint Peeling? Causes and What to Do
 
-If you're noticing bubbling, cracking, or chunks of paint lifting off your siding, you're not alone. Exterior paint peeling in Fort Collins, CO is one of the most common calls we get — and it's rarely random. There's always a root cause. Here's how to identify it and what actually fixes it.
+If you're noticing bubbling, cracking, or chunks of paint lifting off your siding, you're not alone. Exterior paint peeling in Timnath, Severance, and Windsor is one of the most common calls we get — and it's rarely random. There's always a root cause. Here's how to identify it and what actually fixes it.
 
 ---
 
@@ -103,4 +103,4 @@ Done right, you're looking at a 7–10 year finish that handles Colorado's condi
 
 ---
 
-If you're dealing with peeling exterior paint in Fort Collins, Timnath, Windsor, or anywhere in Northern Colorado, we'll come out, take a look, and give you a straight answer on what's going on. [Request a free on-site quote](/contact/) and we'll diagnose the problem before we talk paint.
+If you're dealing with peeling exterior paint in Timnath, Severance, Windsor, or anywhere in Northern Colorado, we'll come out, take a look, and give you a straight answer on what's going on. [Request a free on-site quote](/contact/) and we'll diagnose the problem before we talk paint.

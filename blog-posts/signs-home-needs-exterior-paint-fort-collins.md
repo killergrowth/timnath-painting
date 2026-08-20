@@ -1,12 +1,12 @@
 ---
 slug: signs-home-needs-exterior-paint-fort-collins
 title: Signs Your Home Needs a Fresh Coat of Exterior Paint
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-08-14T13:00:14.628Z'
 scheduledDate: 2026-08-14T13:00:00.000Z
 excerpt: >-
   Not sure if your home is due for new paint? Here are the key warning signs
-  Fort Collins area homeowners should watch for before damage gets expensive.
+  Timnath, Severance, and Windsor homeowners should watch for before damage gets expensive.
 featuredImage: blog-posts/images/signs-home-needs-exterior-paint-fort-collins.jpg
 inlineImage1: null
 inlineImage2: null
@@ -26,7 +26,7 @@ imagePrompt3: >-
 tags:
   - exterior painting
   - home maintenance
-  - Fort Collins
+  - Timnath
   - paint tips
   - Northern Colorado
 author: Timnath Painting
@@ -40,9 +40,9 @@ updatedAt: '2026-05-19T20:34:17.292Z'
 
 Most homeowners don't think about exterior paint until something looks obviously wrong. By then, the damage is usually deeper than the surface. In Northern Colorado, that window between "it looks fine" and "now it's a problem" is shorter than most people expect.
 
-Fort Collins sits at around 5,000 feet elevation. That means 10–15% more UV radiation than sea-level cities and 28+ freeze-thaw cycles every year. Your paint takes a beating — and the signs show up faster here than they would in a milder climate.
+Timnath, Severance, and Windsor sit at around 5,000 feet elevation. That means 10–15% more UV radiation than sea-level cities and 28+ freeze-thaw cycles every year. Your paint takes a beating — and the signs show up faster here than they would in a milder climate.
 
-Here's what to look for when you walk the perimeter of your home.
+Here's what to look for when you walk the perimeter of your home in Timnath, Severance, or Windsor.
 
 ---
 
@@ -80,7 +80,7 @@ If you can see raw wood anywhere on your siding, trim, or fascia boards, that ar
 
 ## The Colorado Factor
 
-If your home's paint is more than 7–10 years old and you're seeing even one of these signs, it's worth getting an evaluation. Standard paint jobs in milder climates might stretch 10–15 years. At Northern Colorado's elevation and freeze-thaw exposure, that timeline compresses.
+If your home's paint is more than 7–10 years old and you're seeing even one of these signs, it's worth getting an evaluation. Standard paint jobs in milder climates might stretch 10–15 years. At the elevation and freeze-thaw exposure common to Timnath, Severance, and Windsor, that timeline compresses.
 
 The good news: catching it at the warning-sign stage is significantly cheaper than catching it after the wood has been compromised.
 
@@ -96,6 +96,6 @@ At Timnath Painting, we use paint systems specifically selected for Northern Col
 
 ## Ready to Take a Closer Look?
 
-If you've spotted one or more of these signs on your Fort Collins-area home, don't wait until next spring. We offer free on-site quotes across Timnath, Windsor, Fort Collins, and the surrounding [Northern Colorado communities](/areas-served/) we serve.
+If you've spotted one or more of these signs on your home, don't wait until next spring. We offer free on-site quotes across Timnath, Severance, Windsor, and the surrounding [Northern Colorado communities](/areas-served/) we serve.
 
 [Contact us](/contact/) to schedule your walkthrough — no pressure, just an honest assessment of where your home stands.
