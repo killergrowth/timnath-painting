@@ -30,7 +30,7 @@ const NEIGHBORHOODS = [
       { q: 'How long does an exterior paint job last in Timnath Ranch?', a: 'Builder-grade coatings typically fail in 4–6 years on fiber cement in this climate. Premium coatings with proper prep — full wash, caulk, spot prime, two-coat application — last 7–10 years. South and west exposures on Timnath Ranch homes get a third coat as standard practice on our projects.' },
       { q: 'Can you match the existing approved color on my Timnath Ranch home?', a: 'Yes. We use spectrophotometer color matching and coordinate directly with Sherwin-Williams and Benjamin Moore reps to replicate your existing approved color precisely. This is important for touch-ups, partial repaints, and any work that needs to blend with existing surfaces.' },
     ],
-    relatedNeighborhoods: ['serratoga-falls', 'timnath-lakes', 'trailside'],
+    relatedNeighborhoods: ['serratoga-falls', 'timnath-lakes', 'wildwing', 'trailside', 'harmony-club'],
   },
   {
     name: 'Serratoga Falls',
@@ -52,7 +52,7 @@ const NEIGHBORHOODS = [
       { q: 'Who approves exterior color changes in Serratoga Falls?', a: 'The Serratoga Falls HOA architectural review committee (ARC) approves all exterior color changes. We handle the full submission process — color selection from the approved palette, written request, and documentation — and build the approval window into your project timeline so there are no delays.' },
       { q: 'Can you paint multi-unit attached homes in Serratoga Falls?', a: 'Yes. Serratoga Falls includes attached townhome-style units along the lakefront. We sequence these projects unit-by-unit with proper masking at shared wall transitions to prevent color bleed and maintain a consistent finish across the row.' },
     ],
-    relatedNeighborhoods: ['timnath-ranch', 'timnath-lakes', 'wildwing'],
+    relatedNeighborhoods: ['timnath-ranch', 'timnath-lakes', 'wildwing', 'trailside', 'harmony-club'],
   },
   {
     name: 'Timnath Lakes',
@@ -74,7 +74,7 @@ const NEIGHBORHOODS = [
       { q: 'Do I need HOA approval to repaint my home in Timnath Lakes?', a: "Yes, if you are changing colors. If you are repainting with the same existing approved color, some HOAs waive the formal approval requirement — but confirm with your property manager before starting. We'll advise you during the quote visit on what your specific HOA requires." },
       { q: 'How many coats of paint do south-facing walls need in Timnath Lakes?', a: 'A minimum of three coats on south and west-facing elevations is our standard for Timnath Lakes projects. The UV load at this latitude combined with open-sky exposure fades two-coat systems faster than in shaded neighborhoods. We factor this into every quote upfront — no surprises.' },
     ],
-    relatedNeighborhoods: ['timnath-ranch', 'serratoga-falls', 'trailside'],
+    relatedNeighborhoods: ['timnath-ranch', 'serratoga-falls', 'wildwing', 'trailside', 'harmony-club'],
   },
   {
     name: 'Wildwing',
@@ -96,7 +96,7 @@ const NEIGHBORHOODS = [
       { q: 'Can you match existing paint colors in Wildwing without HOA documentation?', a: "If you're repainting with the same color and your HOA doesn't require approval for same-color repaints, yes. We can spectrophotometer-match your existing color precisely. If you're changing colors in an HOA community, we handle the approval documentation. Ask your property manager which applies to your situation — we'll advise during the quote." },
       { q: 'Does mildew on shaded siding in Wildwing affect exterior painting?', a: 'It does if it\'s not treated before coating. Mildew that\'s painted over will continue growing under the new paint and cause premature adhesion failure. We treat all mildew-affected surfaces with a biocide wash during prep before applying any primer or topcoat.' },
     ],
-    relatedNeighborhoods: ['timnath-ranch', 'trailside', 'harmony-club'],
+    relatedNeighborhoods: ['timnath-ranch', 'serratoga-falls', 'timnath-lakes', 'trailside', 'harmony-club'],
   },
   {
     name: 'Trailside',
@@ -118,7 +118,7 @@ const NEIGHBORHOODS = [
       { q: 'Does the Trailside HOA require color approval before exterior painting?', a: 'Yes. All Timnath HOA communities require architectural review committee approval for exterior color changes. We handle the full documentation and submission process for Trailside homeowners — including color selection from the approved palette, written request preparation, and ARC submission.' },
       { q: 'How far in advance should I book exterior painting in Trailside?', a: 'Spring slots (May–June) fill 4–8 weeks in advance. We recommend booking in March or April for a late spring project. Fall (September–October) is also an excellent painting window in Northern Colorado — cooler temperatures, lower UV, and manageable humidity. Contact us early in the season to lock in your window.' },
     ],
-    relatedNeighborhoods: ['timnath-ranch', 'timnath-lakes', 'wildwing'],
+    relatedNeighborhoods: ['timnath-ranch', 'serratoga-falls', 'timnath-lakes', 'wildwing', 'harmony-club'],
   },
   {
     name: 'Harmony Club',
@@ -140,7 +140,7 @@ const NEIGHBORHOODS = [
       { q: 'How long does a premium exterior paint job last on a Harmony Club home?', a: 'With full prep — pressure wash, caulk, prime, two-coat minimum on all surfaces, three coats on south and fairway-facing elevations — Sherwin-Williams Duration and Benjamin Moore Aura systems last 7–10 years on Harmony Club homes. Builder-grade coatings typically fail at year 5–6, often sooner on south-facing and irrigation-adjacent elevations.' },
       { q: 'Can you match the original builder color on my Harmony Club home exactly?', a: "Yes. We use spectrophotometer color matching and work with Sherwin-Williams and Benjamin Moore contractor reps to replicate existing colors with precision. This is critical in Harmony Club, where color consistency across adjacent properties is an HOA governance priority. A near-match is not acceptable — we get it right." },
     ],
-    relatedNeighborhoods: ['timnath-ranch', 'wildwing', 'serratoga-falls'],
+    relatedNeighborhoods: ['timnath-ranch', 'serratoga-falls', 'timnath-lakes', 'wildwing', 'trailside'],
   },
 ];
 
