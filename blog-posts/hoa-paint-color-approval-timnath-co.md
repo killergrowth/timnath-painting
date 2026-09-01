@@ -1,4 +1,4 @@
----
+﻿---
 slug: hoa-paint-color-approval-timnath-co
 title: >-
   How to Submit an Exterior Paint Color for HOA Approval (NoCo Homeowner's
@@ -8,7 +8,7 @@ publishDate: null
 scheduledDate: 2026-10-27T13:00:00.000Z
 excerpt: >-
   A step-by-step guide for Timnath and Windsor homeowners navigating HOA
-  exterior paint color approval — from ACC forms to what happens if you're
+  exterior paint color approval â€” from ACC forms to what happens if you're
   denied.
 featuredImage: blog-posts/images/hoa-paint-color-approval-timnath-co.jpg
 inlineImage1: null
@@ -31,7 +31,7 @@ tags:
   - hoa approval
   - timnath co
   - northern colorado
-author: Timnath Painting
+author: Keystone Painting
 sheetRow: 45
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
@@ -40,9 +40,9 @@ updatedAt: '2026-05-19T20:48:03.194Z'
 ---
 ## The HOA Approval Process Is More Involved Than Most Homeowners Expect
 
-You've picked the color. You love it. Your neighbor loves it. But before a single brush touches your siding, your HOA's Architectural Control Committee (ACC) has the final say — and skipping that step can cost you a forced repaint at your own expense.
+You've picked the color. You love it. Your neighbor loves it. But before a single brush touches your siding, your HOA's Architectural Control Committee (ACC) has the final say â€” and skipping that step can cost you a forced repaint at your own expense.
 
-For homeowners in Timnath, Windsor, and surrounding Northern Colorado communities, HOA paint approval isn't just a formality. Many of these neighborhoods have strict color palettes, specific product requirements, and approval windows that can stretch 2–4 weeks. Getting it right the first time saves you time, money, and a headache.
+For homeowners in Timnath, Windsor, and surrounding Northern Colorado communities, HOA paint approval isn't just a formality. Many of these neighborhoods have strict color palettes, specific product requirements, and approval windows that can stretch 2â€“4 weeks. Getting it right the first time saves you time, money, and a headache.
 
 Here's exactly how to move through the process.
 
@@ -50,13 +50,13 @@ Here's exactly how to move through the process.
 
 ## Step 1: Pull Your HOA's CC&Rs and Architectural Guidelines
 
-Before you do anything else, request a current copy of your HOA's **CC&Rs (Covenants, Conditions & Restrictions)** and any separate **Architectural Guidelines** document. These are different — the CC&Rs are the governing rules, while the architectural guidelines often contain the approved color palette and submission requirements.
+Before you do anything else, request a current copy of your HOA's **CC&Rs (Covenants, Conditions & Restrictions)** and any separate **Architectural Guidelines** document. These are different â€” the CC&Rs are the governing rules, while the architectural guidelines often contain the approved color palette and submission requirements.
 
 What to look for:
 - **Approved color palettes** (some HOAs only allow colors from specific manufacturer lines like Sherwin-Williams or Benjamin Moore)
 - **Sheen restrictions** (flat, satin, or eggshell only in some communities)
 - **Trim and accent rules** (door color, garage door, fascia are often regulated separately)
-- **Submission deadlines** — some HOAs only review applications monthly
+- **Submission deadlines** â€” some HOAs only review applications monthly
 
 If you're in a newer Timnath or Windsor development, these documents are often available through your HOA's online portal. If not, contact your property management company directly.
 
@@ -64,15 +64,15 @@ If you're in a newer Timnath or Windsor development, these documents are often a
 
 ## Step 2: Complete the ACC Application Form
 
-Every HOA that regulates exterior changes requires an **Architectural Change Request** or **ACC Application**. The form is typically one page but needs to be complete — missing information is the #1 reason submissions get delayed.
+Every HOA that regulates exterior changes requires an **Architectural Change Request** or **ACC Application**. The form is typically one page but needs to be complete â€” missing information is the #1 reason submissions get delayed.
 
 Standard information required:
 - Property address and owner contact info
-- Description of work (exterior repaint — body, trim, accents)
+- Description of work (exterior repaint â€” body, trim, accents)
 - Proposed start and completion dates
 - Contractor name and license/insurance info
 
-Some HOAs also require your contractor to be listed on their approved vendor list or submit proof of insurance. If you're working with a [licensed and insured painting contractor](/hoa-painting/), ask them for a certificate of insurance upfront — they should have it ready.
+Some HOAs also require your contractor to be listed on their approved vendor list or submit proof of insurance. If you're working with a [licensed and insured painting contractor](/hoa-painting/), ask them for a certificate of insurance upfront â€” they should have it ready.
 
 ---
 
@@ -84,7 +84,7 @@ This is where most submissions fall apart. There's a big difference between **pa
 
 **Sample boards:** A painted board (usually 6"x8" or larger) showing the actual color applied to a primed surface. This is what most HOAs require because it shows true color under natural light.
 
-**Pro tip:** Paint your sample board with two coats on the same substrate your home uses (wood, fiber cement, stucco). Color looks different on different surfaces and in different lighting conditions. Northern Colorado's high-altitude sunlight can shift how colors read compared to in-store lighting — especially in the late afternoon.
+**Pro tip:** Paint your sample board with two coats on the same substrate your home uses (wood, fiber cement, stucco). Color looks different on different surfaces and in different lighting conditions. Northern Colorado's high-altitude sunlight can shift how colors read compared to in-store lighting â€” especially in the late afternoon.
 
 Submit samples for every color you're proposing: body, trim, and any accent colors. Label each one clearly.
 
@@ -92,13 +92,13 @@ Submit samples for every color you're proposing: body, trim, and any accent colo
 
 ## Step 4: Know the Approval Timeline
 
-Most HOAs aim to review ACC applications within **10–30 days**, but that window varies widely. Some boards meet monthly; others have a standing committee that reviews weekly.
+Most HOAs aim to review ACC applications within **10â€“30 days**, but that window varies widely. Some boards meet monthly; others have a standing committee that reviews weekly.
 
 **Typical timeline breakdown:**
 - **Submit application + samples:** Day 1
-- **HOA review period:** 10–30 days
-- **Written approval issued:** 1–5 days after review
-- **Work can begin:** After written approval only — never verbal
+- **HOA review period:** 10â€“30 days
+- **Written approval issued:** 1â€“5 days after review
+- **Work can begin:** After written approval only â€” never verbal
 
 Build this into your project schedule. If you're hoping to paint in September before Northern Colorado's weather window closes, submit your application in late July or early August.
 
@@ -106,7 +106,7 @@ Build this into your project schedule. If you're hoping to paint in September be
 
 ## Step 5: What to Do If You're Denied
 
-Denials happen — usually because the color falls outside the approved palette or the submission was incomplete. Here's how to respond:
+Denials happen â€” usually because the color falls outside the approved palette or the submission was incomplete. Here's how to respond:
 
 1. **Request written feedback.** You're entitled to know specifically why the color was denied.
 2. **Adjust and resubmit.** Most denials are fixable. A slight value shift or switching to a palette-approved alternative is often enough.
@@ -119,6 +119,7 @@ The key: stay in writing throughout the process. Document every exchange.
 
 ## Work With a Contractor Who Knows HOA Process
 
-A big part of a smooth HOA approval is having a contractor who understands what committees look for. At Timnath Painting, we've worked through the ACC process across multiple Northern Colorado communities and know what documentation is needed, how to prep sample boards, and how to schedule work around approval windows.
+A big part of a smooth HOA approval is having a contractor who understands what committees look for. At Keystone Painting, we've worked through the ACC process across multiple Northern Colorado communities and know what documentation is needed, how to prep sample boards, and how to schedule work around approval windows.
 
 If you're planning an [exterior repaint](/exterior-painting/) and need help navigating the HOA process, [contact us](/contact/) for a free on-site quote. We'll walk through your HOA's requirements with you before the first form is filed.
+

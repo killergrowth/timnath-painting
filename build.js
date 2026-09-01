@@ -1,6 +1,6 @@
-'use strict';
+﻿'use strict';
 /**
- * build.js  -  Timnath Painting Site Builder
+ * build.js  -  Keystone Painting Site Builder
  * Generates all pillar pages from data + templates
  * Run: node build.js
  * Output: dist/
@@ -12,9 +12,10 @@ const { CLIENT, SERVICES, CITIES, SERVICE_DATA, CITY_DATA } = require('./_build-
 const T = require('./build-templates.js');
 const { buildBlog } = require('./_lib/blog-build');
 const { generateSitemap } = require('./_lib/gen-sitemap');
+const { buildAllProjects } = require('./scripts/build-projects');
 
-const SITE_DOMAIN = 'timnathpainting.com';
-const SITE_ID     = 'timnath-painting';
+const SITE_DOMAIN = 'paintkeystone.com';
+const SITE_ID     = 'keystone-painting';
 const { injectScripts, loadSiteScripts } = require('C:\\Users\\KillerGrowth\\.openclaw\\workspace\\tools\\kg-site-builder\\lib\\inject-scripts');
 const ROOT = __dirname;
 const DIST = path.join(ROOT, 'dist');
@@ -34,7 +35,7 @@ const HEADER = fs.readFileSync(path.join(PARTS, 'header.html'), 'utf8');
 const HEADER_STRIPPED = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
 const FOOTER_MINIMAL = fs.readFileSync(path.join(PARTS, 'footer-minimal.html'), 'utf8');
 
-// Custom SVG icons ï¿½" inline with brand color
+// Custom SVG icons Ã¯Â¿Â½" inline with brand color
 const RED = '#AE360E';
 function inlineSvg(filename, size) {
   const raw = fs.readFileSync(path.join(__dirname, 'assets/images', filename), 'utf8')
@@ -63,10 +64,10 @@ function writeStripped(relPath, html) {
   console.log('Built:', relPath);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Setup Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ Setup ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 ensureDir(DIST);
 copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
-// Generate mobile hero variant (800px @ q68 ~70KB) ï¿½" desktop is pre-compressed in source
+// Generate mobile hero variant (800px @ q68 ~70KB) Ã¯Â¿Â½" desktop is pre-compressed in source
 // Source: assets/images/backgrounds/timnath-hero.webp (151KB @ 1440px q50)
 {
   const sharp = require('sharp');
@@ -84,9 +85,9 @@ copyDir(path.join(ROOT, 'assets'), path.join(DIST, 'assets'));
   if (fs.existsSync(src)) fs.copyFileSync(src, path.join(DIST, f));
 });
 
-// Root index.html ï¿½" built by buildHomepage()
+// Root index.html Ã¯Â¿Â½" built by buildHomepage()
 
-// Copy coming-soon landing page to root (DISABLED ï¿½" site is live)
+// Copy coming-soon landing page to root (DISABLED Ã¯Â¿Â½" site is live)
 /* const COMING_SOON = path.join(ROOT, '..', 'timnath-painting-coming-soon');
 if (fs.existsSync(COMING_SOON)) {
   fs.copyFileSync(path.join(COMING_SOON, 'index.html'), path.join(DIST, 'index.html'));
@@ -98,7 +99,7 @@ if (fs.existsSync(COMING_SOON)) {
   fs.writeFileSync(path.join(DIST, 'index.html'), csHtml, 'utf8');
   console.log('Coming-soon landing page copied to root.');
 } */
-// Remove _worker.js and _routes.json ï¿½" Pages Functions handle routing now
+// Remove _worker.js and _routes.json Ã¯Â¿Â½" Pages Functions handle routing now
 // _worker.js in dist/ disables ALL Pages Functions (CF limitation)
 const workerFile = path.join(DIST, '_worker.js');
 const routesFile = path.join(DIST, '_routes.json');
@@ -107,15 +108,15 @@ if (fs.existsSync(routesFile)) fs.unlinkSync(routesFile);
 
 console.log('Assets copied.\n');
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ HOMEPAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ HOMEPAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildHomepage() {
-  // ï¿½"ï¿½ï¿½"ï¿½ Reviews data ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½ï¿½"ï¿½
+  // Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½ Reviews data Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½Ã¯Â¿Â½"Ã¯Â¿Â½
   const reviewsFile = path.join(ROOT, 'data', 'reviews.json');
   const reviewData = fs.existsSync(reviewsFile)
     ? JSON.parse(fs.readFileSync(reviewsFile, 'utf8'))
     : { rating: null, userRatingCount: 0, reviews: [] };
 
-  // Build review cards — filter 5-star only, max 6 total, carousel slides
+  // Build review cards â€” filter 5-star only, max 6 total, carousel slides
   const fiveStarReviews = reviewData.reviews.filter(r => r.rating === 5).slice(0, 6);
   const reviewCards = fiveStarReviews.map((r) => {
     const initial = (r.author || 'A').charAt(0).toUpperCase();
@@ -143,7 +144,7 @@ function buildHomepage() {
     name: CLIENT.name,
     telephone: CLIENT.phone,
     email: CLIENT.email,
-    url: 'https://timnathpainting.com',
+    url: 'https://paintkeystone.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '4836 Becker Dr',
@@ -178,10 +179,10 @@ function buildHomepage() {
     {
       bg: 'hero-real-exterior.jpg',
       sub: 'Northern Colorado Painting Contractor',
-      lines: ['Premium Exterior', 'Painting and More'],
+      lines: ['Premium Exterior Painting in Timnath, Severance & Windsor'],
       btn1: { t: 'Schedule A Free Consultation', h: '/get-a-quote/' },
       btn2: { t: 'Our Services', h: '/exterior-painting/index.html' },
-      subText: 'Professional painting done right—on time, on budget, and built to last.'
+      subText: 'Professional painting done rightâ€”on time, on budget, and built to last.'
     },
   ];
 
@@ -195,7 +196,7 @@ function buildHomepage() {
       src="/assets/images/backgrounds/${bgWebp}"
       srcset="/assets/images/backgrounds/${bgMobile} 800w, /assets/images/backgrounds/${bgWebp} 1440w"
       sizes="(max-width:800px) 100vw, 1440px"
-      alt="Exterior painting services in Northern Colorado by Timnath Painting" width="1440" height="960"
+      alt="Exterior painting services in Northern Colorado by Keystone Painting" width="1440" height="960"
       fetchpriority="high" decoding="sync"
       style="position:absolute;top:-5%;left:0;width:100%;height:110%;object-fit:cover;object-position:center;">
   </div>
@@ -349,7 +350,7 @@ ${T.topbar()}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -365,23 +366,23 @@ ${T.contactFormSection()}`;
   // Inject reviews section and schema
   const finalContent = schemaTag + '\n' + content.replace('<!-- REVIEWS -->', reviewsSection);
 
-  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Northern Colorado`, CLIENT.description, 'https://timnathpainting.com/', '/assets/images/backgrounds/hero-real-exterior.jpg')}
+  write('index.html', `${T.htmlHead(`${CLIENT.name} | Exterior Painting & Fence Staining in Timnath, Severance, Windsor`, CLIENT.description, 'https://paintkeystone.com/', '/assets/images/backgrounds/hero-real-exterior.jpg')}
 ${T.wrapBody(finalContent)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ ABOUT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ ABOUT PAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildAbout() {
   const content = `
 ${T.topbar()}
 <!-- HEADER -->
-${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
+${T.pageHeader('About Keystone Painting', '<li><span>About Us</span></li>')}
 
 <section class="about-one" style="padding-top:80px;padding-bottom:80px;">
   <div class="container">
     <div class="row align-items-center gutter-y-30">
       <div class="col-lg-6" style="text-align:center;">
         <div style="overflow:visible;">
-          <img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Timnath Painting" style="width:100%;max-width:460px;display:block;margin:0 auto;">
+          <img src="/assets/images/about/josh-funk.png" alt="Josh Funk  -  Owner, Keystone Painting" style="width:100%;max-width:460px;display:block;margin:0 auto;">
           <p style="margin-top:12px;font-weight:600;font-size:1rem;color:#3a2e1e;">Josh Funk, Owner</p>
           <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:inline-block;">Get a Free Quote</a>
         </div>
@@ -407,7 +408,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
       <div class="col-lg-6">
         <div class="sec-title text-start">
           <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline">Why We Do It Differently</p></div>
-          <h3 class="sec-title__title">Why Northern Colorado Homes Trust Timnath Painting</h3>
+          <h3 class="sec-title__title">Why Northern Colorado Homes Trust Keystone Painting</h3>
         </div>
         <p class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">Most painting contractors are reactive. You call when something's wrong. They show up, quote the job, and disappear until the next crisis. That's not how we operate.</p>
         <ul class="about-one__list list-unstyled wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms" style="margin-top:20px;">
@@ -429,7 +430,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
           <div class="progress-box__bar"><div class="progress-box__bar__inner count-bar" data-percent="100%"><div class="progress-box__number count-text">100%</div></div></div>
         </div>
         <div class="wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms" style="margin-top:32px;border-radius:10px;overflow:hidden;">
-          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Timnath Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
+          <img src="/assets/images/about/about-kitchen.jpg" alt="Painting project by Keystone Painting" style="width:100%;height:auto;display:block;border-radius:10px;">
         </div>
       </div>
     </div>
@@ -464,7 +465,7 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -477,11 +478,11 @@ ${T.pageHeader('About Timnath Painting', '<li><span>About Us</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('about.html', `${T.htmlHead('About Timnath Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Timnath Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 670-3965", 'https://timnathpainting.com/about')}
+  write('about.html', `${T.htmlHead('About Keystone Painting | Josh Funk | NoCo Painting Contractor', "Meet Josh Funk and the Keystone Painting team. Premium painting contractor serving the Golden Triangle  -  Timnath, Windsor & Severance CO. (970) 670-3965", 'https://paintkeystone.com/about')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ SERVICE HUB PAGES Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ SERVICE HUB PAGES ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildServiceHub(slug) {
   const d = SERVICE_DATA[slug];
   if (!d) { console.warn('No data for', slug); return; }
@@ -538,7 +539,7 @@ function buildServiceHub(slug) {
   const whyUsSection = d.whyUs ? `<div style="margin:40px 0;padding:32px;background:#201b10;border-radius:10px;">
           <div class="sec-title text-start" style="padding-bottom:0;margin-bottom:16px;">
             <div class="d-flex align-items-center justify-content-start"><p class="sec-title__tagline" style="color:#AE360E;">why choose us</p></div>
-            <h3 class="sec-title__title" style="margin-bottom:0;color:#fff;">Why Timnath Painting</h3>
+            <h3 class="sec-title__title" style="margin-bottom:0;color:#fff;">Why Keystone Painting</h3>
           </div>
           ${d.whyUs.split('\n\n').map(p => `<p class="wow fadeInUp" data-wow-duration="1500ms" style="color:#e8e0d8;line-height:1.8;">${p}</p>`).join('\n')}
           <ul class="list-unstyled" style="margin-top:20px;line-height:2.2;">
@@ -624,7 +625,7 @@ ${T.pageHeader(d.title, `<li><span>${d.title.split(' in ')[0]}</span></li>`)}
             <a href="/get-a-quote/" class="wallox-btn wallox-btn--base" style="margin-top:20px;display:block;text-align:center;">Request a Quote</a>
           </div>
           <div style="background:#201b10;color:#f4ede4;padding:30px;border-radius:8px;">
-            <h4 style="color:#ae360e;margin-bottom:15px;">Why Timnath Painting</h4>
+            <h4 style="color:#ae360e;margin-bottom:15px;">Why Keystone Painting</h4>
             <ul class="list-unstyled" style="line-height:2;">
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>Licensed &amp; Insured</li>
               <li><i class="fa-solid fa-check" style="color:#ae360e;margin-right:8px;"></i>No-VOC Products.</li>
@@ -645,7 +646,7 @@ ${serviceReviewsSection}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -658,13 +659,13 @@ ${serviceReviewsSection}
 
 ${T.contactFormSection()}`;
 
-  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://timnathpainting.com/${slug}/`)}
+  write(`${slug}/index.html`, `${T.htmlHead(d.metaTitle, d.metaDesc, `https://paintkeystone.com/${slug}/`)}
 ${T.wrapBody(content)}`);
 }
 
 
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ CONTACT PAGE Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ CONTACT PAGE ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildContact() {
   const content = `
 ${T.topbar()}
@@ -696,7 +697,7 @@ ${T.topbar()}
 <section class="contact-wrap">
   <div class="container">
     <div class="contact-page-header">
-      <h1 class="contact-headline">Get In Touch With Timnath Painting</h1>
+      <h1 class="contact-headline">Get In Touch With Keystone Painting</h1>
       <p class="contact-subtext">We respond fast and always keep it honest</p>
     </div>
     <div class="contact-grid">
@@ -753,11 +754,11 @@ ${T.topbar()}
 </main>
 </div>`;
 
-  write('contact.html', `${T.htmlHead('Contact Timnath Painting | Free Quote | (970) 670-3965', 'Contact Timnath Painting for a free exterior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://timnathpainting.com/contact')}
+  write('contact.html', `${T.htmlHead('Contact Keystone Painting | Free Quote | (970) 670-3965', 'Contact Keystone Painting for a free exterior painting quote. Serving Timnath, Windsor, Severance & Northern Colorado. Call (970) 670-3965.', 'https://paintkeystone.com/contact')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ Areas Served INDEX Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ Areas Served INDEX ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 function buildServiceAreas() {
   const cityGrid = CITIES.map(c => {
     const serviceLinks = SERVICES.map(s =>
@@ -794,7 +795,7 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -807,11 +808,11 @@ ${T.pageHeader('Areas Served  -  Northern Colorado', '<li><span>Areas Served</sp
 
 ${T.contactFormSection()}`;
 
-  write('areas-served/index.html', `${T.htmlHead('Areas Served | Timnath Painting | Northern Colorado', 'Timnath Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://timnathpainting.com/areas-served/')}
+  write('areas-served/index.html', `${T.htmlHead('Areas Served | Keystone Painting | Northern Colorado', 'Keystone Painting serves Northern Colorado including Timnath, Windsor, Fort Collins, Loveland, Greeley and more. View all Areas Served.', 'https://paintkeystone.com/areas-served/')}
 ${T.wrapBody(content)}`);
 }
 
-// Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½ RUN ALL Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½Ã¢"ï¿½'ï¿½
+// ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ RUN ALL ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½ÃƒÂ¢"Ã¯Â¿Â½'Ã¯Â¿Â½
 buildHomepage();
 buildAbout();
 Object.keys(SERVICE_DATA).forEach(buildServiceHub);
@@ -844,7 +845,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">what we do</p></div>
       <h3 class="sec-title__title">Professional Painting Services in Northern Colorado</h3>
-      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Timnath Painting handles it all with crews using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.</p>
+      <p style="margin:20px auto 0;max-width:680px;color:#5a5650;">From full exterior repaint to HOA common areas, Keystone Painting handles it all with crews using premium eco-friendly, no-VOC products by Sherwin Williams and Benjamin Moore.</p>
     </div>
     <div class="row gutter-y-30">${serviceGrid}
     <div class="col-lg-4 col-md-6">
@@ -863,7 +864,7 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -876,10 +877,10 @@ ${T.pageHeader('Our Services', '<li><span>Services</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  write('services/index.html', `${T.htmlHead('Services | Timnath Painting | Northern Colorado', 'Exterior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://timnathpainting.com/services/')}
+  write('services/index.html', `${T.htmlHead('Services | Keystone Painting | Northern Colorado', 'Exterior painting, HOA painting, commercial painting, fence staining and more. Professional painting services across Northern Colorado.', 'https://paintkeystone.com/services/')}
 ${T.wrapBody(content)}`);
 }
-// â•â• CITY HUB PAGES â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// Ã¢â€¢ÂÃ¢â€¢Â CITY HUB PAGES Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
 function buildCityHub(city) {
   const d = CITY_DATA[city.slug];
   if (!d) { console.warn('No city data for', city.slug); return; }
@@ -913,7 +914,7 @@ function buildCityHub(city) {
       name: CLIENT.name,
       telephone: CLIENT.phone,
       email: CLIENT.email,
-      url: `https://timnathpainting.com/areas-served/${city.slug}/`,
+      url: `https://paintkeystone.com/areas-served/${city.slug}/`,
       areaServed: `${d.label}, ${d.state}`,
       address: {
         '@type': 'PostalAddress',
@@ -964,7 +965,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
 
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">common questions</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions ï¿½" ${d.label}, CO</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Frequently Asked Questions Ã¯Â¿Â½" ${d.label}, CO</h2>
           ${T.faqBlock(d.faqs, city.slug + '-faq')}
         </div>
 
@@ -987,7 +988,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
         </div>
 
         <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
+          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Keystone Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
@@ -1013,7 +1014,7 @@ ${T.pageHeader(`Painting Services in ${d.label}, CO`, `<li><a href="/areas-serve
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -1028,15 +1029,15 @@ ${T.contactFormSection()}`;
 
   write(`areas-served/${city.slug}/index.html`,
     `${T.htmlHead(
-      `Painting Services in ${d.label}, CO | Timnath Painting`,
+      `Painting Services in ${d.label}, CO | Keystone Painting`,
       `Professional painting services in ${d.label}, CO. Exterior painting, HOA, commercial, fence staining. Licensed, eco-certified, $1M liability. Call (970) 670-3965.`,
-      `https://timnathpainting.com/areas-served/${city.slug}/`
+      `https://paintkeystone.com/areas-served/${city.slug}/`
     )}
 ${T.wrapBody(content)}`);
 }
 
-// â•â• GALLERY PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-function buildGallery_OLD() { // OLD ï¿½" replaced by template-based version below
+// Ã¢â€¢ÂÃ¢â€¢Â GALLERY PAGE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
+function buildGallery_OLD() { // OLD Ã¯Â¿Â½" replaced by template-based version below
   const galleryCSS = `
 .gallery-filter-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px;}
 .filter-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;color:#5a5650;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s;}
@@ -1093,7 +1094,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -1106,7 +1107,7 @@ ${T.pageHeader('Project Gallery', '<li><span>Gallery</span></li>')}
 
 ${T.contactFormSection()}`;
 
-  const head = T.htmlHead('Project Gallery | Timnath Painting', 'Browse completed painting projects by Timnath Painting across Northern Colorado. Exterior, HOA, commercial, fence staining and more.');
+  const head = T.htmlHead('Project Gallery | Keystone Painting', 'Browse completed painting projects by Keystone Painting across Northern Colorado. Exterior, HOA, commercial, fence staining and more.');
   const fullPage = head.replace('</head>', `<style>${galleryCSS}</style></head>`);
 
   const bodyScript = `
@@ -1196,7 +1197,7 @@ function buildGallery() {
   console.log('Built: gallery/index.html');
 }
 
-// â•â• UPLOAD ADMIN PAGE â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// Ã¢â€¢ÂÃ¢â€¢Â UPLOAD ADMIN PAGE Ã¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢ÂÃ¢â€¢Â
 function buildUploadAdmin() {
   // Read the pre-built upload page from the dist template file if it exists,
   // otherwise write the standalone file directly (not injected through wrapBody
@@ -1225,9 +1226,9 @@ function buildServiceLocation(service, city) {
   if (!sd || !cd) { console.warn('Missing data:', service.slug, city.slug); return; }
 
   const pageSlug   = `${service.slug}-${city.slug}`;
-  const canonical  = `https://timnathpainting.com/${pageSlug}/`;
+  const canonical  = `https://paintkeystone.com/${pageSlug}/`;
   const h1Title    = `${service.label} in ${cd.label}, CO`;
-  const metaTitle  = `${service.label} in ${cd.label}, CO | Timnath Painting`;
+  const metaTitle  = `${service.label} in ${cd.label}, CO | Keystone Painting`;
   const metaDesc   = `Professional ${service.label.toLowerCase()} in ${cd.label}, CO. Licensed, Eco-Friendly & No-VOC, $1M liability. Free on-site quote. Call ${CLIENT.phone}.`.slice(0, 160);
 
   // Blended FAQs: 2 service-specific + up to 3 city-specific
@@ -1248,7 +1249,7 @@ function buildServiceLocation(service, city) {
         name: CLIENT.name,
         telephone: CLIENT.phone,
         email: CLIENT.email,
-        url: 'https://timnathpainting.com',
+        url: 'https://paintkeystone.com',
         address: {
           '@type': 'PostalAddress',
           streetAddress: '4836 Becker Dr',
@@ -1335,7 +1336,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         <!-- Why Us -->
         <div style="margin-bottom:32px;">
           <p style="font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#AE360E;margin-bottom:8px;">why choose us</p>
-          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Why ${cd.label} Homeowners Choose Timnath Painting</h2>
+          <h2 style="font-size:24px;font-weight:700;color:#201B10;margin-bottom:20px;">Why ${cd.label} Homeowners Choose Keystone Painting</h2>
           <ul style="list-style:none;padding:0;margin:0;">
             ${whyFeatures.map(f => `<li style="display:flex;align-items:flex-start;gap:14px;padding:16px 0;border-bottom:1px solid #e4dacc;"><div style="flex-shrink:0;width:36px;height:36px;background:#AE360E;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;"><i class="${f.icon}"></i></div><div><div style="font-weight:700;color:#201B10;margin-bottom:4px;">${f.title}</div><div style="color:#5a5650;font-size:14px;line-height:1.6;">${f.text}</div></div></li>`).join('')}
           </ul>
@@ -1378,7 +1379,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
         </div>
 
         <div style="background:#201B10;color:#f4ede4;padding:28px;border-radius:8px;margin-bottom:24px;">
-          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Timnath Painting</p>
+          <p style="color:#AE360E;margin-bottom:14px;font-size:16px;font-weight:600;">Why Keystone Painting</p>
           <ul class="list-unstyled" style="line-height:2.2;margin:0;">
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>Licensed &amp; Insured</li>
             <li><i class="fa-solid fa-check" style="color:#AE360E;margin-right:8px;"></i>No-VOC Products.</li>
@@ -1412,7 +1413,7 @@ ${T.pageHeader(h1Title, `<li><a href="/${service.slug}/index.html">${service.lab
   <div class="container">
     <div class="sec-title text-center" style="margin-bottom:40px;">
       <div class="d-flex align-items-center justify-content-center"><p class="sec-title__tagline">Painting Tips &amp; Insights</p></div>
-      <h2 class="sec-title__title">From the Timnath Painting Blog</h2>
+      <h2 class="sec-title__title">From the Keystone Painting Blog</h2>
     </div>
     <div class="row gutter-y-30">
       <!-- RECENT_POSTS -->
@@ -1437,7 +1438,7 @@ SERVICES.forEach(service => {
   });
 });
 
-// ─── HOW IT WORKS / PROCESS PAGE ──────────────────────────────────────────
+// â”€â”€â”€ HOW IT WORKS / PROCESS PAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function buildHowItWorks() {
   const outDir = path.join(DIST, 'how-it-works');
   fs.mkdirSync(outDir, { recursive: true });
@@ -1451,9 +1452,9 @@ function buildHowItWorks() {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Process | Timnath Painting</title>
-  <meta name="description" content="See how Timnath Painting makes exterior painting simple — from color selection to HOA approval to a finished job. Two tracks: standard and HOA neighborhoods.">
-  <link rel="canonical" href="https://timnathpainting.com/how-it-works/">
+  <title>Our Process | Keystone Painting</title>
+  <meta name="description" content="See how Keystone Painting makes exterior painting simple â€” from color selection to HOA approval to a finished job. Two tracks: standard and HOA neighborhoods.">
+  <link rel="canonical" href="https://paintkeystone.com/how-it-works/">
   ${headPartial}
 </head>
 <body>
@@ -1466,7 +1467,7 @@ ${header}
     <div class="container text-center">
       <p style="color:#AE360E; font-weight:700; font-size:13px; letter-spacing:2px; text-transform:uppercase; margin-bottom:12px;">Our Process</p>
       <h1 style="color:#fff; font-size:clamp(32px,5vw,52px); font-weight:800; margin-bottom:16px; line-height:1.15;">We Make This Simple</h1>
-      <p style="color:rgba(255,255,255,0.75); font-size:18px; max-width:560px; margin:0 auto 28px;">Here's exactly what to expect — from picking your color to the last brushstroke.</p>
+      <p style="color:rgba(255,255,255,0.75); font-size:18px; max-width:560px; margin:0 auto 28px;">Here's exactly what to expect â€” from picking your color to the last brushstroke.</p>
       <a href="/get-a-quote/" class="wallox-btn wallox-btn--primary">Get a Free Quote <i class="fa-solid fa-arrow-right"></i></a>
     </div>
   </section>
@@ -1476,7 +1477,7 @@ ${header}
     <div class="container">
       <div class="text-center" style="max-width:640px; margin:0 auto 56px;">
         <h2 style="font-size:clamp(24px,3.5vw,36px); font-weight:800; color:#201B10; margin-bottom:14px;">Pick Your Track</h2>
-        <p style="color:#5a5650; font-size:17px; line-height:1.75;">Most jobs are straightforward. HOA neighborhoods add one extra step — but we've mapped it all out so you know what's coming.</p>
+        <p style="color:#5a5650; font-size:17px; line-height:1.75;">Most jobs are straightforward. HOA neighborhoods add one extra step â€” but we've mapped it all out so you know what's coming.</p>
       </div>
 
       <!-- Two Track Layout -->
@@ -1510,7 +1511,7 @@ ${header}
             </div>
             <div style="margin-top:8px; padding:16px 20px; background:#f8f5f1; border-radius:10px; font-size:14px; color:#5a5650;">
               <i class="fa-solid fa-bolt" style="color:#AE360E; margin-right:8px;"></i>
-              <strong style="color:#201B10;">Timeline:</strong> Most jobs quoted within 24 hours. Scheduling within 1–2 weeks.
+              <strong style="color:#201B10;">Timeline:</strong> Most jobs quoted within 24 hours. Scheduling within 1â€“2 weeks.
             </div>
             <div style="margin-top:16px; padding:20px; background:#fff4f0; border-radius:10px; text-align:center;">
               <p style="font-size:13px; font-weight:700; color:#201B10; margin:0 0 10px;"><i class="fa-solid fa-palette" style="color:#AE360E; margin-right:6px;"></i>Not sure which color?</p>
@@ -1534,7 +1535,7 @@ ${header}
             </div>
             <div class="process-steps">
               ${[
-                ['1', 'fa-palette', 'Pick Your Color', 'Choose from your HOA\'s approved palette — or check with your board. Sherwin-Williams offers free design consultations if you need a hand.'],
+                ['1', 'fa-palette', 'Pick Your Color', 'Choose from your HOA\'s approved palette â€” or check with your board. Sherwin-Williams offers free design consultations if you need a hand.'],
                 ['2', 'fa-file-signature', 'Get HOA Approval', 'Submit your color choice to your HOA board for sign-off. Most boards respond within a week or two. We can provide documentation if needed.'],
                 ['3', 'fa-phone', 'Call Us for a Quote', 'Once you have approval in hand, we\'ll come out, assess the job, and get you a written quote within 24 hours.'],
                 ['4', 'fa-calendar-check', 'We Schedule &amp; Show Up', 'Your crew shows up on time, matches the approved colors exactly, and leaves the site clean.'],
@@ -1549,7 +1550,7 @@ ${header}
             </div>
             <div style="margin-top:8px; padding:16px 20px; background:#fff4f0; border-radius:10px; font-size:14px; color:#5a5650;">
               <i class="fa-solid fa-circle-info" style="color:#AE360E; margin-right:8px;"></i>
-              <strong style="color:#201B10;">HOA tip:</strong> Get written approval before we schedule — it's the only variable we can't control for you.
+              <strong style="color:#201B10;">HOA tip:</strong> Get written approval before we schedule â€” it's the only variable we can't control for you.
             </div>
           </div>
         </div>
@@ -1562,7 +1563,7 @@ ${header}
   <section style="background:#AE360E; padding:56px 0;">
     <div class="container text-center">
       <h2 style="color:#fff; font-size:clamp(24px,3.5vw,38px); font-weight:800; margin-bottom:14px;">Ready? We Move Fast.</h2>
-      <p style="color:rgba(255,255,255,0.85); font-size:17px; max-width:520px; margin:0 auto 28px;">Once you're ready — approved colors in hand — we'll get you a written quote within 24 hours.</p>
+      <p style="color:rgba(255,255,255,0.85); font-size:17px; max-width:520px; margin:0 auto 28px;">Once you're ready â€” approved colors in hand â€” we'll get you a written quote within 24 hours.</p>
       <a href="/get-a-quote/" style="display:inline-flex; align-items:center; gap:10px; padding:16px 36px; background:#fff; color:#AE360E; font-weight:800; font-size:16px; border-radius:100px; text-decoration:none;">
         Request Your Free Quote <i class="fa-solid fa-arrow-right"></i>
       </a>
@@ -1621,13 +1622,13 @@ copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
 buildBlog({
   srcDir: ROOT,
   distDir: DIST,
-  siteId: 'timnath-painting',
+  siteId: 'keystone-painting',
   postsPerPage: 10,
-  domain: 'timnathpainting.com',
-  siteName: 'Timnath Painting'
+  domain: 'paintkeystone.com',
+  siteName: 'Keystone Painting'
 });
 
-// â”€â”€ Spread recent posts to all inner pages â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// Ã¢â€â‚¬Ã¢â€â‚¬ Spread recent posts to all inner pages Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 (function spreadRecentPosts() {
   const blogIndexPath = path.join(ROOT, 'blog-posts', 'blog-index.json');
   if (!fs.existsSync(blogIndexPath)) return;
@@ -1677,7 +1678,7 @@ console.log('\n? All pillar pages built successfully.');
 
 
 // ============================================================
-// GET A QUOTE PAGE ï¿½ High-conversion standalone landing page
+// GET A QUOTE PAGE Ã¯Â¿Â½ High-conversion standalone landing page
 // ============================================================
 function buildGetAQuote() {
   const HEADER_STRIPPED_HTML = fs.readFileSync(path.join(PARTS, 'header-stripped.html'), 'utf8');
@@ -1688,9 +1689,9 @@ function buildGetAQuote() {
   }
 
   const head = T.htmlHead(
-    'Get a Free Painting Quote | Timnath Painting | (970) 670-3965',
-    'Request a free painting quote from Timnath Painting. No pressure, no surprises. Serving Timnath, Windsor, Fort Collins & Northern Colorado. We respond within 2 hours.',
-    'https://timnathpainting.com/get-a-quote/'
+    'Get a Free Painting Quote | Keystone Painting | (970) 670-3965',
+    'Request a free painting quote from Keystone Painting. No pressure, no surprises. Serving Timnath, Windsor, Fort Collins & Northern Colorado. We respond within 2 hours.',
+    'https://paintkeystone.com/get-a-quote/'
   );
 
   const html = head + `
@@ -1788,7 +1789,7 @@ function buildGetAQuote() {
 
 buildGetAQuote();
 
-// ── Sign-Up Landing Page (Ad traffic, noindex, excluded from sitemap) ──
+// â”€â”€ Sign-Up Landing Page (Ad traffic, noindex, excluded from sitemap) â”€â”€
 (function buildSignUp() {
   const src = path.join(ROOT, 'sign-up.html');
   if (!fs.existsSync(src)) { console.log('sign-up.html not found, skipping.'); return; }
@@ -1820,6 +1821,10 @@ buildGetAQuote();
   console.log('Built: sign-up/index.html (noindex, excluded from sitemap)');
 })();
 
+// Build project pages
+buildAllProjects(write, T);
+
 // Generate sitemap from actual dist/ contents
 generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN, excludeSlugs: ['sign-up'] });
+
 

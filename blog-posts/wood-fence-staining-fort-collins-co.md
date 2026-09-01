@@ -1,8 +1,8 @@
----
+﻿---
 slug: wood-fence-staining-fort-collins-co
 title: 'Wood Fence Staining: Complete Guide for Colorado Homeowners'
-status: scheduled
-publishDate: null
+status: published
+publishDate: '2026-08-25T14:43:50.591Z'
 scheduledDate: '2026-08-25T13:00:00.000Z'
 excerpt: >-
   Colorado's UV exposure and freeze-thaw cycles destroy untreated wood fast.
@@ -29,7 +29,7 @@ tags:
   - colorado homeowners
   - fort collins
   - exterior wood care
-author: Timnath Painting
+author: Keystone Painting
 sheetRow: 27
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
@@ -39,9 +39,9 @@ gbpGenerated: true
 ---
 ## Why Colorado Is Hard on Wood Fences
 
-A wood fence in Fort Collins or Timnath isn't living in a forgiving climate. At altitude, UV radiation hits 10–15% harder than at sea level. Northern Colorado averages 28+ freeze-thaw cycles per year. Add spring moisture and summer heat swings, and untreated wood starts cracking, graying, and splitting faster than most homeowners expect.
+A wood fence in Fort Collins or Timnath isn't living in a forgiving climate. At altitude, UV radiation hits 10â€“15% harder than at sea level. Northern Colorado averages 28+ freeze-thaw cycles per year. Add spring moisture and summer heat swings, and untreated wood starts cracking, graying, and splitting faster than most homeowners expect.
 
-The good news: a properly stained fence can last 3–5 years between applications and resist everything Colorado throws at it — if you do it right. This guide covers the full process, start to finish.
+The good news: a properly stained fence can last 3â€“5 years between applications and resist everything Colorado throws at it â€” if you do it right. This guide covers the full process, start to finish.
 
 ***
 
@@ -49,16 +49,16 @@ The good news: a properly stained fence can last 3–5 years between application
 
 This is the mistake we see most often. If your fence was just installed, **do not stain it immediately.**
 
-New lumber — especially pressure-treated wood — needs time to dry out and cure. Staining too early traps moisture inside the wood, which causes the finish to peel and fail within a season. The general rule:
+New lumber â€” especially pressure-treated wood â€” needs time to dry out and cure. Staining too early traps moisture inside the wood, which causes the finish to peel and fail within a season. The general rule:
 
-* **Pressure-treated lumber:** Wait 6–12 months
-* **Cedar or redwood:** Wait 2–4 weeks minimum, longer if it was kiln-dried
+* **Pressure-treated lumber:** Wait 6â€“12 months
+* **Cedar or redwood:** Wait 2â€“4 weeks minimum, longer if it was kiln-dried
 
 A simple splash test tells you when wood is ready: pour a small amount of water on the surface. If it beads up, the wood is still too wet to stain. If it absorbs, you're good to go.
 
 ***
 
-## Step 2: Prep the Surface — Don't Skip This
+## Step 2: Prep the Surface â€” Don't Skip This
 
 No stain performs well on dirty, grayed, or weathered wood. Prep is where most DIY fence projects go wrong.
 
@@ -70,9 +70,9 @@ No stain performs well on dirty, grayed, or weathered wood. Prep is where most D
 
 **For existing fences that have weathered:**
 
-* Pressure wash at 1,200–1,500 PSI (too high strips wood fibers)
+* Pressure wash at 1,200â€“1,500 PSI (too high strips wood fibers)
 * Use a wood brightener or cleaner to remove gray oxidation and mill glaze
-* Let dry 24–48 hours — longer in humid conditions
+* Let dry 24â€“48 hours â€” longer in humid conditions
 
 Proper prep is non-negotiable in Colorado. Stain applied over a dirty or damp surface will peel, bubble, or fail to penetrate the wood grain.
 
@@ -82,15 +82,15 @@ Proper prep is non-negotiable in Colorado. Stain applied over a dirty or damp su
 
 Not all stains hold up equally in high-UV, high-altitude environments. Here's how to think through the options:
 
-**Transparent stains** show the most wood grain but offer the least UV protection. Fine for decorative applications, but they'll need reapplication every 1–2 years in Colorado.
+**Transparent stains** show the most wood grain but offer the least UV protection. Fine for decorative applications, but they'll need reapplication every 1â€“2 years in Colorado.
 
 **Semi-transparent stains** balance aesthetics and protection. They let the grain show through while adding a pigment layer that deflects UV rays. This is the most popular choice for cedar and natural wood fences.
 
-**Solid stains** deliver the most protection and longest life. If your fence is already weathered or you want maximum durability, a solid stain is worth considering — though it hides more of the wood character.
+**Solid stains** deliver the most protection and longest life. If your fence is already weathered or you want maximum durability, a solid stain is worth considering â€” though it hides more of the wood character.
 
 **Oil-based vs. water-based:** Oil-based stains penetrate deeper into the wood grain, which is a real advantage for dry Colorado conditions where wood contracts and expands aggressively. Water-based formulas have improved significantly and clean up easier, but oil-based still tends to outperform on rough-sawn or older wood.
 
-For our [fence staining](/fence-staining/) projects across Northern Colorado, we consistently lean toward penetrating oil-based semi-transparent stains for cedar fences — they hold up through the freeze-thaw season better than most alternatives.
+For our [fence staining](/fence-staining/) projects across Northern Colorado, we consistently lean toward penetrating oil-based semi-transparent stains for cedar fences â€” they hold up through the freeze-thaw season better than most alternatives.
 
 ***
 
@@ -98,9 +98,9 @@ For our [fence staining](/fence-staining/) projects across Northern Colorado, we
 
 Timing matters. Apply stain:
 
-* When temps are between 50°F and 90°F
-* On a dry day with no rain in the forecast for 24–48 hours
-* Out of direct midday sun when possible — hot wood causes stain to dry too fast and lap marks form
+* When temps are between 50Â°F and 90Â°F
+* On a dry day with no rain in the forecast for 24â€“48 hours
+* Out of direct midday sun when possible â€” hot wood causes stain to dry too fast and lap marks form
 
 **Application methods:**
 
@@ -115,11 +115,11 @@ Apply thin, even coats. Two light coats almost always outperform one heavy coat.
 
 Even a well-stained fence needs periodic attention. Here's a realistic maintenance timeline for Fort Collins and surrounding areas:
 
-* **Year 1:** Inspect for peeling, cracking, or graying — especially after the first winter
-* **Every 2–3 years:** Full clean and recoat for semi-transparent or transparent stains
-* **Every 4–5 years:** Solid stains typically hold longer before needing reapplication
+* **Year 1:** Inspect for peeling, cracking, or graying â€” especially after the first winter
+* **Every 2â€“3 years:** Full clean and recoat for semi-transparent or transparent stains
+* **Every 4â€“5 years:** Solid stains typically hold longer before needing reapplication
 
-Annual cleaning — even just a garden hose rinse in fall — extends life significantly by preventing dirt and mold from breaking down the finish.
+Annual cleaning â€” even just a garden hose rinse in fall â€” extends life significantly by preventing dirt and mold from breaking down the finish.
 
 ***
 
@@ -129,4 +129,5 @@ If your fence is already showing signs of UV damage, deep cracking, or peeling, 
 
 Our team serves homeowners across [Fort Collins](/areas-served/fort-collins-co/), [Windsor](/areas-served/windsor-co/), Timnath, and greater Northern Colorado with [exterior staining services](/exterior-staining/) built for Colorado's specific climate demands. We'll tell you honestly whether your fence needs prep work, how long to wait on a new install, and which product makes sense for your wood type.
 
-[Contact us](/contact/) for a free on-site estimate — no pressure, just straight answers.
+[Contact us](/contact/) for a free on-site estimate â€” no pressure, just straight answers.
+

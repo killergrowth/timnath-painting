@@ -1,5 +1,5 @@
-/**
- * Cloudflare Pages Function — /submit
+﻿/**
+ * Cloudflare Pages Function â€” /submit
  * Returns JSON { ok: true } or { ok: false, error: string }
  * Sends a branded HTML email via Gmail API (service account JWT auth).
  */
@@ -74,14 +74,14 @@ function buildHtmlEmail(name, email, phone, address, service, message) {
 
         <!-- Header -->
         <tr><td style="background:#2E2A20;padding:36px 40px;text-align:center;border-radius:8px 8px 0 0;">
-          <img src="https://timnathpainting.com/assets/images/logo-email-v3.png" alt="Timnath Painting" style="max-width:280px;width:100%;height:auto;display:block;margin:0 auto 20px;">
+          <img src="https://paintkeystone.com/assets/images/logo-email-v3.png" alt="Keystone Painting" style="max-width:280px;width:100%;height:auto;display:block;margin:0 auto 20px;">
           <div style="color:#DF9E42;font-family:'Oswald',Arial,sans-serif;font-size:14px;font-weight:600;letter-spacing:3px;text-transform:uppercase;">New Quote Request</div>
         </td></tr>
 
         <!-- Body -->
         <tr><td style="background:#ffffff;padding:36px 40px;">
           <p style="margin:0 0 24px;color:#2E2A20;font-family:'Open Sans',Arial,sans-serif;font-size:15px;line-height:1.6;">
-            A new quote request was submitted through the Timnath Painting website. Here are the details:
+            A new quote request was submitted through the Keystone Painting website. Here are the details:
           </p>
 
           <table width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">
@@ -119,7 +119,7 @@ function buildHtmlEmail(name, email, phone, address, service, message) {
         <!-- Footer -->
         <tr><td style="background:#2E2A20;padding:24px 40px;text-align:center;border-radius:0 0 8px 8px;">
           <p style="margin:0;color:#888;font-size:12px;">
-            Timnath Painting &bull; Timnath, CO 80547 &bull;
+            Keystone Painting &bull; Timnath, CO 80547 &bull;
           </p>
         </td></tr>
 
@@ -132,7 +132,7 @@ function buildHtmlEmail(name, email, phone, address, service, message) {
 
 const JSON_HEADERS = {
   'Content-Type': 'application/json',
-  'Access-Control-Allow-Origin': 'https://timnathpainting.com',
+  'Access-Control-Allow-Origin': 'https://paintkeystone.com',
 };
 
 export async function onRequestPost({ request, env }) {
@@ -168,12 +168,12 @@ export async function onRequestPost({ request, env }) {
       env.GMAIL_FROM
     );
 
-    const subject = 'New Quote Request - Timnath Painting';
+    const subject = 'New Quote Request - Keystone Painting';
     const htmlBody = buildHtmlEmail(name, email, phone, address, service, message);
 
     // Build MIME multipart message (HTML only)
     const mimeLines = [
-      `From: Timnath Painting <${env.GMAIL_FROM}>`,
+      `From: Keystone Painting <${env.GMAIL_FROM}>`,
       `To: ${env.GMAIL_TO}`,
       `Subject: ${subject}`,
       `MIME-Version: 1.0`,
@@ -211,3 +211,4 @@ export async function onRequestPost({ request, env }) {
     });
   }
 }
+

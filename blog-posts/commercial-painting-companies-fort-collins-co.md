@@ -1,4 +1,4 @@
----
+﻿---
 slug: commercial-painting-companies-fort-collins-co
 title: What to Look for in a Commercial Painting Company
 status: scheduled
@@ -30,7 +30,7 @@ tags:
   - commercial painting companies
   - exterior painting
   - property maintenance
-author: Timnath Painting
+author: Keystone Painting
 sheetRow: 36
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
@@ -42,7 +42,7 @@ gbpGenerated: true
 
 Most painting contractors can roll a bedroom wall. Commercial work is a different animal.
 
-When you're dealing with stucco, EIFS, CMU block, metal cladding, or multi-story exteriors — and you need the job done without shutting down operations — the stakes are higher. The wrong crew costs you more than a bad paint job. It costs you time, liability exposure, and tenant or customer complaints.
+When you're dealing with stucco, EIFS, CMU block, metal cladding, or multi-story exteriors â€” and you need the job done without shutting down operations â€” the stakes are higher. The wrong crew costs you more than a bad paint job. It costs you time, liability exposure, and tenant or customer complaints.
 
 If you're searching for **commercial painting companies in Fort Collins, CO**, here's what actually separates a contractor worth hiring from one you'll regret.
 
@@ -72,7 +72,7 @@ If the answer is "the owner," make sure you understand what other jobs they're r
 
 ## 3\. Surface Prep Knowledge for Commercial Materials
 
-This is where most commercial painting failures originate — not the paint itself, but what happened (or didn't happen) before it went on.
+This is where most commercial painting failures originate â€” not the paint itself, but what happened (or didn't happen) before it went on.
 
 Commercial buildings use materials that demand specific prep protocols:
 
@@ -98,13 +98,13 @@ Before signing, ask:
 * How do you handle dust, fumes, and debris control?
 * Do you communicate daily with our on-site contact?
 
-This isn't just a convenience issue — in some commercial environments (medical, food service, etc.) it's a compliance issue. A contractor who hasn't thought through operational disruption hasn't done enough commercial work.
+This isn't just a convenience issue â€” in some commercial environments (medical, food service, etc.) it's a compliance issue. A contractor who hasn't thought through operational disruption hasn't done enough commercial work.
 
 ***
 
 ## 5\. Insurance Levels That Match Commercial Risk
 
-Residential painters typically carry $300K–$1M in general liability. That's not enough for a commercial job.
+Residential painters typically carry $300Kâ€“$1M in general liability. That's not enough for a commercial job.
 
 Look for:
 
@@ -112,7 +112,7 @@ Look for:
 * **Workers' comp:** Active policy covering their actual crew (ask for a certificate)
 * **Commercial auto** if they're operating vehicles on your property
 
-We carry $2M in liability coverage — not because it's a marketing line, but because it's the right level for the work we do. If a contractor can't produce certificates on request, walk away.
+We carry $2M in liability coverage â€” not because it's a marketing line, but because it's the right level for the work we do. If a contractor can't produce certificates on request, walk away.
 
 ***
 
@@ -120,14 +120,15 @@ We carry $2M in liability coverage — not because it's a marketing line, but be
 
 A commercial painting company that's done mostly work in a mild climate is going to underbid your prep and overestimate their coating's lifespan here.
 
-Fort Collins sits at elevation. UV exposure runs 10–15% higher than lower-altitude regions. Winter freeze-thaw cycles stress substrates in ways that Southeast or Midwest contractors simply haven't encountered.
+Fort Collins sits at elevation. UV exposure runs 10â€“15% higher than lower-altitude regions. Winter freeze-thaw cycles stress substrates in ways that Southeast or Midwest contractors simply haven't encountered.
 
-Make sure whoever you hire has a track record in this region — not just a license to work here.
+Make sure whoever you hire has a track record in this region â€” not just a license to work here.
 
 ***
 
 ## We Do Commercial Work in Fort Collins and Across Northern Colorado
 
-Timnath Painting handles [commercial painting projects](/commercial-painting/) across the region, including Fort Collins, Windsor, Loveland, and surrounding communities. We show up with the right crew size, a dedicated point of contact, documented surface prep for commercial substrates, and $2M in liability coverage.
+Keystone Painting handles [commercial painting projects](/commercial-painting/) across the region, including Fort Collins, Windsor, Loveland, and surrounding communities. We show up with the right crew size, a dedicated point of contact, documented surface prep for commercial substrates, and $2M in liability coverage.
 
-If you're evaluating [commercial painting companies](/commercial-painting/) for an upcoming project, we're happy to walk you through our process on-site — no pressure, no vague estimates. [Request a free quote](/contact/) and let's take a look at what your property actually needs.
+If you're evaluating [commercial painting companies](/commercial-painting/) for an upcoming project, we're happy to walk you through our process on-site â€” no pressure, no vague estimates. [Request a free quote](/contact/) and let's take a look at what your property actually needs.
+

@@ -1,4 +1,4 @@
----
+﻿---
 slug: hoa-painting-timnath-co
 title: 'HOA Exterior Painting: Rules, Process & What to Expect'
 status: scheduled
@@ -29,7 +29,7 @@ tags:
   - exterior painting
   - northern colorado
   - timnath ranch
-author: Timnath Painting
+author: Keystone Painting
 sheetRow: 42
 sheetId: 1vbAvFozBVBuLll38MuHoDJE9fA1iaJYoON1Xz08J4p0
 sheetGid: '1429273512'
@@ -39,9 +39,9 @@ gbpGenerated: true
 ---
 ## Why HOA Painting Is a Different Animal
 
-If you live in a neighborhood governed by an HOA — like many in the Timnath Ranch area — getting your home's exterior painted isn't as simple as picking a color and calling a contractor. There are rules, timelines, and an approval process involved. Most homeowners don't realize this until they're already mid-project.
+If you live in a neighborhood governed by an HOA â€” like many in the Timnath Ranch area â€” getting your home's exterior painted isn't as simple as picking a color and calling a contractor. There are rules, timelines, and an approval process involved. Most homeowners don't realize this until they're already mid-project.
 
-This post walks you through exactly what [HOA painting in Timnath, CO](/hoa-painting/) looks like — from the first approval request to the final walkthrough — so there are no surprises.
+This post walks you through exactly what [HOA painting in Timnath, CO](/hoa-painting/) looks like â€” from the first approval request to the final walkthrough â€” so there are no surprises.
 
 ***
 
@@ -49,10 +49,10 @@ This post walks you through exactly what [HOA painting in Timnath, CO](/hoa-pain
 
 Every HOA is different, but most governing documents (CC&Rs) give the association authority over:
 
-* **Approved color palettes** — usually a set of pre-approved body, trim, and accent colors
-* **Paint sheen and finish type** — some HOAs specify satin vs. flat on certain surfaces
-* **Which surfaces require approval** — typically any color change, but sometimes even same-color repaints require notification
-* **Approved contractors** — some HOAs maintain a preferred vendor list or require proof of licensing and insurance before a contractor sets foot on the property
+* **Approved color palettes** â€” usually a set of pre-approved body, trim, and accent colors
+* **Paint sheen and finish type** â€” some HOAs specify satin vs. flat on certain surfaces
+* **Which surfaces require approval** â€” typically any color change, but sometimes even same-color repaints require notification
+* **Approved contractors** â€” some HOAs maintain a preferred vendor list or require proof of licensing and insurance before a contractor sets foot on the property
 
 If you're not sure what your HOA requires, pull your CC&Rs and look for the Architectural Review Committee (ARC) section. When in doubt, call the management company directly.
 
@@ -66,13 +66,13 @@ Once you know the rules, you'll need to submit a formal request to the ARC befor
 * Which surfaces each color applies to (body, trim, garage door, front door, etc.)
 * Contractor name, license number, and proof of insurance
 
-**Timeline reality check:** ARC approval can take anywhere from 7 to 30 days depending on how your HOA is structured. Some have monthly board meetings where all requests are reviewed at once. Plan accordingly — do not schedule your painter before approval is in hand.
+**Timeline reality check:** ARC approval can take anywhere from 7 to 30 days depending on how your HOA is structured. Some have monthly board meetings where all requests are reviewed at once. Plan accordingly â€” do not schedule your painter before approval is in hand.
 
 We handle the paperwork side of this for every [exterior painting](/exterior-painting/) project we run in HOA communities. If you need a specific paint product or sheen documented, we provide it.
 
 ***
 
-## Step 3: Who Manages the Project — You or the HOA?
+## Step 3: Who Manages the Project â€” You or the HOA?
 
 This depends on whether the exterior is **owner-maintained** or **HOA-maintained** property.
 
@@ -80,7 +80,7 @@ This depends on whether the exterior is **owner-maintained** or **HOA-maintained
 
 **HOA-maintained:** The association hires a contractor (sometimes through a bid process) and the cost is either covered by HOA dues or assessed to affected units. Individual homeowners may have little say in contractor selection but may be able to influence color within the approved palette.
 
-If you're in an HOA-maintained situation, the management company typically coordinates everything — and your job is mostly to keep the area around your home clear for the crew.
+If you're in an HOA-maintained situation, the management company typically coordinates everything â€” and your job is mostly to keep the area around your home clear for the crew.
 
 ***
 
@@ -88,11 +88,11 @@ If you're in an HOA-maintained situation, the management company typically coord
 
 Whether you're hiring independently or the HOA is running the project, the quality of work should meet the same standard. In Northern Colorado, that means:
 
-* **Proper surface prep** — pressure washing, scraping, sanding, and spot priming before any paint goes on
-* **Climate-appropriate products** — Northern Colorado sees 28+ freeze-thaw cycles per year and UV levels 10–15% higher than sea level; not every paint formulation holds up
-* **Clean lines on trim** — HOA communities are visually uniform by design; sloppy cut-in lines stand out
+* **Proper surface prep** â€” pressure washing, scraping, sanding, and spot priming before any paint goes on
+* **Climate-appropriate products** â€” Northern Colorado sees 28+ freeze-thaw cycles per year and UV levels 10â€“15% higher than sea level; not every paint formulation holds up
+* **Clean lines on trim** â€” HOA communities are visually uniform by design; sloppy cut-in lines stand out
 
-A well-applied paint system in this climate should realistically last 7–10 years before the next full repaint cycle. If your contractor can't speak to product selection and longevity, that's a red flag.
+A well-applied paint system in this climate should realistically last 7â€“10 years before the next full repaint cycle. If your contractor can't speak to product selection and longevity, that's a red flag.
 
 You can see examples of our work across [Timnath and surrounding communities](/gallery/) to get a sense of what finished results look like.
 
@@ -100,7 +100,7 @@ You can see examples of our work across [Timnath and surrounding communities](/g
 
 ## Step 5: Post-Job Approval and Documentation
 
-Some HOAs require a final sign-off after the work is complete — a quick confirmation that the finished product matches what was approved. Keep a copy of:
+Some HOAs require a final sign-off after the work is complete â€” a quick confirmation that the finished product matches what was approved. Keep a copy of:
 
 * Your ARC approval letter
 * The paint colors and products used (brand, name, formula code)
@@ -115,3 +115,4 @@ This matters when you go to sell the home. Buyers and their agents will ask, and
 Timnath Ranch and similar communities in the area have specific requirements, and navigating them is part of what we do. We carry **[$2M in liability coverage](/about/)**, we're licensed and insured, and we document everything the ARC needs to approve your project without back-and-forth delays.
 
 If you're coming up on a required repaint cycle or just ready to refresh before the next HOA inspection, [reach out for a free on-site quote](/contact/). We'll walk the property, review your HOA requirements with you, and get you a clear plan before anything gets submitted.
+
