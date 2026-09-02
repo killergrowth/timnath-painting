@@ -1619,6 +1619,7 @@ buildHowItWorks();
 copyDir(path.join(ROOT, 'functions'), path.join(DIST, 'functions'));
 
 // Build blog
+const { buildRss } = require('./gen-rss');
 buildBlog({
   srcDir: ROOT,
   distDir: DIST,
@@ -1627,6 +1628,9 @@ buildBlog({
   domain: 'paintkeystone.com',
   siteName: 'Keystone Painting'
 });
+
+// RSS feed — generates dist/blog/feed/index.xml → /blog/feed/
+buildRss();
 
 // Ã¢â€â‚¬Ã¢â€â‚¬ Spread recent posts to all inner pages Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
 (function spreadRecentPosts() {
