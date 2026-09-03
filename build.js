@@ -1819,7 +1819,7 @@ buildGetAQuote();
   }).join('\n');
   html = html.replace('<!-- REVIEW_CARDS -->', reviewCards || '');
 
-  const dest = path.join(DIST, 'sign-up/index.html');
+  const dest = path.join(DIST, 'sign-up/exterior/index.html');
   ensureDir(path.dirname(dest));
   fs.writeFileSync(dest, html, 'utf8');
   console.log('Built: sign-up/index.html (noindex, excluded from sitemap)');
@@ -1829,6 +1829,6 @@ buildGetAQuote();
 buildAllProjects(write, T);
 
 // Generate sitemap from actual dist/ contents
-generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN, excludeSlugs: ['sign-up'] });
+generateSitemap({ distDir: DIST, siteRoot: ROOT, domain: SITE_DOMAIN, excludeSlugs: ['sign-up', 'sign-up/exterior'] });
 
 
